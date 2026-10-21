@@ -16,6 +16,12 @@
 
 已用 Node.js 24.18.0 执行 `npm run build`，成功生成 355 个 HTML 与 343 条可索引网址；两份版本文件、当前验证环境和 GitHub 检查配置一致。
 
-未登录或修改 Cloudflare 账户，也未推送远端。线上是否成功需以应用配置后的新部署日志为准。
+经站长明确授权，已将两个版本文件提交到 GitHub 的 `main` 分支，提交号为 `88fdcf1a45d25107737b7498c1f5328eaeebb908`。Cloudflare Pages 返回 `Deployed successfully`，GitHub 质量检查通过；公网首页实测返回 HTTP 200。
+
+本次远端仅新增 `.node-version` 和 `.nvmrc`，没有把本地后续文章、品牌或界面更新额外发布到线上。远端部署与本地完整源码的范围分别记录。
+
+- [已部署网站](https://498d1cf5.jichangfan-shop.pages.dev)
+- [实际修复提交](https://github.com/yinxingren588/jichangfan.shop/commit/88fdcf1a45d25107737b7498c1f5328eaeebb908)
+- 详细成功记录：`docs/audit/cloudflare-live.json`。
 
 官方依据：[Cloudflare 构建版本配置](https://developers.cloudflare.com/pages/configuration/build-image/)。

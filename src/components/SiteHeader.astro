@@ -6,6 +6,13 @@ const path=Astro.url.pathname;
 <header class="header"><div class="container header-row">
  <a class="logo" href="/" aria-label="机场翻首页"><span class="logo-icon"><SiteMark/></span><span class="logo-text">机场翻<small>JICHANGFAN</small></span></a>
  <button type="button" class="menu-button" aria-controls="primary-nav" aria-expanded="false"><span>菜单</span><span class="menu-lines" aria-hidden="true"></span></button>
- <nav id="primary-nav" class="nav" aria-label="主导航">{nav.map(([label,url])=><a class:list={{active:url==='/'?path==='/':path.startsWith(url)}} href={url} aria-current={(url==='/'?path==='/':path.startsWith(url))?'page':undefined}>{label}</a>)}</nav>
+ <nav id="primary-nav" class="nav" aria-label="主导航">{nav.map(([label,url])=><a class:list={{active:url==='/'?path==='/':path.startsWith(url),'contact-nav':url==='/contact/'}} href={url} aria-current={(url==='/'?path==='/':path.startsWith(url))?'page':undefined}>{label}</a>)}</nav>
  <a href="/search/" class="search-link" aria-label="搜索文章与品牌"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><span>搜索</span></a>
 </div></header>
+<style>
+ .nav a.contact-nav{align-self:center;padding:9px 12px;border:1px solid #b5c3b5;border-radius:2px;min-height:40px}
+ .nav a.contact-nav:hover,.nav a.contact-nav.active{background:var(--forest);border-color:var(--forest);color:#fffefa}
+ .nav a.contact-nav.active:after{display:none}
+ @media(max-width:1050px){.nav a.contact-nav{margin:4px 0;padding:10px 14px;text-align:center;justify-content:center}}
+ @media(max-width:600px){.nav a.contact-nav{padding:10px 6px}}
+</style>

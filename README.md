@@ -4,6 +4,8 @@
 
 ## 先看这里
 
+- [联系我们与 Gmail 使用说明](docs/contact-update.md)
+
 - [全部240篇文章与品牌资料完成记录](docs/full-editorial-review.md)
 - [240篇逐篇修改清单](docs/full-editorial-manifest.csv)
 

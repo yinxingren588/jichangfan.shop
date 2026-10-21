@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "date": "2026-10-21",
+  "email": "yinxingren588@gmail.com",
+  "checks": [
+    {
+      "width": 1440,
+      "navigation": "PASS",
+      "layout": "PASS",
+      "email": "PASS"
+    },
+    {
+      "width": 1280,
+      "navigation": "PASS",
+      "layout": "PASS",
+      "email": "PASS"
+    },
+    {
+      "width": 1100,
+      "navigation": "PASS",
+      "layout": "PASS",
+      "email": "PASS"
+    },
+    {
+      "width": 1051,
+      "navigation": "PASS",
+      "layout": "PASS",
+      "email": "PASS"
+    },
+    {
+      "width": 1024,
+      "navigation": "PASS",
+      "layout": "PASS",
+      "email": "PASS"
+    },
+    {
+      "width": 768,
+      "navigation": "PASS",
+      "layout": "PASS",
+      "email": "PASS"
+    },
+    {
+      "width": 375,
+      "navigation": "PASS",
+      "layout": "PASS",
+      "email": "PASS"
+    },
+    {
+      "width": 320,
+      "navigation": "PASS",
+      "layout": "PASS",
+      "email": "PASS"
+    }
+  ],
+  "clipboard": "Exact address copied",
+  "mailto": "Exact address with enquiry-specific subjects; no messages sent",
+  "accessibility": "No WCAG A/AA violations at 1440 and 375 px",
+  "noJavaScript": "Email remains usable; copy button hidden"
+}

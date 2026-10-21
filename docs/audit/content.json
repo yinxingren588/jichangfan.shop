@@ -2,7 +2,7 @@
   "status": "PASS",
   "issues": [],
   "brands": 5,
-  "articles": 15,
+  "articles": 215,
   "reviewStatus": "official-data only",
   "factualLimits": "Automated checks detect schema/evidence gaps and unsupported test claims; human judgement is still required for source interpretation."
 }

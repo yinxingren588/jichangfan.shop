@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import ArticleList from './ArticleList.astro';
+import {blogTopics} from '../data/blog-topics';
+import {site} from '../data/site';
+import type {CollectionEntry} from 'astro:content';
+interface Props {entries:CollectionEntry<'articles'>[];currentPage?:number;totalPages?:number;total?:number;topic?:typeof blogTopics[number];}
+const {entries,currentPage=1,totalPages=1,total=entries.length,topic}=Astro.props;
+const heading=topic?topic.name:currentPage===1?'博客文章':'博客文章 · 第 '+currentPage+' 页';
+const title=topic?topic.name+'专题：具体问题与实用检查指南':currentPage===1?'博客文章：选型、节点、设备与隐私的实用指南':'博客文章归档 · 第 '+currentPage+' 页';
+const description=topic?topic.intro:currentPage===1?'机场翻的 '+total+' 篇博客，按选型预算、流量、网络、协议、四类设备、应用与隐私整理，提供问题解答、检查步骤、适用范围和官方资料。':'机场翻博客归档第 '+currentPage+' 页，每页 20 篇，继续浏览设备、网络和服务选择问题的实用指南。';
+const breadcrumbs=[{name:'博客文章',url:'/blog/'},...(topic?[{name:topic.name,url:'/blog/topics/'+topic.id+'/'}]:currentPage>1?[{name:'第 '+currentPage+' 页',url:'/blog/page/'+currentPage+'/'}]:[])];
+const schema=[{'@context':'https://schema.org','@type':'ItemList',name:heading,itemListElement:entries.map((e,i)=>({'@type':'ListItem',position:i+1,name:e.data.title,url:site.url+'/blog/'+e.id+'/'}))}];
+---
+<Base {title} {description} {breadcrumbs} {schema} noindex={!topic&&currentPage>1}>
+ <div class="container">
+  <header class="page-heading"><div class="eyebrow">JICHANGFAN / PRACTICAL READING</div><h1>{heading}</h1><p>{topic?topic.intro:'从一个具体问题开始，读懂价格、配置与使用边界。新增内容按十个主题整理，每篇附检查步骤、相关阅读和官方参考。'}</p><div class="meta"><span>{topic?entries.length+' 篇主题文章':total+' 篇博客 · 每页 20 篇'}</span><time datetime="2026-10-21">更新于 2026-10-21</time></div></header>
+  <nav class="topic-directory" aria-label="博客主题"><a href="/blog/" aria-current={!topic&&currentPage===1?'page':undefined}>全部文章</a>{blogTopics.map(t=><a href={'/blog/topics/'+t.id+'/'} aria-current={topic?.id===t.id?'page':undefined}>{t.name}</a>)}</nav>
+  <section class="section"><div class="section-heading"><h2>{topic?'本专题文章':'文章目录'}</h2>{!topic&&<span class="meta">第 {currentPage} / {totalPages} 页</span>}</div><ArticleList {entries} numbered/></section>
+  {!topic&&totalPages>1&&<nav class="page-nav pagination" aria-label="博客分页">{currentPage>1&&<a href={currentPage===2?'/blog/':'/blog/page/'+(currentPage-1)+'/'}>← 上一页</a>}{Array.from({length:totalPages},(_,i)=>i+1).map(p=>p===currentPage?<span aria-current="page">{p}</span>:<a href={p===1?'/blog/':'/blog/page/'+p+'/'} aria-label={'第 '+p+' 页'}>{p}</a>)}{currentPage<totalPages&&<a href={'/blog/page/'+(currentPage+1)+'/'}>下一页 →</a>}</nav>}
+  {topic&&<nav class="page-nav"><a href="/blog/">全部博客 →</a><a href="/search/">搜索具体问题 →</a></nav>}
+ </div>
+</Base>

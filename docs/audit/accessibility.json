@@ -22,5 +22,17 @@
   {
     "route": "/recommend/budget/",
     "violations": []
+  },
+  {
+    "route": "/blog/",
+    "violations": []
+  },
+  {
+    "route": "/blog/topics/windows/",
+    "violations": []
+  },
+  {
+    "route": "/blog/practical-windows-sleep-reconnect/",
+    "violations": []
   }
 ]

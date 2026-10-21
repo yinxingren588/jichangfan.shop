@@ -1,0 +1,10 @@
+---
+import BlogArchive from '../../../components/BlogArchive.astro';
+import {getCollection} from 'astro:content';
+export async function getStaticPaths(){
+ const entries=(await getCollection('articles',({data})=>data.category==='blog'&&!data.draft)).sort((a,b)=>(a.data.order??0)-(b.data.order??0)||a.id.localeCompare(b.id));
+ const totalPages=Math.ceil(entries.length/20);
+ return Array.from({length:totalPages-1},(_,i)=>{const page=i+2;return {params:{page:String(page)},props:{entries:entries.slice((page-1)*20,page*20),currentPage:page,totalPages,total:entries.length}};});
+}
+---
+<BlogArchive {...Astro.props}/>

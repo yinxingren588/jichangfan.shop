@@ -6,3 +6,5 @@
 
 /* AA contrast for secondary text on the light page surfaces. */
 :root{--muted:#52627b}.meta,.breadcrumb{color:#53647c}.rank-num{color:#5b6d88}.note{color:#52627b}.compare-banner p{color:#4e5f7a}.footer a{color:#53627a}.footer-bottom{color:#596b85}.page-heading p{color:#53647b}.article-number{color:#73839b}
+
+.topic-directory{display:flex;flex-wrap:wrap;gap:9px;margin:20px 0 30px}.topic-directory a{padding:8px 13px;border:1px solid #d5dfef;border-radius:6px;background:#fff;font-size:12px;color:#435875}.topic-directory a[aria-current=page]{color:#fff;background:#2563eb;border-color:#2563eb}.pagination span{padding:6px 12px;border-radius:5px;background:#2563eb;color:#fff;font-size:12px}

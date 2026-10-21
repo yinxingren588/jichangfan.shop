@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "issues": [],
+  "newArticles": 200,
+  "totalMarkdown": 215,
+  "topics": {
+    "选型与预算": 20,
+    "流量与计费": 20,
+    "节点与网络": 20,
+    "协议与配置": 20,
+    "Windows 实用检查": 20,
+    "Android 实用检查": 20,
+    "iOS 与 iPadOS": 20,
+    "macOS 实用检查": 20,
+    "AI 与应用场景": 20,
+    "隐私与安全习惯": 20
+  },
+  "minChineseCharacters": 617,
+  "maxChineseCharacters": 723,
+  "pairsCompared": 19900,
+  "maxFiveCharacterShingleJaccard": 0.62,
+  "closestPair": [
+    "AI 文件上传失败，先检查什么？",
+    "AI 桌面端和网页端表现不同，先查哪些条件？"
+  ],
+  "flaggedPairs": [],
+  "limits": "Shared article layout, context and checklist wording are intentional. Similarity checks detect near duplicates; they do not prove factual completeness or editorial quality."
+}

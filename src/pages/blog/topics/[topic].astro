@@ -1,0 +1,10 @@
+---
+import BlogArchive from '../../../components/BlogArchive.astro';
+import {getCollection} from 'astro:content';
+import {blogTopics} from '../../../data/blog-topics';
+export async function getStaticPaths(){
+ const all=await getCollection('articles',({data})=>data.category==='blog'&&!data.draft);
+ return blogTopics.map(topic=>({params:{topic:topic.id},props:{topic,entries:all.filter(e=>e.data.topic===topic.id).sort((a,b)=>(a.data.order??0)-(b.data.order??0))}}));
+}
+---
+<BlogArchive {...Astro.props}/>

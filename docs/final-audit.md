@@ -1,4 +1,6 @@
-# 新团博客最终验收报告
+# 机场翻最终验收报告
+
+品牌修正说明：网站正式名称为“机场翻”，英文 JICHANGFAN，域名 jichangfan.shop。2026-10-21 已更新全部 51 页品牌标识、标题、Schema、favicon、分享图片和预览图，重建、SEO 与链接检查通过，专项记录见 audit/brand-correction.json。文件保存在用户原先指定的“新团博客/jichangfan.shop”目录。此前 Lighthouse 原始报告保留历史构建证据，品牌修正没有重新测量性能分数。
 
 验收日：2026-10-21（Asia/Shanghai）。正式域名：https://jichangfan.shop 。源码仓库：https://github.com/yinxingren588/jichangfan.shop 。
 

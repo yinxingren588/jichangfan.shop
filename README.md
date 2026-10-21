@@ -1,4 +1,4 @@
-# 新团博客 · jichangfan.shop
+# 机场翻 · jichangfan.shop
 
 完整 Astro 静态中文博客。网站源码、内容、构建产物、SEO 配置、IndexNow、自动验收和部署说明均在本目录。
 

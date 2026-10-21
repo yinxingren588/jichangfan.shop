@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "brand": "机场翻",
+  "english": "JICHANGFAN",
+  "domain": "jichangfan.shop",
+  "pages": 51,
+  "checks": [
+    "Title brand",
+    "No old brand in production HTML",
+    "Open Graph site name",
+    "Organization and WebSite schema",
+    "Desktop header visual",
+    "375px layout",
+    "Regenerated favicon, social image and preview screenshots"
+  ]
+}

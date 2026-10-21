@@ -1,0 +1,77 @@
+{
+  "date": "2026-10-21",
+  "results": [
+    {
+      "width": 1440,
+      "slug": "yinxingren",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "slug": "feimaoyun",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "slug": "feiv",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "slug": "edgenova",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "slug": "laddercloud",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "slug": "sujie",
+      "overflow": false
+    },
+    {
+      "width": 375,
+      "slug": "yinxingren",
+      "overflow": false
+    },
+    {
+      "width": 375,
+      "slug": "feimaoyun",
+      "overflow": false
+    },
+    {
+      "width": 375,
+      "slug": "feiv",
+      "overflow": false
+    },
+    {
+      "width": 375,
+      "slug": "edgenova",
+      "overflow": false
+    },
+    {
+      "width": 375,
+      "slug": "laddercloud",
+      "overflow": false
+    },
+    {
+      "width": 375,
+      "slug": "sujie",
+      "overflow": false
+    },
+    {
+      "route": "/airport/yinxingren/",
+      "accessibilityViolations": 0
+    },
+    {
+      "route": "/review/yinxingren/",
+      "accessibilityViolations": 0
+    },
+    {
+      "route": "/ranking/budget/",
+      "accessibilityViolations": 0
+    }
+  ]
+}

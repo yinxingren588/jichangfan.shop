@@ -5,7 +5,7 @@ category: "blog"
 date: "2026-10-21"
 updated: "2026-10-21"
 tags: ["预算","流量"]
-sources: [{"title":"Windscribe 官方套餐页","url":"https://windscribe.com/upgrade"},{"title":"Proton VPN 官方套餐说明","url":"https://protonvpn.com/support/knowledge-base-bonus-connections"}]
+sources: [{"title":"Windscribe：付款周期与续费展示","url":"https://windscribe.com/upgrade"},{"title":"Mullvad：按购买渠道区分退款","url":"https://mullvad.net/en/help/refunds"},{"title":"Apple：取消订阅","url":"https://support.apple.com/en-us/118428"}]
 draft: false
 ---
 
@@ -27,6 +27,22 @@ draft: false
 
 网络需求、设备和服务状态都可能改变。退款窗口结束后，未使用月份是否可退要看条款。把长周期省下的费用与预付款规模放在一起衡量；不能只根据折扣百分比决定。
 
+## 在预计使用时长下复算
+
+用实际打算使用的月份比较现金支出，避免把年付月均直接当每次付款。下面是教学假设：月付12元，年付108元，权益相同，未用时间不可退，且暂不计其他费用。
+
+| 预计使用 | 逐月付款合计 | 年付当次支出 | 差额怎样理解 |
+| --- | --- | --- | --- |
+| 3个月 | 36元 | 108元 | 年付多付72元 |
+| 9个月 | 108元 | 108元 | 当次支出相同 |
+| 12个月 | 144元 | 108元 | 年付账面少36元 |
+
+第九个月只是这个假设里的费用交点，不是所有套餐的标准。若两种方案的流量、节点或客户端授权不同，就还不能直接按上表下结论；需要把差异权益与自己需求并列。跨币种时保留原币，再注明换算日期与费用。
+
+## 取消续费与退款分开检查
+
+停止下一次扣款，不等于退回已经支付的当期金额。Mullvad的退款帮助按付款渠道区分处理，Apple也分别提供取消订阅与申请退款流程。引用这些资料用于说明阅读方法，不能把它们的期限与排除条件套给其他品牌。
+
 ## 一个用于理解的例子
 
 假设月付 12 元、年付 108 元，则年付等效 9 元/月，但立即支出 108 元。若只用三个月且不能退剩余费用，实际已付金额仍为 108 元。这是算术示例，不是本站品牌套餐。
@@ -40,3 +56,13 @@ draft: false
 ### 应该怎样读本站价格榜？
 
 [美元普通月付榜](/ranking/budget/)不混入年付折算。具体年付总额见[品牌资料](/airport/)，选择前也可使用[比较工具](/compare/)。
+
+## 进一步阅读与参考
+
+- [多年优惠还应核对什么](/blog/practical-long-contract-check/)
+- [续费提醒怎样做](/blog/practical-renewal-calendar/)
+- [套餐比较工具](/compare/)
+
+本文保留原有概念与选择框架，资料说明与实际测试分别标注。算例为编辑设计，可替换成自己的输入；没有为品牌编造网络表现或长期保证。
+
+[Windscribe：付款周期与续费展示](https://windscribe.com/upgrade)、[Mullvad：按购买渠道区分退款](https://mullvad.net/en/help/refunds)、[Apple：取消订阅](https://support.apple.com/en-us/118428)。

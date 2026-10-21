@@ -7,7 +7,7 @@ updated: "2026-10-21"
 tags: ["使用教程","配置导入"]
 topic: "guide-import"
 related: ["windows","wireguard-android","configuration-backup"]
-sources: [{"title":"Proton VPN：Windows手动配置WireGuard","url":"https://protonvpn.com/support/wireguard-manual-windows"},{"title":"WireGuard官方安装入口","url":"https://www.wireguard.com/install/"}]
+sources: [{"title": "Proton VPN：官方 WireGuard Windows 客户端配置示例", "url": "https://protonvpn.com/support/wireguard-manual-windows"}, {"title": "Proton VPN：生成 WireGuard 配置文件", "url": "https://protonvpn.com/support/wireguard-configurations"}, {"title": "WireGuard：官方安装入口", "url": "https://www.wireguard.com/install/"}]
 draft: false
 order: 8
 ---
@@ -38,7 +38,31 @@ order: 8
 
 导入时报错，先检查文件类型、内容是否完整，以及下载得到的是否其实是登录网页。激活后失败，再核对配置有效性、服务端信息和本地网络。不要在没有记录的情况下同时更改端点、路由和DNS；需要重新生成时，从可信后台获取新的完整文件。
 
+
+
+## 激活以后按握手和任务分层观察
+
+WireGuard 文件能导入、隧道被激活与远端有数据响应，应分别记录。官方客户端中的状态只用于判断相应层次，不能替代目标应用验收。本文采用有效配置的正常导入流程，不提供猜测端点、私钥或路由的模板。
+
+| 检查结果 | 对应处理 |
+| --- | --- |
+| 文件无法导入 | 核对 .conf 内容、来源与完整性 |
+| 激活报本地组件错误 | 记录完整错误，按客户端支持流程排查 |
+| 激活后无预期任务响应 | 查看握手、收发与路由，再交服务方核对配置 |
+
+### 对照案例
+
+例如列表里出现隧道且能点激活，但实际没有远端响应。它说明本地配置已加载，不能据此宣布线路正常或账号有效。应保持原配置，保留握手时间与错误，再对照基础接入及服务方支持，不随手改 AllowedIPs。
+
+### 完成后的验收
+
+记录导入文件日期、激活结果、必要连接活动及目标任务，随后 Deactivate 并确认原网络。配置中 PrivateKey 等字段视为秘密，任何支持截图先脱敏。
+
 ## 常见问题
+
+### 同一个配置复制给第二台电脑会更方便吗？
+
+先看服务端的设备和密钥规则。文件可复制不代表允许并发或不会产生路由冲突，应按服务方支持方式为设备配置，不能用复制规避额度。
 
 ### 可以把其他客户端的订阅改成.conf吗？
 
@@ -47,3 +71,10 @@ order: 8
 ### 配置文件需要公开给支持人员吗？
 
 先提供脱敏错误、系统和客户端版本，不公开私钥。跨设备操作可继续阅读[Android文件导入](/guides/wireguard-android/)及[配置备份](/guides/configuration-backup/)。
+
+
+## 进一步阅读与参考
+
+- [Proton VPN：官方 WireGuard Windows 客户端配置示例](https://protonvpn.com/support/wireguard-manual-windows)
+- [Proton VPN：生成 WireGuard 配置文件](https://protonvpn.com/support/wireguard-configurations)
+- [WireGuard：官方安装入口](https://www.wireguard.com/install/)

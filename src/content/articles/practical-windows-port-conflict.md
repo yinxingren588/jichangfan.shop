@@ -10,50 +10,49 @@ primaryKeyword: "vpn推荐"
 batch: 5
 order: 94
 related: ["practical-windows-split-app","practical-windows-profile-duplicate"]
-sources: [{"title":"Microsoft：Windows VPN 连接说明","url":"https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows"},{"title":"Mullvad：官方桌面应用使用说明","url":"https://mullvad.net/en/help/using-mullvad-vpn-app"},{"title":"WireGuard：官方安装入口","url":"https://www.wireguard.com/install/"}]
+sources: [{"title": "Microsoft：Get-NetTCPConnection 参数与示例", "url": "https://learn.microsoft.com/en-us/powershell/module/nettcpip/get-nettcpconnection"}, {"title": "Microsoft：Windows 代理设置", "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/use-a-proxy-server-in-windows"}]
 draft: false
 ---
 
-先查客户端明确错误，确认哪个程序占用端口，再按应用说明选择受支持的处理方式。
+本地代理端口冲突时，先查是谁正在监听客户端需要的地址和端口。常见原因包括同一程序重复启动、旧实例未退出，或另一工具使用了相同端口；‘连接被拒绝’则也可能是根本没有监听，不能与端口被占用混为一谈。
 
-## 关键判断
+## 具体检查步骤
 
-端口是本地服务的一部分，改变后使用该端口的应用也可能需要同步。不要只改一处后忘记验证。
+1. 从报错中抄下本地地址、TCP 或 UDP 类型及端口。127.0.0.1 与所有接口的监听范围不同，不要只记一个数字；也不要为解决冲突直接把监听开放到公网。
 
-## 三步检查
+2. 对 TCP 可在 PowerShell 使用只读查询 `Get-NetTCPConnection -State Listen -LocalPort 7890`，7890 仅为示例，应替换为实际端口。查看 OwningProcess，再到任务管理器核对所属程序。
 
-### 1. 记录错误中的本地地址
+3. 确认是自己的重复客户端后正常退出多余实例。若要改端口，同时更新自己使用的系统代理、浏览器扩展或应用代理配置；不结束不认识的系统或企业进程。
 
-保留具体错误文字和发生阶段，遮盖其中的私人数据。无法建立连接、认证被拒绝和任务处理失败，不应被合并成同一种不能用。
+## 怎样根据结果继续判断
 
-### 2. 关闭重复代理实例
+| 观察结果 | 下一步 |
+| --- | --- |
+| 报错地址已被占用 | 核对监听进程，处理重复实例或协调端口 |
+| 连接拒绝且找不到监听 | 确认客户端已启动、本地地址和端口正确 |
+| 改端口后浏览器仍失败 | 检查其他配置是否还指向旧端口 |
 
-先记录哪个程序在接管连接与系统代理。每次只保留一个已知方案观察，退出后核对设置是否恢复；不要直接终止不认识的系统或企业进程。
+## 一个可对照的排查场景
 
-### 3. 修改前保存原端口设置
+例如客户端改用 7891，但浏览器代理仍写 7890，表现为客户端正常、网页无法连接。应把依赖端口的设置一起核对，不能据此认为新的节点失败。示例端口不代表任何产品的固定默认值。
 
-先写出本次要验证的具体成功条件，再实际执行。保留失败样本与改变过的条件；另一个任务的成功不自动覆盖这次任务，单次结果也不代表长期表现。
+## 恢复与验收
 
-## 怎样保留这次结果
-
-把“记录错误中的本地地址”得到的信息和“修改前保存原端口设置”的结果分开保存。前者说明起点，后者说明是否达到目的；中间若改变了条件，也要记下改变了什么。这样下次遇到相似现象时，可以先对照差异，而不是从头猜原因。
-
-## 容易忽略的边界
-
-不随意终止不认识的系统或企业进程。
-
-Windows 内置连接、独立 VPN 应用和代理客户端可能使用不同入口。本组按具体故障或使用时点展开，先定位应用与系统的边界，再按当前官方文档处理，避免一次改变整个网络环境。
+修改前记录旧端口与全部使用方；无效时将两端一起恢复。验收先确认正确进程在预期本地地址监听，再测试实际任务，最后重启客户端确认配置保存。
 
 ## 常见问题
 
-### 需要先重装软件或重置网络吗？
+### 查询没有结果就能断定端口没有问题吗？
 
-通常应先确认错误范围并保留日志。重装和重置可能同时改变多项条件；按官方流程处理之前，准备必要的配置与账号恢复方式。
+不能。上述命令检查 TCP 监听，不覆盖 UDP、瞬时进程退出或其他绑定错误。应结合错误文本和产品说明；查询权限不足也要单独记录。
 
 ## 进一步阅读与参考
 
 - [Windows 分应用分流，怎样验证真的生效？](/blog/practical-windows-split-app/)
+
 - [Windows 里出现多个同名 VPN 配置，怎样整理？](/blog/practical-windows-profile-duplicate/)
+
 - [Windows 实用检查主题目录](/blog/topics/windows/)
 
-官方参考：[Microsoft：Windows VPN 连接说明](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows)、[Mullvad：官方桌面应用使用说明](https://mullvad.net/en/help/using-mullvad-vpn-app)、[WireGuard：官方安装入口](https://www.wireguard.com/install/)。它们用于核对概念与平台边界，本文步骤为编辑整理，不表示所有软件具有同一功能。具体按钮和当前支持情况请读相应官方帮助；没有用官方宣传冒充本站实测。
+- [Microsoft：Get-NetTCPConnection 参数与示例](https://learn.microsoft.com/en-us/powershell/module/nettcpip/get-nettcpconnection)
+- [Microsoft：Windows 代理设置](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/use-a-proxy-server-in-windows)

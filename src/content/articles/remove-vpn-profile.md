@@ -7,7 +7,7 @@ updated: "2026-10-21"
 tags: ["使用教程","隐私与退出"]
 topic: "guide-privacy"
 related: ["configuration-backup","device-limit-review","disconnect-restore"]
-sources: [{"title":"Apple：安装或移除iPhone配置描述文件","url":"https://support.apple.com/en-gb/guide/iphone/iph6c493b19/ios"},{"title":"Android帮助：连接和管理VPN","url":"https://support.google.com/android/answer/9089766"},{"title":"OpenVPN Connect：导入连接配置","url":"https://openvpn.net/connect-docs/import-profile.html"}]
+sources: [{"title": "Apple：在 iPhone 上安装或移除描述文件", "url": "https://support.apple.com/guide/iphone/iph6c493b19/ios"}, {"title": "Google：Android VPN 连接和配置管理", "url": "https://support.google.com/android/answer/9089766"}, {"title": "Apple：取消由 Apple 计费的订阅", "url": "https://support.apple.com/118428"}]
 draft: false
 order: 29
 ---
@@ -34,7 +34,31 @@ order: 29
 
 检查当前设备的普通网页和其他必要连接是否正常，确认没有误删仍需使用的项目。给备份标注当前状态，避免后续换设备时误导入。如果清理的是描述文件，特别留意它可能包含多项设置，不能只按文件名称推断影响范围。
 
+
+
+## 删除后按本机、授权和计费分别确认
+
+清理配置先明确目标：只整理本机列表、让旧设备失去授权，还是停止付款。三者由不同系统管理；描述文件还可能包含不止一项网络设置。移除前应了解来源、影响与重新创建方式，受管项目由管理员处理。
+
+| 检查结果 | 对应处理 |
+| --- | --- |
+| 个人本机重复配置 | 确认可恢复后按所属应用移除 |
+| 旧设备授权不再需要 | 到服务商支持的设备或密钥管理处理 |
+| 目标是停止自动扣款 | 按收据找实际计费方取消 |
+
+### 对照案例
+
+例如删除 iPhone 上的描述文件后，商家网站年付服务仍在有效期内，并不矛盾。本机配置不是账单；同样，注销服务账户可能影响其他电脑，不能为了清理一台手机误停所有设备。
+
+### 完成后的验收
+
+完成后检查本机是否仍自动创建连接、旧授权是否按需撤销和下次续费状态。取消凭证保存在本人账户记录中，含密钥的旧导出按泄露风险处理，不公开分享。
+
 ## 常见问题
+
+### 卸载 App 与移除描述文件是同一个动作吗？
+
+不是。它们可能有独立来源和关联设置，应分别核对。组织管理的描述文件不要为排错擅自移除，避免丢失工作配置或数据。
 
 ### 系统提示由组织管理怎么办？
 
@@ -43,3 +67,10 @@ order: 29
 ### 删除配置以后就不会再被计入设备数吗？
 
 取决于服务端如何计算授权。按[设备清点流程](/guides/device-limit-review/)核对；删除前需要保存资料，可阅读[配置备份](/guides/configuration-backup/)。
+
+
+## 进一步阅读与参考
+
+- [Apple：在 iPhone 上安装或移除描述文件](https://support.apple.com/guide/iphone/iph6c493b19/ios)
+- [Google：Android VPN 连接和配置管理](https://support.google.com/android/answer/9089766)
+- [Apple：取消由 Apple 计费的订阅](https://support.apple.com/118428)

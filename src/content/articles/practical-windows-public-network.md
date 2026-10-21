@@ -10,50 +10,49 @@ primaryKeyword: "vpn推荐"
 batch: 5
 order: 88
 related: ["practical-windows-ethernet-wifi","practical-windows-time-check"]
-sources: [{"title":"Microsoft：Windows VPN 连接说明","url":"https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows"},{"title":"Mullvad：官方桌面应用使用说明","url":"https://mullvad.net/en/help/using-mullvad-vpn-app"},{"title":"WireGuard：官方安装入口","url":"https://www.wireguard.com/install/"}]
+sources: [{"title": "Microsoft：在 Windows 中连接 VPN", "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows"}, {"title": "Microsoft：Windows Wi-Fi 故障排查与网络重置", "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/fix-wi-fi-connection-issues-in-windows"}]
 draft: false
 ---
 
-先确认接入网络的合法使用要求和认证，再建立自己的连接并核对实际任务。
+在酒店、车站或咖啡店使用 Windows VPN 前，应先确认接入网络身份并完成必要认证，再建立受信任的连接。VPN 不能证明 Wi-Fi 本身可信，也不能替代 HTTPS 和账户安全；公共网络不应为了排错而开启无关共享。
 
-## 关键判断
+## 具体检查步骤
 
-有些场所需要先完成网页认证。VPN 不能替代接入许可，也不能保证公共网络上的所有风险都消失。
+1. 通过场所工作人员或正式说明核对 Wi-Fi 名称和登录方式。若需要门户认证，先完成最小必要步骤；页面要求安装未知证书、远程控制程序或输入无关账户时，应停止并核实。
 
-## 三步检查
+2. 确认客户端和配置来自原有可信入口，提前准备账号恢复和离线说明。连接前查看 Windows 对当前网络的识别，公共接入不应仅为方便就改成家庭可信网络。
 
-### 1. 完成可信网络入口的认证
+3. 建立连接后测试一个低敏感度网页和实际工作服务。若存在持续阻断策略，先查产品对认证门户的官方处理办法；不要盲目停用整个安全系统来打开门户。
 
-区分设备上的登录、服务账户的权益和目标应用的使用资格。一个环节成功只证明该环节满足条件，剩余部分仍需按对应提供方的正式流程确认。
+## 怎样根据结果继续判断
 
-### 2. 确认客户端来源和账户
+| 观察结果 | 下一步 |
+| --- | --- |
+| Wi-Fi 已连但门户未认证 | 先解决场所接入，节点切换不能替代认证 |
+| 普通联网可用而 VPN 不通 | 记录错误和接入网络，再联系支持 |
+| 认证页面出现证书警告 | 核实网络与域名，不直接忽略警告继续登录 |
 
-从开发者的可信入口定位产品，核对发布者与适用系统。文件名、图标或别人转发的截图都不能代替来源；之后也应保持可追溯的更新渠道。
+## 一个可对照的排查场景
 
-### 3. 保留断开与恢复步骤
+例如刚进酒店就启动带断网保护的客户端，酒店登录页面因此未完成。按产品支持的门户处理方式完成认证后再连接，能区分接入和隧道两个环节；不需要重新安装客户端或购买另一份套餐。
 
-恢复资料需要同时说明它来自哪个版本、适用于什么场景。保存之后确认自己能读懂并找到操作入口；含凭据的文件应与公开说明分开管理。
+## 恢复与验收
 
-## 怎样保留这次结果
-
-把“完成可信网络入口的认证”得到的信息和“保留断开与恢复步骤”的结果分开保存。前者说明起点，后者说明是否达到目的；中间若改变了条件，也要记下改变了什么。这样下次遇到相似现象时，可以先对照差异，而不是从头猜原因。
-
-## 容易忽略的边界
-
-不接受公共页面要求安装来源不明的证书或远程控制软件。
-
-Windows 内置连接、独立 VPN 应用和代理客户端可能使用不同入口。本组按具体故障或使用时点展开，先定位应用与系统的边界，再按当前官方文档处理，避免一次改变整个网络环境。
+离开时结束敏感会话，按需要关闭自动加入该网络，并确认回到自己常用网络后连接策略正常。更改过临时例外的，应撤销例外，保留登录和计费凭证而非保存门户密码截图。
 
 ## 常见问题
 
-### 需要先重装软件或重置网络吗？
+### 连上 VPN 后可以放心忽略网页证书问题吗？
 
-通常应先确认错误范围并保留日志。重装和重置可能同时改变多项条件；按官方流程处理之前，准备必要的配置与账号恢复方式。
+不可以。网页证书验证和 VPN 是不同层的保护，警告可能与错误域名、系统时间或拦截有关。应查明原因，不以 VPN 已连接作为继续提交密码的依据。
 
 ## 进一步阅读与参考
 
 - [Windows 有线正常、Wi-Fi 连 VPN 失败，如何缩小范围？](/blog/practical-windows-ethernet-wifi/)
+
 - [Windows 时间不准会影响连接排查吗？](/blog/practical-windows-time-check/)
+
 - [Windows 实用检查主题目录](/blog/topics/windows/)
 
-官方参考：[Microsoft：Windows VPN 连接说明](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows)、[Mullvad：官方桌面应用使用说明](https://mullvad.net/en/help/using-mullvad-vpn-app)、[WireGuard：官方安装入口](https://www.wireguard.com/install/)。它们用于核对概念与平台边界，本文步骤为编辑整理，不表示所有软件具有同一功能。具体按钮和当前支持情况请读相应官方帮助；没有用官方宣传冒充本站实测。
+- [Microsoft：在 Windows 中连接 VPN](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows)
+- [Microsoft：Windows Wi-Fi 故障排查与网络重置](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/fix-wi-fi-connection-issues-in-windows)

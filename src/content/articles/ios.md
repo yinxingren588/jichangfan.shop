@@ -5,7 +5,7 @@ category: "guides"
 date: "2026-10-21"
 updated: "2026-10-21"
 tags: ["入门","设备","协议","设备入门"]
-sources: [{"title":"WireGuard 官方安装入口","url":"https://www.wireguard.com/install/"},{"title":"IVPN 官方协议说明","url":"https://www.ivpn.net/knowledgebase/general/what-vpn-protocols-do-you-offer/"}]
+sources: [{"title": "Apple：设备部署中的 VPN 能力和适用范围", "url": "https://support.apple.com/guide/deployment/vpn-overview-depae3d361d0/web"}, {"title": "Apple：在 iPhone 上安装或移除描述文件", "url": "https://support.apple.com/guide/iphone/iph6c493b19/ios"}, {"title": "Apple：iPhone 蜂窝数据设置和应用用量", "url": "https://support.apple.com/guide/iphone/iph3dd5f213/ios"}, {"title": "Apple：取消由 Apple 计费的订阅", "url": "https://support.apple.com/118428"}, {"title": "WireGuard：官方安装入口", "url": "https://www.wireguard.com/install/"}, {"title": "IVPN：各平台支持的协议", "url": "https://www.ivpn.net/knowledgebase/general/what-vpn-protocols-do-you-offer/"}]
 draft: false
 topic: "guide-devices"
 order: 4
@@ -34,7 +34,31 @@ related: ["windows","macos"]
 
 先在原应用断开，检查自动连接是否仍开启。换设备前查看服务允许的同时连接数，必要时在后台撤销旧设备。配置删除并不一定取消订阅付款，自动续费需在实际购买渠道另行确认。
 
+
+
+## 先分清应用、描述文件和服务账户
+
+iPhone 与 iPad 上，下载客户端、安装描述文件、购买服务和授予设备授权是不同流程。App Store 的客户端费用不自动包含机场套餐，出现 VPN 标识也不证明目标服务已授权。按照资料类型选择入口，避免不断增加无关配置。
+
+| 检查结果 | 对应处理 |
+| --- | --- |
+| 正式 App 配套登录或导入 | 核对开发者、格式及系统兼容性 |
+| 组织提供的描述文件或证书 | 由管理员解释用途、权限与恢复方式 |
+| 仅某 App 在蜂窝下失败 | 先查该 App 蜂窝数据权限，再比网络 |
+
+### 对照案例
+
+例如服务方只要求下载正式客户端并导入订阅，陌生网页却要求安装所谓‘通用描述文件’。后者不是原流程的一部分，应回到可信帮助核实。描述文件界面能显示名字，并不替提供者身份作保证。
+
+### 完成后的验收
+
+记录配置归属、实际工作任务、断开恢复及 Wi-Fi/蜂窝差异。没有测试的热点或受管应用范围写明未确认，不能用手机图标替这些对象完成验收。
+
 ## 常见问题
+
+### 删除 App 能取消所有相关收费吗？
+
+不能。客户端、Apple 计费订阅与服务商直付套餐可能分别管理。按收据确定计费方，再在对应渠道确认续费状态，本机移除配置不能代替账单处理。
 
 ### 系统中显示 VPN，就一定是商业 VPN 吗？
 
@@ -43,3 +67,13 @@ related: ["windows","macos"]
 ### 需要一直开着吗？
 
 取决于你的使用场景、服务条款和应用策略。先理解自动连接与断网保护，再作选择。遇到异常可看[连接排查教程](/guides/troubleshooting/)。
+
+
+## 进一步阅读与参考
+
+- [Apple：设备部署中的 VPN 能力和适用范围](https://support.apple.com/guide/deployment/vpn-overview-depae3d361d0/web)
+- [Apple：在 iPhone 上安装或移除描述文件](https://support.apple.com/guide/iphone/iph6c493b19/ios)
+- [Apple：iPhone 蜂窝数据设置和应用用量](https://support.apple.com/guide/iphone/iph3dd5f213/ios)
+- [Apple：取消由 Apple 计费的订阅](https://support.apple.com/118428)
+- [WireGuard：官方安装入口](https://www.wireguard.com/install/)
+- [IVPN：各平台支持的协议](https://www.ivpn.net/knowledgebase/general/what-vpn-protocols-do-you-offer/)

@@ -5,7 +5,7 @@ category: "blog"
 date: "2026-10-21"
 updated: "2026-10-21"
 tags: ["稳定","入门"]
-sources: [{"title":"Mullvad 官方服务器说明","url":"https://mullvad.net/en/help/server-list"},{"title":"Just My Socks 官方订购页","url":"https://www.justmysocks.net/members/cart.php"}]
+sources: [{"title":"Just My Socks：按周期展示配额","url":"https://www.justmysocks.net/members/cart.php"},{"title":"Windscribe：付款周期与续费展示","url":"https://windscribe.com/upgrade"},{"title":"EFF：理解 VPN 的信任与适用范围","url":"https://ssd.eff.org/module/choosing-vpn-thats-right-you"}]
 draft: false
 ---
 
@@ -22,6 +22,22 @@ draft: false
 ## 实测需要保留哪些条件
 
 至少应有日期与时区、地区、运营商、设备、协议、客户端版本、节点、任务与观察时长。多品牌比较应尽量使用相同条件，并保留失败样本；只展示最快一次会放大结果。
+
+## 一张可复用的观察记录
+
+| 记录项 | 至少写清什么 | 省略后会出现的问题 |
+| --- | --- | --- |
+| 环境 | 日期时区、地区、接入类型与运营商 | 无法判断结果是否适用于自己 |
+| 设备 | 系统、客户端版本与连接模式 | 不知道改变了哪个对象 |
+| 任务 | 文件、会议、网页或播放的具体动作 | 把一个成功外推成所有用途 |
+| 样本 | 成功、失败、尝试次数与观察时长 | 只挑最快截图造成偏差 |
+| 结果 | 可测数值、错误与恢复过程 | 感受被写成精确事实 |
+
+公开材料将令牌、私人地址与账号信息脱敏，原始秘密不放到公开仓库。没有发生过的测试保持空白，不用编辑设计的数字填充“实测”栏。
+
+## 一条结论怎样超出了证据
+
+假设某订购页写有2.5Gbps端口规格，文章就写“用户下载实测2.5Gbps”。前者是服务页面规格，后者需要用户侧测量，两者并不等同。再假设某任务尝试三次、两次完成，就应保留这三次记录，不能删掉失败后发布100%成功结论。例子用于说明证据推理，不代表本站实际测试。
 
 ## 数据多久会过期
 
@@ -40,3 +56,13 @@ draft: false
 ### 怎样自己做一份小记录？
 
 可参考[稳定性观察标准](/ranking/stable/)并按自己的常用任务记录，公开前遮盖凭据。
+
+## 进一步阅读与参考
+
+- [怎样核查推荐理由](/blog/practical-recommendation-evidence/)
+- [旧评测如何重新核对](/blog/practical-review-age/)
+- [稳定性观察方法](/ranking/stable/)
+
+本文保留原有概念与选择框架，资料说明与实际测试分别标注。算例为编辑设计，可替换成自己的输入；没有为品牌编造网络表现或长期保证。
+
+[Just My Socks：按周期展示配额](https://www.justmysocks.net/members/cart.php)、[Windscribe：付款周期与续费展示](https://windscribe.com/upgrade)、[EFF：理解 VPN 的信任与适用范围](https://ssd.eff.org/module/choosing-vpn-thats-right-you)。

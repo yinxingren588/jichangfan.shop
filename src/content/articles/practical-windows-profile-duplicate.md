@@ -10,50 +10,49 @@ primaryKeyword: "vpn推荐"
 batch: 5
 order: 95
 related: ["practical-windows-port-conflict","practical-windows-browser-extension"]
-sources: [{"title":"Microsoft：Windows VPN 连接说明","url":"https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows"},{"title":"Mullvad：官方桌面应用使用说明","url":"https://mullvad.net/en/help/using-mullvad-vpn-app"},{"title":"WireGuard：官方安装入口","url":"https://www.wireguard.com/install/"}]
+sources: [{"title": "Microsoft：在 Windows 中连接 VPN", "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows"}, {"title": "Microsoft：Windows VPN 配置选项", "url": "https://learn.microsoft.com/en-us/windows/security/operating-system-security/network-security/vpn/vpn-profile-options"}]
 draft: false
 ---
 
-先识别每个配置的来源和用途，再归档失效项，保留当前可用的恢复资料。
+同名 VPN 配置应按实际内容和来源整理，不能只凭列表名称删除。Windows 内置配置、第三方客户端配置和组织下发配置可能分别管理；名字相同也可能指向不同服务器，名字不同也可能使用同一授权。
 
-## 关键判断
+## 具体检查步骤
 
-同名不代表相同端点；名称不同也可能只是重复副本。应比较关键字段与任务，而不是按外观删除。
+1. 先把每项所在位置、配置名称、服务器、协议和提供方记成清单。截图应遮盖账号和地址中的令牌；确认哪些条目由个人建立，哪些来自组织管理。
 
-## 三步检查
+2. 在没有重要任务时逐项连接，测试同一个预期资源，并记录实际使用项。对第三方客户端，查看其自己的配置库，不假设 Windows 设置能展示或删除全部内容。
 
-### 1. 记录建立日期与所属服务
+3. 给已确认用途的配置改成易辨识名称，例如‘个人月付·手动连接’。保留当前可用项和恢复来源，确认重复且无依赖的旧项后再按对应程序流程删除。
 
-时间记录应能相互对应，必要时明确时区。系统、应用日志与后台可能采用不同显示方式；日期相同也不保证处于同一观察窗口。
+## 怎样根据结果继续判断
 
-### 2. 核对实际连接字段
+| 观察结果 | 下一步 |
+| --- | --- |
+| 同名、服务器和协议不同 | 先重命名区分用途，不合并凭据 |
+| 删除后自动重新出现 | 可能由管理策略或客户端重建，查来源 |
+| 无法判断哪项仍在使用 | 先标记待核实，暂不删除 |
 
-从开发者的可信入口定位产品，核对发布者与适用系统。文件名、图标或别人转发的截图都不能代替来源；之后也应保持可追溯的更新渠道。
+## 一个可对照的排查场景
 
-### 3. 确认后再移除不用项
+例如电脑中两个‘工作 VPN’，一个来自旧公司、一个由当前公司下发。能连上不代表有权继续使用旧配置；应按各组织要求处理，不能为了列表整齐把当前受管连接一起删掉。
 
-本地文件、运行状态、服务端授权与付款属于不同对象。只完成其中一项时，其他项未必随之变化；删除前应确认资料归属和可恢复性。
+## 恢复与验收
 
-## 怎样保留这次结果
-
-把“记录建立日期与所属服务”得到的信息和“确认后再移除不用项”的结果分开保存。前者说明起点，后者说明是否达到目的；中间若改变了条件，也要记下改变了什么。这样下次遇到相似现象时，可以先对照差异，而不是从头猜原因。
-
-## 容易忽略的边界
-
-不要清除组织管理的连接，遇到受管设备先联系管理员。
-
-Windows 内置连接、独立 VPN 应用和代理客户端可能使用不同入口。本组按具体故障或使用时点展开，先定位应用与系统的边界，再按当前官方文档处理，避免一次改变整个网络环境。
+清理完成后验证手动连接、自动启动和断开三种状态；若删除错误，必须能从合法来源重新创建。不要依赖含有明文密钥的公开截图作备份，也不要删除未确认的证书。
 
 ## 常见问题
 
-### 需要先重装软件或重置网络吗？
+### 直接卸载客户端能把所有重复项清空吗？
 
-通常应先确认错误范围并保留日志。重装和重置可能同时改变多项条件；按官方流程处理之前，准备必要的配置与账号恢复方式。
+不保证。系统内置配置、其他应用及管理服务可能独立存在。应该针对每项来源处理，而不是反复卸载所有网络工具。
 
 ## 进一步阅读与参考
 
 - [Windows 本地代理端口冲突，应该怎样处理？](/blog/practical-windows-port-conflict/)
+
 - [Windows 浏览器 VPN 扩展能覆盖电脑所有应用吗？](/blog/practical-windows-browser-extension/)
+
 - [Windows 实用检查主题目录](/blog/topics/windows/)
 
-官方参考：[Microsoft：Windows VPN 连接说明](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows)、[Mullvad：官方桌面应用使用说明](https://mullvad.net/en/help/using-mullvad-vpn-app)、[WireGuard：官方安装入口](https://www.wireguard.com/install/)。它们用于核对概念与平台边界，本文步骤为编辑整理，不表示所有软件具有同一功能。具体按钮和当前支持情况请读相应官方帮助；没有用官方宣传冒充本站实测。
+- [Microsoft：在 Windows 中连接 VPN](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows)
+- [Microsoft：Windows VPN 配置选项](https://learn.microsoft.com/en-us/windows/security/operating-system-security/network-security/vpn/vpn-profile-options)

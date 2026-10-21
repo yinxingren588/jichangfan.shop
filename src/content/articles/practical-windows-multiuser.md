@@ -10,50 +10,49 @@ primaryKeyword: "vpn推荐"
 batch: 5
 order: 97
 related: ["practical-windows-browser-extension","practical-windows-network-reset"]
-sources: [{"title":"Microsoft：Windows VPN 连接说明","url":"https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows"},{"title":"Mullvad：官方桌面应用使用说明","url":"https://mullvad.net/en/help/using-mullvad-vpn-app"},{"title":"WireGuard：官方安装入口","url":"https://www.wireguard.com/install/"}]
+sources: [{"title": "Microsoft：Windows VPN 配置选项", "url": "https://learn.microsoft.com/en-us/windows/security/operating-system-security/network-security/vpn/vpn-profile-options"}, {"title": "Microsoft：在 Windows 中连接 VPN", "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows"}]
 draft: false
 ---
 
-先区分系统范围与用户范围的设置，并遵守设备和账号管理规则。
+多人共用电脑时，应先区分 Windows 登录账户、VPN 本地配置和服务商账户。切换系统用户不等于前一个 VPN 服务已停止；某些客户端由全机服务接管网络，另一些配置只对当前用户生效。管理方式必须与实际软件一致。
 
-## 关键判断
+## 具体检查步骤
 
-共享设备可能保留前一用户的网络或自动连接选项。应了解范围后再调整，不让私人凭据暴露给其他用户。
+1. 确认设备是否受组织管理。个人电脑可为不同使用者建立各自标准账户；企业配置、证书和管理策略由管理员维护，不在多人之间共享管理员口令。
 
-## 三步检查
+2. 逐个记录客户端配置保存在哪个账户、是否自动登录、是否由系统服务运行。只写配置名称和用途，不把订阅、密钥或密码放进所有用户都能打开的共享文件夹。
 
-### 1. 确认电脑是否受组织管理
+3. 在没有进行中的工作时，按 A 用户连接、切换到 B 用户、再回到 A 的顺序测试。分别检查网络状态和实际任务，记录前一个会话是否仍占连接数。
 
-先确认设备和配置由谁管理。个人经验不能覆盖组织的授权与访问规则，遇到受管设置应走管理员提供的支持流程。
+## 怎样根据结果继续判断
 
-### 2. 分别记录用户账户的配置
+| 观察结果 | 下一步 |
+| --- | --- |
+| B 登录后沿用 A 的网络路径 | 检查全机服务或路由作用范围 |
+| B 找不到配置 | 可能为用户级配置，不直接复制 A 的凭据 |
+| 切换后达到设备或会话上限 | 查看服务端授权和同时连接条款 |
 
-区分设备上的登录、服务账户的权益和目标应用的使用资格。一个环节成功只证明该环节满足条件，剩余部分仍需按对应提供方的正式流程确认。
+## 一个可对照的排查场景
 
-### 3. 检查切换用户后的状态
+例如家人退出桌面窗口但没有断开由系统服务维持的 VPN，下一位使用者发现网络仍走该服务。仅创建两个 Windows 用户不能隔离全机网络组件，应先按客户端文档确定能否按用户使用，必要时约定显式断开流程。
 
-公开材料中不应出现可直接使用的凭据。先制作脱敏副本，保留字段类型和错误位置；如果原凭据已经泄露，后续还要确认服务端撤销，不能只删除截图。
+## 恢复与验收
 
-## 怎样保留这次结果
-
-把“确认电脑是否受组织管理”得到的信息和“检查切换用户后的状态”的结果分开保存。前者说明起点，后者说明是否达到目的；中间若改变了条件，也要记下改变了什么。这样下次遇到相似现象时，可以先对照差异，而不是从头猜原因。
-
-## 容易忽略的边界
-
-不未经授权改变组织网络策略或共享管理员账户。
-
-Windows 内置连接、独立 VPN 应用和代理客户端可能使用不同入口。本组按具体故障或使用时点展开，先定位应用与系统的边界，再按当前官方文档处理，避免一次改变整个网络环境。
+建立明确的交接动作：结束个人应用会话、按客户端正常断开、锁定或退出自己的 Windows 账户。验收要从另一用户账户执行，确认没有暴露配置文件和自动登录的服务后台。
 
 ## 常见问题
 
-### 需要先重装软件或重置网络吗？
+### 能把一个订阅放进共享文件夹供全家导入吗？
 
-通常应先确认错误范围并保留日志。重装和重置可能同时改变多项条件；按官方流程处理之前，准备必要的配置与账号恢复方式。
+先看服务方的共享、设备及同时连接条款。即使允许家庭共用，也应使用产品支持的授权方式保护凭据；公共可写文件夹会增加误删和外泄机会。
 
 ## 进一步阅读与参考
 
 - [Windows 浏览器 VPN 扩展能覆盖电脑所有应用吗？](/blog/practical-windows-browser-extension/)
+
 - [Windows 网络重置应该放在排查的哪一步？](/blog/practical-windows-network-reset/)
+
 - [Windows 实用检查主题目录](/blog/topics/windows/)
 
-官方参考：[Microsoft：Windows VPN 连接说明](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows)、[Mullvad：官方桌面应用使用说明](https://mullvad.net/en/help/using-mullvad-vpn-app)、[WireGuard：官方安装入口](https://www.wireguard.com/install/)。它们用于核对概念与平台边界，本文步骤为编辑整理，不表示所有软件具有同一功能。具体按钮和当前支持情况请读相应官方帮助；没有用官方宣传冒充本站实测。
+- [Microsoft：Windows VPN 配置选项](https://learn.microsoft.com/en-us/windows/security/operating-system-security/network-security/vpn/vpn-profile-options)
+- [Microsoft：在 Windows 中连接 VPN](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows)

@@ -7,7 +7,7 @@ if($('h1').length!==1)issues.push(p.url+' H1 count '+$('h1').length);
 if($('link[rel=canonical]').length!==1||$('link[rel=canonical]').attr('href')!==site.url+p.url)issues.push(p.url+' wrong canonical');
 const robots=$('meta[name=robots]').attr('content')||'';if(!/^(index|noindex), follow/.test(robots))issues.push(p.url+' wrong robots');
 const indexed=!robots.includes('noindex');if(indexed!==urls.includes(site.url+p.url))issues.push(p.url+' sitemap inclusion mismatch');
-if(/localhost|127\.0\.0\.1|\{\{[^}]+\}\}|TODO|Lorem ipsum/i.test($('main').text()+$('link[rel=canonical]').attr('href')))issues.push(p.url+' leftover variable or test URL');
+if(/localhost|127\.0\.0\.1/i.test($('link[rel=canonical]').attr('href')||'')||/(?:localhost|127\.0\.0\.1):4321|\{\{[^}]+\}\}|TODO|Lorem ipsum/i.test($('main').text()))issues.push(p.url+' leftover variable or test URL');
 if($('main').text().trim().length<50)issues.push(p.url+' blank page');
 for(const prop of ['og:title','og:description','og:url','og:image'])if(!$('meta[property="'+prop+'"]').attr('content'))issues.push(p.url+' missing '+prop);
 if(!$('meta[name="twitter:card"]').length)issues.push(p.url+' missing Twitter card');

@@ -5,7 +5,7 @@ category: "guides"
 date: "2026-10-21"
 updated: "2026-10-21"
 tags: ["稳定","设备","协议","故障排查"]
-sources: [{"title":"Android 帮助：连接 VPN","url":"https://support.google.com/android/answer/9089766"},{"title":"IVPN 官方协议说明","url":"https://www.ivpn.net/knowledgebase/general/what-vpn-protocols-do-you-offer/"}]
+sources: [{"title": "Microsoft：Windows Wi-Fi 故障排查与网络重置", "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/fix-wi-fi-connection-issues-in-windows"}, {"title": "Apple：排查 VPN 和其他网络安全软件", "url": "https://support.apple.com/102281"}, {"title": "Google：Android VPN 连接和配置管理", "url": "https://support.google.com/android/answer/9089766"}]
 draft: false
 topic: "guide-troubleshoot"
 order: 16
@@ -38,7 +38,31 @@ related: ["dns-check","network-time-check"]
 
 如果多个节点和协议均失败，并能稳定复现，请向官方支持提供脱敏记录：发生时间、设备版本、错误信息与已做的检查。日志先遮盖凭据，避免公开上传完整配置。
 
+
+
+## 根据失败阶段选择下一项检查
+
+有效排查先确定停在基础接入、导入、认证、路由还是业务服务。不要同时重装程序、改 DNS 和换协议，这会破坏可复现条件。所有测试都以自己有权操作的设备与任务为范围，尤其注意持续阻断和工作管理策略。
+
+| 检查结果 | 对应处理 |
+| --- | --- |
+| 普通网络也失败 | 查接入、门户、运营商与保护状态 |
+| 配置解析或认证失败 | 查格式、令牌、套餐和设备授权 |
+| 普通网页成功、一个服务失败 | 记录应用错误，查账户与该服务状态 |
+
+### 对照案例
+
+例如 App 返回明确的权限不足，而浏览器和其他目标正常。这类错误通常应先向业务服务核对账号，反复切换节点会改变变量却没有解决权限条件。相反，所有请求超时才需要继续查共同路径。
+
+### 完成后的验收
+
+在原失败任务上验证改善，并做正常断开与重连；保留至少一次失败样本。向客服提供版本、时刻、错误和已试步骤，任何订阅 URL、密码与私钥先脱敏。
+
 ## 常见问题
+
+### 连接显示正常就可以跳过网络检查吗？
+
+不可以。客户端状态、本地接口和端到端任务属于不同层次。应核对真正失败的请求，避免用首页能开代替上传、会议或后台同步。
 
 ### 重装应用是否总能修好？
 
@@ -47,3 +71,10 @@ related: ["dns-check","network-time-check"]
 ### 该如何判断稳定性？
 
 保留成功和失败样本，按[稳定性观察标准](/ranking/stable/)记录多天结果。了解[节点含义](/glossary/node/)也能帮助区分入口和出口。
+
+
+## 进一步阅读与参考
+
+- [Microsoft：Windows Wi-Fi 故障排查与网络重置](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/fix-wi-fi-connection-issues-in-windows)
+- [Apple：排查 VPN 和其他网络安全软件](https://support.apple.com/102281)
+- [Google：Android VPN 连接和配置管理](https://support.google.com/android/answer/9089766)

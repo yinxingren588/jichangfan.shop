@@ -7,7 +7,7 @@ updated: "2026-10-21"
 tags: ["使用教程","日常维护"]
 topic: "guide-maintenance"
 related: ["configuration-backup","subscription-refresh","troubleshooting"]
-sources: [{"title":"Google Play帮助：更新Android应用","url":"https://support.google.com/googleplay/answer/113412"},{"title":"WireGuard官方安装入口","url":"https://www.wireguard.com/install/"}]
+sources: [{"title": "Google：更新 Android 应用", "url": "https://support.google.com/googleplay/answer/113412"}, {"title": "Google：Play Protect 应用安全检查", "url": "https://support.google.com/googleplay/answer/2812853"}, {"title": "WireGuard：官方安装入口", "url": "https://www.wireguard.com/install/"}]
 draft: false
 order: 24
 ---
@@ -38,7 +38,31 @@ order: 24
 
 一条“旧版本→新版本、更新时间、配置是否保留、连接结果”通常足够个人维护。出现问题时，只回退到官方明确提供和支持的方式，不随意安装别人分享的旧包。更新成功也不等于账户自动续期，流量和设备权益仍要在服务商侧核对。
 
+
+
+## 更新后按原任务完成回归
+
+可信来源只解决应用身份的一部分问题，不保证每个配置在新版都兼容。更新完成应比较原任务，而不是仅看新版本号。若出现第二个同名图标、签名冲突或需要卸载旧版，先核对渠道和分支，避免丢掉本地资料。
+
+| 检查结果 | 对应处理 |
+| --- | --- |
+| 版本变更、配置保留 | 用原网络与原任务回归 |
+| 新旧两个同名应用并存 | 核对分支和应用身份 |
+| 增加敏感权限或导入格式改变 | 先读正式变更说明与必要性 |
+
+### 对照案例
+
+例如稳定版与预览版使用不同包身份，安装后新应用没有原配置。这可能是并存而非资料丢失，应先确认官方迁移说明。为找回旧按钮安装未知修改版，会使来源和排障更复杂。
+
+### 完成后的验收
+
+至少记录更新前后版本、连接、上传、退出及一次切网。新问题保留日志再求助；回退只采用正式支持方式，不假设旧版必能读取新版数据。
+
 ## 常见问题
+
+### 应用更新等于刷新订阅和续费吗？
+
+不是。它们分别改变程序、配置与服务权益。每项都应在对应渠道核对，更新成功不能证明套餐仍有额度。
 
 ### 为什么没有看到更新按钮？
 
@@ -47,3 +71,10 @@ order: 24
 ### 更新后节点仍是旧的怎么办？
 
 程序版本与远程配置是不同对象。继续阅读[订阅更新](/guides/subscription-refresh/)和[配置备份](/guides/configuration-backup/)，不要重复安装来代替资料更新。
+
+
+## 进一步阅读与参考
+
+- [Google：更新 Android 应用](https://support.google.com/googleplay/answer/113412)
+- [Google：Play Protect 应用安全检查](https://support.google.com/googleplay/answer/2812853)
+- [WireGuard：官方安装入口](https://www.wireguard.com/install/)

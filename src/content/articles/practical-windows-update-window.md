@@ -10,50 +10,49 @@ primaryKeyword: "vpn推荐"
 batch: 5
 order: 90
 related: ["practical-windows-time-check","practical-windows-log-export"]
-sources: [{"title":"Microsoft：Windows VPN 连接说明","url":"https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows"},{"title":"Mullvad：官方桌面应用使用说明","url":"https://mullvad.net/en/help/using-mullvad-vpn-app"},{"title":"WireGuard：官方安装入口","url":"https://www.wireguard.com/install/"}]
+sources: [{"title": "Microsoft：Windows Wi-Fi 故障排查与网络重置", "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/fix-wi-fi-connection-issues-in-windows"}, {"title": "Microsoft：在 Windows 中连接 VPN", "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows"}]
 draft: false
 ---
 
-以原来可用的任务为基线，检查客户端兼容、连接和退出行为，保留系统版本。
+Windows 更新前后，应围绕原来可用的任务做回归检查，而不是只确认客户端能启动。系统、网卡驱动、虚拟网络组件和客户端可能在不同时间更新；先记录版本，才能判断变化发生在哪一层。
 
-## 关键判断
+## 具体检查步骤
 
-系统更新和服务端变化可能同时发生。版本信息可以帮助支持人员判断，而不是靠记忆猜测。
+1. 更新前记录 Windows 版本、客户端版本、连接模式和一组小任务：普通网页、VPN 连接、实际工作应用、断开后联网。保存可恢复配置和合法安装来源。
 
-## 三步检查
+2. 阅读客户端支持说明，确认更新后系统是否在支持范围。重要远程工作前预留维护时间；受管设备的更新和恢复由管理员安排，不自行安装来源不明的旧驱动。
 
-### 1. 记录更新前设备状态
+3. 更新完成并按要求重启后，在相同接入、配置和目标下重做检查。把启动失败、认证失败、路由异常和睡眠后恢复分别记录，不把所有变化写成‘速度变慢’。
 
-先找与当前功能有关的变化、已知问题和迁移要求。升级后用原来可用的任务复测；时间先后只是线索，不直接证明故障由更新引起。
+## 怎样根据结果继续判断
 
-### 2. 查看客户端支持要求
+| 观察结果 | 下一步 |
+| --- | --- |
+| 客户端无法启动或组件加载失败 | 优先查兼容与安装日志 |
+| 连接成功但某应用失败 | 查分流、DNS 和应用会话 |
+| 所有网络在更新后异常 | 按 Microsoft 基础网络流程排查，保留驱动与更新信息 |
 
-记录完整版本，不只写最新版。支持情况可能按操作系统、芯片或客户端渠道区分；查看官方文档时，也要确认选中的是自己的平台。
+## 一个可对照的排查场景
 
-### 3. 更新后复测主要任务
+例如更新系统后，同时把客户端和节点也换了，原来的会议失败就无法只归因于系统更新。较清楚的做法是先保持原配置复测，发现问题后一次调整一项，并记录对应版本与错误。
 
-先写出本次要验证的具体成功条件，再实际执行。保留失败样本与改变过的条件；另一个任务的成功不自动覆盖这次任务，单次结果也不代表长期表现。
+## 恢复与验收
 
-## 怎样保留这次结果
-
-把“记录更新前设备状态”得到的信息和“更新后复测主要任务”的结果分开保存。前者说明起点，后者说明是否达到目的；中间若改变了条件，也要记下改变了什么。这样下次遇到相似现象时，可以先对照差异，而不是从头猜原因。
-
-## 容易忽略的边界
-
-不要从非官方渠道下载驱动来修复尚未定位的问题。
-
-Windows 内置连接、独立 VPN 应用和代理客户端可能使用不同入口。本组按具体故障或使用时点展开，先定位应用与系统的边界，再按当前官方文档处理，避免一次改变整个网络环境。
+先使用产品提供的修复或恢复方式；系统回退、驱动处理和网络重置都需确认影响并备份。最终验收还包括重启、正常退出及一次实际工作任务，不能以窗口能打开结束检查。
 
 ## 常见问题
 
-### 需要先重装软件或重置网络吗？
+### 出问题后是否应立即卸载系统安全更新？
 
-通常应先确认错误范围并保留日志。重装和重置可能同时改变多项条件；按官方流程处理之前，准备必要的配置与账号恢复方式。
+不应仅凭时间接近就这样处理。先获取错误和兼容信息，按 Microsoft 或组织支持流程确定必要操作，避免用未经确认的回退替代定位。
 
 ## 进一步阅读与参考
 
 - [Windows 时间不准会影响连接排查吗？](/blog/practical-windows-time-check/)
+
 - [Windows 客户端日志怎样导出给客服？](/blog/practical-windows-log-export/)
+
 - [Windows 实用检查主题目录](/blog/topics/windows/)
 
-官方参考：[Microsoft：Windows VPN 连接说明](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows)、[Mullvad：官方桌面应用使用说明](https://mullvad.net/en/help/using-mullvad-vpn-app)、[WireGuard：官方安装入口](https://www.wireguard.com/install/)。它们用于核对概念与平台边界，本文步骤为编辑整理，不表示所有软件具有同一功能。具体按钮和当前支持情况请读相应官方帮助；没有用官方宣传冒充本站实测。
+- [Microsoft：Windows Wi-Fi 故障排查与网络重置](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/fix-wi-fi-connection-issues-in-windows)
+- [Microsoft：在 Windows 中连接 VPN](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows)

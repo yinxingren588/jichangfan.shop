@@ -7,7 +7,7 @@ updated: "2026-10-21"
 tags: ["使用教程","日常维护"]
 topic: "guide-maintenance"
 related: ["device-limit-review","client-update","subscription-link-reset"]
-sources: [{"title":"Proton VPN：下载WireGuard配置","url":"https://protonvpn.com/support/wireguard-configurations"},{"title":"OpenVPN Connect：导入连接配置","url":"https://openvpn.net/connect-docs/import-profile.html"}]
+sources: [{"title": "OpenVPN Connect：导入连接配置", "url": "https://openvpn.net/connect-docs/import-profile.html"}, {"title": "Proton VPN：生成 WireGuard 配置文件", "url": "https://protonvpn.com/support/wireguard-configurations"}, {"title": "Apple：iCloud 备份包含哪些资料", "url": "https://support.apple.com/108770"}]
 draft: false
 order: 25
 ---
@@ -41,7 +41,31 @@ order: 25
 - 明确是否需要登录、重新授权或生成新配置。
 - 能验证连接，也知道断开后如何恢复网络。
 
+
+
+## 恢复演练比文件数量更重要
+
+有效备份需要能够恢复到受支持的客户端，同时保留服务端授权条件。含私钥的文件与操作说明应分开保护；压缩、改扩展名或设置容易共享的链接，并不自动提供访问控制。备份日期也不能代替凭据有效期。
+
+| 检查结果 | 对应处理 |
+| --- | --- |
+| 可从账户重新生成的配置 | 记录可信入口与重新授权要求 |
+| 仅保存在本机的规则 | 按正式导出方式保存并记录适用版本 |
+| 包含私钥、证书或令牌 | 作为凭据保护，不放公开教程附件 |
+
+### 对照案例
+
+例如整机备份恢复了旧订阅，但令牌在备份后已重置。文件完整不等于服务器仍接受，应重新获取正式授权，并把旧备份标成失效。备份的目标是恢复能力，而不是无限积累相似文件。
+
+### 完成后的验收
+
+在允许的设备上小范围恢复一次，验证导入、认证、原任务及断开。新设备未验收前不要删除唯一可用来源，迁移成功后再按规则撤销不用的旧设备。
+
 ## 常见问题
+
+### 云同步等于独立备份吗？
+
+不一定。同步可能把误删或变更继续传播，备份则取决于具体工具的版本和恢复设计。应阅读实际服务说明，并验证能否找回需要的有效版本。
 
 ### 截图能代替完整配置备份吗？
 
@@ -50,3 +74,10 @@ order: 25
 ### 备份旧链接会不会阻止它被撤销？
 
 不会。服务端控制的有效性与本地副本是两回事。继续阅读[链接重置](/guides/subscription-link-reset/)和[设备管理](/guides/device-limit-review/)。
+
+
+## 进一步阅读与参考
+
+- [OpenVPN Connect：导入连接配置](https://openvpn.net/connect-docs/import-profile.html)
+- [Proton VPN：生成 WireGuard 配置文件](https://protonvpn.com/support/wireguard-configurations)
+- [Apple：iCloud 备份包含哪些资料](https://support.apple.com/108770)

@@ -7,7 +7,7 @@ updated: "2026-10-21"
 tags: ["使用教程","隐私与退出"]
 topic: "guide-privacy"
 related: ["subscription-refresh","configuration-backup","logs-redaction"]
-sources: [{"title":"MDN：URL组成与处理","url":"https://developer.mozilla.org/en-US/docs/Web/API/URL"},{"title":"Proton VPN：下载WireGuard配置","url":"https://protonvpn.com/support/wireguard-configurations"}]
+sources: [{"title": "Proton VPN：生成 WireGuard 配置文件", "url": "https://protonvpn.com/support/wireguard-configurations"}, {"title": "OpenVPN Connect：导入连接配置", "url": "https://openvpn.net/connect-docs/import-profile.html"}]
 draft: false
 order: 27
 ---
@@ -38,7 +38,31 @@ order: 27
 
 客户端刷新订阅通常只是重新获取内容；服务端重置可能改变取用内容的凭据。是否会使旧链接、节点密码或已下载文件失效，各服务不同。处理前后记下服务商的明确说明，未确认的部分保留待核实，不补写统一结论。
 
+
+
+## 新文件生成不等于旧授权撤销
+
+处理泄露要确认服务端撤销的对象：下载入口令牌、节点密码、设备密钥或其他授权可能分别管理。更新一份配置、改本机名称或更换登录密码，不保证所有旧凭据同时失效，应逐项查服务方明确说明。
+
+| 检查结果 | 对应处理 |
+| --- | --- |
+| 公开的是推广邀请链接 | 先确认是否含个人连接授权，不与私密订阅混淆 |
+| 暴露私密订阅 token | 按该服务支持方式重置并更新设备 |
+| 已下载文件含独立密钥 | 确认原密钥是否需要另外撤销 |
+
+### 对照案例
+
+例如只重置订阅获取链接，但别人之前保存的独立配置是否还能连接仍未确认。应向服务方明确询问旧配置失效范围，不把‘新链接生成成功’当作所有泄露风险已经消除的证明。
+
+### 完成后的验收
+
+列出受影响设备逐台更新，验收新配置、原任务和断开。清理公开副本只是减少继续传播，仍要保留撤销范围记录，避免将新凭据又写进共享清单。
+
 ## 常见问题
+
+### 只删除公开帖子就算结束了吗？
+
+不够。别人可能已保存副本，需要按实际授权类型处理服务端撤销。没有自助入口时联系官方支持，不安装陌生人的所谓一键修复工具。
 
 ### 推广邀请码公开了也要按这套流程处理吗？
 
@@ -47,3 +71,9 @@ order: 27
 ### 把本地配置改名能解决吗？
 
 改名只方便自己识别，不会自动改变服务端凭据。继续阅读[配置更新](/guides/subscription-refresh/)和[日志脱敏](/guides/logs-redaction/)。
+
+
+## 进一步阅读与参考
+
+- [Proton VPN：生成 WireGuard 配置文件](https://protonvpn.com/support/wireguard-configurations)
+- [OpenVPN Connect：导入连接配置](https://openvpn.net/connect-docs/import-profile.html)

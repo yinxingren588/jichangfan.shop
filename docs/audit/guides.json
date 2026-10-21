@@ -29,10 +29,10 @@
       "count": 5
     }
   ],
-  "minNewChineseCharacters": 739,
-  "maxNewChineseCharacters": 837,
+  "minNewChineseCharacters": 1150,
+  "maxNewChineseCharacters": 1251,
   "pairsCompared": 435,
-  "maxFiveCharacterShingleJaccard": 0.02,
+  "maxFiveCharacterShingleJaccard": 0.021,
   "closestPair": [
     "wireguard-android",
     "wireguard-windows"

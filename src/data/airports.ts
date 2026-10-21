@@ -1,7 +1,7 @@
 import {partnerAirports} from './partners';
 export {partnerAirports} from './partners';
-export interface Plan { name:string; price:number; currency:'USD'|'EUR'|'CNY'; period:'month'|'year'|'one-time'|'year-equivalent'; trafficGB?:number; trafficApprox?:boolean; unlimited?:boolean; trafficMultiplier?:number; verified:boolean; reference?:boolean; source:string; note?:string; }
-export interface Airport { id:string; name:string; slug:string; kind:'proxy'|'vpn'; description:string; officialUrl?:string; affiliateUrl?:string; coupon?:string; startingPrice?:number; currency?:string; plans:Plan[]; protocols:string[]; regions:string[]; deviceLimit?:string; aiSupport?:string[]; streamingSupport?:string[]; advantages:string[]; disadvantages:string[]; suitableFor:string[]; sources:string[]; lastVerified?:string; testStatus:'tested'|'official-data'|'reference-data'|'unverified'; monogram:string; color:string; conclusion:string; analysis:string[]; clients:string; line:string; }
+export interface Plan { name:string; price:number; currency:'USD'|'EUR'|'CNY'; period:'month'|'year'|'one-time'|'year-equivalent'; trafficGB?:number; trafficApprox?:boolean; unlimited?:boolean; trafficMultiplier?:number; verified:boolean; ownerConfirmed?:boolean; reference?:boolean; port?:string; devices?:string; source:string; note?:string; }
+export interface Airport { id:string; name:string; slug:string; kind:'proxy'|'vpn'; description:string; officialUrl?:string; affiliateUrl?:string; coupon?:string; startingPrice?:number; currency?:string; plans:Plan[]; protocols:string[]; regions:string[]; deviceLimit?:string; aiSupport?:string[]; streamingSupport?:string[]; advantages:string[]; disadvantages:string[]; suitableFor:string[]; sources:string[]; lastVerified?:string; testStatus:'tested'|'official-data'|'owner-confirmed'|'reference-data'|'unverified'; monogram:string; color:string; conclusion:string; analysis:string[]; clients:string; line:string; }
 const jms='https://www.justmysocks.net/members/cart.php';
 const ivpn='https://www.ivpn.net/blog/ivpn-plan-changes-new-plus-tier-increased-device-limits-additional-privacy-services/';
 const proton='https://account.protonvpn.com/pricing?currency=USD&hfp=true';
@@ -14,12 +14,12 @@ const originalAirports:Airport[] = [
 ];
 export const airports:Airport[]=[...partnerAirports,...originalAirports];
 export const money=(price:number,currency:string)=>currency==='CNY'?'¥'+new Intl.NumberFormat('zh-CN',{maximumFractionDigits:2}).format(price):new Intl.NumberFormat('en-US',{style:'currency',currency,maximumFractionDigits:2}).format(price);
-export const monthlyPlan=(a:Airport)=>a.plans.find(p=>p.period==='month'&&p.verified);
+export const monthlyPlan=(a:Airport)=>a.plans.find(p=>p.period==='month'&&(p.verified||p.ownerConfirmed));
 export const displayPlan=(a:Airport)=>a.plans.find(p=>p.period==='month')||a.plans[0];
-export const evidenceLabel=(a:Airport)=>a.testStatus==='reference-data'?'第三方参考 · 未核验订单':'官方公开资料 · 未实测';
+export const evidenceLabel=(a:Airport)=>a.testStatus==='owner-confirmed'?'站长确认 · 指定资料源':a.testStatus==='reference-data'?'第三方参考 · 未核验订单':'官方公开资料 · 未实测';
 export const pricePeriod=(p:Plan)=>p.period==='year-equivalent'?'年付折合每月（总额待确认）':p.period==='year'?'年付总额':p.period==='one-time'?'一次性':'月付';
 export const priceLabel=(p?:Plan)=>p?money(p.price,p.currency)+' / '+pricePeriod(p):'尚未核实';
-export function unitCost(p:Plan){ if(!p.verified||p.period!=='month'||!p.trafficGB||!p.trafficMultiplier||p.unlimited) return undefined; return p.price/(p.trafficGB/p.trafficMultiplier); }
+export function unitCost(p:Plan){ if(!(p.verified||p.ownerConfirmed)||p.period!=='month'||!p.trafficGB||!p.trafficMultiplier||p.unlimited) return undefined; return p.price/(p.trafficGB/p.trafficMultiplier); }
 export const traffic=(p?:Plan)=>!p?'尚未核实':p.unlimited?'官方：不限量':p.trafficGB?(p.trafficApprox?'约 ':'')+p.trafficGB+' GB / '+(p.period==='one-time'?'总配额':'月'):'尚未核实';
-export const completeness=(a:Airport)=>[a.plans.some(p=>p.verified),!!a.deviceLimit,a.protocols.length>0,a.regions.length>0,a.sources.length>0].filter(Boolean).length;
+export const completeness=(a:Airport)=>[a.plans.some(p=>p.verified||p.ownerConfirmed),!!a.deviceLimit,a.protocols.length>0,a.regions.length>0,a.sources.length>0].filter(Boolean).length;
 export const budgetOrder=()=>airports.filter(a=>monthlyPlan(a)?.currency==='USD').sort((a,b)=>monthlyPlan(a)!.price-monthlyPlan(b)!.price);

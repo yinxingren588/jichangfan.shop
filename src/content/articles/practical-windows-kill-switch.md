@@ -10,50 +10,49 @@ primaryKeyword: "vpn推荐"
 batch: 5
 order: 92
 related: ["practical-windows-log-export","practical-windows-split-app"]
-sources: [{"title":"Microsoft：Windows VPN 连接说明","url":"https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows"},{"title":"Proton VPN：断网保护说明","url":"https://protonvpn.com/support/what-is-kill-switch"}]
+sources: [{"title": "Mullvad：桌面应用连接、断网保护和设备管理", "url": "https://mullvad.net/en/help/using-mullvad-vpn-app"}, {"title": "Microsoft：Windows Wi-Fi 故障排查与网络重置", "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/fix-wi-fi-connection-issues-in-windows"}]
 draft: false
 ---
 
-先阅读所用应用的保护模式，明确正常断开、意外断线和退出应用时分别会怎样。
+断网保护需要先弄清‘隧道意外中断时阻断’与‘只要未连接就阻断’两种行为。不同客户端对主动断开、退出、重启的处理并不相同。启用前应把官方恢复步骤保存到本地，并在自己能直接操作电脑的空闲时段验证。
 
-## 关键判断
+## 具体检查步骤
 
-不同模式可能有不同阻断范围。保护有效与否应观察实际行为，不能只看开关是否亮起。
+1. 在客户端帮助中确认开关名称、阻断范围和例外。特别记录主动断开、完全退出程序和系统重启后三种状态，找不到说明就先向服务方确认，不用产品名称猜行为。
 
-## 三步检查
+2. 保存配置副本和恢复入口，准备本地登录权限。只通过远程桌面操作的电脑，必须先有现场协助或其他恢复渠道，否则断开网络后将无法继续处理。
 
-### 1. 找到关闭保护的官方步骤
+3. 在无重要传输时建立连接，再按照产品官方测试方法验证中断与恢复。观察浏览器和一个实际应用；测试不包含删除防火墙规则或强行结束系统服务。
 
-本地文件、运行状态、服务端授权与付款属于不同对象。只完成其中一项时，其他项未必随之变化；删除前应确认资料归属和可恢复性。
+## 怎样根据结果继续判断
 
-### 2. 在非关键时段做验证
+| 观察结果 | 下一步 |
+| --- | --- |
+| 主动断开后全部离线 | 可能符合持续阻断策略，查原开关说明 |
+| 应用关闭后仍离线 | 检查常驻保护服务及官方解除方法 |
+| 隧道恢复后任务仍失败 | 重建应用会话，再查保护状态和日志 |
 
-先写出本次要验证的具体成功条件，再实际执行。保留失败样本与改变过的条件；另一个任务的成功不自动覆盖这次任务，单次结果也不代表长期表现。
+## 一个可对照的排查场景
 
-### 3. 确认普通网络恢复
+例如用户启用‘始终阻断未保护流量’后主动断开，网页不能打开。这可能正是设置的预期结果。应通过原客户端关闭该策略或重新连接，再验证恢复；随手删除网络适配器会增加额外故障。
 
-恢复资料需要同时说明它来自哪个版本、适用于什么场景。保存之后确认自己能读懂并找到操作入口；含凭据的文件应与公开说明分开管理。
+## 恢复与验收
 
-## 怎样保留这次结果
-
-把“找到关闭保护的官方步骤”得到的信息和“确认普通网络恢复”的结果分开保存。前者说明起点，后者说明是否达到目的；中间若改变了条件，也要记下改变了什么。这样下次遇到相似现象时，可以先对照差异，而不是从头猜原因。
-
-## 容易忽略的边界
-
-不要在不了解恢复方式时，在唯一远程连接的工作电脑上直接试验。
-
-Windows 内置连接、独立 VPN 应用和代理客户端可能使用不同入口。本组按具体故障或使用时点展开，先定位应用与系统的边界，再按当前官方文档处理，避免一次改变整个网络环境。
+恢复按已保存的产品流程执行：重新建立连接，或在本机明确关闭自己启用的持续阻断。完成后核对开关状态、普通联网和重启后的行为，避免留下下一次开机才出现的离线状态。
 
 ## 常见问题
 
-### 需要先重装软件或重置网络吗？
+### 可以直接关闭 Windows 防火墙解除吗？
 
-通常应先确认错误范围并保留日志。重装和重置可能同时改变多项条件；按官方流程处理之前，准备必要的配置与账号恢复方式。
+不建议。保护未必只由 Windows 防火墙实现，关闭防火墙也会改变其他安全策略。先使用产品支持的入口；组织受管设备则由管理员处理。
 
 ## 进一步阅读与参考
 
 - [Windows 客户端日志怎样导出给客服？](/blog/practical-windows-log-export/)
+
 - [Windows 分应用分流，怎样验证真的生效？](/blog/practical-windows-split-app/)
+
 - [Windows 实用检查主题目录](/blog/topics/windows/)
 
-官方参考：[Microsoft：Windows VPN 连接说明](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows)、[Proton VPN：断网保护说明](https://protonvpn.com/support/what-is-kill-switch)。它们用于核对概念与平台边界，本文步骤为编辑整理，不表示所有软件具有同一功能。具体按钮和当前支持情况请读相应官方帮助；没有用官方宣传冒充本站实测。
+- [Mullvad：桌面应用连接、断网保护和设备管理](https://mullvad.net/en/help/using-mullvad-vpn-app)
+- [Microsoft：Windows Wi-Fi 故障排查与网络重置](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/fix-wi-fi-connection-issues-in-windows)

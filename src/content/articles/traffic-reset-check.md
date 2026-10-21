@@ -7,7 +7,7 @@ updated: "2026-10-21"
 tags: ["使用教程","日常维护"]
 topic: "guide-maintenance"
 related: ["device-limit-review","subscription-refresh","configuration-backup"]
-sources: [{"title":"Apple：蜂窝数据与用量统计","url":"https://support.apple.com/en-us/109323"},{"title":"Microsoft：Windows网络设置与任务","url":"https://support.microsoft.com/en-us/windows/experience/connectivity-networking/essential-network-settings-and-tasks-in-windows"}]
+sources: [{"title": "Apple：iPhone 蜂窝数据设置和应用用量", "url": "https://support.apple.com/guide/iphone/iph3dd5f213/ios"}, {"title": "Microsoft：Windows 计量连接", "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/metered-connections-in-windows"}]
 draft: false
 order: 21
 ---
@@ -41,7 +41,31 @@ order: 21
 
 在预期重置或到期前后各留一份记录，核对实际规则是否与订单一致。若只想让本机统计更容易对应账期，可以按系统支持方式管理其计数范围，但明确它不会改变服务端配额。需要加购时，先确认加购规则和原流量关系，再自行决定。
 
+
+
+## 用算例核对付款与流量周期
+
+套餐付款周期、额度重置周期和本机统计窗口必须分别填写。数字相同不代表定义一致，年付、按月给流量和一次性总量尤其容易混算。下面只解释计算关系，具体天数、倍率、到期处理仍以品牌对应条款为准。
+
+| 检查结果 | 对应处理 |
+| --- | --- |
+| 年付、每月配额 | 分开记录年付款与每次配额重置 |
+| 一次购买总流量 | 不要乘十二或自行假定月度刷新 |
+| 系统用量与后台不等 | 核对统计起点、多设备、上下行和倍率 |
+
+### 对照案例
+
+假设年付方案标注每月 100 GB，全年累计发放量可按 12 次理解为 1200 GB，但不等于购买当天可用 1200 GB，也不意味着未用量结转。若实际发放次数或条款不同，需按其说明计算，不能从年付自行推定。
+
+### 完成后的验收
+
+在预期重置前后各保存一次后台记录，并标注查看时区与更新时间。若续费、加购或改套餐，重新核对流量如何衔接；不要为测试计费连续下载无用大文件。
+
 ## 常见问题
+
+### 清零手机统计能让机场配额恢复吗？
+
+不能。本机计数器只改变本机展示范围，服务端配额由其账户系统管理。正式对账分别看运营商与服务商账单。
 
 ### 年付总额对应每月配额，应该看哪个日期？
 
@@ -50,3 +74,9 @@ order: 21
 ### 剩余流量下降很快就必须换节点吗？
 
 先排除其他设备使用、应用后台传输和统计范围差异。继续阅读[设备限制核对](/guides/device-limit-review/)与[配置更新管理](/guides/subscription-refresh/)。
+
+
+## 进一步阅读与参考
+
+- [Apple：iPhone 蜂窝数据设置和应用用量](https://support.apple.com/guide/iphone/iph3dd5f213/ios)
+- [Microsoft：Windows 计量连接](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/metered-connections-in-windows)

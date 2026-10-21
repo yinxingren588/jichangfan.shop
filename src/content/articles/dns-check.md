@@ -7,7 +7,7 @@ updated: "2026-10-21"
 tags: ["使用教程","故障排查"]
 topic: "guide-troubleshoot"
 related: ["troubleshooting","firefox-proxy","network-time-check"]
-sources: [{"title":"Microsoft：Windows网络设置与任务","url":"https://support.microsoft.com/en-us/windows/experience/connectivity-networking/essential-network-settings-and-tasks-in-windows"},{"title":"Mozilla：Firefox连接设置","url":"https://support.mozilla.org/en-US/kb/connection-settings-firefox"}]
+sources: [{"title": "Google：Android 网络高级设置与私人 DNS", "url": "https://support.google.com/android/answer/9654714"}, {"title": "Mozilla：Firefox 连接与代理设置", "url": "https://support.mozilla.org/en-US/kb/connection-settings-firefox"}, {"title": "Microsoft：Windows Wi-Fi 故障排查与网络重置", "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/fix-wi-fi-connection-issues-in-windows"}]
 draft: false
 order: 17
 ---
@@ -38,7 +38,31 @@ order: 17
 
 不要直接用网页的裸IP代替域名来证明DNS一定正常或异常，HTTPS证书和网站虚拟主机也会影响结果。也不要把某次改善解释成所有节点都需要同一个公共DNS。可靠的结论应限定到具体设备、网络、应用与本次修改。
 
+
+
+## 解析、代理和 HTTPS 错误的分界
+
+DNS 将名称对应到地址，后续连接与 HTTPS 验证仍可能失败。浏览器报错中出现代理、证书或 HTTP 状态时，不能统一当作解析故障。系统、VPN 和浏览器可能各有解析设置，应先画清控制来源再改一处。
+
+| 检查结果 | 对应处理 |
+| --- | --- |
+| 错误明确指向无法解析名称 | 核对当前实际 DNS 来源和主机名 |
+| 提示本地代理拒绝连接 | 先查代理进程与端口，不急着换 DNS |
+| 显示证书错误或 HTTP 拒绝 | 核对时间、证书或服务权限 |
+
+### 对照案例
+
+例如访问 HTTPS 裸 IP 失败，却据此判断域名解析有问题，这组测试并不可靠。证书和虚拟主机可能要求原域名；应保留域名任务，结合明确解析错误或受支持的诊断结果判断。
+
+### 完成后的验收
+
+每次改动保存原值，重建连接后用原域名和任务复测。连接内成功还要验证断开后的正常解析；无效改动恢复，不在三个位置不断叠加公共 DNS。
+
 ## 常见问题
+
+### 使用某个公共 DNS 就适合所有机场吗？
+
+不应统一设定。客户端可能需要特定解析与分流方式，公共 DNS 的可达和隐私条件也不同，应按产品支持和当前任务验证。
 
 ### 改DNS会自动改变节点地区吗？
 
@@ -47,3 +71,10 @@ DNS负责名称解析，服务端出口和节点选择是其他配置；不能�
 ### 证书报错应该先换解析地址吗？
 
 先看错误细节与系统时间。可以继续使用[日期与时区核对](/guides/network-time-check/)以及[通用连接排查](/guides/troubleshooting/)。
+
+
+## 进一步阅读与参考
+
+- [Google：Android 网络高级设置与私人 DNS](https://support.google.com/android/answer/9654714)
+- [Mozilla：Firefox 连接与代理设置](https://support.mozilla.org/en-US/kb/connection-settings-firefox)
+- [Microsoft：Windows Wi-Fi 故障排查与网络重置](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/fix-wi-fi-connection-issues-in-windows)

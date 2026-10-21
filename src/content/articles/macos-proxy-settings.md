@@ -7,7 +7,7 @@ updated: "2026-10-21"
 tags: ["使用教程","连接与分流"]
 topic: "guide-connection"
 related: ["macos","windows-system-proxy","disconnect-restore"]
-sources: [{"title":"Apple：更改Mac代理设置","url":"https://support.apple.com/en-au/guide/mac-help/mchlp2591/mac"}]
+sources: [{"title": "Apple：Mac 网络服务的代理设置", "url": "https://support.apple.com/guide/mac-help/mchlp2591/mac"}, {"title": "Apple：在 Mac 上设置 VPN 连接", "url": "https://support.apple.com/guide/mac-help/mchlp2963/mac"}]
 draft: false
 order: 12
 ---
@@ -34,7 +34,31 @@ Mac中的系统代理属于网络设置，不是把任意机场订阅变成连�
 
 结束使用时，从客户端关闭连接或系统代理接管，再回到相同网络服务中核对。需要恢复时采用开始前的记录，只改动本次添加的内容。如果代理由应用自动管理，还应查看该应用关于退出和自动启动的说明，避免系统与应用轮流覆盖设置。
 
+
+
+## 更换网络服务后重新核对代理范围
+
+Mac 代理设置与所选网络服务有关。Wi-Fi、以太网或其他接入不应仅凭名称相似就认定共享相同参数；HTTP、HTTPS、SOCKS 与自动代理配置的用途也不同。只填写服务方或客户端明确给出的类型与值。
+
+| 检查结果 | 对应处理 |
+| --- | --- |
+| Wi-Fi 正常、有线失败 | 分别核对当前服务的代理与基础访问 |
+| 浏览器正常、独立应用失败 | 查该应用是否采用系统代理 |
+| 退出客户端后失去网页访问 | 检查是否仍指向停止的本地代理 |
+
+### 对照案例
+
+例如临时在 Wi-Fi 服务填了手动代理，回家切到有线后仍有不同表现。应先确认当前服务的配置及客户端是否自动接管，而不是一次清空所有服务的网络参数。代理例外可能还承载工作需要。
+
+### 完成后的验收
+
+完成连接内、正常断开后以及切换回原网络服务的验收。每处修改均保留原值，恢复仅限本次变化；配置若由组织管理，先向管理员确认。
+
 ## 常见问题
+
+### SOCKS、HTTPS 等开关全打开会更兼容吗？
+
+不一定，可能让本不支持的请求走向错误服务。需要按实际代理协议分别设置，不按开关数量判断连接质量。
 
 ### 为什么换成网线后表现不同？
 
@@ -47,3 +71,9 @@ Mac中的系统代理属于网络设置，不是把任意机场订阅变成连�
 ## 结果检查与进一步阅读
 
 本次操作结束时，应能明确当前网络、所用代理类型、填写资料的来源，以及如何退出恢复。安装和权限部分见[Mac连接准备](/guides/macos/)；遇到退出后打不开网页，继续阅读[恢复基础网络](/guides/disconnect-restore/)。
+
+
+## 进一步阅读与参考
+
+- [Apple：Mac 网络服务的代理设置](https://support.apple.com/guide/mac-help/mchlp2591/mac)
+- [Apple：在 Mac 上设置 VPN 连接](https://support.apple.com/guide/mac-help/mchlp2963/mac)

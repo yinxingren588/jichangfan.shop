@@ -10,50 +10,49 @@ primaryKeyword: "vpn推荐"
 batch: 5
 order: 86
 related: ["practical-windows-app-only","practical-windows-ethernet-wifi"]
-sources: [{"title":"Microsoft：Windows VPN 连接说明","url":"https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows"},{"title":"Mullvad：官方桌面应用使用说明","url":"https://mullvad.net/en/help/using-mullvad-vpn-app"},{"title":"WireGuard：官方安装入口","url":"https://www.wireguard.com/install/"}]
+sources: [{"title": "Microsoft：Windows 代理设置", "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/use-a-proxy-server-in-windows"}, {"title": "Mozilla：Firefox 连接与代理设置", "url": "https://support.mozilla.org/en-US/kb/connection-settings-firefox"}]
 draft: false
 ---
 
-先对齐扩展、代理、解析与登录状态，再把差异归因到具体层面。
+两个浏览器表现不同，先让比较条件相同，再依次检查扩展、浏览器代理、安全 DNS 和登录状态。浏览器 A 打开首页、浏览器 B 上传文件失败并不是同一个测试；直接归因于机场节点，会错过浏览器本地设置和站点账号条件。
 
-## 关键判断
+## 具体检查步骤
 
-差异说明浏览器条件不同，不立即证明节点变化。一次只调整一个相关设置，方便恢复和解释。
+1. 复制完全相同的 HTTPS 地址，在相近时间打开，记录版本、错误代码和是否登录。先用不含敏感信息的页面，不要把已登录账户和退出账户的结果混为一组。
 
-## 三步检查
+2. 记录两个浏览器是否安装代理扩展、是否由组织管理、是否使用独立 DNS。Windows 系统代理只是其中一层，某个扩展可能改变该浏览器的代理行为。
 
-### 1. 使用相同目标地址
+3. 在失败浏览器中按其官方方式使用临时配置档案或排查模式，保留旧档案不动。逐项复测扩展与设置，确认是哪一项改变了原先失败的请求。
 
-恢复资料需要同时说明它来自哪个版本、适用于什么场景。保存之后确认自己能读懂并找到操作入口；含凭据的文件应与公开说明分开管理。
+## 怎样根据结果继续判断
 
-### 2. 记录各浏览器网络扩展
+| 观察结果 | 下一步 |
+| --- | --- |
+| 仅带某个代理扩展时失败 | 核对扩展与桌面客户端是否同时接管代理 |
+| 相同页面可开，登录后失败 | 记录会话、权限和站点错误，转查账户条件 |
+| 错误指向名称解析 | 比较安全 DNS 与客户端 DNS，而不是只比较网页加载速度 |
 
-系统、浏览器和连接应用可能分别影响解析。先记录每层由谁管理，再只改与问题有关的一项；未经定位同时替换多处设置，会让结果更难解释。
+## 一个可对照的排查场景
 
-### 3. 核对安全 DNS 和账号状态
+例如 Edge 和另一浏览器访问同一文档页：前者正常，后者提示代理服务器拒绝连接。发现后者仍启用指向旧本地端口的扩展后，修正该扩展再测试，比删除整个浏览记录更能保留证据。若两个浏览器使用不同账户，应另外建立一组账户一致的比较。
 
-区分设备上的登录、服务账户的权益和目标应用的使用资格。一个环节成功只证明该环节满足条件，剩余部分仍需按对应提供方的正式流程确认。
+## 恢复与验收
 
-## 怎样保留这次结果
-
-把“使用相同目标地址”得到的信息和“核对安全 DNS 和账号状态”的结果分开保存。前者说明起点，后者说明是否达到目的；中间若改变了条件，也要记下改变了什么。这样下次遇到相似现象时，可以先对照差异，而不是从头猜原因。
-
-## 容易忽略的边界
-
-不要将关闭所有浏览器保护作为长期解决方法。
-
-Windows 内置连接、独立 VPN 应用和代理客户端可能使用不同入口。本组按具体故障或使用时点展开，先定位应用与系统的边界，再按当前官方文档处理，避免一次改变整个网络环境。
+测试结束后关闭临时档案，按记录恢复 DNS 和扩展状态。验收包含打开页面、登录及原先失败的操作；不要为了页面能开就长期关闭证书校验或移除组织强制策略。
 
 ## 常见问题
 
-### 需要先重装软件或重置网络吗？
+### 隐私窗口能完全排除浏览器差异吗？
 
-通常应先确认错误范围并保留日志。重装和重置可能同时改变多项条件；按官方流程处理之前，准备必要的配置与账号恢复方式。
+不能。隐私窗口主要改变浏览数据保存和会话，某些扩展仍可能获准运行，代理和系统策略也可能沿用。要看具体浏览器的设置说明，不能把隐私窗口当作全新网络环境。
 
 ## 进一步阅读与参考
 
 - [Windows 只有一个应用不能联网，为什么先查应用？](/blog/practical-windows-app-only/)
+
 - [Windows 有线正常、Wi-Fi 连 VPN 失败，如何缩小范围？](/blog/practical-windows-ethernet-wifi/)
+
 - [Windows 实用检查主题目录](/blog/topics/windows/)
 
-官方参考：[Microsoft：Windows VPN 连接说明](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows)、[Mullvad：官方桌面应用使用说明](https://mullvad.net/en/help/using-mullvad-vpn-app)、[WireGuard：官方安装入口](https://www.wireguard.com/install/)。它们用于核对概念与平台边界，本文步骤为编辑整理，不表示所有软件具有同一功能。具体按钮和当前支持情况请读相应官方帮助；没有用官方宣传冒充本站实测。
+- [Microsoft：Windows 代理设置](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/use-a-proxy-server-in-windows)
+- [Mozilla：Firefox 连接与代理设置](https://support.mozilla.org/en-US/kb/connection-settings-firefox)

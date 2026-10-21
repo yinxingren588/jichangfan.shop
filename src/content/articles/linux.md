@@ -7,7 +7,7 @@ updated: "2026-10-21"
 tags: ["使用教程","设备入门"]
 topic: "guide-devices"
 related: ["windows","openvpn-connect","disconnect-restore"]
-sources: [{"title":"Ubuntu官方：连接VPN","url":"https://help.ubuntu.com/stable/ubuntu-help/net-vpn-connect.html"},{"title":"WireGuard官方安装入口","url":"https://www.wireguard.com/install/"}]
+sources: [{"title": "Ubuntu：桌面连接 VPN", "url": "https://help.ubuntu.com/stable/ubuntu-help/net-vpn-connect.html"}, {"title": "OpenVPN Connect：导入连接配置", "url": "https://openvpn.net/connect-docs/import-profile.html"}, {"title": "Proton VPN：生成 WireGuard 配置文件", "url": "https://protonvpn.com/support/wireguard-configurations"}]
 draft: false
 order: 5
 ---
@@ -38,7 +38,31 @@ Ubuntu官方说明，不同VPN类型可能需要相应的NetworkManager组件，
 
 你应当知道实际使用的协议、配置来自哪里、从哪里连接和退出。如果系统没有对应类型，应转向正确客户端，而不是继续猜字段。保留一条脱敏结果：系统版本、客户端版本、连接名称和失败阶段，便于下次有针对性地询问支持。
 
+
+
+## 找不到 VPN 类型时怎样继续
+
+Ubuntu 桌面网络管理器能提供的类型与已安装组件有关。系统列表没有某个协议，不代表该服务一定不可用；但也不能将任意代理订阅当作原生 VPN。应按服务方支持的发行版和桌面环境选择受支持方案。
+
+| 检查结果 | 对应处理 |
+| --- | --- |
+| 服务方明确支持 NetworkManager | 核对对应组件与导入格式 |
+| 列表缺少需要的类型 | 查官方组件或客户端说明，不猜相近类型 |
+| 只有第三方订阅 URL | 先确认 Linux 客户端支持，不直接粘贴进服务器字段 |
+
+### 对照案例
+
+例如取得 .ovpn 文件后，网络设置中没有相应导入选项。应核对服务方要求的 NetworkManager 支持组件，再按官方软件渠道安装；复制未知网站的提权一键脚本，会让配置来源与恢复范围都更难确认。
+
+### 完成后的验收
+
+验收至少包括基础访问、认证、目标任务及断开后的原网络。若用专用客户端，记录它与系统网络管理器谁负责连接，避免同时启用两套方案改变路由。
+
 ## 常见问题
+
+### 系统安装了协议软件就一定有可用服务器吗？
+
+没有。客户端与网络服务分别提供，需要有效的配套配置和账户权益。安装成功只说明软件就绪，认证、路由与实际任务仍要独立验证。
 
 ### 为什么安装了WireGuard仍不能直接上网？
 
@@ -47,3 +71,10 @@ Ubuntu官方说明，不同VPN类型可能需要相应的NetworkManager组件，
 ### 可以直接照搬Windows配置吗？
 
 先确认文件类型与协议是否支持，再按Linux文档导入；操作入口和系统权限不能照搬。进一步阅读[OpenVPN配置导入](/guides/openvpn-connect/)和[断开后的恢复检查](/guides/disconnect-restore/)。
+
+
+## 进一步阅读与参考
+
+- [Ubuntu：桌面连接 VPN](https://help.ubuntu.com/stable/ubuntu-help/net-vpn-connect.html)
+- [OpenVPN Connect：导入连接配置](https://openvpn.net/connect-docs/import-profile.html)
+- [Proton VPN：生成 WireGuard 配置文件](https://protonvpn.com/support/wireguard-configurations)

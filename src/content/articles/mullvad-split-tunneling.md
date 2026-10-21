@@ -7,7 +7,7 @@ updated: "2026-10-21"
 tags: ["使用教程","连接与分流"]
 topic: "guide-connection"
 related: ["windows","firefox-proxy","ipv6-connection-check"]
-sources: [{"title":"Mullvad：应用分流操作说明","url":"https://mullvad.net/en/help/split-tunneling-with-the-mullvad-app"}]
+sources: [{"title": "Mullvad：应用分流、排除列表和已知限制", "url": "https://mullvad.net/en/help/split-tunneling-with-the-mullvad-app"}, {"title": "Mullvad：浏览器连接检测及检测范围", "url": "https://mullvad.net/en/check"}]
 draft: false
 order: 15
 ---
@@ -38,7 +38,31 @@ order: 15
 
 记录客户端版本、目标程序名称、加入或移除后的结果，以及官方错误提示。如果出现驱动相关错误，应参照当前官方帮助核对冲突，不直接照搬别人的卸载清单。本文没有在你的设备上进行实测，也不把一次演示当作功能在所有环境中均有效的保证。
 
+
+
+## 排除应用后还要检查启动来源
+
+Mullvad 官方把分流定义为排除选定应用，使其使用普通网络和原出口。Windows 上的子进程和由排除应用启动的程序可能受到影响，且有已知不支持情况；例外应控制到真正需要的范围，不以列表已有名称结束验收。
+
+| 检查结果 | 对应处理 |
+| --- | --- |
+| 排除浏览器后检测显示未用 Mullvad | 符合该浏览器被排除的预期，继续核对任务 |
+| 应用类型不受支持 | 查官方限制，不承诺通过改名能解决 |
+| 从排除浏览器启动的安装程序路径变化 | 按官方建议从资源管理器重新启动并复核 |
+
+### 对照案例
+
+例如从已排除浏览器下载并直接运行另一个程序，新程序可能继承相关排除影响。应结束并从正常系统入口启动后再观察，不能只检查新程序没有显式出现在列表中就认定它走 VPN。
+
+### 完成后的验收
+
+记录添加例外前、例外后与移除后的同一浏览器检测及真实任务。测试完移除不再需要的例外，重新打开相关应用并确认路径恢复；不要借此公开真实出口资料。
+
 ## 常见问题
+
+### 这套排除步骤能复制到其他品牌吗？
+
+不能。不同客户端的列表语义、驱动和阻断组合可能不同。此处仅说明已具备该功能的 Mullvad Windows 场景，其余应查对应产品正式文档。
 
 ### 排除应用之后还能把它当成经过VPN保护吗？
 
@@ -47,3 +71,9 @@ order: 15
 ### 这是按网站分别选择国家吗？
 
 本教程说明的是应用排除，不是按网站任意分配节点。进一步阅读[浏览器代理对照](/guides/firefox-proxy/)和[IPv4与IPv6观察](/guides/ipv6-connection-check/)。
+
+
+## 进一步阅读与参考
+
+- [Mullvad：应用分流、排除列表和已知限制](https://mullvad.net/en/help/split-tunneling-with-the-mullvad-app)
+- [Mullvad：浏览器连接检测及检测范围](https://mullvad.net/en/check)

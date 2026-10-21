@@ -1,6 +1,6 @@
 ---
 title: "Mac 虚拟机中的网络会自动沿用宿主 VPN 吗？"
-description: "不能假定，需要结合虚拟化网络模式和客户端实现，在虚拟机内部单独验证。"
+description: "Mac 虚拟机是否沿用宿主 VPN，取决于虚拟网络模式、宿主接管范围、来宾设置与产品实现。宿主浏览器显示某个出口，不能替代在虚拟机里验证真实请求。"
 category: "blog"
 date: "2026-10-21"
 updated: "2026-10-21"
@@ -10,50 +10,65 @@ primaryKeyword: "vpn推荐"
 batch: 8
 order: 153
 related: ["practical-mac-terminal-network","practical-mac-local-printer"]
-sources: [{"title":"Apple：在 Mac 上设置 VPN 连接","url":"https://support.apple.com/guide/mac-help/set-up-a-vpn-connection-on-mac-mchlp2963/mac"},{"title":"Mullvad：官方桌面应用使用说明","url":"https://mullvad.net/en/help/using-mullvad-vpn-app"},{"title":"WireGuard：官方安装入口","url":"https://www.wireguard.com/install/"}]
+sources: [{"title":"Parallels：Mac 虚拟机网络模式","url":"https://kb.parallels.com/eu/4948"},{"title":"Apple：网络代理设置","url":"https://support.apple.com/en-au/guide/mac-help/mchlp2591/mac"},{"title":"Apple Developer：Packet Tunnel 的网络设置","url":"https://developer.apple.com/documentation/NetworkExtension/NEPacketTunnelProvider"}]
 draft: false
 ---
 
-不能假定，需要结合虚拟化网络模式和客户端实现，在虚拟机内部单独验证。
+Mac 虚拟机是否沿用宿主 VPN，取决于虚拟网络模式、宿主接管范围、来宾设置与产品实现。宿主浏览器显示某个出口，不能替代在虚拟机里验证真实请求。
 
-## 关键判断
+## 先明确三种网络角色
 
-宿主机与来宾系统是不同观察对象。共享物理网络不保证最终出口和解析设置相同。
+共享或 NAT 模式通常由宿主转发，桥接模式让来宾更像局域网里的独立设备，仅主机网络则主要用于来宾与宿主或其他虚拟机通信。不同虚拟化产品细节不同，不能把 Parallels 的说明当成所有软件的统一行为。
 
-## 三步检查
+## 系统代理不会自然变成来宾代理
 
-### 1. 记录虚拟机网络模式
+宿主浏览器使用本地代理，只表示该应用遵守设置。来宾自己的 127.0.0.1 指向来宾本身，不是 Mac。即便共享网络能经过宿主某种 VPN，按应用分流、断线保护或局域网设置仍可能改变结果。
 
-安装数量、同时连接数量与多人共享规则是不同条款。先读清当前套餐的正式说明，再处理不用的设备；不能从其中一项的无限推断其他项也无限。
+## 先记录这些条件
 
-### 2. 核对宿主连接和分流范围
+| 项目 | 应填写 |
+| --- | --- |
+| 虚拟化软件 | 产品、版本和网络模式 |
+| 宿主 VPN | 客户端、模式和官方覆盖说明 |
+| 来宾配置 | 系统、代理、DNS 和另一个 VPN |
+| 实际任务 | 目标、来源观察与完成结果 |
 
-明确哪些任务应经过连接、哪些应保持原路径。规则列表只代表配置，不能替代实际验证；已有会话是否需要重建，应查看所用产品说明。
+未验证的组合明确留空，不复制宿主的结果。
 
-### 3. 在来宾系统重复实际任务
+## 一个共享与桥接对照例子
 
-先记录哪个程序在接管连接与系统代理。每次只保留一个已知方案观察，退出后核对设置是否恢复；不要直接终止不认识的系统或企业进程。
+假设 Parallels 官方说明共享模式可使用宿主 VPN，桥接则使用独立网络路径。仍应在该版本里验证来宾出口与目标任务，尤其是分流和重连。若换成另一虚拟化产品，重新查其官方网络说明，不能沿用同样结论。
 
-## 怎样保留这次结果
+## 怎样做低风险验收
 
-把“记录虚拟机网络模式”得到的信息和“在来宾系统重复实际任务”的结果分开保存。前者说明起点，后者说明是否达到目的；中间若改变了条件，也要记下改变了什么。这样下次遇到相似现象时，可以先对照差异，而不是从头猜原因。
+先确认来宾普通联网，再连接宿主 VPN，分别在宿主和来宾测试同一允许目标。核对 IPv4/IPv6 与真实任务，记录断开后的行为。切换虚拟网络模式会影响地址和现有会话，先保存工作，不在重要传输中试验。
 
-## 容易忽略的边界
+## 失败后如何恢复
 
-不凭宿主机的状态图宣布虚拟机已被覆盖。
+恢复原虚拟网络模式和来宾代理，按产品说明重建连接。若要把宿主代理暴露给来宾，应先查官方安全方案，不能随意监听所有接口并关闭认证。单位虚拟机和内网连接遵循管理员要求，避免桥接破坏既有隔离。
 
-Mac 的系统版本、芯片、客户端实现和组织设置都会影响使用方式。本组将权限、恢复和任务验证分开，帮助你在变更前保留原状态，并减少对无关网络组件的改动。
+## 补充核对细节
+
+来宾还可能安装自己的 VPN，形成与宿主不同的双层连接。此时应为两层分别记录协议、入口和断线行为，先按各自官方说明确认支持。只在宿主测一次出口，无法说明来宾内部的认证、分流和 IPv6 都符合预期。
 
 ## 常见问题
 
-### 其他 Mac 型号上的成功可以直接照用吗？
+### 来宾里填写 127.0.0.1 就能用宿主代理吗？
 
-只能作线索。芯片、系统、应用与权限状态可能不同，仍需核对本机支持条件，再在自己的工作任务中验证。
+通常不能，它指来宾自己。需要按虚拟化产品的宿主访问方案配置。
+
+### 共享网络能保证所有流量都经过宿主 VPN 吗？
+
+不能仅凭模式名称保证。仍受 VPN 实现、分流、双栈与来宾设置影响。
 
 ## 进一步阅读与参考
 
 - [Mac 浏览器能联网，终端任务失败，先核对什么？](/blog/practical-mac-terminal-network/)
 - [Mac 连上 VPN 后找不到局域网打印机，怎么办？](/blog/practical-mac-local-printer/)
-- [macOS 实用检查主题目录](/blog/topics/macos/)
+- [macOS 使用主题目录](/blog/topics/macos/)
 
-官方参考：[Apple：在 Mac 上设置 VPN 连接](https://support.apple.com/guide/mac-help/set-up-a-vpn-connection-on-mac-mchlp2963/mac)、[Mullvad：官方桌面应用使用说明](https://mullvad.net/en/help/using-mullvad-vpn-app)、[WireGuard：官方安装入口](https://www.wireguard.com/install/)。它们用于核对概念与平台边界，本文步骤为编辑整理，不表示所有软件具有同一功能。具体按钮和当前支持情况请读相应官方帮助；没有用官方宣传冒充本站实测。
+- [Parallels：Mac 虚拟机网络模式](https://kb.parallels.com/eu/4948)
+- [Apple：网络代理设置](https://support.apple.com/en-au/guide/mac-help/mchlp2591/mac)
+- [Apple Developer：Packet Tunnel 的网络设置](https://developer.apple.com/documentation/NetworkExtension/NEPacketTunnelProvider)
+
+本文是按官方文档整理的 Mac 使用与恢复方法，不包含对读者设备的实际操作；菜单名称、功能与组织管理要求应按当前版本核对。

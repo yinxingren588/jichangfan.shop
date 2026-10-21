@@ -10,50 +10,49 @@ primaryKeyword: "vpn推荐"
 batch: 5
 order: 96
 related: ["practical-windows-profile-duplicate","practical-windows-multiuser"]
-sources: [{"title":"Microsoft：Windows VPN 连接说明","url":"https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows"},{"title":"Mullvad：官方桌面应用使用说明","url":"https://mullvad.net/en/help/using-mullvad-vpn-app"},{"title":"WireGuard：官方安装入口","url":"https://www.wireguard.com/install/"}]
+sources: [{"title": "Microsoft：Windows 代理设置", "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/use-a-proxy-server-in-windows"}, {"title": "Microsoft：VPN 路由决策", "url": "https://learn.microsoft.com/en-us/windows/security/operating-system-security/network-security/vpn/vpn-routing"}]
 draft: false
 ---
 
-不能从扩展名称作此推断，需要查清它控制的范围，并单独验证浏览器以外的程序。
+单独的浏览器 VPN 或代理扩展通常只处理该浏览器可接管的请求，不能据此认定邮件、游戏、下载器和系统更新也经过同一路径。有些扩展会控制配套桌面应用，因此最终范围应以扩展及桌面程序的官方说明为准。
 
-## 关键判断
+## 具体检查步骤
 
-浏览器扩展与系统客户端可能提供不同能力。适合浏览器任务的方案未必适合整机应用。
+1. 先查看安装来源与产品帮助，区分‘浏览器代理扩展’和‘桌面应用控制扩展’。记录是否要求安装本机配套组件，以及关闭扩展是否也会断开桌面连接。
 
-## 三步检查
+2. 分别列出浏览器、下载器和一个工作应用的预期路径。检查桌面程序是否启用系统代理、虚拟网络接口或分应用规则；扩展上的已连接文字不能代替这些设置。
 
-### 1. 读取扩展官方说明
+3. 用同一可信的出口检查页面测试浏览器；其他程序通过其连接记录或自己可控制的服务日志核对。没有应用级证据时，把覆盖范围记为未确认，不从浏览器 IP 外推。
 
-先写出本次要验证的具体成功条件，再实际执行。保留失败样本与改变过的条件；另一个任务的成功不自动覆盖这次任务，单次结果也不代表长期表现。
+## 怎样根据结果继续判断
 
-### 2. 核对桌面客户端是否另有功能
+| 观察结果 | 下一步 |
+| --- | --- |
+| 扩展连通而桌面客户端未运行 | 只确认浏览器任务，不承诺系统全局覆盖 |
+| 扩展开关改变了桌面客户端状态 | 继续核对配套程序的路由和例外规则 |
+| 应用不支持系统代理 | 查该应用或客户端的明确支持方式 |
 
-如果当前资料不足以完成这一步，就明确记录缺少哪个条件，并通过原本可信的官方入口核对。不要用其他用户的配置或旧页面替自己填入一个未经确认的答案。
+## 一个可对照的排查场景
 
-### 3. 分别测试两类应用
+例如浏览器显示某个出口，但独立下载器仍使用原来的路径。可能是下载器未采用浏览器代理，也可能是配套客户端把它排除。应分别记录两者，再决定是否需要受支持的桌面连接方案；这不是扩展必然失效的证据。
 
-如果当前资料不足以完成这一步，就明确记录缺少哪个条件，并通过原本可信的官方入口核对。不要用其他用户的配置或旧页面替自己填入一个未经确认的答案。
+## 恢复与验收
 
-## 怎样保留这次结果
-
-把“读取扩展官方说明”得到的信息和“分别测试两类应用”的结果分开保存。前者说明起点，后者说明是否达到目的；中间若改变了条件，也要记下改变了什么。这样下次遇到相似现象时，可以先对照差异，而不是从头猜原因。
-
-## 容易忽略的边界
-
-不把一个网页的出口状态作为整个操作系统的流量证明。
-
-Windows 内置连接、独立 VPN 应用和代理客户端可能使用不同入口。本组按具体故障或使用时点展开，先定位应用与系统的边界，再按当前官方文档处理，避免一次改变整个网络环境。
+试验结束后恢复原扩展和桌面程序状态，确认没有两个程序反复争夺代理设置。只保留自己明确需要且来源可信的扩展，移除不用的扩展后再查看 Windows 代理是否恢复。
 
 ## 常见问题
 
-### 需要先重装软件或重置网络吗？
+### 扩展商店里写 VPN 就代表整机加密吗？
 
-通常应先确认错误范围并保留日志。重装和重置可能同时改变多项条件；按官方流程处理之前，准备必要的配置与账号恢复方式。
+名称不是技术范围说明。需要看产品如何解释代理、隧道、DNS 和桌面组件；即便采用完整 VPN，分流例外与应用连接也仍需单独验证。
 
 ## 进一步阅读与参考
 
 - [Windows 里出现多个同名 VPN 配置，怎样整理？](/blog/practical-windows-profile-duplicate/)
+
 - [多人共用 Windows 电脑，VPN 配置怎样管理？](/blog/practical-windows-multiuser/)
+
 - [Windows 实用检查主题目录](/blog/topics/windows/)
 
-官方参考：[Microsoft：Windows VPN 连接说明](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows)、[Mullvad：官方桌面应用使用说明](https://mullvad.net/en/help/using-mullvad-vpn-app)、[WireGuard：官方安装入口](https://www.wireguard.com/install/)。它们用于核对概念与平台边界，本文步骤为编辑整理，不表示所有软件具有同一功能。具体按钮和当前支持情况请读相应官方帮助；没有用官方宣传冒充本站实测。
+- [Microsoft：Windows 代理设置](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/use-a-proxy-server-in-windows)
+- [Microsoft：VPN 路由决策](https://learn.microsoft.com/en-us/windows/security/operating-system-security/network-security/vpn/vpn-routing)

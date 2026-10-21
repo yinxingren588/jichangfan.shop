@@ -10,50 +10,49 @@ primaryKeyword: "vpn推荐"
 batch: 5
 order: 84
 related: ["practical-windows-built-in-type","practical-windows-app-only"]
-sources: [{"title":"Microsoft：Windows VPN 连接说明","url":"https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows"},{"title":"Mullvad：官方桌面应用使用说明","url":"https://mullvad.net/en/help/using-mullvad-vpn-app"},{"title":"WireGuard：官方安装入口","url":"https://www.wireguard.com/install/"}]
+sources: [{"title": "Microsoft：Windows 代理设置", "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/use-a-proxy-server-in-windows"}, {"title": "Microsoft：Windows Wi-Fi 故障排查与网络重置", "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/fix-wi-fi-connection-issues-in-windows"}]
 draft: false
 ---
 
-先核对应用是否留下系统代理或断网保护，再按其官方帮助恢复普通连接。
+退出客户端后打不开网页，先检查 Windows 是否仍指向已经停止的本地代理，再检查客户端断网保护。‘程序窗口消失’不等于代理、后台服务和过滤规则全部恢复；先分清这几项，通常比立刻网络重置更有效。
 
-## 关键判断
+## 具体检查步骤
 
-程序退出不保证所有网络选项恢复；同时，断网也可能是保护策略。两种情况需要分开确认。
+1. 记下退出前的模式、代理端口及保护开关。尝试通过客户端正常断开并退出，避免直接结束进程使清理流程来不及执行。
 
-## 三步检查
+2. 在 Windows 设置中打开‘网络和 Internet → 代理’，核对手动代理、设置脚本和自动检测。若是自己启用的本地代理且对应程序已停，按原记录恢复；企业代理先联系管理员。
 
-### 1. 主动断开并完全退出应用
+3. 分别测试一个浏览器和另一个原先正常的应用。若浏览器有独立代理扩展或应用有自设代理，也要核对；Windows 系统代理恢复不能代替这些程序的独立设置。
 
-本地文件、运行状态、服务端授权与付款属于不同对象。只完成其中一项时，其他项未必随之变化；删除前应确认资料归属和可恢复性。
+## 怎样根据结果继续判断
 
-### 2. 查看启用过的代理选项
+| 观察结果 | 下一步 |
+| --- | --- |
+| 网页提示连接本地代理被拒绝 | 核对代理地址及对应监听程序 |
+| 代理正常但所有连接被阻断 | 查看客户端持续断网保护是否启用 |
+| 只有一个应用仍失败 | 检查该应用自己的代理和已有会话 |
 
-先记录哪个程序在接管连接与系统代理。每次只保留一个已知方案观察，退出后核对设置是否恢复；不要直接终止不认识的系统或企业进程。
+## 一个可对照的排查场景
 
-### 3. 验证浏览器和其他程序
+例如手动代理仍为 127.0.0.1 的某端口，而客户端已经退出，浏览器可能一直连接不存在的本地服务。恢复自己更改的代理后原网页成功，说明该现象与残留配置有关；这不等于服务端节点有故障。
 
-先写出本次要验证的具体成功条件，再实际执行。保留失败样本与改变过的条件；另一个任务的成功不自动覆盖这次任务，单次结果也不代表长期表现。
+## 恢复与验收
 
-## 怎样保留这次结果
-
-把“主动断开并完全退出应用”得到的信息和“验证浏览器和其他程序”的结果分开保存。前者说明起点，后者说明是否达到目的；中间若改变了条件，也要记下改变了什么。这样下次遇到相似现象时，可以先对照差异，而不是从头猜原因。
-
-## 容易忽略的边界
-
-不要盲目删除所有网络适配器，尤其是仍在使用的企业或虚拟机组件。
-
-Windows 内置连接、独立 VPN 应用和代理客户端可能使用不同入口。本组按具体故障或使用时点展开，先定位应用与系统的边界，再按当前官方文档处理，避免一次改变整个网络环境。
+恢复应以退出前保存的正常值为依据，不要统一关闭所有组织配置。验收包括普通网页、实际工作应用，以及再次启动和退出客户端后是否仍可恢复；若反复残留，向该软件提交版本和复现步骤。
 
 ## 常见问题
 
-### 需要先重装软件或重置网络吗？
+### 需要同时执行各种代理重置命令吗？
 
-通常应先确认错误范围并保留日志。重装和重置可能同时改变多项条件；按官方流程处理之前，准备必要的配置与账号恢复方式。
+不宜。浏览器、系统代理与某些后台服务可能使用不同配置层，多种命令一起执行会丢失原状态。先定位是哪一层，再按相关官方帮助处理。
 
 ## 进一步阅读与参考
 
 - [Windows 内置 VPN 的类型，为什么必须匹配？](/blog/practical-windows-built-in-type/)
+
 - [Windows 只有一个应用不能联网，为什么先查应用？](/blog/practical-windows-app-only/)
+
 - [Windows 实用检查主题目录](/blog/topics/windows/)
 
-官方参考：[Microsoft：Windows VPN 连接说明](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows)、[Mullvad：官方桌面应用使用说明](https://mullvad.net/en/help/using-mullvad-vpn-app)、[WireGuard：官方安装入口](https://www.wireguard.com/install/)。它们用于核对概念与平台边界，本文步骤为编辑整理，不表示所有软件具有同一功能。具体按钮和当前支持情况请读相应官方帮助；没有用官方宣传冒充本站实测。
+- [Microsoft：Windows 代理设置](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/use-a-proxy-server-in-windows)
+- [Microsoft：Windows Wi-Fi 故障排查与网络重置](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/fix-wi-fi-connection-issues-in-windows)

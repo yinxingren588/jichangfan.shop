@@ -7,7 +7,7 @@ updated: "2026-10-21"
 tags: ["使用教程","连接与分流"]
 topic: "guide-connection"
 related: ["windows-system-proxy","macos-proxy-settings","dns-check"]
-sources: [{"title":"Mozilla：Firefox连接设置","url":"https://support.mozilla.org/en-US/kb/connection-settings-firefox"}]
+sources: [{"title": "Mozilla：Firefox 连接与代理设置", "url": "https://support.mozilla.org/en-US/kb/connection-settings-firefox"}, {"title": "Microsoft：VPN 路由决策", "url": "https://learn.microsoft.com/en-us/windows/security/operating-system-security/network-security/vpn/vpn-routing"}]
 draft: false
 order: 14
 ---
@@ -38,7 +38,31 @@ order: 14
 
 保留“原模式、修改项、同一页面的前后结果”三列即可。若设置重启后又被改变，检查扩展、同步或受管理策略，先找清控制来源。本文不要求更改高级配置编辑器中的隐藏参数，也不把代理问题与所有网站的账户拒绝混为一谈。
 
+
+
+## 代理模式与本地服务逐项对应
+
+Firefox 当前版本可能调整设置入口，因此优先在设置中搜索代理，按 Mozilla 最新帮助找到配置。更改前记录所选模式和扩展控制来源，不在系统与浏览器两个位置同时填一组猜测值。代理设置与账号会话又是不同问题。
+
+| 检查结果 | 对应处理 |
+| --- | --- |
+| 手动模式指向本机端口 | 确认本地服务运行且端口一致 |
+| 系统代理模式仍失败 | 核对系统真实设置与应用接管情况 |
+| PAC 地址返回普通网页 | 确认得到真正脚本，而非订阅或登录地址 |
+
+### 对照案例
+
+例如桌面客户端已经自动设置系统代理，但 Firefox 保留几个月前的手动端口。应先记录并纠正浏览器模式，再测试相同网页；另一个浏览器正常正好可帮助缩小到独立设置。
+
+### 完成后的验收
+
+用同一 URL 比较修改前后，再测试一次退出客户端后的恢复。若设置自动变回，查看扩展或组织策略，不用反复修改隐藏参数来与控制来源争抢。
+
 ## 常见问题
+
+### 不使用代理意味着所有请求都不经过 VPN 吗？
+
+不能这样推断。它指 Firefox 的代理配置，系统级 VPN 或虚拟接口仍可能处理网络路径。要区分浏览器代理与系统路由。
 
 ### 使用系统代理就是整个电脑走VPN吗？
 
@@ -47,3 +71,9 @@ order: 14
 ### 为什么代理列表正确仍有单个网站失败？
 
 还可能涉及目标服务状态、账号或解析设置。先用[DNS检查流程](/guides/dns-check/)缩小范围，再按[通用排查顺序](/guides/troubleshooting/)处理。
+
+
+## 进一步阅读与参考
+
+- [Mozilla：Firefox 连接与代理设置](https://support.mozilla.org/en-US/kb/connection-settings-firefox)
+- [Microsoft：VPN 路由决策](https://learn.microsoft.com/en-us/windows/security/operating-system-security/network-security/vpn/vpn-routing)

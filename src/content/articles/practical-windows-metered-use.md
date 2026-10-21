@@ -10,50 +10,48 @@ primaryKeyword: "vpn推荐"
 batch: 5
 order: 99
 related: ["practical-windows-network-reset","practical-windows-recovery-card"]
-sources: [{"title":"Microsoft：Windows VPN 连接说明","url":"https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows"},{"title":"Mullvad：官方桌面应用使用说明","url":"https://mullvad.net/en/help/using-mullvad-vpn-app"},{"title":"WireGuard：官方安装入口","url":"https://www.wireguard.com/install/"}]
+sources: [{"title": "Microsoft：Windows 计量连接", "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/metered-connections-in-windows"}]
 draft: false
 ---
 
-系统的网络使用设置与服务商配额是不同机制，应分别监测和理解。
+Windows 计量连接可以减少部分后台下载，但它不是机场套餐的硬性额度开关。Windows 按网络接口和本机活动记录用量，机场则可能按账户、多设备、上下行或倍率记账，两边数字不必相等，最终套餐余量仍应查看服务商账户。
 
-## 关键判断
+## 具体检查步骤
 
-系统设置可能影响部分更新策略，但不能由此保证所有程序停止传输，也不能改变服务端扣费口径。
+1. 在当前网络属性中确认是否启用计量连接。Wi-Fi 与有线连接可以分别设置，切换接入后要重新核对；不要以为设置过某个 Wi-Fi 就覆盖所有网络。
 
-## 三步检查
+2. 检查系统更新、商店和同步工具如何响应计量状态。Microsoft 说明部分后台活动会受限，但应用行为各异，用户手动下载也可能继续产生大量数据。
 
-### 1. 查看当前系统的计量说明
+3. 记录服务商后台余额和 Windows 用量各自的时间范围，做一次小规模任务后再对照。注意后台刷新延迟、上传计费和多设备共享，不把接口统计直接当成套餐账单。
 
-对账时同时写出统计起止、单位和扣除规则。客户端本次运行的数字与服务后台整个账期的数字，不能在未对齐条件时直接比较。
+## 怎样根据结果继续判断
 
-### 2. 核对应用是否遵循相关设置
+| 观察结果 | 下一步 |
+| --- | --- |
+| 计量已开但大文件仍下载 | 检查该应用的下载策略，计量不是统一拦截器 |
+| Windows 显示很少，后台扣得较多 | 核对其他设备、节点倍率和统计周期 |
+| 更新或同步暂停 | 确认是否由计量策略导致，选择合适网络再完成 |
 
-先写出本次要验证的具体成功条件，再实际执行。保留失败样本与改变过的条件；另一个任务的成功不自动覆盖这次任务，单次结果也不代表长期表现。
+## 一个可对照的排查场景
 
-### 3. 保留服务后台余量记录
+假设套餐剩余 10 GB，电脑连接手机热点并启用计量。用户仍手动下载 6 GB 文件，热点和机场可能分别计费。计量状态并没有为这个文件提供免费流量，也不能保证剩余 4 GB 与后台立即一致。数字为说明性算例。
 
-分别记录前台使用、进入空闲和重新操作三个时点。设备电源管理与应用重连可能是不同机制；不要把所有空闲后异常都归因于服务端。
+## 恢复与验收
 
-## 怎样保留这次结果
-
-把“查看当前系统的计量说明”得到的信息和“保留服务后台余量记录”的结果分开保存。前者说明起点，后者说明是否达到目的；中间若改变了条件，也要记下改变了什么。这样下次遇到相似现象时，可以先对照差异，而不是从头猜原因。
-
-## 容易忽略的边界
-
-不把开启计量连接写成机场套餐绝不会超额的承诺。
-
-Windows 内置连接、独立 VPN 应用和代理客户端可能使用不同入口。本组按具体故障或使用时点展开，先定位应用与系统的边界，再按当前官方文档处理，避免一次改变整个网络环境。
+如需临时允许更新，先确认可用余量和接入费用，完成后恢复原策略。离线或省流验收应查看真正消耗配额的后台任务，而不只检查计量开关颜色。
 
 ## 常见问题
 
-### 需要先重装软件或重置网络吗？
+### Windows 的数据限制能保证机场绝不超额吗？
 
-通常应先确认错误范围并保留日志。重装和重置可能同时改变多项条件；按官方流程处理之前，准备必要的配置与账号恢复方式。
+不能作这种保证。系统提醒、接口统计与服务方计费口径存在范围差异。应同时设置服务商可用的额度提醒，接近上限时停止大流量任务并核对规则。
 
 ## 进一步阅读与参考
 
 - [Windows 网络重置应该放在排查的哪一步？](/blog/practical-windows-network-reset/)
+
 - [给 Windows 做一张断网恢复卡，应该写什么？](/blog/practical-windows-recovery-card/)
+
 - [Windows 实用检查主题目录](/blog/topics/windows/)
 
-官方参考：[Microsoft：Windows VPN 连接说明](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows)、[Mullvad：官方桌面应用使用说明](https://mullvad.net/en/help/using-mullvad-vpn-app)、[WireGuard：官方安装入口](https://www.wireguard.com/install/)。它们用于核对概念与平台边界，本文步骤为编辑整理，不表示所有软件具有同一功能。具体按钮和当前支持情况请读相应官方帮助；没有用官方宣传冒充本站实测。
+- [Microsoft：Windows 计量连接](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/metered-connections-in-windows)

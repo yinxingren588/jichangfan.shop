@@ -10,50 +10,49 @@ primaryKeyword: "vpn推荐"
 batch: 6
 order: 103
 related: ["practical-android-always-on","practical-android-network-switch"]
-sources: [{"title":"Google：Android VPN 设置说明","url":"https://support.google.com/android/answer/9089766"},{"title":"WireGuard：官方安装入口","url":"https://www.wireguard.com/install/"}]
+sources: [{"title": "Android Developers：Doze 和应用待机机制", "url": "https://developer.android.com/training/monitoring-device-state/doze-standby"}, {"title": "Android Developers：VPN 服务、常开和分应用机制", "url": "https://developer.android.com/develop/connectivity/vpn"}]
 draft: false
 ---
 
-先记录发生时点，再对照后台、电池管理与客户端说明，不直接认定节点失效。
+锁屏后任务停止，先确认是 VPN 服务断开，还是业务应用暂停。Android 的省电与后台机制可能延后某些活动，厂商也可能增加管理策略；不能看到一次延迟就断定‘系统杀了 VPN’，更不能把关闭全部电池保护当作统一答案。
 
-## 关键判断
+## 具体检查步骤
 
-如果亮屏时正常、锁屏后重复失败，设备策略值得优先检查。但仍要保留其他可能变化的条件。
+1. 在屏幕亮起时先完成同一小任务，记录客户端状态。随后锁屏一段自己明确记录的时间，唤醒后立即查看 VPN 状态、通知、最后连接时间和任务错误。
 
-## 三步检查
+2. 比较普通待机、省电模式和充电状态下的现象，但一次只改一项。若仅某个应用通知延迟，应查看该应用后台机制，不把消息推送等同于 VPN 隧道状态。
 
-### 1. 观察是否仅锁屏触发
+3. 按手机厂商及客户端官方帮助检查后台限制。只对确有需要且来源可信的应用调整支持的设置，并重复同一锁屏步骤；不安装未知保活工具或停用系统安全服务。
 
-分别记录前台使用、进入空闲和重新操作三个时点。设备电源管理与应用重连可能是不同机制；不要把所有空闲后异常都归因于服务端。
+## 怎样根据结果继续判断
 
-### 2. 记录系统和应用版本
+| 观察结果 | 下一步 |
+| --- | --- |
+| VPN 日志明确显示断开 | 保存断开原因、时间与接入变化 |
+| VPN 保持连接，业务任务停住 | 查业务应用待机、会话和网络权限 |
+| 只在移动网络或弱信号出现 | 增加接入稳定性对照，不先改所有电池设置 |
 
-先记录哪个程序在接管连接与系统代理。每次只保留一个已知方案观察，退出后核对设置是否恢复；不要直接终止不认识的系统或企业进程。
+## 一个可对照的排查场景
 
-### 3. 查厂商后台管理建议
+例如锁屏后聊天通知变慢，唤醒时 VPN 一直显示连接且网页立即可用。这只能说明推送任务与锁屏有关，还需查应用和系统后台策略；不能把它直接写成节点断线。
 
-先确认设备和配置由谁管理。个人经验不能覆盖组织的授权与访问规则，遇到受管设置应走管理员提供的支持流程。
+## 恢复与验收
 
-## 怎样保留这次结果
-
-把“观察是否仅锁屏触发”得到的信息和“查厂商后台管理建议”的结果分开保存。前者说明起点，后者说明是否达到目的；中间若改变了条件，也要记下改变了什么。这样下次遇到相似现象时，可以先对照差异，而不是从头猜原因。
-
-## 容易忽略的边界
-
-不为了保持连接而无限制关闭所有电池和安全管理。
-
-Android 设备厂商、系统版本和网络工具的实现会影响设置位置与行为。本组按手机实际任务核对权限、后台和切换场景，保留恢复步骤，不把另一部手机的结果当作你的设备保证。
+调整无效就恢复原后台策略，记录有效条件与电池变化。最终验收包括锁屏后恢复实际任务和主动断开，既要可用，也要能在不需要时停止服务。
 
 ## 常见问题
 
-### 不同厂商的 Android 手机可以照搬步骤吗？
+### 允许后台无限制就能保证永不断线吗？
 
-不能假定界面和行为完全相同。保留厂商、系统与应用版本，优先读取本机说明；找不到选项时，先核对是否支持，而不是猜一个替代按钮。
+不能。系统策略只是影响因素之一，信号、认证、服务端和客户端实现仍会导致中断。应描述具体设备、版本和观察结果，不作所有 Android 通用保证。
 
 ## 进一步阅读与参考
 
 - [Android 常开 VPN 和应用自动重连，有何区别？](/blog/practical-android-always-on/)
+
 - [Android 从 Wi-Fi 切换移动网络后要检查什么？](/blog/practical-android-network-switch/)
+
 - [Android 实用检查主题目录](/blog/topics/android/)
 
-官方参考：[Google：Android VPN 设置说明](https://support.google.com/android/answer/9089766)、[WireGuard：官方安装入口](https://www.wireguard.com/install/)。它们用于核对概念与平台边界，本文步骤为编辑整理，不表示所有软件具有同一功能。具体按钮和当前支持情况请读相应官方帮助；没有用官方宣传冒充本站实测。
+- [Android Developers：Doze 和应用待机机制](https://developer.android.com/training/monitoring-device-state/doze-standby)
+- [Android Developers：VPN 服务、常开和分应用机制](https://developer.android.com/develop/connectivity/vpn)

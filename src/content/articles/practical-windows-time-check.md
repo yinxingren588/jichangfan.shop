@@ -10,50 +10,49 @@ primaryKeyword: "vpn推荐"
 batch: 5
 order: 89
 related: ["practical-windows-public-network","practical-windows-update-window"]
-sources: [{"title":"Microsoft：Windows VPN 连接说明","url":"https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows"},{"title":"Mullvad：官方桌面应用使用说明","url":"https://mullvad.net/en/help/using-mullvad-vpn-app"},{"title":"WireGuard：官方安装入口","url":"https://www.wireguard.com/install/"}]
+sources: [{"title": "Microsoft：Windows 日期、时间与时区设置", "url": "https://support.microsoft.com/en-us/windows/experience/personalization/set-time-date-and-time-zone-settings-in-windows"}, {"title": "Mozilla：安全网站的时间错误", "url": "https://support.mozilla.org/en-US/kb/troubleshoot-time-errors-secure-websites"}]
 draft: false
 ---
 
-可能干扰认证与错误记录的解释，排查前应确认日期、时区和时间同步状态。
+系统日期和时间明显错误，会干扰证书有效期判断、部分登录认证与日志对照。时间问题值得先查，但并不是所有连接错误的原因；校正后应复现原错误，不能把‘改过时间’当作修复证明。时区显示错误与实际时钟偏差也要区分。
 
-## 关键判断
+## 具体检查步骤
 
-时间纠正后恢复只是一个线索，不应据此给所有失败归因。应继续检查是否稳定复现。
+1. 在 Windows 日期和时间设置中，对照可靠时钟核对年月日、当前时间和时区。记录偏差；组织设备的时间可能由管理策略控制，不私自改动同步服务。
 
-## 三步检查
+2. 先恢复正确时间，再按系统提供的同步选项处理。若同步失败，记录具体提示和基础网络状态，不为了让某张证书暂时通过而把日期回拨。
 
-### 1. 核对系统日期与时区
+3. 检查客户端日志标记的是本地时间还是 UTC，再重新执行原来的最小失败操作。记录校正前后错误是否相同，避免把两个时区的日志误认为同一时刻。
 
-时间记录应能相互对应，必要时明确时区。系统、应用日志与后台可能采用不同显示方式；日期相同也不保证处于同一观察窗口。
+## 怎样根据结果继续判断
 
-### 2. 确认记录与日志的时间对应
+| 观察结果 | 下一步 |
+| --- | --- |
+| 提示证书尚未生效或已过期 | 核对时钟后还需核对真实证书状态 |
+| 时间正确仍认证失败 | 继续查账号、证书链与服务端错误 |
+| 每次关机后时间大幅变化 | 交由设备支持排查时钟和系统同步原因 |
 
-让日志片段对应到具体故障时段，并附上最短复现步骤。先检查其中的 URL 参数、设备标识和私人路径，只提交支持流程实际要求的范围。
+## 一个可对照的排查场景
 
-### 3. 再复现原连接错误
+例如日志显示 12:05，而工单记为北京时间 20:05，可能只是日志采用 UTC。应标注偏移并换算，而不是改动电脑时间来让日志‘对齐’。如果年月日确实错误，先校正，再核对证书和原任务。
 
-保留具体错误文字和发生阶段，遮盖其中的私人数据。无法建立连接、认证被拒绝和任务处理失败，不应被合并成同一种不能用。
+## 恢复与验收
 
-## 怎样保留这次结果
-
-把“核对系统日期与时区”得到的信息和“再复现原连接错误”的结果分开保存。前者说明起点，后者说明是否达到目的；中间若改变了条件，也要记下改变了什么。这样下次遇到相似现象时，可以先对照差异，而不是从头猜原因。
-
-## 容易忽略的边界
-
-不要为绕过认证提示而随意回拨系统日期。
-
-Windows 内置连接、独立 VPN 应用和代理客户端可能使用不同入口。本组按具体故障或使用时点展开，先定位应用与系统的边界，再按当前官方文档处理，避免一次改变整个网络环境。
+正确时间应在重启后仍保持，并且能与日志时区对应。验收要复现最初失败的网页或连接；若时间无误仍出现证书警告，应保留警告内容并停止提交敏感数据。
 
 ## 常见问题
 
-### 需要先重装软件或重置网络吗？
+### VPN 会自动修正电脑时间吗？
 
-通常应先确认错误范围并保留日志。重装和重置可能同时改变多项条件；按官方流程处理之前，准备必要的配置与账号恢复方式。
+不能这样假定。联网可能让系统同步服务重新可达，但时间设置和 VPN 连接不是同一功能。按 Windows 及组织的时间管理方式处理即可。
 
 ## 进一步阅读与参考
 
 - [Windows 在公共网络上使用 VPN，先准备什么？](/blog/practical-windows-public-network/)
+
 - [Windows 更新前后，VPN 应该做哪些回归检查？](/blog/practical-windows-update-window/)
+
 - [Windows 实用检查主题目录](/blog/topics/windows/)
 
-官方参考：[Microsoft：Windows VPN 连接说明](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows)、[Mullvad：官方桌面应用使用说明](https://mullvad.net/en/help/using-mullvad-vpn-app)、[WireGuard：官方安装入口](https://www.wireguard.com/install/)。它们用于核对概念与平台边界，本文步骤为编辑整理，不表示所有软件具有同一功能。具体按钮和当前支持情况请读相应官方帮助；没有用官方宣传冒充本站实测。
+- [Microsoft：Windows 日期、时间与时区设置](https://support.microsoft.com/en-us/windows/experience/personalization/set-time-date-and-time-zone-settings-in-windows)
+- [Mozilla：安全网站的时间错误](https://support.mozilla.org/en-US/kb/troubleshoot-time-errors-secure-websites)

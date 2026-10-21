@@ -7,7 +7,7 @@ updated: "2026-10-21"
 tags: ["使用教程","隐私与退出"]
 topic: "guide-privacy"
 related: ["dns-check","mullvad-split-tunneling","logs-redaction"]
-sources: [{"title":"MDN：IPv6术语说明","url":"https://developer.mozilla.org/en-US/docs/Glossary/IPv6"},{"title":"Mullvad官方连接检查","url":"https://mullvad.net/en/check"}]
+sources: [{"title": "MDN：IPv6 概念", "url": "https://developer.mozilla.org/en-US/docs/Glossary/IPv6"}, {"title": "Mullvad：浏览器连接检测及检测范围", "url": "https://mullvad.net/en/check"}, {"title": "Microsoft：VPN 路由决策", "url": "https://learn.microsoft.com/en-us/windows/security/operating-system-security/network-security/vpn/vpn-routing"}]
 draft: false
 order: 30
 ---
@@ -38,7 +38,31 @@ order: 30
 
 可以说某次检查页观察到的出口与预期一致，但不能由此推断所有后台程序、域名解析或未来连接都相同。若服务没有公开说明，保留待确认，不以关闭整个系统IPv6作为通用修复。涉及修改时应采用对应平台与客户端的正式帮助，并留好恢复记录。
 
+
+
+## 检测结果应按地址族与请求范围解释
+
+IPv4 与 IPv6 是不同地址体系。没有测到 IPv6，可能是接入、目标或配置不提供可用路径，不能统一解释为安全成功或故障。浏览器检测还依赖页面脚本和当前浏览器设置，应记录检测条件，不把品牌识别文字当作所有 VPN 的判定标准。
+
+| 检查结果 | 对应处理 |
+| --- | --- |
+| 只得到 IPv4 结果 | 记录 IPv6 未确认，核对本机与接入支持 |
+| IPv4 符合预期、IPv6 路径不同 | 查产品 IPv6 路由和分流说明 |
+| 页面显示未用 Mullvad，但用的是其他服务 | 不要把品牌识别等同于其他服务失效 |
+
+### 对照案例
+
+例如检测页没有显示 IPv6，用户据此宣称所有设备不存在泄露。这忽略了浏览器、接入和测试目标的范围；应在确有 IPv6 的条件下按产品说明复测，并且对其他应用保留独立验证。
+
+### 完成后的验收
+
+保留时间、接入、浏览器、连接模式及两种地址族结果，测试前后用相同目标比较。不要为一次检测随意禁用系统协议；改动有明确依据时保存原值并确认原任务恢复。
+
 ## 常见问题
+
+### 一次检测通过能证明长期全设备安全了吗？
+
+不能。切网、重启、版本更新和分流都会改变条件。测试只说明本次可观察请求，应以清楚的范围描述结果。
 
 ### 看到IPv6地址就说明VPN失效了吗？
 
@@ -47,3 +71,10 @@ order: 30
 ### 检测成功能保证AI或视频平台可用吗？
 
 不能。目标服务还可能有账号和地区条件。进一步阅读[DNS故障区分](/guides/dns-check/)与[应用分流验证](/guides/mullvad-split-tunneling/)，提交材料前按[日志脱敏](/guides/logs-redaction/)检查。
+
+
+## 进一步阅读与参考
+
+- [MDN：IPv6 概念](https://developer.mozilla.org/en-US/docs/Glossary/IPv6)
+- [Mullvad：浏览器连接检测及检测范围](https://mullvad.net/en/check)
+- [Microsoft：VPN 路由决策](https://learn.microsoft.com/en-us/windows/security/operating-system-security/network-security/vpn/vpn-routing)

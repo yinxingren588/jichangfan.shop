@@ -10,50 +10,49 @@ primaryKeyword: "vpn推荐"
 batch: 5
 order: 83
 related: ["practical-windows-startup-order","practical-windows-proxy-residue"]
-sources: [{"title":"Microsoft：Windows VPN 连接说明","url":"https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows"},{"title":"Mullvad：官方桌面应用使用说明","url":"https://mullvad.net/en/help/using-mullvad-vpn-app"},{"title":"WireGuard：官方安装入口","url":"https://www.wireguard.com/install/"}]
+sources: [{"title": "Microsoft：在 Windows 中连接 VPN", "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows"}, {"title": "Microsoft：Windows VPN 配置选项", "url": "https://learn.microsoft.com/en-us/windows/security/operating-system-security/network-security/vpn/vpn-profile-options"}]
 draft: false
 ---
 
-系统连接类型要与服务端提供的信息一致，代理订阅 URL 不是可通用粘贴的服务器地址。
+Windows 内置 VPN 的连接类型必须与服务端协议和认证方式匹配。它不是所有机场订阅的通用导入器；服务商只提供代理订阅 URL 时，不能把 URL 填进服务器地址并期待系统自动识别。先拿到针对 Windows 的正式配置说明，再选择内置连接或指定客户端。
 
-## 关键判断
+## 具体检查步骤
 
-名称相近不代表配置兼容。缺少服务端信息时，应向提供方核实，不能自行补造地址或凭据。
+1. 从服务商账户或组织管理员取得协议名称、服务器地址和登录方式。确认提供的是 Windows 内置 VPN 参数，还是某款客户端专用的订阅。避免从论坛复制他人的服务器和密钥。
 
-## 三步检查
+2. 在 Windows 设置的‘网络和 Internet → VPN’核对提供程序、VPN 类型与认证字段。服务器地址不是订阅管理网页；用户名密码也未必等于网站登录凭据。
 
-### 1. 读取服务商 Windows 帮助
+3. 先给配置起易识别的名称，按服务方指定值填写一次并记录错误。若要求证书或组织策略，交由授权人员提供和部署，不使用未知根证书代替缺失配置。
 
-公开材料中不应出现可直接使用的凭据。先制作脱敏副本，保留字段类型和错误位置；如果原凭据已经泄露，后续还要确认服务端撤销，不能只删除截图。
+## 怎样根据结果继续判断
 
-### 2. 确认连接类型与认证方式
+| 观察结果 | 下一步 |
+| --- | --- |
+| 只有订阅 URL、二维码 | 先查订阅支持的客户端格式，不直接建内置连接 |
+| 有协议和专用认证信息 | 逐项对应 Windows 字段，避免凭名称猜协议 |
+| 认证通过但目标资源不可达 | 继续查路由和访问权限，不反复改密码 |
 
-区分设备上的登录、服务账户的权益和目标应用的使用资格。一个环节成功只证明该环节满足条件，剩余部分仍需按对应提供方的正式流程确认。
+## 一个可对照的排查场景
 
-### 3. 逐项核对输入字段
+例如教程要求安装专门客户端并导入订阅，而用户在内置 VPN 中选择‘自动’后粘贴完整订阅链接。失败首先说明输入对象不匹配，不能据此认定套餐或节点不可用。正确做法是回到服务方的 Windows 使用说明。
 
-记录完整版本，不只写最新版。支持情况可能按操作系统、芯片或客户端渠道区分；查看官方文档时，也要确认选中的是自己的平台。
+## 恢复与验收
 
-## 怎样保留这次结果
-
-把“读取服务商 Windows 帮助”得到的信息和“逐项核对输入字段”的结果分开保存。前者说明起点，后者说明是否达到目的；中间若改变了条件，也要记下改变了什么。这样下次遇到相似现象时，可以先对照差异，而不是从头猜原因。
-
-## 容易忽略的边界
-
-不要把其他用户的企业 VPN 服务器设置抄入个人订阅。
-
-Windows 内置连接、独立 VPN 应用和代理客户端可能使用不同入口。本组按具体故障或使用时点展开，先定位应用与系统的边界，再按当前官方文档处理，避免一次改变整个网络环境。
+新配置未验证前保留原可用配置及其来源。连接成功后测试一个预期资源，断开后确认普通联网恢复；错误求助时可提供连接类型和代码，但遮盖服务器账户、证书与订阅令牌。
 
 ## 常见问题
 
-### 需要先重装软件或重置网络吗？
+### 选择自动类型能识别所有机场协议吗？
 
-通常应先确认错误范围并保留日志。重装和重置可能同时改变多项条件；按官方流程处理之前，准备必要的配置与账号恢复方式。
+不能。自动选项的协商范围仍受 Windows 和服务器支持的类型约束，不能让系统获得任意第三方协议能力。具体可用类型以当前系统与服务方文档为准。
 
 ## 进一步阅读与参考
 
 - [Windows 开机自动连接 VPN，怎样安排验证？](/blog/practical-windows-startup-order/)
+
 - [Windows 退出客户端后打不开网页，怎样检查代理残留？](/blog/practical-windows-proxy-residue/)
+
 - [Windows 实用检查主题目录](/blog/topics/windows/)
 
-官方参考：[Microsoft：Windows VPN 连接说明](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows)、[Mullvad：官方桌面应用使用说明](https://mullvad.net/en/help/using-mullvad-vpn-app)、[WireGuard：官方安装入口](https://www.wireguard.com/install/)。它们用于核对概念与平台边界，本文步骤为编辑整理，不表示所有软件具有同一功能。具体按钮和当前支持情况请读相应官方帮助；没有用官方宣传冒充本站实测。
+- [Microsoft：在 Windows 中连接 VPN](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows)
+- [Microsoft：Windows VPN 配置选项](https://learn.microsoft.com/en-us/windows/security/operating-system-security/network-security/vpn/vpn-profile-options)

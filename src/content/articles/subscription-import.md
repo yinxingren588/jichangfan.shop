@@ -7,7 +7,7 @@ updated: "2026-10-21"
 tags: ["使用教程","配置导入"]
 topic: "guide-import"
 related: ["qr-import","subscription-refresh","configuration-backup"]
-sources: [{"title":"OpenVPN Connect：导入连接配置","url":"https://openvpn.net/connect-docs/import-profile.html"},{"title":"Proton VPN：下载WireGuard配置","url":"https://protonvpn.com/support/wireguard-configurations"},{"title":"MDN：URL组成与处理","url":"https://developer.mozilla.org/en-US/docs/Web/API/URL"}]
+sources: [{"title": "OpenVPN Connect：导入连接配置", "url": "https://openvpn.net/connect-docs/import-profile.html"}, {"title": "Proton VPN：生成 WireGuard 配置文件", "url": "https://protonvpn.com/support/wireguard-configurations"}]
 draft: false
 order: 6
 ---
@@ -38,7 +38,31 @@ order: 6
 
 保留错误原文、客户端版本和发生阶段；删除无效的新条目之前，先确认它不是原本的可用配置。不要把完整订阅地址贴到公开工单或在线转换工具中。需要支持时，可只提供地址的格式类型和脱敏域名，令牌部分全部隐藏。
 
+
+
+## 把导入错误与连接错误分开
+
+判断失败要看停在哪一步。格式解析发生在导入阶段，认证和路由发生在后续连接阶段；两者需要的资料不同。对支持工单可提供客户端版本和错误类型，但完整 URL 的令牌、单节点密码和私钥都应隐藏。
+
+| 检查结果 | 对应处理 |
+| --- | --- |
+| 返回 HTML、登录页或支付页 | 核对地址用途与账号，不把网页当配置 |
+| 格式解析失败或空列表 | 查指定格式、客户端版本及订阅返回内容 |
+| 列表正常但连接被拒绝 | 转查授权、端点与具体协议错误 |
+
+### 对照案例
+
+例如登录后台的链接被复制成订阅，客户端显示格式错误。应从正式账户找到专门的订阅入口，而不是手动把页面地址改后缀。OpenVPN 的 URL 导入只适用于服务方明确支持的连接配置获取方式。
+
+### 完成后的验收
+
+新配置用独立名称保存，完成读取、连接、原任务和断开四项。验证前不要覆盖唯一可用配置；如果原凭据已撤销，本地备份也不能让它重新有效。
+
 ## 常见问题
+
+### 把链接交给在线转换站能解决全部格式问题吗？
+
+不能。转换服务可能取得其中凭据，且无法修复失效授权或未知协议。先确认客户端原生支持与服务方建议，优先使用不向未知第三方暴露订阅的方式。
 
 ### 能看到节点就算设置完成了吗？
 
@@ -47,3 +71,9 @@ order: 6
 ### 一个地址可以放进所有应用吗？
 
 不可以预先这样假设。先核对格式，再阅读[二维码导入检查](/guides/qr-import/)；已经导入但内容过旧时，使用[订阅更新流程](/guides/subscription-refresh/)处理。
+
+
+## 进一步阅读与参考
+
+- [OpenVPN Connect：导入连接配置](https://openvpn.net/connect-docs/import-profile.html)
+- [Proton VPN：生成 WireGuard 配置文件](https://protonvpn.com/support/wireguard-configurations)

@@ -7,7 +7,7 @@ updated: "2026-10-21"
 tags: ["使用教程","配置导入"]
 topic: "guide-import"
 related: ["subscription-import","wireguard-android","subscription-link-reset"]
-sources: [{"title":"MDN：URL组成与处理","url":"https://developer.mozilla.org/en-US/docs/Web/API/URL"},{"title":"OpenVPN Connect：导入连接配置","url":"https://openvpn.net/connect-docs/import-profile.html"},{"title":"WireGuard官方安装入口","url":"https://www.wireguard.com/install/"}]
+sources: [{"title": "Proton VPN：官方 WireGuard Android 客户端配置示例", "url": "https://protonvpn.com/support/wireguard-manual-android"}, {"title": "OpenVPN Connect：导入连接配置", "url": "https://openvpn.net/connect-docs/import-profile.html"}, {"title": "Apple：在 iPhone 上安装或移除描述文件", "url": "https://support.apple.com/guide/iphone/iph6c493b19/ios"}]
 draft: false
 order: 7
 ---
@@ -38,7 +38,31 @@ order: 7
 
 成功导入后，应能说清这份资料的来源、类型和连接结果，而不是只看到“扫码成功”。扫码识别成功但没有可用配置时，优先查格式兼容；配置能创建但连不上时，再查账户、网络和节点状态，分别保留错误信息。
 
+
+
+## 二维码识别之后仍要核对内容类型
+
+二维码不会替你验证发布者身份或配置兼容。相机读出一段文字、客户端成功识别类型和网络任务真正成功是不同结果。原图若包含凭据，上传识别或转发求助同样会暴露资料，不能只遮住旁边的文字。
+
+| 检查结果 | 对应处理 |
+| --- | --- |
+| 识别成普通 HTTPS 网页 | 先核对它是订阅、账户页面还是其他用途 |
+| 识别成单协议配置 | 确认客户端支持该格式再导入 |
+| 出现未知描述文件安装 | 暂停，先核实提供方与权限用途 |
+
+### 对照案例
+
+例如电脑上展示自己的订阅二维码，手机扫码导入后又把整张屏幕截图发到公开群。配置虽已导入，凭据也可能同步泄露。应使用脱敏错误截图，泄露后按服务方方式撤销或重置，而不只是删除图片。
+
+### 完成后的验收
+
+导入前后确认配置名称和格式，完成小任务与正常退出。清点相册、聊天、云端分享和导出副本，保留受保护的恢复来源，把不再有效的二维码明确标注过期。
+
 ## 常见问题
+
+### 二维码能扫描，是否说明节点一定可用？
+
+不能。它只说明载体可识别；资料可能过期、类型不符或授权已撤销。需要继续检查导入结果、连接和真实任务。
 
 ### 二维码发到群里会不会暴露账号资料？
 
@@ -47,3 +71,10 @@ order: 7
 ### 手机相机识别失败怎么办？
 
 先确认该客户端支持的导入方式，可改用官方提供的文件或链接。继续阅读[订阅格式核对](/guides/subscription-import/)和[订阅链接重置](/guides/subscription-link-reset/)。
+
+
+## 进一步阅读与参考
+
+- [Proton VPN：官方 WireGuard Android 客户端配置示例](https://protonvpn.com/support/wireguard-manual-android)
+- [OpenVPN Connect：导入连接配置](https://openvpn.net/connect-docs/import-profile.html)
+- [Apple：在 iPhone 上安装或移除描述文件](https://support.apple.com/guide/iphone/iph6c493b19/ios)

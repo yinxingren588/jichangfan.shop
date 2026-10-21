@@ -12,9 +12,12 @@
         "trafficGB": 144,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/yinxingren/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "500 Mbps",
+        "devices": "5台设备"
       },
       {
         "name": "纯专线主力版",
@@ -24,9 +27,12 @@
         "trafficGB": 350,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/yinxingren/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "1000 Mbps",
+        "devices": "8台设备"
       }
     ]
   },
@@ -43,9 +49,12 @@
         "trafficGB": 120,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/muguang/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "500 Mbps",
+        "devices": "4台设备"
       },
       {
         "name": "海量进阶月付",
@@ -55,9 +64,12 @@
         "trafficGB": 300,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/muguang/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "800 Mbps",
+        "devices": "6台设备"
       }
     ]
   },
@@ -74,9 +86,12 @@
         "trafficGB": 200,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/breezenet/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "500 Mbps",
+        "devices": "4台设备"
       },
       {
         "name": "微风进阶版",
@@ -86,9 +101,12 @@
         "trafficGB": 500,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/breezenet/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "1000 Mbps",
+        "devices": "6台设备"
       }
     ]
   },
@@ -105,9 +123,12 @@
         "trafficGB": 150,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/feimaoyun/",
-        "note": "参考页的周期列写作月付，但套餐名和备注明确写年付折算；本站按年付折合月价展示，年付总额待确认。"
+        "note": "来源备注为年付折合月价，不能按月购买；年度实付总额与续费规则请在订单查看。",
+        "ownerConfirmed": true,
+        "port": "400 Mbps",
+        "devices": "4台设备"
       },
       {
         "name": "畅享月付版",
@@ -117,9 +138,12 @@
         "trafficGB": 350,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/feimaoyun/",
-        "note": "参考页的周期列写作月付，但套餐名和备注明确写年付折算；本站按年付折合月价展示，年付总额待确认。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "800 Mbps",
+        "devices": "6台设备"
       }
     ]
   },
@@ -136,9 +160,12 @@
         "trafficGB": 180,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/dalaocloud/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "600 Mbps",
+        "devices": "5台设备"
       },
       {
         "name": "大佬至尊版",
@@ -148,9 +175,12 @@
         "trafficGB": 450,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/dalaocloud/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "1200 Mbps",
+        "devices": "8台设备"
       }
     ]
   },
@@ -167,9 +197,12 @@
         "trafficGB": 100,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/feiv/",
-        "note": "不限时方案按一次性总配额展示，使用期限、清零条件和续费方式尚未在结账页核实。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "300 Mbps",
+        "devices": "3台设备"
       },
       {
         "name": "不限时海量版",
@@ -179,9 +212,12 @@
         "trafficGB": 200,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/feiv/",
-        "note": "不限时方案按一次性总配额展示，使用期限、清零条件和续费方式尚未在结账页核实。"
+        "note": "不限时档按总配额展示，不是每月重置；有效期与服务条款见订单。",
+        "ownerConfirmed": true,
+        "port": "500 Mbps",
+        "devices": "5台设备"
       }
     ]
   },
@@ -198,9 +234,12 @@
         "trafficGB": 125,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/laddercloud/",
-        "note": "第二档的流量列为350GB，备注另提最高500GB，信息不一致；本表保留流量列数值，下单前确认对应套餐。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "500 Mbps",
+        "devices": "4台设备"
       },
       {
         "name": "海量专线版",
@@ -210,9 +249,12 @@
         "trafficGB": 350,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/laddercloud/",
-        "note": "第二档的流量列为350GB，备注另提最高500GB，信息不一致；本表保留流量列数值，下单前确认对应套餐。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "1000 Mbps",
+        "devices": "6台设备"
       }
     ]
   },
@@ -229,9 +271,12 @@
         "trafficGB": 150,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/wavenet/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "600 Mbps",
+        "devices": "5台设备"
       },
       {
         "name": "自研旗舰版",
@@ -241,9 +286,12 @@
         "trafficGB": 360,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/wavenet/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "1000 Mbps",
+        "devices": "8台设备"
       }
     ]
   },
@@ -260,9 +308,12 @@
         "trafficGB": 100,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/lingdongcloud/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "400 Mbps",
+        "devices": "4台设备"
       },
       {
         "name": "畅享月付版",
@@ -272,9 +323,12 @@
         "trafficGB": 260,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/lingdongcloud/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "800 Mbps",
+        "devices": "6台设备"
       }
     ]
   },
@@ -291,9 +345,12 @@
         "trafficGB": 60,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/firefly/",
-        "note": "参考页的周期列写作月付，但套餐名和备注明确写年付折算；本站按年付折合月价展示，年付总额待确认。"
+        "note": "来源备注为年付折合月价，不能按月购买；年度实付总额与续费规则请在订单查看。",
+        "ownerConfirmed": true,
+        "port": "300 Mbps",
+        "devices": "3台设备"
       },
       {
         "name": "标准月付版",
@@ -303,9 +360,12 @@
         "trafficGB": 160,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/firefly/",
-        "note": "参考页的周期列写作月付，但套餐名和备注明确写年付折算；本站按年付折合月价展示，年付总额待确认。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "600 Mbps",
+        "devices": "5台设备"
       }
     ]
   },
@@ -322,9 +382,12 @@
         "trafficGB": 150,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/lingmao/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "500 Mbps",
+        "devices": "4台设备"
       },
       {
         "name": "旗舰大流量版",
@@ -334,9 +397,12 @@
         "trafficGB": 350,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/lingmao/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "1000 Mbps",
+        "devices": "6台设备"
       }
     ]
   },
@@ -353,9 +419,12 @@
         "trafficGB": 150,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/flashleap/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "500 Mbps",
+        "devices": "4台设备"
       },
       {
         "name": "纯专线进阶版",
@@ -365,9 +434,12 @@
         "trafficGB": 360,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/flashleap/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "1000 Mbps",
+        "devices": "6台设备"
       }
     ]
   },
@@ -384,9 +456,12 @@
         "trafficGB": 100,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/wuyou/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "400 Mbps",
+        "devices": "4台设备"
       },
       {
         "name": "无忧进阶版",
@@ -396,9 +471,12 @@
         "trafficGB": 260,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/wuyou/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "800 Mbps",
+        "devices": "6台设备"
       }
     ]
   },
@@ -415,9 +493,12 @@
         "trafficGB": 120,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/kuajiecloud/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "500 Mbps",
+        "devices": "4台设备"
       },
       {
         "name": "全专线旗舰版",
@@ -427,9 +508,12 @@
         "trafficGB": 320,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/kuajiecloud/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "1000 Mbps",
+        "devices": "6台设备"
       }
     ]
   },
@@ -446,9 +530,12 @@
         "trafficGB": 100,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/stardream/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "400 Mbps",
+        "devices": "4台设备"
       },
       {
         "name": "双专线标准版",
@@ -458,9 +545,12 @@
         "trafficGB": 240,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/stardream/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "800 Mbps",
+        "devices": "6台设备"
       }
     ]
   },
@@ -477,9 +567,12 @@
         "trafficGB": 148,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/lightspeed/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "500 Mbps",
+        "devices": "4台设备"
       },
       {
         "name": "隧道高配版",
@@ -489,9 +582,12 @@
         "trafficGB": 360,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/lightspeed/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "1000 Mbps",
+        "devices": "6台设备"
       }
     ]
   },
@@ -508,9 +604,12 @@
         "trafficGB": 100,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/v2yun/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "400 Mbps",
+        "devices": "4台设备"
       },
       {
         "name": "IPLC进阶版",
@@ -520,9 +619,12 @@
         "trafficGB": 240,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/v2yun/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "800 Mbps",
+        "devices": "6台设备"
       }
     ]
   },
@@ -539,9 +641,12 @@
         "trafficGB": 120,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/u1s1/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "500 Mbps",
+        "devices": "4台设备"
       },
       {
         "name": "三网优化旗舰版",
@@ -551,9 +656,12 @@
         "trafficGB": 300,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/u1s1/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "1000 Mbps",
+        "devices": "6台设备"
       }
     ]
   },
@@ -570,9 +678,12 @@
         "trafficGB": 100,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/jiliancloud/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "400 Mbps",
+        "devices": "4台设备"
       },
       {
         "name": "双专线增强版",
@@ -582,9 +693,12 @@
         "trafficGB": 250,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/jiliancloud/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "800 Mbps",
+        "devices": "6台设备"
       }
     ]
   },
@@ -601,9 +715,12 @@
         "trafficGB": 120,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/quanqiuyun/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "500 Mbps",
+        "devices": "4台设备"
       },
       {
         "name": "中转海量版",
@@ -613,9 +730,12 @@
         "trafficGB": 300,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/quanqiuyun/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "800 Mbps",
+        "devices": "6台设备"
       }
     ]
   },
@@ -632,9 +752,12 @@
         "trafficGB": 110,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/guangnianti/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "400 Mbps",
+        "devices": "4台设备"
       },
       {
         "name": "大流量专线版",
@@ -644,9 +767,12 @@
         "trafficGB": 280,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/guangnianti/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "800 Mbps",
+        "devices": "6台设备"
       }
     ]
   },
@@ -663,9 +789,12 @@
         "trafficGB": 150,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/sogoyun/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "600 Mbps",
+        "devices": "5台设备"
       },
       {
         "name": "企业尊享版",
@@ -675,9 +804,12 @@
         "trafficGB": 350,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/sogoyun/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "1000 Mbps",
+        "devices": "8台设备"
       }
     ]
   },
@@ -694,9 +826,12 @@
         "trafficGB": 60,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/yuzhoucloud/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "400 Mbps",
+        "devices": "4台设备"
       },
       {
         "name": "双线畅享版",
@@ -706,9 +841,12 @@
         "trafficGB": 180,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/yuzhoucloud/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "800 Mbps",
+        "devices": "6台设备"
       }
     ]
   },
@@ -725,9 +863,12 @@
         "trafficGB": 120,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/ermaoyun/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "400 Mbps",
+        "devices": "4台设备"
       },
       {
         "name": "多节点大流量版",
@@ -737,9 +878,12 @@
         "trafficGB": 280,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/ermaoyun/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "800 Mbps",
+        "devices": "6台设备"
       }
     ]
   },
@@ -756,9 +900,12 @@
         "trafficGB": 150,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/yifanyun/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "500 Mbps",
+        "devices": "4台设备"
       },
       {
         "name": "专线旗舰版",
@@ -768,9 +915,12 @@
         "trafficGB": 350,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/yifanyun/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "1000 Mbps",
+        "devices": "6台设备"
       }
     ]
   },
@@ -787,9 +937,12 @@
         "trafficGB": 200,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/edgenova/",
-        "note": "86元和168元为参考页列出的年付总额；200GB和450GB来自月度流量列，实际重置规则待确认。"
+        "note": "一次支付全年金额，流量按来源表头为月度配额，不视为全年可提前使用的总包。",
+        "ownerConfirmed": true,
+        "port": "500 Mbps",
+        "devices": "5台设备"
       },
       {
         "name": "进阶专线版",
@@ -799,9 +952,12 @@
         "trafficGB": 450,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/edgenova/",
-        "note": "86元和168元为参考页列出的年付总额；200GB和450GB来自月度流量列，实际重置规则待确认。"
+        "note": "一次支付全年金额，流量按来源表头为月度配额，不视为全年可提前使用的总包。",
+        "ownerConfirmed": true,
+        "port": "1000 Mbps",
+        "devices": "8台设备"
       }
     ]
   },
@@ -818,9 +974,12 @@
         "trafficGB": 45,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/kexincloud/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "300 Mbps",
+        "devices": "3台设备"
       },
       {
         "name": "IPLC标准版",
@@ -830,9 +989,12 @@
         "trafficGB": 150,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/kexincloud/",
-        "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "600 Mbps",
+        "devices": "5台设备"
       }
     ]
   },
@@ -849,9 +1011,12 @@
         "trafficGB": 150,
         "trafficApprox": true,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/sujie/",
-        "note": "入门方案的参考页备注为约150GB、按套餐而定，本站保留约数标记。"
+        "note": "来源备注约 150GB，具体配额按实际套餐确认。",
+        "ownerConfirmed": true,
+        "port": "500 Mbps",
+        "devices": "4台设备"
       },
       {
         "name": "极速畅联版",
@@ -861,9 +1026,12 @@
         "trafficGB": 350,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/sujie/",
-        "note": "入门方案的参考页备注为约150GB、按套餐而定，本站保留约数标记。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "1000 Mbps",
+        "devices": "6台设备"
       }
     ]
   },
@@ -880,9 +1048,12 @@
         "trafficGB": 30,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/kuaili/",
-        "note": "参考页的周期列写作月付，但套餐名和备注明确写年付折算；本站按年付折合月价展示，年付总额待确认。"
+        "note": "来源备注为年付折合月价，不能按月购买；年度实付总额与续费规则请在订单查看。",
+        "ownerConfirmed": true,
+        "port": "300 Mbps",
+        "devices": "3台设备"
       },
       {
         "name": "IEPL标准版",
@@ -892,9 +1063,12 @@
         "trafficGB": 120,
         "trafficApprox": false,
         "verified": false,
-        "reference": true,
+        "reference": false,
         "source": "https://jiediantuijian.shop/airport/kuaili/",
-        "note": "参考页的周期列写作月付，但套餐名和备注明确写年付折算；本站按年付折合月价展示，年付总额待确认。"
+        "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+        "ownerConfirmed": true,
+        "port": "600 Mbps",
+        "devices": "5台设备"
       }
     ]
   }

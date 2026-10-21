@@ -7,7 +7,7 @@ updated: "2026-10-21"
 tags: ["使用教程","隐私与退出"]
 topic: "guide-privacy"
 related: ["troubleshooting","subscription-link-reset","configuration-backup"]
-sources: [{"title":"Mullvad官方项目：日志与遥测说明","url":"https://github.com/mullvad/mullvadvpn-app/blob/main/docs/logging-and-telemetry.md"}]
+sources: [{"title": "Mullvad 官方项目：日志与遥测说明", "url": "https://github.com/mullvad/mullvadvpn-app/blob/main/docs/logging-and-telemetry.md"}]
 draft: false
 order: 26
 ---
@@ -44,7 +44,31 @@ order: 26
 
 保存自己的工单编号、已提交的脱敏副本和对应原始记录，便于后续对照。得到回复后一次只试一项建议，并记下结果。若发现原始凭据已经公开，应处理相关撤销或重建，不认为删掉帖子就必然消除传播过的副本。
 
+
+
+## 脱敏保留字段结构与错误时间线
+
+日志的价值在错误与前后事件，不在完整秘密。不同客户端的自动脱敏范围不同，Mullvad 项目对自身日志的说明不能当作全部工具的默认保证。处理副本前先写出复现动作，防止脱敏后只剩无法理解的零碎文字。
+
+| 检查结果 | 对应处理 |
+| --- | --- |
+| 含带 token 的 URL | 替换敏感值，按需要保留字段名和错误 |
+| 含二维码、私钥或证书附件 | 去掉原始凭据，不只遮盖旁边文字 |
+| 要求系统诊断整包 | 先确认必要范围与正式提交渠道 |
+
+### 对照案例
+
+例如‘更新失败’与完整订阅地址在同一行，可以保留错误和时间，隐藏授权参数。若截图还显示二维码，即使文字已遮住也仍可能泄露；压缩包还需检查是否夹带原始配置和旧截图。
+
+### 完成后的验收
+
+重新打开脱敏文件和压缩包，确保仍可复现时间线、没有秘密副本。正式提交后记录工单编号，临时详细日志停止采集；公开泄露过的授权按服务方流程更换。
+
 ## 常见问题
+
+### 把所有地址涂黑就更专业吗？
+
+并非如此。过度遮盖会失去排障所需结构，应最小化敏感信息而保留错误类型与时间。具体所需字段由正式支持解释，不向未知群聊上传整机资料。
 
 ### 日志里写着匿名就可以随便公开吗？
 
@@ -53,3 +77,8 @@ order: 26
 ### 怎样说明“不能用”更清楚？
 
 使用[通用故障排查](/guides/troubleshooting/)定位阶段，再按本文整理。涉及链接暴露，可继续看[凭据重置流程](/guides/subscription-link-reset/)。
+
+
+## 进一步阅读与参考
+
+- [Mullvad 官方项目：日志与遥测说明](https://github.com/mullvad/mullvadvpn-app/blob/main/docs/logging-and-telemetry.md)

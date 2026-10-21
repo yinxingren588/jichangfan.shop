@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "issues": [],
+  "reviewed": 240,
+  "categories": {
+    "blog": 205,
+    "guides": 30,
+    "glossary": 5
+  },
+  "checks": [
+    "every original article has a saved substantive edit",
+    "individual repair notes",
+    "hash and source parity",
+    "preserved title, category and URL",
+    "primary sources linked in body"
+  ],
+  "limits": "Confirms review coverage and final-file consistency; does not prove product compatibility, successful configuration on every device, or search ranking."
+}

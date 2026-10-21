@@ -1,31 +1,50 @@
-# 品牌、套餐与优惠码维护
+本轮已完整更新 29 个品牌的 58 档套餐和 12 个站长提供的优惠码。价格、流量以站长确认的 jiediantuijian.shop 为依据，读取日期为 2026-10-21。29 个页面均有来源指纹记录，见项目 docs/brand-source-audit.json。
 
-新增29个品牌、58档套餐参考、12个站长提供的优惠码；保留原有5个品牌，当前共34个品牌。博客仍有205篇，其中原先新增的200篇保持完整。
+每个品牌的资料页列出两档金额、付款周期、月配额或总配额、并发设备、标称端口、协议、地区、优惠码及购买入口。套餐分析页分别写有选档理由、标称成本表、具体预算情景、该品牌需要看清的条件、专属问答和相近候选，不再套用同一段比较结论。
 
-## 页面入口
+重要口径已修正：
 
-- /coupons/：所有29个品牌的套餐与优惠信息、复制按钮和推广入口。
-- /airport/：全部34个品牌，可按代理订阅、商业VPN筛选。
-- /airport/{slug}/：每个品牌的价格、流量、优惠码及来源。
-- /review/{slug}/：计费分析与购买前确认条件。
-- /compare/：选择2–4个品牌；可查看所有档位、付款口径、配额和代码。
+- 飞猫云、Firefly机场、快狸的低门槛金额属于年付折合月价；84/96/120 元仅是按月均数乘 12 的预算演算，实际年度总额另看订单。
+- EdgeNova 为 86 元/年、200GB/月，及 168 元/年、450GB/月；月度配额不写成可提前用的年度总流量。
+- 飞V的 29 元档为 200GB 总配额；4.9 元档才是 100GB/月。
+- 梯子云 48 元档以表格的 350GB/月为准，没有把备注最高 500GB 当成本档权益。
+- 速界基础档保留约 150GB 的原始限定；光速云保留 148GB 精确值。
+- 优惠码保留大小写；没有折扣、有效期或适用范围的证据时，不自行计算优惠后价格。
 
-## 数据与修改
+线路、端口和 AI/流媒体功能按指定资料页的声明呈现。没有把来源网站的评分或测速记录改称机场翻实测。人民币月付预算表增加 28 个品牌，EdgeNova 的年付单独保留，其他三家年付月均档不混入普通月付。
 
-src/data/partner-brands.json 保存站长提供的名称、完整推广地址和优惠码，大小写和 #/ 邀请参数应原样保留。没有提供代码的17个品牌显示未提供，不从地址参数推断优惠码。
+品牌逐项完成清单：
 
-src/data/partner-plans.json 保存参考套餐，每档附参考来源，verified 为 false、reference 为 true。金额均为人民币，未应用优惠码。docs/partner-brand-sources.json 是本次摘录记录，docs/partner-plans.csv 是可用表格软件打开的UTF-8汇总。
+| 品牌 | 本轮选档重点 | 资料与分析 |
+| --- | --- | --- |
+| 隐形人 | 以设备数和 144GB / 350GB 两档划分主力用途 | /airport/yinxingren/ · /review/yinxingren/ |
+| 暮光网络 | 20 元门槛与 300GB 进阶档的差额比较 | /airport/muguang/ · /review/muguang/ |
+| 微风网络 Breezenet | 8 元 200GB 与 18 元 500GB 的低预算选择 | /airport/breezenet/ · /review/breezenet/ |
+| 飞猫云 | 区分约 7 元年付月均价和 16 元普通月付 | /airport/feimaoyun/ · /review/feimaoyun/ |
+| 大佬云 | 180GB 到 450GB 的配额和并发同时升级 | /airport/dalaocloud/ · /review/dalaocloud/ |
+| 飞V | 月付主力与不限时备用必须分开计算 | /airport/feiv/ · /review/feiv/ |
+| 梯子云 LadderCloud | 125GB 基础中转与 350GB 专线档的分界 | /airport/laddercloud/ · /review/laddercloud/ |
+| 浪网 WaveNet | 先验证自研客户端，再决定 150GB 或 360GB | /airport/wavenet/ · /review/wavenet/ |
+| 灵动云 | 100GB 轻用量与 260GB 持续用量的选择 | /airport/lingdongcloud/ · /review/lingdongcloud/ |
+| Firefly机场 | 60GB 年付月均档适合什么用量 | /airport/firefly/ · /review/firefly/ |
+| 灵猫 | 150GB 与 350GB 的 IPLC 套餐差异 | /airport/lingmao/ · /review/lingmao/ |
+| 闪跃 FlashLeap | 150GB 到 360GB 的专线档升级账本 | /airport/flashleap/ · /review/flashleap/ |
+| 无忧链接 | 19 元 100GB 与 36 元 260GB 的预算边界 | /airport/wuyou/ · /review/wuyou/ |
+| 跨界云 | 120GB 入门与 320GB 旗舰之间的实际差额 | /airport/kuajiecloud/ · /review/kuajiecloud/ |
+| 星岛梦 StarDream | 16 元双专线门槛与 240GB 标准档 | /airport/stardream/ · /review/stardream/ |
+| 光速云 LightSpeed | 148GB 公网隧道与 360GB 高配的比较 | /airport/lightspeed/ · /review/lightspeed/ |
+| 唯兔云（V2云） | 14.9 元 100GB 的低门槛与 240GB 进阶 | /airport/v2yun/ · /review/v2yun/ |
+| U1S1（有一说一） | 三网优化的描述应和 120GB / 300GB 分开看 | /airport/u1s1/ · /review/u1s1/ |
+| 极连云 | 14.4 元与 28 元双专线档如何取舍 | /airport/jiliancloud/ · /review/jiliancloud/ |
+| 全球云 | 经典中转 120GB 与海量 300GB 的同周期比较 | /airport/quanqiuyun/ · /review/quanqiuyun/ |
+| 光年梯 | 12.6 元 110GB 与 26 元 280GB 的配额台阶 | /airport/guangnianti/ · /review/guangnianti/ |
+| Sogo云 | 150GB / 350GB 与 5 台 / 8 台并发一起筛选 | /airport/sogoyun/ · /review/sogoyun/ |
+| 宇宙云 YuZhou | 60GB 起步档与 180GB 档的用量分界 | /airport/yuzhoucloud/ · /review/yuzhoucloud/ |
+| 二猫云 2mao | 15 元 120GB 与 30 元 280GB 的多地区选择 | /airport/ermaoyun/ · /review/ermaoyun/ |
+| 一翻云 1fly | 25 元专线入门与 45 元 350GB 旗舰档 | /airport/yifanyun/ · /review/yifanyun/ |
+| 边缘节点 EdgeNova | 86 元年付总额与每月 200GB 必须分栏 | /airport/edgenova/ · /review/edgenova/ |
+| 可信云 | 9 元 45GB 的小配额与 22 元 150GB | /airport/kexincloud/ · /review/kexincloud/ |
+| 速界 SuJie | 150GB 约数和一键客户端需求都要看清 | /airport/sujie/ · /review/sujie/ |
+| 快狸 KuaiLi | 30GB 年付月均档与 120GB 普通月付 | /airport/kuaili/ · /review/kuaili/ |
 
-period=month 表示月付；year 表示年付总额；year-equivalent 表示年付折合月价，年付总额未知时不自动乘12补造；one-time 表示一次性价格和总配额。trafficApprox 标记约数。年付总额和月度配额是两个不同周期。
-
-优惠码未验证折扣、截止日期、适用档位或是否仍生效。只有取得对应公开条款或结账证据后才补充，不假设全部通用。本文没有登录、注册、付款或兑换操作。
-
-## 来源与商业关系
-
-29个品牌价格及流量取自 https://jiediantuijian.shop/ 的公开参考表，整理于2026-10-21。不是官方确认价格，不能作为可下单金额保证。该参考站的性能、评分和解锁宣传未作为本站事实。原有5个品牌的官方资料来源单独保留。
-
-推广入口旁已披露可能获得佣金，外链标记 sponsored nofollow noopener noreferrer；全站页脚、编辑政策、隐私政策也已更新。复制按钮只在点击时写入可见优惠码，不读取剪贴板。
-
-## 验证
-
-运行 npm run check、npm run build、npm test；npm test 包含29品牌专项检查，核对所有品牌页和分析页的价格、配额、代码、完整推广链接、来源披露和付款周期。npm run audit:browser 检查比较工具、复制按钮、筛选、手机菜单、无障碍及三种尺寸。
+本轮只更新本地源文件及部署包，由站长自行部署。

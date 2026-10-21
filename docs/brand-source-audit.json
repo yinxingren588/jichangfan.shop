@@ -1,0 +1,1717 @@
+{
+  "date": "2026-10-21",
+  "confirmation": "Owner confirms the designated source prices and traffic; source specifications are attributed declarations, not our network measurements.",
+  "brands": [
+    {
+      "slug": "yinxingren",
+      "url": "https://jiediantuijian.shop/airport/yinxingren/",
+      "checkedAt": "2026-10-21",
+      "sha256": "db3bbd8c0d2aa6624c3fa59d9115df15fc9e2c90a7971a251ffdf94aa351a7f1",
+      "plans": {
+        "headers": [
+          "套餐名称",
+          "付款周期",
+          "套餐价格",
+          "月度可用流量",
+          "端口带宽",
+          "设备并发",
+          "备注说明"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "纯专线入门版",
+              "月付",
+              "¥24",
+              "144 GB",
+              "500 Mbps",
+              "5台设备",
+              "¥24/月起，144GB/月 IEPL纯专线，优惠码 yxr888"
+            ]
+          },
+          {
+            "cells": [
+              "纯专线主力版",
+              "月付",
+              "¥48",
+              "350 GB",
+              "1000 Mbps",
+              "8台设备",
+              "千兆大带宽，晚高峰零卡顿"
+            ]
+          }
+        ]
+      },
+      "specifications": [
+        {
+          "key": "线路架构",
+          "value": "IEPL纯专线"
+        },
+        {
+          "key": "支持加密协议",
+          "value": "Shadowsocks, Trojan, Hysteria2"
+        },
+        {
+          "key": "核心节点覆盖",
+          "value": "香港、台湾、日本、新加坡、美国、英国、韩国"
+        },
+        {
+          "key": "设备并发限制",
+          "value": "5-8台设备"
+        }
+      ]
+    },
+    {
+      "slug": "muguang",
+      "url": "https://jiediantuijian.shop/airport/muguang/",
+      "checkedAt": "2026-10-21",
+      "sha256": "dd72f5a17606f7746eb28d060471e2a2db45d8afc6d0ce6738924b355c0aa67c",
+      "plans": {
+        "headers": [
+          "套餐名称",
+          "付款周期",
+          "套餐价格",
+          "月度可用流量",
+          "端口带宽",
+          "设备并发",
+          "备注说明"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "专线基础月付",
+              "月付",
+              "¥20",
+              "120 GB",
+              "500 Mbps",
+              "4台设备",
+              "¥20/月起，120GB/月专线节点"
+            ]
+          },
+          {
+            "cells": [
+              "海量进阶月付",
+              "月付",
+              "¥38",
+              "300 GB",
+              "800 Mbps",
+              "6台设备",
+              "大流量支持，满足多设备并发"
+            ]
+          }
+        ]
+      },
+      "specifications": [
+        {
+          "key": "线路架构",
+          "value": "专线节点"
+        },
+        {
+          "key": "支持加密协议",
+          "value": "VLESS, Shadowsocks"
+        },
+        {
+          "key": "核心节点覆盖",
+          "value": "香港、台湾、日本、新加坡、美国、德国"
+        },
+        {
+          "key": "设备并发限制",
+          "value": "4-6台"
+        }
+      ]
+    },
+    {
+      "slug": "breezenet",
+      "url": "https://jiediantuijian.shop/airport/breezenet/",
+      "checkedAt": "2026-10-21",
+      "sha256": "a969d73fbff5ab43095df84cded8a7630a446b1e25e191054191eafad287a87e",
+      "plans": {
+        "headers": [
+          "套餐名称",
+          "付款周期",
+          "套餐价格",
+          "月度可用流量",
+          "端口带宽",
+          "设备并发",
+          "备注说明"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "微风入门版",
+              "月付",
+              "¥8",
+              "200 GB",
+              "500 Mbps",
+              "4台设备",
+              "¥8/月起，200GB超大流量，专属优惠码 weifeng90"
+            ]
+          },
+          {
+            "cells": [
+              "微风进阶版",
+              "月付",
+              "¥18",
+              "500 GB",
+              "1000 Mbps",
+              "6台设备",
+              "IEPL/IPLC高速专线，千兆原生IP解锁"
+            ]
+          }
+        ]
+      },
+      "specifications": [
+        {
+          "key": "线路架构",
+          "value": "IEPL/IPLC"
+        },
+        {
+          "key": "支持加密协议",
+          "value": "VLESS, Shadowsocks, Trojan"
+        },
+        {
+          "key": "核心节点覆盖",
+          "value": "香港、台湾、日本、新加坡、美国、英国"
+        },
+        {
+          "key": "设备并发限制",
+          "value": "4-6台"
+        }
+      ]
+    },
+    {
+      "slug": "feimaoyun",
+      "url": "https://jiediantuijian.shop/airport/feimaoyun/",
+      "checkedAt": "2026-10-21",
+      "sha256": "ec5f6e093f8f359817dac65b51e3c73158e6be7af02acfefd4e983004a0b3e8f",
+      "plans": {
+        "headers": [
+          "套餐名称",
+          "付款周期",
+          "套餐价格",
+          "月度可用流量",
+          "端口带宽",
+          "设备并发",
+          "备注说明"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "特惠年付折算",
+              "月付",
+              "¥7",
+              "150 GB",
+              "400 Mbps",
+              "4台设备",
+              "年付折算约 ¥7/月起，150GB流量，优惠码 flycat888"
+            ]
+          },
+          {
+            "cells": [
+              "畅享月付版",
+              "月付",
+              "¥16",
+              "350 GB",
+              "800 Mbps",
+              "6台设备",
+              "双线冗余入口智能调度"
+            ]
+          }
+        ]
+      },
+      "specifications": [
+        {
+          "key": "线路架构",
+          "value": "IEPL/IPLC / 优质中转线路"
+        },
+        {
+          "key": "支持加密协议",
+          "value": "Shadowsocks, V2Ray, Trojan"
+        },
+        {
+          "key": "核心节点覆盖",
+          "value": "香港、台湾、日本、新加坡、美国、韩国"
+        },
+        {
+          "key": "设备并发限制",
+          "value": "4-6台"
+        }
+      ]
+    },
+    {
+      "slug": "dalaocloud",
+      "url": "https://jiediantuijian.shop/airport/dalaocloud/",
+      "checkedAt": "2026-10-21",
+      "sha256": "4bbdd099533735df5489e11e539ca71e137fdc537dd25fd44032c108d2c5e32e",
+      "plans": {
+        "headers": [
+          "套餐名称",
+          "付款周期",
+          "套餐价格",
+          "月度可用流量",
+          "端口带宽",
+          "设备并发",
+          "备注说明"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "大佬轻享版",
+              "月付",
+              "¥18",
+              "180 GB",
+              "600 Mbps",
+              "5台设备",
+              "¥18/月起，180GB充沛流量"
+            ]
+          },
+          {
+            "cells": [
+              "大佬至尊版",
+              "月付",
+              "¥38",
+              "450 GB",
+              "1200 Mbps",
+              "8台设备",
+              "企业级SLA稳定保障"
+            ]
+          }
+        ]
+      },
+      "specifications": [
+        {
+          "key": "线路架构",
+          "value": "优质骨干中转 / 专线"
+        },
+        {
+          "key": "支持加密协议",
+          "value": "Shadowsocks, Trojan, Hysteria2"
+        },
+        {
+          "key": "核心节点覆盖",
+          "value": "香港、台湾、日本、新加坡、美国、英国、德国"
+        },
+        {
+          "key": "设备并发限制",
+          "value": "5-8台"
+        }
+      ]
+    },
+    {
+      "slug": "feiv",
+      "url": "https://jiediantuijian.shop/airport/feiv/",
+      "checkedAt": "2026-10-21",
+      "sha256": "9c814d96853763eaac3d5b97df42f16c1fe2a2c81d295d5e9c6bb5fb657310ab",
+      "plans": {
+        "headers": [
+          "套餐名称",
+          "付款周期",
+          "套餐价格",
+          "月度可用流量",
+          "端口带宽",
+          "设备并发",
+          "备注说明"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "轻量入门版",
+              "月付",
+              "¥4.9",
+              "100 GB",
+              "300 Mbps",
+              "3台设备",
+              "¥4.9/月起，突破性极低起步价"
+            ]
+          },
+          {
+            "cells": [
+              "不限时海量版",
+              "不限时",
+              "¥29",
+              "200 GB",
+              "500 Mbps",
+              "5台设备",
+              "流量永久不清零，极低成本应急备用"
+            ]
+          }
+        ]
+      },
+      "specifications": [
+        {
+          "key": "线路架构",
+          "value": "优化线路"
+        },
+        {
+          "key": "支持加密协议",
+          "value": "Trojan, V2Ray"
+        },
+        {
+          "key": "核心节点覆盖",
+          "value": "香港、台湾、日本、新加坡、美国"
+        },
+        {
+          "key": "设备并发限制",
+          "value": "3-5台"
+        }
+      ]
+    },
+    {
+      "slug": "laddercloud",
+      "url": "https://jiediantuijian.shop/airport/laddercloud/",
+      "checkedAt": "2026-10-21",
+      "sha256": "ee3e80782299d8c4f6358f7860a733c24855878cb698e71858aac6f6c2e6311d",
+      "plans": {
+        "headers": [
+          "套餐名称",
+          "付款周期",
+          "套餐价格",
+          "月度可用流量",
+          "端口带宽",
+          "设备并发",
+          "备注说明"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "中转基础版",
+              "月付",
+              "¥25",
+              "125 GB",
+              "500 Mbps",
+              "4台设备",
+              "¥25/月起，125GB高速中转"
+            ]
+          },
+          {
+            "cells": [
+              "海量专线版",
+              "月付",
+              "¥48",
+              "350 GB",
+              "1000 Mbps",
+              "6台设备",
+              "最高可达500GB海量方案"
+            ]
+          }
+        ]
+      },
+      "specifications": [
+        {
+          "key": "线路架构",
+          "value": "优化中转/专线"
+        },
+        {
+          "key": "支持加密协议",
+          "value": "Shadowsocks, Trojan, V2Ray"
+        },
+        {
+          "key": "核心节点覆盖",
+          "value": "香港、台湾、日本、新加坡、美国、英国"
+        },
+        {
+          "key": "设备并发限制",
+          "value": "4-6台"
+        }
+      ]
+    },
+    {
+      "slug": "wavenet",
+      "url": "https://jiediantuijian.shop/airport/wavenet/",
+      "checkedAt": "2026-10-21",
+      "sha256": "30d684c60326d67d39388db0acea006f5479e4c7ca43700b8b8ec67caad41e95",
+      "plans": {
+        "headers": [
+          "套餐名称",
+          "付款周期",
+          "套餐价格",
+          "月度可用流量",
+          "端口带宽",
+          "设备并发",
+          "备注说明"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "自研优化版",
+              "月付",
+              "¥30",
+              "150 GB",
+              "600 Mbps",
+              "5台设备",
+              "¥30/月起，150GB/月自研客户端优化线路"
+            ]
+          },
+          {
+            "cells": [
+              "自研旗舰版",
+              "月付",
+              "¥58",
+              "360 GB",
+              "1000 Mbps",
+              "8台设备",
+              "VLESS先进协议高流量方案"
+            ]
+          }
+        ]
+      },
+      "specifications": [
+        {
+          "key": "线路架构",
+          "value": "自研客户端优化线路"
+        },
+        {
+          "key": "支持加密协议",
+          "value": "VLESS, Trojan"
+        },
+        {
+          "key": "核心节点覆盖",
+          "value": "香港、台湾、日本、新加坡、美国、英国、德国"
+        },
+        {
+          "key": "设备并发限制",
+          "value": "5-8台"
+        }
+      ]
+    },
+    {
+      "slug": "lingdongcloud",
+      "url": "https://jiediantuijian.shop/airport/lingdongcloud/",
+      "checkedAt": "2026-10-21",
+      "sha256": "01ed354fa4e1d37fd8b8990e1de865f785db8f000df1cbe4ef5d89a888f12323",
+      "plans": {
+        "headers": [
+          "套餐名称",
+          "付款周期",
+          "套餐价格",
+          "月度可用流量",
+          "端口带宽",
+          "设备并发",
+          "备注说明"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "均衡基础版",
+              "月付",
+              "¥20",
+              "100 GB",
+              "400 Mbps",
+              "4台设备",
+              "¥20/月起，100GB/月起均衡配置"
+            ]
+          },
+          {
+            "cells": [
+              "畅享月付版",
+              "月付",
+              "¥36",
+              "260 GB",
+              "800 Mbps",
+              "6台设备",
+              "Trojan安全协议稳定防封"
+            ]
+          }
+        ]
+      },
+      "specifications": [
+        {
+          "key": "线路架构",
+          "value": "优化节点"
+        },
+        {
+          "key": "支持加密协议",
+          "value": "Trojan, Shadowsocks"
+        },
+        {
+          "key": "核心节点覆盖",
+          "value": "香港、台湾、日本、新加坡、美国"
+        },
+        {
+          "key": "设备并发限制",
+          "value": "4-6台"
+        }
+      ]
+    },
+    {
+      "slug": "firefly",
+      "url": "https://jiediantuijian.shop/airport/firefly/",
+      "checkedAt": "2026-10-21",
+      "sha256": "d15eeb202b04122490c586d5623424b107bacc7202eea2bbe0bf22358cd87fae",
+      "plans": {
+        "headers": [
+          "套餐名称",
+          "付款周期",
+          "套餐价格",
+          "月度可用流量",
+          "端口带宽",
+          "设备并发",
+          "备注说明"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "特惠年付折算",
+              "月付",
+              "¥8",
+              "60 GB",
+              "300 Mbps",
+              "3台设备",
+              "年付折算约 ¥8/月，60GB/月，优惠码 firefly"
+            ]
+          },
+          {
+            "cells": [
+              "标准月付版",
+              "月付",
+              "¥16",
+              "160 GB",
+              "600 Mbps",
+              "5台设备",
+              "优质线路与VLESS协议支持"
+            ]
+          }
+        ]
+      },
+      "specifications": [
+        {
+          "key": "线路架构",
+          "value": "优质线路"
+        },
+        {
+          "key": "支持加密协议",
+          "value": "VLESS, Trojan"
+        },
+        {
+          "key": "核心节点覆盖",
+          "value": "香港、台湾、日本、新加坡、美国"
+        },
+        {
+          "key": "设备并发限制",
+          "value": "3-5台"
+        }
+      ]
+    },
+    {
+      "slug": "lingmao",
+      "url": "https://jiediantuijian.shop/airport/lingmao/",
+      "checkedAt": "2026-10-21",
+      "sha256": "cb6f5130751de45c56be6a67bea009f6a3303e40809b488fcec4fcb4a242dff9",
+      "plans": {
+        "headers": [
+          "套餐名称",
+          "付款周期",
+          "套餐价格",
+          "月度可用流量",
+          "端口带宽",
+          "设备并发",
+          "备注说明"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "IPLC专线版",
+              "月付",
+              "¥25",
+              "150 GB",
+              "500 Mbps",
+              "4台设备",
+              "¥25/月起，150GB/月真实IPLC专线"
+            ]
+          },
+          {
+            "cells": [
+              "旗舰大流量版",
+              "月付",
+              "¥48",
+              "350 GB",
+              "1000 Mbps",
+              "6台设备",
+              "全节点原生IP流媒体与AI解锁"
+            ]
+          }
+        ]
+      },
+      "specifications": [
+        {
+          "key": "线路架构",
+          "value": "IPLC"
+        },
+        {
+          "key": "支持加密协议",
+          "value": "V2Ray, Shadowsocks"
+        },
+        {
+          "key": "核心节点覆盖",
+          "value": "香港、台湾、日本、新加坡、美国、英国"
+        },
+        {
+          "key": "设备并发限制",
+          "value": "4-6台"
+        }
+      ]
+    },
+    {
+      "slug": "flashleap",
+      "url": "https://jiediantuijian.shop/airport/flashleap/",
+      "checkedAt": "2026-10-21",
+      "sha256": "bdab5d8cc422be0aa1e2d9dc3732f15dd9f8f166059c62757d4b59639e912730",
+      "plans": {
+        "headers": [
+          "套餐名称",
+          "付款周期",
+          "套餐价格",
+          "月度可用流量",
+          "端口带宽",
+          "设备并发",
+          "备注说明"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "纯专线入门版",
+              "月付",
+              "¥24",
+              "150 GB",
+              "500 Mbps",
+              "4台设备",
+              "¥24/月起，150GB/月 IPLC纯专线，优惠码 shanyue"
+            ]
+          },
+          {
+            "cells": [
+              "纯专线进阶版",
+              "月付",
+              "¥46",
+              "360 GB",
+              "1000 Mbps",
+              "6台设备",
+              "低延迟游戏与4K流媒体极致体验"
+            ]
+          }
+        ]
+      },
+      "specifications": [
+        {
+          "key": "线路架构",
+          "value": "IPLC纯专线"
+        },
+        {
+          "key": "支持加密协议",
+          "value": "Shadowsocks, Trojan, V2Ray"
+        },
+        {
+          "key": "核心节点覆盖",
+          "value": "香港、台湾、日本、新加坡、美国"
+        },
+        {
+          "key": "设备并发限制",
+          "value": "4-6台"
+        }
+      ]
+    },
+    {
+      "slug": "wuyou",
+      "url": "https://jiediantuijian.shop/airport/wuyou/",
+      "checkedAt": "2026-10-21",
+      "sha256": "b5759836eff745262b4aa8fe47cb8d18318c058cf35649868379195e1384f66d",
+      "plans": {
+        "headers": [
+          "套餐名称",
+          "付款周期",
+          "套餐价格",
+          "月度可用流量",
+          "端口带宽",
+          "设备并发",
+          "备注说明"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "无忧基础版",
+              "月付",
+              "¥19",
+              "100 GB",
+              "400 Mbps",
+              "4台设备",
+              "¥19/月起，100GB/月真实IPLC专线，优惠码 wuyou666"
+            ]
+          },
+          {
+            "cells": [
+              "无忧进阶版",
+              "月付",
+              "¥36",
+              "260 GB",
+              "800 Mbps",
+              "6台设备",
+              "Shadowsocks / V2Ray多协议支持"
+            ]
+          }
+        ]
+      },
+      "specifications": [
+        {
+          "key": "线路架构",
+          "value": "IPLC"
+        },
+        {
+          "key": "支持加密协议",
+          "value": "Shadowsocks, V2Ray"
+        },
+        {
+          "key": "核心节点覆盖",
+          "value": "香港、台湾、日本、新加坡、美国"
+        },
+        {
+          "key": "设备并发限制",
+          "value": "4-6台"
+        }
+      ]
+    },
+    {
+      "slug": "kuajiecloud",
+      "url": "https://jiediantuijian.shop/airport/kuajiecloud/",
+      "checkedAt": "2026-10-21",
+      "sha256": "07936e85cba23bacdf209cff26d76392271c9eb8776715232391da8cd7a9bff8",
+      "plans": {
+        "headers": [
+          "套餐名称",
+          "付款周期",
+          "套餐价格",
+          "月度可用流量",
+          "端口带宽",
+          "设备并发",
+          "备注说明"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "全专线基础版",
+              "月付",
+              "¥20",
+              "120 GB",
+              "500 Mbps",
+              "4台设备",
+              "¥20/月起，120GB/月全专线架构"
+            ]
+          },
+          {
+            "cells": [
+              "全专线旗舰版",
+              "月付",
+              "¥42",
+              "320 GB",
+              "1000 Mbps",
+              "6台设备",
+              "全专线架构Shadowsocks协议"
+            ]
+          }
+        ]
+      },
+      "specifications": [
+        {
+          "key": "线路架构",
+          "value": "全专线架构"
+        },
+        {
+          "key": "支持加密协议",
+          "value": "Shadowsocks, Trojan"
+        },
+        {
+          "key": "核心节点覆盖",
+          "value": "香港、台湾、日本、新加坡、美国、英国"
+        },
+        {
+          "key": "设备并发限制",
+          "value": "4-6台"
+        }
+      ]
+    },
+    {
+      "slug": "stardream",
+      "url": "https://jiediantuijian.shop/airport/stardream/",
+      "checkedAt": "2026-10-21",
+      "sha256": "7c5d4df17ac70d10f8c371a3d12dd85ceb02188d1f3bd00e33886f2c1a84463f",
+      "plans": {
+        "headers": [
+          "套餐名称",
+          "付款周期",
+          "套餐价格",
+          "月度可用流量",
+          "端口带宽",
+          "设备并发",
+          "备注说明"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "双专线特惠版",
+              "月付",
+              "¥16",
+              "100 GB",
+              "400 Mbps",
+              "4台设备",
+              "¥16/月起，100GB/月双专线，优惠码 nmw888"
+            ]
+          },
+          {
+            "cells": [
+              "双专线标准版",
+              "月付",
+              "¥32",
+              "240 GB",
+              "800 Mbps",
+              "6台设备",
+              "IPLC / IEPL双线冗余调度"
+            ]
+          }
+        ]
+      },
+      "specifications": [
+        {
+          "key": "线路架构",
+          "value": "IPLC / IEPL"
+        },
+        {
+          "key": "支持加密协议",
+          "value": "V2Ray, Shadowsocks"
+        },
+        {
+          "key": "核心节点覆盖",
+          "value": "香港、台湾、日本、新加坡、美国"
+        },
+        {
+          "key": "设备并发限制",
+          "value": "4-6台"
+        }
+      ]
+    },
+    {
+      "slug": "lightspeed",
+      "url": "https://jiediantuijian.shop/airport/lightspeed/",
+      "checkedAt": "2026-10-21",
+      "sha256": "90c82b8e90bb875f1a186bed085a201c1b6e5c9bf506cdd99f2a1b554ca0c097",
+      "plans": {
+        "headers": [
+          "套餐名称",
+          "付款周期",
+          "套餐价格",
+          "月度可用流量",
+          "端口带宽",
+          "设备并发",
+          "备注说明"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "隧道基础版",
+              "月付",
+              "¥23",
+              "148 GB",
+              "500 Mbps",
+              "4台设备",
+              "¥23/月起，148GB公网隧道中转，优惠码 jichangcha09"
+            ]
+          },
+          {
+            "cells": [
+              "隧道高配版",
+              "月付",
+              "¥42",
+              "360 GB",
+              "1000 Mbps",
+              "6台设备",
+              "高度灵活套餐，大带宽中转"
+            ]
+          }
+        ]
+      },
+      "specifications": [
+        {
+          "key": "线路架构",
+          "value": "公网隧道中转"
+        },
+        {
+          "key": "支持加密协议",
+          "value": "Shadowsocks, Trojan"
+        },
+        {
+          "key": "核心节点覆盖",
+          "value": "香港、台湾、日本、新加坡、美国、韩国"
+        },
+        {
+          "key": "设备并发限制",
+          "value": "4-6台"
+        }
+      ]
+    },
+    {
+      "slug": "v2yun",
+      "url": "https://jiediantuijian.shop/airport/v2yun/",
+      "checkedAt": "2026-10-21",
+      "sha256": "702e43652a715b4650200d035b439517c34d66462961868844d93979b3381673",
+      "plans": {
+        "headers": [
+          "套餐名称",
+          "付款周期",
+          "套餐价格",
+          "月度可用流量",
+          "端口带宽",
+          "设备并发",
+          "备注说明"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "IPLC超值版",
+              "月付",
+              "¥14.9",
+              "100 GB",
+              "400 Mbps",
+              "4台设备",
+              "¥14.9/月超低起步，100GB/月真实IPLC专线，优惠码 rabbit"
+            ]
+          },
+          {
+            "cells": [
+              "IPLC进阶版",
+              "月付",
+              "¥28",
+              "240 GB",
+              "800 Mbps",
+              "6台设备",
+              "VLESS / SS双协议支持"
+            ]
+          }
+        ]
+      },
+      "specifications": [
+        {
+          "key": "线路架构",
+          "value": "IPLC专线"
+        },
+        {
+          "key": "支持加密协议",
+          "value": "VLESS, Shadowsocks"
+        },
+        {
+          "key": "核心节点覆盖",
+          "value": "香港、台湾、日本、新加坡、美国"
+        },
+        {
+          "key": "设备并发限制",
+          "value": "4-6台"
+        }
+      ]
+    },
+    {
+      "slug": "u1s1",
+      "url": "https://jiediantuijian.shop/airport/u1s1/",
+      "checkedAt": "2026-10-21",
+      "sha256": "46d5ff9b3a412843ab7ffa05f15ac9d2346f02ed75be39394615508d7981885c",
+      "plans": {
+        "headers": [
+          "套餐名称",
+          "付款周期",
+          "套餐价格",
+          "月度可用流量",
+          "端口带宽",
+          "设备并发",
+          "备注说明"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "三网优化基础版",
+              "月付",
+              "¥20",
+              "120 GB",
+              "500 Mbps",
+              "4台设备",
+              "¥20/月起，120GB/月 BGP三网优化 + IEPL，优惠码 U1S1"
+            ]
+          },
+          {
+            "cells": [
+              "三网优化旗舰版",
+              "月付",
+              "¥38",
+              "300 GB",
+              "1000 Mbps",
+              "6台设备",
+              "BGP国内入口多线智能分流"
+            ]
+          }
+        ]
+      },
+      "specifications": [
+        {
+          "key": "线路架构",
+          "value": "BGP三网优化 + IEPL"
+        },
+        {
+          "key": "支持加密协议",
+          "value": "Shadowsocks, Trojan"
+        },
+        {
+          "key": "核心节点覆盖",
+          "value": "香港、台湾、日本、新加坡、美国"
+        },
+        {
+          "key": "设备并发限制",
+          "value": "4-6台"
+        }
+      ]
+    },
+    {
+      "slug": "jiliancloud",
+      "url": "https://jiediantuijian.shop/airport/jiliancloud/",
+      "checkedAt": "2026-10-21",
+      "sha256": "7521e82f55148f82b92ee9fffcb0282627fe5ba359f64f770ef0360fa80f94f4",
+      "plans": {
+        "headers": [
+          "套餐名称",
+          "付款周期",
+          "套餐价格",
+          "月度可用流量",
+          "端口带宽",
+          "设备并发",
+          "备注说明"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "亲民双专线版",
+              "月付",
+              "¥14.4",
+              "100 GB",
+              "400 Mbps",
+              "4台设备",
+              "¥14.4/月亲民门槛，100GB/月 IPLC / IEPL双专线"
+            ]
+          },
+          {
+            "cells": [
+              "双专线增强版",
+              "月付",
+              "¥28",
+              "250 GB",
+              "800 Mbps",
+              "6台设备",
+              "自研/通用多协议丰富支持"
+            ]
+          }
+        ]
+      },
+      "specifications": [
+        {
+          "key": "线路架构",
+          "value": "IPLC / IEPL"
+        },
+        {
+          "key": "支持加密协议",
+          "value": "Shadowsocks, Trojan, V2Ray"
+        },
+        {
+          "key": "核心节点覆盖",
+          "value": "香港、台湾、日本、新加坡、美国"
+        },
+        {
+          "key": "设备并发限制",
+          "value": "4-6台"
+        }
+      ]
+    },
+    {
+      "slug": "quanqiuyun",
+      "url": "https://jiediantuijian.shop/airport/quanqiuyun/",
+      "checkedAt": "2026-10-21",
+      "sha256": "7dc945ba48221c253e42b05a9328d47dd6c8cc775b0cd70afc38ef15ce8d71d0",
+      "plans": {
+        "headers": [
+          "套餐名称",
+          "付款周期",
+          "套餐价格",
+          "月度可用流量",
+          "端口带宽",
+          "设备并发",
+          "备注说明"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "中转经典版",
+              "月付",
+              "¥20",
+              "120 GB",
+              "500 Mbps",
+              "4台设备",
+              "约 ¥20/月起，120GB/月经典中转优化，优惠码 tt88"
+            ]
+          },
+          {
+            "cells": [
+              "中转海量版",
+              "月付",
+              "¥38",
+              "300 GB",
+              "800 Mbps",
+              "6台设备",
+              "VLESS / Trojan双协议"
+            ]
+          }
+        ]
+      },
+      "specifications": [
+        {
+          "key": "线路架构",
+          "value": "中转优化"
+        },
+        {
+          "key": "支持加密协议",
+          "value": "VLESS, Trojan"
+        },
+        {
+          "key": "核心节点覆盖",
+          "value": "香港、台湾、日本、新加坡、美国"
+        },
+        {
+          "key": "设备并发限制",
+          "value": "4-6台"
+        }
+      ]
+    },
+    {
+      "slug": "guangnianti",
+      "url": "https://jiediantuijian.shop/airport/guangnianti/",
+      "checkedAt": "2026-10-21",
+      "sha256": "6a4f5a20c5b147ed9fc2b0e62038892a9d7637a5142e39dee1c83e95ac7c293d",
+      "plans": {
+        "headers": [
+          "套餐名称",
+          "付款周期",
+          "套餐价格",
+          "月度可用流量",
+          "端口带宽",
+          "设备并发",
+          "备注说明"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "击穿底价版",
+              "月付",
+              "¥12.6",
+              "110 GB",
+              "400 Mbps",
+              "4台设备",
+              "¥12.6击穿底价，110GB/月高质量IEPL专线"
+            ]
+          },
+          {
+            "cells": [
+              "大流量专线版",
+              "月付",
+              "¥26",
+              "280 GB",
+              "800 Mbps",
+              "6台设备",
+              "Shadowsocks轻量低延迟协议"
+            ]
+          }
+        ]
+      },
+      "specifications": [
+        {
+          "key": "线路架构",
+          "value": "IEPL专线"
+        },
+        {
+          "key": "支持加密协议",
+          "value": "Shadowsocks, Trojan"
+        },
+        {
+          "key": "核心节点覆盖",
+          "value": "香港、台湾、日本、新加坡、美国"
+        },
+        {
+          "key": "设备并发限制",
+          "value": "4-6台"
+        }
+      ]
+    },
+    {
+      "slug": "sogoyun",
+      "url": "https://jiediantuijian.shop/airport/sogoyun/",
+      "checkedAt": "2026-10-21",
+      "sha256": "e48a8a085e10de849397c832bdd95ec252ba0e95bb31ea9dde7eb86613c8b8a2",
+      "plans": {
+        "headers": [
+          "套餐名称",
+          "付款周期",
+          "套餐价格",
+          "月度可用流量",
+          "端口带宽",
+          "设备并发",
+          "备注说明"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "企业专线版",
+              "月付",
+              "¥25",
+              "150 GB",
+              "600 Mbps",
+              "5台设备",
+              "¥25/月起，150GB/月 IEPL企业级专线"
+            ]
+          },
+          {
+            "cells": [
+              "企业尊享版",
+              "月付",
+              "¥46",
+              "350 GB",
+              "1000 Mbps",
+              "8台设备",
+              "自研协议/通用协议双支持"
+            ]
+          }
+        ]
+      },
+      "specifications": [
+        {
+          "key": "线路架构",
+          "value": "IEPL企业级专线"
+        },
+        {
+          "key": "支持加密协议",
+          "value": "Shadowsocks, Trojan, VLESS"
+        },
+        {
+          "key": "核心节点覆盖",
+          "value": "香港、台湾、日本、新加坡、美国、英国"
+        },
+        {
+          "key": "设备并发限制",
+          "value": "5-8台"
+        }
+      ]
+    },
+    {
+      "slug": "yuzhoucloud",
+      "url": "https://jiediantuijian.shop/airport/yuzhoucloud/",
+      "checkedAt": "2026-10-21",
+      "sha256": "523d6e50a18dd6f67fb98f36d896cab0effd6fa4dcdb76903dd545d6109c7074",
+      "plans": {
+        "headers": [
+          "套餐名称",
+          "付款周期",
+          "套餐价格",
+          "月度可用流量",
+          "端口带宽",
+          "设备并发",
+          "备注说明"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "双线超值版",
+              "月付",
+              "¥14.9",
+              "60 GB",
+              "400 Mbps",
+              "4台设备",
+              "¥14.9/月起，60GB/月起双专线，优惠码 YUZHOU553"
+            ]
+          },
+          {
+            "cells": [
+              "双线畅享版",
+              "月付",
+              "¥28",
+              "180 GB",
+              "800 Mbps",
+              "6台设备",
+              "IPLC / IEPL双专线架构稳定护航"
+            ]
+          }
+        ]
+      },
+      "specifications": [
+        {
+          "key": "线路架构",
+          "value": "IPLC / IEPL"
+        },
+        {
+          "key": "支持加密协议",
+          "value": "Shadowsocks, Trojan"
+        },
+        {
+          "key": "核心节点覆盖",
+          "value": "香港、台湾、日本、新加坡、美国"
+        },
+        {
+          "key": "设备并发限制",
+          "value": "4-6台"
+        }
+      ]
+    },
+    {
+      "slug": "ermaoyun",
+      "url": "https://jiediantuijian.shop/airport/ermaoyun/",
+      "checkedAt": "2026-10-21",
+      "sha256": "b6a121b1c3fddcbb0914ee772c25d4e3c3fd56b4bb7311a2a8da897fd9a838b7",
+      "plans": {
+        "headers": [
+          "套餐名称",
+          "付款周期",
+          "套餐价格",
+          "月度可用流量",
+          "端口带宽",
+          "设备并发",
+          "备注说明"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "多节点基础版",
+              "月付",
+              "¥15",
+              "120 GB",
+              "400 Mbps",
+              "4台设备",
+              "约 ¥15/月起，多种套餐可选，多节点覆盖"
+            ]
+          },
+          {
+            "cells": [
+              "多节点大流量版",
+              "月付",
+              "¥30",
+              "280 GB",
+              "800 Mbps",
+              "6台设备",
+              "多地区节点无缝切换"
+            ]
+          }
+        ]
+      },
+      "specifications": [
+        {
+          "key": "线路架构",
+          "value": "多节点覆盖"
+        },
+        {
+          "key": "支持加密协议",
+          "value": "Shadowsocks, V2Ray"
+        },
+        {
+          "key": "核心节点覆盖",
+          "value": "香港、台湾、日本、新加坡、美国、韩国"
+        },
+        {
+          "key": "设备并发限制",
+          "value": "4-6台"
+        }
+      ]
+    },
+    {
+      "slug": "yifanyun",
+      "url": "https://jiediantuijian.shop/airport/yifanyun/",
+      "checkedAt": "2026-10-21",
+      "sha256": "8e9b21a2a582769e103262c1fb1421bb69c6cd0ca4a0843f33e2f87554fa9b19",
+      "plans": {
+        "headers": [
+          "套餐名称",
+          "付款周期",
+          "套餐价格",
+          "月度可用流量",
+          "端口带宽",
+          "设备并发",
+          "备注说明"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "专线畅行版",
+              "月付",
+              "¥25",
+              "150 GB",
+              "500 Mbps",
+              "4台设备",
+              "¥25/月起，150GB/月专线节点"
+            ]
+          },
+          {
+            "cells": [
+              "专线旗舰版",
+              "月付",
+              "¥45",
+              "350 GB",
+              "1000 Mbps",
+              "6台设备",
+              "主流协议高速稳定传输"
+            ]
+          }
+        ]
+      },
+      "specifications": [
+        {
+          "key": "线路架构",
+          "value": "专线节点"
+        },
+        {
+          "key": "支持加密协议",
+          "value": "VLESS, Shadowsocks"
+        },
+        {
+          "key": "核心节点覆盖",
+          "value": "香港、台湾、日本、新加坡、美国"
+        },
+        {
+          "key": "设备并发限制",
+          "value": "4-6台"
+        }
+      ]
+    },
+    {
+      "slug": "edgenova",
+      "url": "https://jiediantuijian.shop/airport/edgenova/",
+      "checkedAt": "2026-10-21",
+      "sha256": "9524e542074bf34163a3cbf68ea609a6d8a387aa136d85b98f136a2c9ccfec24",
+      "plans": {
+        "headers": [
+          "套餐名称",
+          "付款周期",
+          "套餐价格",
+          "月度可用流量",
+          "端口带宽",
+          "设备并发",
+          "备注说明"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "年付大流量版",
+              "年付",
+              "¥86",
+              "200 GB",
+              "500 Mbps",
+              "5台设备",
+              "约 ¥86/年起（折合月付约 ¥7.2/月），大流量IEPL专线直连"
+            ]
+          },
+          {
+            "cells": [
+              "进阶专线版",
+              "年付",
+              "¥168",
+              "450 GB",
+              "1000 Mbps",
+              "8台设备",
+              "专用客户端支持与高带宽保障"
+            ]
+          }
+        ]
+      },
+      "specifications": [
+        {
+          "key": "线路架构",
+          "value": "IEPL专线直连"
+        },
+        {
+          "key": "支持加密协议",
+          "value": "Shadowsocks, Trojan"
+        },
+        {
+          "key": "核心节点覆盖",
+          "value": "香港、台湾、日本、新加坡、美国"
+        },
+        {
+          "key": "设备并发限制",
+          "value": "5-8台"
+        }
+      ]
+    },
+    {
+      "slug": "kexincloud",
+      "url": "https://jiediantuijian.shop/airport/kexincloud/",
+      "checkedAt": "2026-10-21",
+      "sha256": "3cfbd7b0fcf339d8c638cc5a21282a573ab2feaa0919ecc32256851f3f8d9ad3",
+      "plans": {
+        "headers": [
+          "套餐名称",
+          "付款周期",
+          "套餐价格",
+          "月度可用流量",
+          "端口带宽",
+          "设备并发",
+          "备注说明"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "IPLC特惠版",
+              "月付",
+              "¥9",
+              "45 GB",
+              "300 Mbps",
+              "3台设备",
+              "¥9/月起，45GB/月真实IPLC专线"
+            ]
+          },
+          {
+            "cells": [
+              "IPLC标准版",
+              "月付",
+              "¥22",
+              "150 GB",
+              "600 Mbps",
+              "5台设备",
+              "低门槛纯内网专线保障"
+            ]
+          }
+        ]
+      },
+      "specifications": [
+        {
+          "key": "线路架构",
+          "value": "IPLC"
+        },
+        {
+          "key": "支持加密协议",
+          "value": "Shadowsocks, Trojan"
+        },
+        {
+          "key": "核心节点覆盖",
+          "value": "香港、台湾、日本、新加坡、美国"
+        },
+        {
+          "key": "设备并发限制",
+          "value": "3-5台"
+        }
+      ]
+    },
+    {
+      "slug": "sujie",
+      "url": "https://jiediantuijian.shop/airport/sujie/",
+      "checkedAt": "2026-10-21",
+      "sha256": "12d7ec103fdd1736e94a697ed11810e662417f6a1553990b47f2e1732fa127a0",
+      "plans": {
+        "headers": [
+          "套餐名称",
+          "付款周期",
+          "套餐价格",
+          "月度可用流量",
+          "端口带宽",
+          "设备并发",
+          "备注说明"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "新手优化版",
+              "月付",
+              "¥25",
+              "150 GB",
+              "500 Mbps",
+              "4台设备",
+              "¥25/月起，约150GB按套餐而定，新手优化线路"
+            ]
+          },
+          {
+            "cells": [
+              "极速畅联版",
+              "月付",
+              "¥45",
+              "350 GB",
+              "1000 Mbps",
+              "6台设备",
+              "官方客户端一键连接零门槛"
+            ]
+          }
+        ]
+      },
+      "specifications": [
+        {
+          "key": "线路架构",
+          "value": "新手优化线路"
+        },
+        {
+          "key": "支持加密协议",
+          "value": "Shadowsocks, Trojan"
+        },
+        {
+          "key": "核心节点覆盖",
+          "value": "香港、台湾、日本、新加坡、美国"
+        },
+        {
+          "key": "设备并发限制",
+          "value": "4-6台"
+        }
+      ]
+    },
+    {
+      "slug": "kuaili",
+      "url": "https://jiediantuijian.shop/airport/kuaili/",
+      "checkedAt": "2026-10-21",
+      "sha256": "82059b04848c1541490f95472b940ddb299e7210106a743c0af9b6daeb8c31d7",
+      "plans": {
+        "headers": [
+          "套餐名称",
+          "付款周期",
+          "套餐价格",
+          "月度可用流量",
+          "端口带宽",
+          "设备并发",
+          "备注说明"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "IEPL轻量年付折算",
+              "月付",
+              "¥10",
+              "30 GB",
+              "300 Mbps",
+              "3台设备",
+              "年付折算约 ¥10/月起，30GB/月 IEPL专线"
+            ]
+          },
+          {
+            "cells": [
+              "IEPL标准版",
+              "月付",
+              "¥24",
+              "120 GB",
+              "600 Mbps",
+              "5台设备",
+              "自研客户端极简上手体验"
+            ]
+          }
+        ]
+      },
+      "specifications": [
+        {
+          "key": "线路架构",
+          "value": "IEPL专线"
+        },
+        {
+          "key": "支持加密协议",
+          "value": "Shadowsocks, Trojan"
+        },
+        {
+          "key": "核心节点覆盖",
+          "value": "香港、台湾、日本、新加坡、美国"
+        },
+        {
+          "key": "设备并发限制",
+          "value": "3-5台"
+        }
+      ]
+    }
+  ]
+}

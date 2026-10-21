@@ -10,50 +10,49 @@ primaryKeyword: "vpn推荐"
 batch: 5
 order: 91
 related: ["practical-windows-update-window","practical-windows-kill-switch"]
-sources: [{"title":"Microsoft：Windows VPN 连接说明","url":"https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows"},{"title":"Mullvad：官方桌面应用使用说明","url":"https://mullvad.net/en/help/using-mullvad-vpn-app"},{"title":"WireGuard：官方安装入口","url":"https://www.wireguard.com/install/"}]
+sources: [{"title": "Mullvad 官方项目：日志与遥测说明", "url": "https://github.com/mullvad/mullvadvpn-app/blob/main/docs/logging-and-telemetry.md"}, {"title": "Microsoft：Get-NetTCPConnection 参数与示例", "url": "https://learn.microsoft.com/en-us/powershell/module/nettcpip/get-nettcpconnection"}]
 draft: false
 ---
 
-使用产品提供的诊断方式，记录错误发生时点，并在发送前清除凭据和个人信息。
+给客服的 Windows 日志应围绕一次明确失败，保留时间、错误和必要环境，同时移除账户与连接凭据。完整用户目录、浏览记录和所有配置通常远超排错需要；先阅读客户端自己的日志导出说明，再决定导出哪一个时间段。
 
-## 关键判断
+## 具体检查步骤
 
-日志越多不一定越有用。对应故障时间的一小段和复现步骤，通常更利于缩小问题范围。
+1. 记下 Windows 版本、客户端版本、接入网络、失败时刻和最短复现动作。若一次失败约在 20:15，优先整理这段前后的日志，并注明时区，避免让客服在数天记录里猜测。
 
-## 三步检查
+2. 使用应用内的官方导出入口；没有导出功能时，向支持人员确认具体日志位置和文件名。先复制到单独文件夹再处理，保留原件供自己复核，不擅自上传系统诊断整包。
 
-### 1. 只复现与问题有关的任务
+3. 在副本中查找订阅 URL、token、password、私钥、二维码、邮箱和内部地址。只遮盖敏感值，保留错误码、字段名和先后顺序；完成后检查压缩包里是否夹带配置或旧截图。
 
-先写出本次要验证的具体成功条件，再实际执行。保留失败样本与改变过的条件；另一个任务的成功不自动覆盖这次任务，单次结果也不代表长期表现。
+## 怎样根据结果继续判断
 
-### 2. 按官方方法导出
+| 观察结果 | 下一步 |
+| --- | --- |
+| 连接拒绝或超时 | 保留错误、协议、发生时间与重试次数 |
+| 认证失败 | 保留错误种类，删除用户名和认证密钥 |
+| 要求上传整机诊断包 | 先问具体需要哪些项目及提交渠道 |
 
-公开材料中不应出现可直接使用的凭据。先制作脱敏副本，保留字段类型和错误位置；如果原凭据已经泄露，后续还要确认服务端撤销，不能只删除截图。
+## 一个可对照的排查场景
 
-### 3. 检查 URL 密钥和内部地址
+例如日志出现‘无法连接本地 127.0.0.1 某端口’，这个端口和错误通常有排查价值；同一文件中的完整订阅链接则可能让他人获得连接授权。二者不应整段一起公开，也不应把有用错误全部涂掉。
 
-让日志片段对应到具体故障时段，并附上最短复现步骤。先检查其中的 URL 参数、设备标识和私人路径，只提交支持流程实际要求的范围。
+## 恢复与验收
 
-## 怎样保留这次结果
-
-把“只复现与问题有关的任务”得到的信息和“检查 URL 密钥和内部地址”的结果分开保存。前者说明起点，后者说明是否达到目的；中间若改变了条件，也要记下改变了什么。这样下次遇到相似现象时，可以先对照差异，而不是从头猜原因。
-
-## 容易忽略的边界
-
-不要把整个用户目录或全部网络配置作为附件发送。
-
-Windows 内置连接、独立 VPN 应用和代理客户端可能使用不同入口。本组按具体故障或使用时点展开，先定位应用与系统的边界，再按当前官方文档处理，避免一次改变整个网络环境。
+提交前重新打开脱敏后的文件，确认可读、时间顺序完整且敏感内容已移除。通过已知官方工单渠道发送，记录工单编号；若令牌曾公开泄露，要到服务端更换，而不是只删帖子。
 
 ## 常见问题
 
-### 需要先重装软件或重置网络吗？
+### 开启详细日志越久越好吗？
 
-通常应先确认错误范围并保留日志。重装和重置可能同时改变多项条件；按官方流程处理之前，准备必要的配置与账号恢复方式。
+不一定。详细记录可能增加数据量并包含更多目标地址。按产品说明短时开启、复现一次后停止，留足支持人员理解错误的上下文即可。
 
 ## 进一步阅读与参考
 
 - [Windows 更新前后，VPN 应该做哪些回归检查？](/blog/practical-windows-update-window/)
+
 - [Windows 开启断网保护前，怎样避免被锁在离线状态？](/blog/practical-windows-kill-switch/)
+
 - [Windows 实用检查主题目录](/blog/topics/windows/)
 
-官方参考：[Microsoft：Windows VPN 连接说明](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows)、[Mullvad：官方桌面应用使用说明](https://mullvad.net/en/help/using-mullvad-vpn-app)、[WireGuard：官方安装入口](https://www.wireguard.com/install/)。它们用于核对概念与平台边界，本文步骤为编辑整理，不表示所有软件具有同一功能。具体按钮和当前支持情况请读相应官方帮助；没有用官方宣传冒充本站实测。
+- [Mullvad 官方项目：日志与遥测说明](https://github.com/mullvad/mullvadvpn-app/blob/main/docs/logging-and-telemetry.md)
+- [Microsoft：Get-NetTCPConnection 参数与示例](https://learn.microsoft.com/en-us/powershell/module/nettcpip/get-nettcpconnection)

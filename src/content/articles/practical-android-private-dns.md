@@ -10,50 +10,49 @@ primaryKeyword: "vpn推荐"
 batch: 6
 order: 105
 related: ["practical-android-network-switch","practical-android-adblock-conflict"]
-sources: [{"title":"Google：Android VPN 设置说明","url":"https://support.google.com/android/answer/9089766"},{"title":"Proton VPN：DNS 与解析保护说明","url":"https://protonvpn.com/support/dns-leaks-privacy"}]
+sources: [{"title": "Google：Android 网络高级设置与私人 DNS", "url": "https://support.google.com/android/answer/9654714"}, {"title": "Android Developers：VPN 服务、常开和分应用机制", "url": "https://developer.android.com/develop/connectivity/vpn"}]
 draft: false
 ---
 
-先了解系统解析选项和 VPN 产品策略，改动时只调整一层并保留原值。
+Android 私人 DNS 与 VPN 可能分别管理解析，是否需要调整应以本机和客户端说明为准。私人 DNS 只涉及 DNS 传输，不能代表全部网络流量；把它一律关闭或一律填入某个公共地址，都不是可靠的通用修复。
 
-## 关键判断
+## 具体检查步骤
 
-一个解析问题不一定由该设置导致；同时替换系统与应用选项会增加判断难度。
+1. 在系统设置中搜索私人 DNS，记录当前为关闭、自动还是指定主机名。先保存原值；工作或受管设备的 DNS 可能由组织控制，应先联系管理员。
 
-## 三步检查
+2. 查看客户端是否接管 DNS、是否支持系统私人 DNS，以及分流时的解析方式。指定私人 DNS 所需的是提供方要求的主机名，不能凭空把任意 IP 当作兼容输入。
 
-### 1. 记录私人 DNS 当前状态
+3. 当故障明确涉及域名解析时，按官方建议一次调整一项，再重连并重新打开原任务。分别记录解析错误和连接错误，网页变快并不能证明 DNS 路径符合预期。
 
-系统、浏览器和连接应用可能分别影响解析。先记录每层由谁管理，再只改与问题有关的一项；未经定位同时替换多处设置，会让结果更难解释。
+## 怎样根据结果继续判断
 
-### 2. 查应用官方 DNS 说明
+| 观察结果 | 下一步 |
+| --- | --- |
+| 只有指定私人 DNS 时解析失败 | 核对主机名、基础可达性与 VPN 兼容说明 |
+| 解析成功但登录或上传失败 | 继续查连接、账号或应用，不只更换 DNS |
+| 部分域名直连、部分走隧道 | 查分流 DNS 规则和产品支持 |
 
-恢复资料需要同时说明它来自哪个版本、适用于什么场景。保存之后确认自己能读懂并找到操作入口；含凭据的文件应与公开说明分开管理。
+## 一个可对照的排查场景
 
-### 3. 验证解析和目标任务
+例如 VPN 工作正常，但用户另填入错误的私人 DNS 主机名后所有域名失败。恢复先前有记录的系统值后再测，可以验证这次修改的影响；不需要同时换协议、清空配置和更改节点。
 
-先写出本次要验证的具体成功条件，再实际执行。保留失败样本与改变过的条件；另一个任务的成功不自动覆盖这次任务，单次结果也不代表长期表现。
+## 恢复与验收
 
-## 怎样保留这次结果
-
-把“记录私人 DNS 当前状态”得到的信息和“验证解析和目标任务”的结果分开保存。前者说明起点，后者说明是否达到目的；中间若改变了条件，也要记下改变了什么。这样下次遇到相似现象时，可以先对照差异，而不是从头猜原因。
-
-## 容易忽略的边界
-
-不把关闭或开启私人 DNS 写成所有 Android 设备的统一答案。
-
-Android 设备厂商、系统版本和网络工具的实现会影响设置位置与行为。本组按手机实际任务核对权限、后台和切换场景，保留恢复步骤，不把另一部手机的结果当作你的设备保证。
+将无效改动恢复为原来的已知值，并记录哪一个模式对应何种结果。验收包括原失败域名、常用应用和 VPN 断开后的普通解析，防止只修好连接内的一种状态。
 
 ## 常见问题
 
-### 不同厂商的 Android 手机可以照搬步骤吗？
+### 私人 DNS 能让运营商不计算流量吗？
 
-不能假定界面和行为完全相同。保留厂商、系统与应用版本，优先读取本机说明；找不到选项时，先核对是否支持，而不是猜一个替代按钮。
+不能。它与移动套餐或机场配额计费不是同一机制；使用移动接入时，应用数据与 DNS 仍通过运营商提供的链路传输。
 
 ## 进一步阅读与参考
 
 - [Android 从 Wi-Fi 切换移动网络后要检查什么？](/blog/practical-android-network-switch/)
+
 - [Android 广告过滤工具和 VPN 同时使用前查什么？](/blog/practical-android-adblock-conflict/)
+
 - [Android 实用检查主题目录](/blog/topics/android/)
 
-官方参考：[Google：Android VPN 设置说明](https://support.google.com/android/answer/9089766)、[Proton VPN：DNS 与解析保护说明](https://protonvpn.com/support/dns-leaks-privacy)。它们用于核对概念与平台边界，本文步骤为编辑整理，不表示所有软件具有同一功能。具体按钮和当前支持情况请读相应官方帮助；没有用官方宣传冒充本站实测。
+- [Google：Android 网络高级设置与私人 DNS](https://support.google.com/android/answer/9654714)
+- [Android Developers：VPN 服务、常开和分应用机制](https://developer.android.com/develop/connectivity/vpn)

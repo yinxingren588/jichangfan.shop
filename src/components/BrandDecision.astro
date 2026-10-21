@@ -1,0 +1,27 @@
+---
+import type {Airport} from '../data/airports';
+import {money,priceLabel,traffic} from '../data/airports';
+import {brandEditorial} from '../data/partners';
+const {airport:a}=Astro.props as {airport:Airport};
+const e=brandEditorial[a.slug];
+const base=a.plans[0],higher=a.plans[1];
+const fmt=(n:number)=>new Intl.NumberFormat('zh-CN',{maximumFractionDigits:2}).format(n);
+const nominal=(p:typeof base)=>p.period==='month'?p.price/p.trafficGB!:p.period==='year'?p.price/12/p.trafficGB!:p.period==='year-equivalent'?p.price/p.trafficGB!:p.price/p.trafficGB!;
+const baseGB=base.trafficGB??0,higherGB=higher?.trafficGB??0;
+const scenario=e?`${e.caseLabel}，假设使用 ${e.devices} 台个人设备，且配额按一倍扣量、没有其他费用。${baseGB>=e.usageGB?`${base.name}的账面配额可覆盖该用量，剩余 ${fmt(baseGB-e.usageGB)}GB，利用率约 ${fmt(e.usageGB/baseGB*100)}%。`:`该用量已超过${base.name}配额，需要比较高档或加购规则。`}${base.period==='year'?`选择基础档需一次支付 ${money(base.price,base.currency)}，月均预算约 ${money(base.price/12,base.currency)}。`:base.period==='year-equivalent'?`基础档展示约 ${money(base.price,base.currency)} 月均，全年预算算式为 ${base.price}×12≈${fmt(base.price*12)} 元；实际年付总额另看订单。`:`若每月支付基础档金额，按这份实际用量分摊的费用约为 ¥${(base.price/e.usageGB).toFixed(4)}/GB，高于用满配额时的标称比值。`}`:'';
+const upgrade=e?(higher.period==='one-time'?`不限时档 ${higherGB}GB 若按每月 ${e.usageGB}GB 消耗，账面可分配约 ${fmt(higherGB/e.usageGB)} 个月；有效期、倍率及服务变化会改变结果。`:higher.period===base.period?`同周期升级多付 ${money(higher.price-base.price,base.currency)}，增加 ${higherGB-baseGB}GB 配额。只有额外配额或并发确实有用途时，较低的标称单价才可能值得更高总支出。`:`${higher.name}为${priceLabel(higher)}、${traffic(higher)}，应同时比较一次付款金额、可退出时间与实际用量，不只比较页面月均价。`):'';
+---
+{e&&<section class="brand-decision" aria-label={a.name+'的套餐选择与预算示例'}>
+ <h3>{e.focus}</h3><p>{e.selection}</p>
+ <div class="table-wrap" tabindex="0" role="region" aria-label={a.name+'逐档预算计算表'}><table><thead><tr><th scope="col">比较项</th><th scope="col">{base.name}</th><th scope="col">{higher.name}</th></tr></thead><tbody>
+ <tr><th scope="row">价格与周期</th><td>{priceLabel(base)}</td><td>{priceLabel(higher)}</td></tr>
+ <tr><th scope="row">可用配额口径</th><td>{traffic(base)}</td><td>{traffic(higher)}</td></tr>
+ <tr><th scope="row">标称价格 / GB</th>{[base,higher].map(p=><td>{(p.trafficApprox||p.period==='year-equivalent')?'约 ':''}¥{nominal(p).toFixed(4)}<small>{p.period==='year'?'年费÷12÷月配额':p.period==='year-equivalent'?'约数月均价÷月配额':p.period==='one-time'?'一次性金额÷总配额':'月费÷月配额'}</small></td>)}</tr>
+ <tr><th scope="row">来源列示并发</th><td>{base.devices}</td><td>{higher.devices}</td></tr>
+ </tbody></table></div>
+ <p class="note">以上每 GB 数字是标称配额的算术比值，未计优惠、倍率、额外费用或未用完的流量；付款周期不同的两档不能仅按该比值直接判优劣。</p>
+ <h3>带入一个具体用量：{e.usageGB}GB</h3>
+ <p>{scenario}</p><p>{upgrade}</p>
+ <h3>这个品牌特别需要看清的条件</h3><p>{e.boundary}</p>
+ <p>此处是编辑设计的预算情景，{e.usageGB}GB 与设备组合不是用户调查或品牌实测。若常用节点倍率未知，先记录客户端和后台一段时间的扣量差异，再使用<a href="/ranking/value/#cost-calculator">套餐成本计算器</a>调整预算。</p>
+</section>}

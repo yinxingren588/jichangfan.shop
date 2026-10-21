@@ -7,7 +7,7 @@ updated: "2026-10-21"
 tags: ["使用教程","日常维护"]
 topic: "guide-maintenance"
 related: ["subscription-import","configuration-backup","subscription-link-reset"]
-sources: [{"title":"OpenVPN Connect：导入连接配置","url":"https://openvpn.net/connect-docs/import-profile.html"},{"title":"Proton VPN：下载WireGuard配置","url":"https://protonvpn.com/support/wireguard-configurations"}]
+sources: [{"title": "OpenVPN Connect：导入连接配置", "url": "https://openvpn.net/connect-docs/import-profile.html"}, {"title": "Proton VPN：生成 WireGuard 配置文件", "url": "https://protonvpn.com/support/wireguard-configurations"}]
 draft: false
 order: 22
 ---
@@ -38,7 +38,31 @@ order: 22
 
 刷新是取得新内容，重置订阅链接是改变某类访问凭据，续费则是服务权益变化。三者可能有关联，但不能相互替代。付款成功后是否需要更新、旧文件能否继续使用，应查服务商说明，不替不同品牌设定统一的等待时间。
 
+
+
+## 更新结果不只看时间戳
+
+刷新远程内容、服务端重置凭据和购买续期是不同动作。客户端写更新时间可能只说明完成了一次请求，仍需检查返回内容、列表变化与实际任务；本地文件则可能需要手动重新获取，不能凭相同按钮名作统一推断。
+
+| 检查结果 | 对应处理 |
+| --- | --- |
+| 返回登录页或空内容 | 核对地址类型、账户与授权 |
+| 节点列表更新但引用失效 | 检查原选择、分组和规则是否仍指向旧名 |
+| 凭据已被服务端撤销 | 从正式账户取得新资料，刷新旧链接无法恢复 |
+
+### 对照案例
+
+例如服务方把节点改名，订阅刷新显示成功，但用户手工规则还引用旧名称。此时要核对分组依赖，不必立即重置所有配置。另一种情况是令牌已撤销，保留再多本地缓存也不能证明授权有效。
+
+### 完成后的验收
+
+保存更新前后名称及失败提示，新配置验证原任务与断开后再清理旧项。更新记录不保存完整令牌，备份标明有效状态，避免换机时重新导入已经撤销的版本。
+
 ## 常见问题
+
+### 刷新会自动升级套餐和增加流量吗？
+
+不能这样理解。刷新获取配置内容，套餐权益由服务端管理。付款后是否需要重新获取配置，应看该服务说明，而不是规定统一等待时间。
 
 ### 更新后节点数量减少，是操作错了吗？
 
@@ -47,3 +71,9 @@ order: 22
 ### 可以先把旧链接发给别人帮忙吗？
 
 优先提供脱敏错误和版本信息。继续阅读[备份检查](/guides/configuration-backup/)及[链接重置流程](/guides/subscription-link-reset/)。
+
+
+## 进一步阅读与参考
+
+- [OpenVPN Connect：导入连接配置](https://openvpn.net/connect-docs/import-profile.html)
+- [Proton VPN：生成 WireGuard 配置文件](https://protonvpn.com/support/wireguard-configurations)

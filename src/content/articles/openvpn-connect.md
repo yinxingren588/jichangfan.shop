@@ -7,7 +7,7 @@ updated: "2026-10-21"
 tags: ["使用教程","配置导入"]
 topic: "guide-import"
 related: ["linux","subscription-import","logs-redaction"]
-sources: [{"title":"OpenVPN Connect：导入连接配置","url":"https://openvpn.net/connect-docs/import-profile.html"}]
+sources: [{"title": "OpenVPN Connect：导入连接配置", "url": "https://openvpn.net/connect-docs/import-profile.html"}]
 draft: false
 order: 10
 ---
@@ -38,7 +38,31 @@ OpenVPN Connect需要与服务端配套的连接配置，不自带VPN服务。�
 
 把问题分为文件读取、配置确认、身份认证、网络连接和目标访问几个阶段。保留准确错误，不仅写“导入失败”。若下载文件里实际上是登录页，重新通过可信入口下载；若出现服务端认证错误，提交脱敏记录比同时修改多个网络参数更容易得到有效帮助。
 
+
+
+## 先确定是文件导入还是服务端 URL 导入
+
+OpenVPN Connect 不自带网络服务。官方文档把文件与支持的 URL 导入分别说明，URL 入口并非任意机场订阅阅读器。导入时使用服务方的认证方式，网站密码、连接账户与证书密码也可能不是同一份资料。
+
+| 检查结果 | 对应处理 |
+| --- | --- |
+| 有正式 .ovpn 文件 | 按配置管理的文件入口导入 |
+| 服务方明确提供 OpenVPN URL 获取配置 | 按相应 Basic、MFA 或 SAML 等正式流程认证 |
+| 只有其他协议订阅或二维码 | 先找匹配客户端，不强行提交给 OpenVPN |
+
+### 对照案例
+
+例如文件已经导入，但建立连接时要求另外的认证。导入成功不代表服务器接受了凭据；应检查服务方说明，避免把 App Store 密码或其他无关账号填进连接认证框。
+
+### 完成后的验收
+
+保留配置来源、导入结果、认证阶段和实际任务四项；连接后做一次断开恢复。证书、私钥和配置附件不要公开；无效的新条目只在确认不影响原配置时移除。
+
 ## 常见问题
+
+### 可以只把网页改成 .ovpn 后缀导入吗？
+
+不可以。后缀不会生成协议内容，文件必须由配套服务器或提供方给出。格式错误应回源重新获取，不凭空补造参数。
 
 ### 一个配置列表里能放多份资料吗？
 
@@ -47,3 +71,8 @@ OpenVPN Connect需要与服务端配套的连接配置，不自带VPN服务。�
 ### 订阅链接能直接代替.ovpn吗？
 
 只有服务商明确支持对应流程时才可以。继续阅读[订阅类型核对](/guides/subscription-import/)和[日志脱敏整理](/guides/logs-redaction/)。
+
+
+## 进一步阅读与参考
+
+- [OpenVPN Connect：导入连接配置](https://openvpn.net/connect-docs/import-profile.html)

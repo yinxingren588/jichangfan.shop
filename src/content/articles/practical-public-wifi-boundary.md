@@ -10,45 +10,48 @@ primaryKeyword: "vpn"
 batch: 10
 order: 184
 related: ["practical-logs-minimization","practical-https-warning"]
-sources: [{"title":"Mozilla：隐私浏览的范围","url":"https://support.mozilla.org/en-US/kb/private-browsing-use-firefox-without-history"},{"title":"WireGuard：配置与密钥入门","url":"https://www.wireguard.com/quickstart/"}]
+sources: [{"title":"EFF：理解 VPN 的信任与适用范围","url":"https://ssd.eff.org/module/choosing-vpn-thats-right-you"},{"title":"MDN：TLS 的加密、完整性和身份验证","url":"https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Transport_Layer_Security"},{"title":"Mozilla：安全连接与证书警告","url":"https://support.mozilla.org/en-US/kb/secure-connection-failed-firefox-did-not-connect"}]
 draft: false
 ---
 
-仍要核对网络来源、网站身份、设备权限和账户行为，连接工具不能替代这些判断。
+公共Wi-Fi上使用VPN，仍要确认接入网络、目标网站、设备权限和账号行为。VPN保护的是相应连接路径，不能替你验证陌生登录页、付款请求或下载软件的来源。
 
-## 关键判断
+## 先核对接入网络本身
 
-保护一段连接不等于防止所有欺骗和账号风险。真正输入资料的目标网站仍需独立确认。
+向场所正式渠道确认网络名称和正常接入方式，避免只按最强信号或相似名称选择。需要网页认证时，先确认页面与场所信息，不在陌生认证页输入邮箱主密码。基础接入未完成时，VPN连接失败也不一定是服务故障。
 
-## 三步检查
+## 将常见提示分开处理
 
-### 1. 确认官方提供的接入信息
+| 提示 | 应核对什么 | 不应自动推断 |
+| --- | --- | --- |
+| 需要场所网页认证 | 正式接入说明 | 必须安装陌生证书 |
+| 目标网站证书异常 | 域名、时间与错误 | 开VPN后可以忽略 |
+| 请求联系人或支付权限 | 功能与身份 | 网络免费就合理 |
+| VPN无法连接 | 基础接入与具体报错 | 所有节点都失效 |
 
-先确认基础接入本身已能完成正常任务，再建立连接。不同接入方式会改变路径和认证条件；切换时尽量保留同一设备、配置与测试对象。
+## 一个酒店接入的场景
 
-### 2. 谨慎处理认证与证书提示
+假设房间网络要求输入房号与场所提供的接入码，这要与酒店正式说明对应。若页面突然要求安装根证书并输入私人邮箱密码，不应仅因网络名称相同就照做。先通过前台等独立可信渠道确认，保留不含秘密的错误信息。
 
-区分设备上的登录、服务账户的权益和目标应用的使用资格。一个环节成功只证明该环节满足条件，剩余部分仍需按对应提供方的正式流程确认。
+## 接入后的检查顺序
 
-### 3. 使用可信应用并及时断开
+先完成合法认证并确认普通连接；再使用可信客户端建立所需连接；核对关键任务和目标网站HTTPS；使用结束后断开并关闭不再需要的自动加入。不要在公开屏幕展示订阅二维码，也不让不明人员代为导入私人令牌。
 
-本地文件、运行状态、服务端授权与付款属于不同对象。只完成其中一项时，其他项未必随之变化；删除前应确认资料归属和可恢复性。
+## 公共网络的安全边界
 
-## 怎样保留这次结果
+TLS与VPN作用范围不同，目标网站即使加密也可能是仿冒域名。设备上的恶意软件、过宽权限或账户误分享，也不是更换网络出口就能解决。企业任务遵循组织批准的接入方式，不能用个人方案替代管理要求。
 
-把“确认官方提供的接入信息”得到的信息和“使用可信应用并及时断开”的结果分开保存。前者说明起点，后者说明是否达到目的；中间若改变了条件，也要记下改变了什么。这样下次遇到相似现象时，可以先对照差异，而不是从头猜原因。
-
-## 容易忽略的边界
-
-不把已连接 VPN 作为可以忽略所有警告的理由。
-
-隐私管理需要理解凭据、会话、本地文件、应用权限和服务商之间的边界。本组提供具体的信息整理与最小化建议，先明确要保护什么，再选择合适的处理方式。
+离开公共场所后，查看设备是否仍保留不需要的自动加入选项。以后再次接近同名网络时，自动连接行为可能与当前使用场景不同，需要自己确认。
 
 ## 常见问题
 
-### 删除一个本地副本，就算撤销权限了吗？
+### 有VPN就可以在任意网站付款吗？
 
-不一定。先确认你处理的是文件、会话、设备还是服务端凭据；不同对象有不同撤销流程，应分别取得确认。
+仍需独立确认商家和域名。连接加密不替经营者诚信背书，付款与登录请求要核对来源。
+
+### VPN开不起来时，先关闭所有保护吗？
+
+先看基础认证、客户端错误与平台帮助。不要为完成一次接入关闭全部证书验证或安装来历不明的软件。
 
 ## 进一步阅读与参考
 
@@ -56,4 +59,6 @@ draft: false
 - [开着 VPN 还出现证书警告，可以直接继续吗？](/blog/practical-https-warning/)
 - [隐私与安全习惯主题目录](/blog/topics/privacy/)
 
-官方参考：[Mozilla：隐私浏览的范围](https://support.mozilla.org/en-US/kb/private-browsing-use-firefox-without-history)、[WireGuard：配置与密钥入门](https://www.wireguard.com/quickstart/)。它们用于核对概念与平台边界，本文步骤为编辑整理，不表示所有软件具有同一功能。具体按钮和当前支持情况请读相应官方帮助；没有用官方宣传冒充本站实测。
+参考资料供核对本文所述的具体功能或条款形式；算例与操作清单由机场翻编辑整理，未将其他产品的规则套用到收录品牌。
+
+[EFF：理解 VPN 的信任与适用范围](https://ssd.eff.org/module/choosing-vpn-thats-right-you)、[MDN：TLS 的加密、完整性和身份验证](https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Transport_Layer_Security)、[Mozilla：安全连接与证书警告](https://support.mozilla.org/en-US/kb/secure-connection-failed-firefox-did-not-connect)。

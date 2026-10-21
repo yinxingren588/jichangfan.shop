@@ -1,6 +1,6 @@
 ---
 title: "macOS 分流功能怎样验证，而不是只看开关？"
-description: "确认当前产品与版本确实支持，再用两个预期路径不同的任务做对照。"
+description: "macOS 分流要通过实际请求验证：应走 VPN 的任务是否进入隧道，应直连的任务是否保持原路径。应用名单或开关是配置意图，连接结果和日志才说明当前版本是否按预期执行。"
 category: "blog"
 date: "2026-10-21"
 updated: "2026-10-21"
@@ -10,50 +10,61 @@ primaryKeyword: "vpn推荐"
 batch: 8
 order: 148
 related: ["practical-mac-keychain-account","practical-mac-app-store-direct"]
-sources: [{"title":"Apple：在 Mac 上设置 VPN 连接","url":"https://support.apple.com/guide/mac-help/set-up-a-vpn-connection-on-mac-mchlp2963/mac"},{"title":"Proton VPN：分流功能与平台说明","url":"https://protonvpn.com/support/protonvpn-split-tunneling"}]
+sources: [{"title":"Apple Developer：Packet Tunnel 的网络设置","url":"https://developer.apple.com/documentation/NetworkExtension/NEPacketTunnelProvider"},{"title":"mihomo：路由规则","url":"https://wiki.metacubex.one/config/rules/"},{"title":"Apple Developer：网络扩展能力","url":"https://developer.apple.com/documentation/bundleresources/entitlements/com.apple.developer.networking.networkextension"}]
 draft: false
 ---
 
-确认当前产品与版本确实支持，再用两个预期路径不同的任务做对照。
+macOS 分流要通过实际请求验证：应走 VPN 的任务是否进入隧道，应直连的任务是否保持原路径。应用名单或开关是配置意图，连接结果和日志才说明当前版本是否按预期执行。
 
-## 关键判断
+## 先明确分流依据
 
-其他平台教程不证明 Mac 功能相同。实际目标、应用进程和现有会话都可能影响观察。
+产品可能按应用、域名、IP 或路由分流，支持范围与权限不同。浏览器内部请求、辅助进程和扩展也未必被一个应用名称全部覆盖。Apple 的网络扩展允许不同网络处理方式，但不能由系统能力推断某个客户端已实现所有分流功能。
 
-## 三步检查
+## 选择正反两类测试
 
-### 1. 读取本机平台的官方说明
+列出一个必须经过隧道的低风险目标，以及一个必须保持直连的本地或公网目标。记录各自预期和观察方式，再启用分流。若只测成功的一侧，会遗漏过宽规则或根本没有接管的情况。
 
-先写出本次要验证的具体成功条件，再实际执行。保留失败样本与改变过的条件；另一个任务的成功不自动覆盖这次任务，单次结果也不代表长期表现。
+## 建议的验收表
 
-### 2. 记录规则适用对象
+| 项目 | 预期 | 观察方式 |
+| --- | --- | --- |
+| 目标应用 | 指定路径 | 对应进程连接与客户端日志 |
+| 对照应用 | 另一条路径 | 同条件请求来源或路由 |
+| 局域网 | 符合工作要求 | 实际访问必要资源 |
+| IPv4/IPv6 | 符合产品说明 | 分地址族验证 |
 
-明确哪些任务应经过连接、哪些应保持原路径。规则列表只代表配置，不能替代实际验证；已有会话是否需要重建，应查看所用产品说明。
+无法观察的项目标为未验证，不填“通过”。
 
-### 3. 按要求重建连接并验证
+## 一个辅助进程例子
 
-如果当前资料不足以完成这一步，就明确记录缺少哪个条件，并通过原本可信的官方入口核对。不要用其他用户的配置或旧页面替自己填入一个未经确认的答案。
+假设下载应用的主程序被列入分流，但真正传输由另一辅助进程执行，结果可能不符合预期。先查官方是否说明这一结构及如何配置，再重新建立下载连接。不要为一项任务给所有进程增加过宽例外。
 
-## 怎样保留这次结果
+## 避免被旧连接和缓存误导
 
-把“读取本机平台的官方说明”得到的信息和“按要求重建连接并验证”的结果分开保存。前者说明起点，后者说明是否达到目的；中间若改变了条件，也要记下改变了什么。这样下次遇到相似现象时，可以先对照差异，而不是从头猜原因。
+切换策略后，已经建立的连接可能沿用原路径，页面缓存也可能完全不发请求。按客户端或应用说明重建测试连接，必要时选择可确认的新任务。公开出口查询只能验证那一个请求，不等于整套应用已经覆盖。
 
-## 容易忽略的边界
+## 失败后怎样恢复
 
-不使用 Windows 的截图补写 macOS 选项。
-
-Mac 的系统版本、芯片、客户端实现和组织设置都会影响使用方式。本组将权限、恢复和任务验证分开，帮助你在变更前保留原状态，并减少对无关网络组件的改动。
+恢复原分流设置，重新连接并确认工作任务可用，再逐个增加必要规则。若产品不支持当前系统上的某种分流方式，应明确保留限制，不能用别的平台截图替代。日志脱敏后交给开发者，保留版本与复现时间。
 
 ## 常见问题
 
-### 其他 Mac 型号上的成功可以直接照用吗？
+### 把浏览器列入名单就包含所有扩展吗？
 
-只能作线索。芯片、系统、应用与权限状态可能不同，仍需核对本机支持条件，再在自己的工作任务中验证。
+不能保证。实现和辅助进程可能不同，需要按官方说明与实际连接验证。
+
+### 分流通过一次以后就不用再测了吗？
+
+系统、客户端和规则更新可能改变行为，核心任务变化后应复核。
 
 ## 进一步阅读与参考
 
 - [Mac 保存的登录信息与 VPN 凭据，如何区分管理？](/blog/practical-mac-keychain-account/)
 - [Mac 商店版与官网下载版，如何决定安装来源？](/blog/practical-mac-app-store-direct/)
-- [macOS 实用检查主题目录](/blog/topics/macos/)
+- [macOS 使用主题目录](/blog/topics/macos/)
 
-官方参考：[Apple：在 Mac 上设置 VPN 连接](https://support.apple.com/guide/mac-help/set-up-a-vpn-connection-on-mac-mchlp2963/mac)、[Proton VPN：分流功能与平台说明](https://protonvpn.com/support/protonvpn-split-tunneling)。它们用于核对概念与平台边界，本文步骤为编辑整理，不表示所有软件具有同一功能。具体按钮和当前支持情况请读相应官方帮助；没有用官方宣传冒充本站实测。
+- [Apple Developer：Packet Tunnel 的网络设置](https://developer.apple.com/documentation/NetworkExtension/NEPacketTunnelProvider)
+- [mihomo：路由规则](https://wiki.metacubex.one/config/rules/)
+- [Apple Developer：网络扩展能力](https://developer.apple.com/documentation/bundleresources/entitlements/com.apple.developer.networking.networkextension)
+
+本文是按官方文档整理的 Mac 使用与恢复方法，不包含对读者设备的实际操作；菜单名称、功能与组织管理要求应按当前版本核对。

@@ -1,5 +1,28 @@
 ---
-import Base from '../../layouts/Base.astro';import {airports,evidenceLabel} from '../../data/airports';import Promotion from '../../components/Promotion.astro';import PlanTable from '../../components/PlanTable.astro';
-export function getStaticPaths(){return airports.map(a=>({params:{slug:a.slug},props:{a}}));}const {a}=Astro.props;
+import Base from '../../layouts/Base.astro';
+import {airports,evidenceLabel} from '../../data/airports';
+import {brandEditorial} from '../../data/partners';
+import Promotion from '../../components/Promotion.astro';
+import PlanTable from '../../components/PlanTable.astro';
+export function getStaticPaths(){return airports.map(a=>({params:{slug:a.slug},props:{a}}));}
+const {a}=Astro.props,e=brandEditorial[a.slug];
 ---
-<Base title={a.name+' 套餐与优惠码：价格、流量和资料来源'} description={a.description+'逐档查看付款周期、流量配额与资料状态，包含购买前需要确认的限制。'} breadcrumbs={[{name:'品牌资料库',url:'/airport/'},{name:a.name,url:'/airport/'+a.slug+'/'}]}><div class="container"><header class="page-heading"><div class="brand-head"><span class="brand-icon" style={'background:'+a.color} aria-hidden="true">{a.monogram}</span><span class="pill">{evidenceLabel(a)}</span></div><h1>{a.name} 套餐与优惠码</h1><p>{a.description}</p><div class="meta"><span>资料整理 {a.lastVerified}</span><span>未购买实测</span></div></header><div class="page-grid"><article class="prose"><h2>套餐价格与流量</h2><PlanTable airport={a}/><h2>优惠券与购买入口</h2>{a.affiliateUrl?<Promotion airport={a}/>:<p>本站未提供该品牌推广链接或优惠码，可从下方官方来源了解。</p>}<h2>资料依据</h2><p>{a.testStatus==='reference-data'?'套餐价格与流量取自 jiediantuijian.shop 的第三方参考表，记录于 '+a.lastVerified+'。本站尚未在品牌结账页核验，不能视为当前可下单报价。优惠码和推广入口由站长提供。':'价格与权益来自下列官方公开页面；公开资料不代表本站实测结果。'}</p><dl><dt>官网</dt><dd>{a.officialUrl?<a href={a.officialUrl} rel="noopener noreferrer" target="_blank">{a.officialUrl}</a>:'独立官网地址尚未核验；站长提供的推广入口见上方。'}</dd><dt>服务类型</dt><dd>{a.kind==='proxy'?'代理订阅':'商业 VPN'}</dd><dt>设备限制</dt><dd>{a.deviceLimit||'尚未核实'}</dd><dt>协议</dt><dd>{a.protocols.join('、')||'尚未核实'}</dd><dt>节点地区</dt><dd>{a.regions.join('、')||'完整地区列表尚未核实'}</dd></dl><h2>下单前确认</h2><ul><li>优惠码能否使用、适用套餐、折扣幅度与到期日期。</li><li>付款总额、自动续费、退款条款和税费。</li><li>流量是月度重置还是一次性总配额，是否存在节点倍率。</li><li>设备和客户端兼容性，以及自己的运营商到节点的实际表现。</li></ul><h2>资料来源</h2><ul class="sources">{a.sources.map((s,i)=><li><a href={s} target="_blank" rel="noopener noreferrer">{a.testStatus==='reference-data'?'第三方参考':'官方来源'} {i+1}：{new URL(s).hostname}{new URL(s).pathname}</a></li>)}</ul><p>整理日期：{a.lastVerified}。本站有联盟推广链接，具体入口旁已披露；推荐与资料核验规则见<a href="/editorial-policy/">编辑政策</a>。</p></article><aside><div class="side-panel"><h2>继续了解 {a.name}</h2><p>阅读套餐分析，或将候选品牌放在同一张表里。</p><a class="button" href={'/review/'+a.slug+'/'}>阅读套餐分析 →</a><a class="text-link" style="display:block;margin-top:15px" href={'/compare/?brands='+a.slug}>加入横向比较 ↗</a></div><div class="side-panel"><h2>优惠与预算</h2><div class="side-links"><a href="/coupons/">全部品牌优惠码与套餐汇总</a><a href="/glossary/traffic-multiplier/">流量倍率怎么理解</a><a href="/blog/monthly-vs-yearly/">月付与年付的区别</a></div></div></aside></div></div></Base>
+<Base title={a.name+' 套餐与优惠码：价格、流量和资料来源'} description={a.description+'逐档查看付款周期、流量、设备限制和优惠条件。'} breadcrumbs={[{name:'品牌资料库',url:'/airport/'},{name:a.name,url:'/airport/'+a.slug+'/'}]}>
+ <div class="container"><header class="page-heading"><div class="brand-head"><span class="brand-icon" style={'background:'+a.color} aria-hidden="true">{a.monogram}</span><span class="pill">{evidenceLabel(a)}</span></div><h1>{a.name} 套餐与优惠码</h1><p>{a.description}</p><div class="meta"><span>资料整理 {a.lastVerified}</span><span>价格、配额与规格分别标明来源</span></div></header>
+ <div class="page-grid"><article class="prose">
+ <h2>套餐价格与流量</h2><PlanTable airport={a}/>
+ {e&&<><h2>两档套餐怎么选</h2><p>{e.selection}</p><p>需要带入自己的月用量、比较预付款或设备组合时，可阅读<a href={'/review/'+a.slug+'/'}>{a.name} 的逐档预算分析</a>，其中有标称成本、具体算例和容易忽略的条件。</p></>}
+ <h2>优惠券与购买入口</h2>{a.affiliateUrl?<Promotion airport={a}/>:<p>本站未提供该品牌推广链接或优惠码，可从下方官方来源了解。</p>}
+ {a.coupon&&<p>优惠码 <strong>{a.coupon}</strong> 由站长提供，页面套餐金额未使用该代码。复制后在订单优惠栏输入，核对是否出现明确减免；代码被接受也不等于续费继续优惠。保存优惠后总额、适用档位和活动说明。</p>}
+ <h2>线路、协议与设备资料</h2>
+ <p>{e?'以下规格来自站长指定资料页，为来源声明；设备数按所选档位分别查看，端口不等于实际速度。':'以下字段依据官方公开资料整理。'}</p>
+ <dl><dt>服务类型</dt><dd>{a.kind==='proxy'?'代理订阅':'商业 VPN'}</dd><dt>线路描述</dt><dd>{e?.line||a.line}</dd><dt>设备并发</dt><dd>{a.deviceLimit||'尚未核实'}</dd><dt>协议与生态名称</dt><dd>{a.protocols.join('、')||'尚未核实'}</dd><dt>来源列示地区</dt><dd>{a.regions.join('、')||'完整地区列表尚未核实'}</dd></dl>
+ <p>{a.clients}</p>{e?.protocols.includes('V2Ray')&&<p>V2Ray 是工具生态名称，不能单独确定实际传输协议。导入前查看节点类型和客户端支持格式。</p>}
+ {e&&<><h2>AI、流媒体与客户端声明</h2><p>指定资料页列示 AI 项目：{e.aiClaims||'未列明'}；流媒体项目：{e.streamingClaims||'未列明'}。这是来源对功能的描述，机场翻未逐项测试。实际访问还受节点、目标平台地区政策和账号状态影响。</p><p>{e.boundary}</p></>}
+ <h2>资料依据与更新</h2>
+ <p>{e?'套餐价格、流量采用站长确认的指定资料源 jiediantuijian.shop，本次逐档读取日期为 '+a.lastVerified+'。推广入口及优惠码由站长提供，规格按该来源列示；本文没有将来源网站的评分或测速当作机场翻实测。':'价格与权益来自下列官方公开页面；公开资料不代表本站实测结果。'}</p>
+ <h2>本品牌常见问题</h2>{e?.faq.map(f=><><h3>{f.question}</h3><p>{f.answer}</p></>)}
+ <h3>下单前还需要记录什么？</h3><p>记录精确套餐名、付款周期、实付总额、流量重置日、节点倍率、设备限制及退款窗口。套餐按月重置不代表未用完流量自动结转；年付月均价也不代表可按月取消。若条款没有写清，应先向服务商确认。</p>
+ <h2>资料来源</h2><ul class="sources">{a.sources.map((s,i)=><li><a href={s} target="_blank" rel="noopener noreferrer">{e?'站长指定资料源':'官方来源'} {i+1}：{new URL(s).hostname}{new URL(s).pathname}</a></li>)}</ul><p>整理日期：{a.lastVerified}。本站包含联盟推广链接，具体入口旁已披露；资料与更新规则见<a href="/editorial-policy/">编辑政策</a>。</p>
+ </article><aside><div class="side-panel"><h2>继续了解 {a.name}</h2><p>{e?.focus||a.conclusion}</p><a class="button" href={'/review/'+a.slug+'/'}>阅读套餐分析 →</a><a class="text-link" style="display:block;margin-top:15px" href={'/compare/?brands='+a.slug}>加入横向比较 ↗</a></div><div class="side-panel"><h2>优惠与预算</h2><div class="side-links"><a href="/coupons/">全部品牌优惠码与套餐汇总</a><a href="/glossary/traffic-multiplier/">流量倍率怎么理解</a><a href="/blog/monthly-vs-yearly/">月付与年付的区别</a></div></div></aside></div></div>
+</Base>

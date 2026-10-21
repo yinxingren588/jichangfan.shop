@@ -7,7 +7,7 @@ updated: "2026-10-21"
 tags: ["使用教程","连接与分流"]
 topic: "guide-connection"
 related: ["windows","firefox-proxy","disconnect-restore"]
-sources: [{"title":"Microsoft：Windows代理设置","url":"https://support.microsoft.com/en-us/windows/experience/connectivity-networking/use-a-proxy-server-in-windows"},{"title":"Mozilla：Firefox连接设置","url":"https://support.mozilla.org/en-US/kb/connection-settings-firefox"}]
+sources: [{"title": "Microsoft：Windows 代理设置", "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/use-a-proxy-server-in-windows"}, {"title": "Mozilla：Firefox 连接与代理设置", "url": "https://support.mozilla.org/en-US/kb/connection-settings-firefox"}]
 draft: false
 order: 11
 ---
@@ -38,7 +38,31 @@ Microsoft将自动检测、配置脚本和手动配置分别说明。客户端�
 
 记录客户端是否在运行、系统使用哪种方式、浏览器是否跟随系统，以及错误是否只发生在某个程序。仅对自己新增的设置做一次改动并重试。配置脚本、例外列表与VPN连接的代理可能是不同层次，不要在没有记录时同时替换。
 
+
+
+## 退出后报本地连接拒绝时怎么定位
+
+系统代理指向的是代理服务，不是机场订单。若地址是本机回环地址，对应客户端必须真的在预期端口监听；窗口关闭、进程退出和停止接管代理也可能发生在不同时间。此处只恢复本人修改的项目，不更改组织强制配置。
+
+| 检查结果 | 对应处理 |
+| --- | --- |
+| 指向本机地址，客户端已停止 | 恢复原代理或重新运行正确服务，再复测 |
+| 只有 Firefox 失败 | 查其独立代理与扩展控制 |
+| 普通网络也失败且无代理残留 | 继续查接入与断网保护 |
+
+### 对照案例
+
+例如客户端从旧端口改到新端口，Windows 手动代理仍保留旧值。应按实际监听信息更新依赖设置；反复切换远端节点不改变本地端口，所以未必改善网页错误。端口没有统一必填的默认数字。
+
+### 完成后的验收
+
+记录修改项和恢复值，验证网页与实际应用后，再执行一次正常退出。若退出又留下代理，保存客户端版本和重现步骤交支持，不把长期手动兜底当作已经彻底修复。
+
 ## 常见问题
+
+### 手动代理地址能填完整订阅链接吗？
+
+不能混用。手动代理需要主机和端口，脚本需要受支持的 PAC，而订阅应交给兼容客户端。先分清对象再填写。
 
 ### 填完系统代理还需要导入订阅吗？
 
@@ -47,3 +71,9 @@ Microsoft将自动检测、配置脚本和手动配置分别说明。客户端�
 ### 为什么Firefox和其他浏览器结果不同？
 
 先阅读[Firefox连接设置](/guides/firefox-proxy/)，比较其独立设置与系统设置；退出异常可使用[恢复检查](/guides/disconnect-restore/)。
+
+
+## 进一步阅读与参考
+
+- [Microsoft：Windows 代理设置](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/use-a-proxy-server-in-windows)
+- [Mozilla：Firefox 连接与代理设置](https://support.mozilla.org/en-US/kb/connection-settings-firefox)

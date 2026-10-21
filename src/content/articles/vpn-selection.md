@@ -5,7 +5,7 @@ category: "blog"
 date: "2026-10-21"
 updated: "2026-10-21"
 tags: ["入门","预算","VPN"]
-sources: [{"title":"Proton VPN 官方套餐说明","url":"https://protonvpn.com/support/knowledge-base-bonus-connections"},{"title":"Windscribe 官方套餐页","url":"https://windscribe.com/upgrade"},{"title":"IVPN 官方协议说明","url":"https://www.ivpn.net/knowledgebase/general/what-vpn-protocols-do-you-offer/"}]
+sources: [{"title":"Proton VPN：免费与付费套餐说明","url":"https://protonvpn.com/support/proton-vpn-plans"},{"title":"Windscribe：付款周期与续费展示","url":"https://windscribe.com/upgrade"},{"title":"IVPN：各平台协议支持","url":"https://www.ivpn.net/knowledgebase/general/what-vpn-protocols-do-you-offer/"},{"title":"Mullvad：服务与设备条款","url":"https://mullvad.net/en/help/terms-service"}]
 draft: false
 ---
 
@@ -41,9 +41,9 @@ Proton VPN 官方说明列出不同层级的权益。免费方案能帮助理解
 | 需要比较月付与年付 | 两种周期的总额、自动续费与取消规则 | [IVPN 资料](/airport/ivpn/) |
 | 需要区分免费层与付费层 | 节点选择、连接数与功能适用套餐 | [Proton VPN 资料](/airport/proton-vpn/) |
 | 想比较完整套餐与地区组合 | 所含地区、流量条件与最低订单金额 | [Windscribe 资料](/airport/windscribe/) |
-| 已经有代理订阅客户端 | 服务类型、导入格式与客户端兼容 | [29 个品牌参考套餐](/coupons/) |
+| 已经有代理订阅客户端 | 服务类型、导入格式与客户端兼容 | [29 个品牌套餐与优惠](/coupons/) |
 
-上述服务的公开资料与本地实用体验需要分开判断。价格与权益统一在品牌页维护；看见“尚未核实”时，先补来源，不能用知名度代替缺失条件。
+本站29个品牌的价格与流量按站长确认的资料来源整理，集中在品牌与优惠页维护。设备、倍率、退款和具体任务适用条件则分别阅读对应说明；报价准确与性能已经实测是不同结论，不能以品牌知名度替代体验证据。
 
 ## 用一张表完成第一次筛选
 
@@ -57,6 +57,17 @@ Proton VPN 官方说明列出不同层级的权益。免费方案能帮助理解
 | 下一步 | 按短周期验证任务 | 先补兼容与付款资料 | 先核对订单总额 |
 
 这时可以先验证甲、继续补齐乙丙资料。表中的“有说明”不等于软件已经在你的设备上成功运行；验证时仍需记录安装、连接、真实任务与退出恢复的结果。
+
+## 通过资料筛选后，还要怎样验收
+
+| 验收动作 | 留下的依据 | 不可扩大成的结论 |
+| --- | --- | --- |
+| 两台目标设备分别导入 | 系统、版本、格式与结果 | 全部设备通用 |
+| 做一项日常真实任务 | 入口、时段、任务与错误 | 所有平台永久可用 |
+| 更新并切换配置 | 哪一步变化、能否恢复 | 全年不需维护 |
+| 主动退出与重连 | 普通网络和任务恢复结果 | 任何故障都可自动修复 |
+
+例如电脑浏览器正常而手机上传失败，先核对失败阶段与文件条件；不能把两端不同任务直接排成线路优劣。把必须任务通过情况放在价格旁边，最终保留“为何适合自己”的理由。
 
 ## 付款前留下四项记录
 
@@ -76,3 +87,13 @@ Proton VPN 官方说明列出不同层级的权益。免费方案能帮助理解
 ### 第一次购买怎么缩小范围？
 
 从[新手入门专题](/recommend/beginner/)开始，选择两到四个候选放进[对比工具](/compare/)，把未知项补齐后再付款。
+
+## 进一步阅读与参考
+
+- [建立自己的需求表](/blog/practical-requirements-sheet/)
+- [第一次试用预算](/blog/practical-trial-budget/)
+- [按设备查教程](/guides/)
+
+本文保留原有概念与选择框架，资料说明与实际测试分别标注。算例为编辑设计，可替换成自己的输入；没有为品牌编造网络表现或长期保证。
+
+[Proton VPN：免费与付费套餐说明](https://protonvpn.com/support/proton-vpn-plans)、[Windscribe：付款周期与续费展示](https://windscribe.com/upgrade)、[IVPN：各平台协议支持](https://www.ivpn.net/knowledgebase/general/what-vpn-protocols-do-you-offer/)、[Mullvad：服务与设备条款](https://mullvad.net/en/help/terms-service)。

@@ -7,7 +7,7 @@ updated: "2026-10-21"
 tags: ["使用教程","故障排查"]
 topic: "guide-troubleshoot"
 related: ["android","hotel-wifi-login","android-always-on"]
-sources: [{"title":"Android帮助：连接Wi-Fi网络","url":"https://support.google.com/android/answer/9075847"},{"title":"Apple：蜂窝数据与用量统计","url":"https://support.apple.com/en-us/109323"}]
+sources: [{"title": "Android Developers：VPN 服务、常开和分应用机制", "url": "https://developer.android.com/develop/connectivity/vpn"}, {"title": "Apple：iPhone 蜂窝数据设置和应用用量", "url": "https://support.apple.com/guide/iphone/iph3dd5f213/ios"}, {"title": "Google：Android VPN 连接和配置管理", "url": "https://support.google.com/android/answer/9089766"}]
 draft: false
 order: 20
 ---
@@ -38,7 +38,31 @@ order: 20
 
 可以写成“Wi-Fi下三项任务正常；转移动数据后普通网页正常，客户端提示重连；手动重连后任务恢复”。这是记录格式示例，不是本站对任何品牌的实测。它比只写“移动网络不能用”更容易让支持人员理解问题。
 
+
+
+## 切网之后分三层记录恢复
+
+底层接入、VPN 隧道与业务会话恢复可能不同步。Android 与 iOS 的数据权限、厂商策略和协议实现也不同，因此对照应保留同一设备、节点与任务，不用另一部手机的成功替代本机证据。
+
+| 检查结果 | 对应处理 |
+| --- | --- |
+| 移动数据基础访问也失败 | 先查数据开关、线路、套餐与信号 |
+| 基础访问正常，VPN 仍重连 | 查客户端切网支持与错误 |
+| 新任务成功，旧上传不动 | 核对应用续传与旧会话恢复 |
+
+### 对照案例
+
+例如离开 Wi-Fi 后 VPN 很快恢复，但原视频上传从头重试。应同时记录恢复时刻和额外传输，避免只写‘切网成功’。反复重试可能同时消耗移动套餐与机场配额，且两者口径不同。
+
+### 完成后的验收
+
+回到原 Wi-Fi 再做同任务小范围验证，确认没有临时停留在高费用接入。结果应写清版本、网络、失败层与恢复动作，一次成功不作长期稳定性结论。
+
 ## 常见问题
+
+### 切网时改变节点会不会更方便判断？
+
+会同时改变变量，第一次对照应先保持节点不变。确定失败阶段后，再按支持说明单独比较其他配置，并保留每次结果。
 
 ### 开着VPN时移动数据就不扣费吗？
 
@@ -47,3 +71,10 @@ order: 20
 ### 每次都需要更换节点吗？
 
 先固定节点验证问题发生的层次。需要自动连接功能时，阅读[Android始终开启设置](/guides/android-always-on/)并核对设备支持情况。
+
+
+## 进一步阅读与参考
+
+- [Android Developers：VPN 服务、常开和分应用机制](https://developer.android.com/develop/connectivity/vpn)
+- [Apple：iPhone 蜂窝数据设置和应用用量](https://support.apple.com/guide/iphone/iph3dd5f213/ios)
+- [Google：Android VPN 连接和配置管理](https://support.google.com/android/answer/9089766)

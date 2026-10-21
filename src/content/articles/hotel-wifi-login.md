@@ -7,7 +7,7 @@ updated: "2026-10-21"
 tags: ["使用教程","故障排查"]
 topic: "guide-troubleshoot"
 related: ["ios","wifi-cellular-handoff","troubleshooting"]
-sources: [{"title":"Apple：使用需要登录的公共Wi-Fi","url":"https://support.apple.com/en-us/102554"}]
+sources: [{"title": "Apple：使用需要登录的 Wi-Fi 网络", "url": "https://support.apple.com/102554"}, {"title": "Apple：iPhone 蜂窝数据设置和应用用量", "url": "https://support.apple.com/guide/iphone/iph3dd5f213/ios"}, {"title": "Apple：iPhone 或 iPad 无法连接 Wi-Fi 时的检查", "url": "https://support.apple.com/111786"}]
 draft: false
 order: 19
 ---
@@ -38,7 +38,31 @@ order: 19
 
 确认需要保留哪些自动加入设置，以及下一次是否还应自动登录。Apple将自动加入与自动登录分别说明，两者不能混为一谈。离开后切回自己的网络，再确认客户端按预期连接；公共网络上的一次成功不保证下一次或其他场所也相同。
 
+
+
+## 把三套登录信息明确分开
+
+公共 Wi-Fi 认证、VPN 服务账户和目标网站账户分别管理。酒店门户应只接收场所正式要求的信息，不应索取私人订阅令牌或 Apple 账户验证码。先核对网络名称与页面来源，费用及身份要求不清时向场所确认。
+
+| 检查结果 | 对应处理 |
+| --- | --- |
+| 已连 Wi-Fi 但门户未完成 | 先做场所认证，不先切换节点 |
+| 门户完成，普通访问正常 | 再验证 VPN 与业务任务 |
+| 取消门户后仍留在无线网络 | 检查实际互联网资格，关联不等于认证完成 |
+
+### 对照案例
+
+例如手机连接酒店 Wi-Fi 后又自动转蜂窝，网页可以打开，但并不能证明酒店网络已经认证。应核对实际接入和可能费用，再单独验证酒店连接，避免把移动网络成功记成 Wi-Fi 成功。
+
+### 完成后的验收
+
+保存网络名称、认证状态与 VPN 结果，完成实际任务后恢复临时策略。离开时按需要关闭自动加入；未知证书安装、远程控制与无关密码请求应先核实。
+
 ## 常见问题
+
+### 登录门户后就代表所有应用都经过 VPN 吗？
+
+不代表。门户解决基础接入，VPN 的配置范围和业务会话需要另验收；热点电脑、受管 App 和分流例外也不能由手机首页结果代替。
 
 ### 出现欢迎页就说明VPN故障吗？
 
@@ -47,3 +71,10 @@ order: 19
 ### 返回酒店后又不能上网怎么办？
 
 先查看认证是否过期或需要重新登录，不直接重装客户端。继续阅读[Wi-Fi与移动数据切换检查](/guides/wifi-cellular-handoff/)和[基础排查](/guides/troubleshooting/)。
+
+
+## 进一步阅读与参考
+
+- [Apple：使用需要登录的 Wi-Fi 网络](https://support.apple.com/102554)
+- [Apple：iPhone 蜂窝数据设置和应用用量](https://support.apple.com/guide/iphone/iph3dd5f213/ios)
+- [Apple：iPhone 或 iPad 无法连接 Wi-Fi 时的检查](https://support.apple.com/111786)

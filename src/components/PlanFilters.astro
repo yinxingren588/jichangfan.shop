@@ -1,12 +1,12 @@
-<form class="plan-filters" id="plan-filters" aria-label="筛选品牌参考套餐">
+<form class="plan-filters" id="plan-filters" aria-label="筛选品牌套餐">
   <div><label for="plan-brand">品牌名称</label><input id="plan-brand" type="search" name="brand" placeholder="例如：隐形人、Breezenet" autocomplete="off" /></div>
   <div><label for="plan-period">付款口径</label><select id="plan-period" name="period"><option value="all">全部付款方式</option><option value="month">月付</option><option value="year">年付总额</option><option value="year-equivalent">年付折合月价</option><option value="one-time">一次性付款</option></select></div>
   <label class="plan-coupon-filter" for="plan-has-coupon"><input id="plan-has-coupon" type="checkbox" name="coupon" />仅看有站长提供优惠码</label>
   <button type="reset" class="button secondary">清除筛选</button>
 </form>
-<p class="plan-filter-status" id="plan-filter-status" role="status" aria-live="polite">全部 29 个品牌 · 58 档参考套餐。优惠有效性仍需在订单页确认。</p>
-<p class="note" id="plan-filter-empty" hidden>没有符合条件的参考套餐。可以清除品牌文字、切换付款方式或取消优惠码条件。</p>
-<noscript><p class="note">启用 JavaScript 可筛选；下方仍完整列出所有品牌与参考套餐。</p></noscript>
+<p class="plan-filter-status" id="plan-filter-status" role="status" aria-live="polite">全部 29 个品牌 · 58 档套餐。优惠有效性仍需在订单页确认。</p>
+<p class="note" id="plan-filter-empty" hidden>没有符合条件的套餐。可以清除品牌文字、切换付款方式或取消优惠码条件。</p>
+<noscript><p class="note">启用 JavaScript 可筛选；下方仍完整列出所有品牌与套餐。</p></noscript>
 <script>
  const form=document.querySelector<HTMLFormElement>('#plan-filters')!;
  const brand=document.querySelector<HTMLInputElement>('#plan-brand')!;
@@ -23,7 +23,7 @@
    panel.hidden=matching===0;
    if(matching){brands++;plans+=matching;}
   }
-  document.querySelector('#plan-filter-status')!.textContent='找到 '+brands+' 个品牌 · '+plans+' 档参考套餐。优惠码是否生效仍需在订单页确认。';
+  document.querySelector('#plan-filter-status')!.textContent='找到 '+brands+' 个品牌 · '+plans+' 档套餐。优惠码是否生效仍需在订单页确认。';
   document.querySelector<HTMLElement>('#plan-filter-empty')!.hidden=brands>0;
  }
  form.addEventListener('submit',event=>{event.preventDefault();filterPlans();});

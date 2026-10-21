@@ -15,13 +15,13 @@
     "AI 与应用场景": 20,
     "隐私与安全习惯": 20
   },
-  "minChineseCharacters": 617,
-  "maxChineseCharacters": 1122,
+  "minChineseCharacters": 581,
+  "maxChineseCharacters": 913,
   "pairsCompared": 19900,
-  "maxFiveCharacterShingleJaccard": 0.62,
+  "maxFiveCharacterShingleJaccard": 0.053,
   "closestPair": [
-    "AI 文件上传失败，先检查什么？",
-    "AI 桌面端和网页端表现不同，先查哪些条件？"
+    "Android 扫码导入节点前，需要保护哪些资料？",
+    "iOS 通过二维码导入配置，怎样避免泄露？"
   ],
   "flaggedPairs": [],
   "limits": "Shared article layout, context and checklist wording are intentional. Similarity checks detect near duplicates; they do not prove factual completeness or editorial quality."

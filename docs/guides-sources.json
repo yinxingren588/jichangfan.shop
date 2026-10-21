@@ -1,103 +1,502 @@
-{
-  "checkedAt": "2026-10-21",
-  "scope": "25 newly authored guides; 5 existing device/troubleshooting guides retained. Public official documentation read; no customer account or device configurations executed.",
-  "sourceNotes": "Ubuntu official help was readable in search results; a later direct request returned a temporary 503. Apple guide URLs can offer different OS versions. Refer to the current official UI. References support specific steps; general troubleshooting and record templates are original editorial guidance.",
-  "sources": [
-    {
-      "title": "Ubuntu官方：连接VPN",
-      "url": "https://help.ubuntu.com/stable/ubuntu-help/net-vpn-connect.html"
-    },
-    {
-      "title": "WireGuard官方安装入口",
-      "url": "https://www.wireguard.com/install/"
-    },
-    {
-      "title": "Proton VPN：Windows手动配置WireGuard",
-      "url": "https://protonvpn.com/support/wireguard-manual-windows"
-    },
-    {
-      "title": "Proton VPN：Android手动配置WireGuard",
-      "url": "https://protonvpn.com/support/wireguard-manual-android"
-    },
-    {
-      "title": "Proton VPN：下载WireGuard配置",
-      "url": "https://protonvpn.com/support/wireguard-configurations"
-    },
-    {
-      "title": "OpenVPN Connect：导入连接配置",
-      "url": "https://openvpn.net/connect-docs/import-profile.html"
-    },
-    {
-      "title": "Microsoft：Windows代理设置",
-      "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/use-a-proxy-server-in-windows"
-    },
-    {
-      "title": "Apple：更改Mac代理设置",
-      "url": "https://support.apple.com/en-au/guide/mac-help/mchlp2591/mac"
-    },
-    {
-      "title": "Android帮助：连接和管理VPN",
-      "url": "https://support.google.com/android/answer/9089766"
-    },
-    {
-      "title": "Mozilla：Firefox连接设置",
-      "url": "https://support.mozilla.org/en-US/kb/connection-settings-firefox"
-    },
-    {
-      "title": "Mullvad：应用分流操作说明",
-      "url": "https://mullvad.net/en/help/split-tunneling-with-the-mullvad-app"
-    },
-    {
-      "title": "Microsoft：Windows网络设置与任务",
-      "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/essential-network-settings-and-tasks-in-windows"
-    },
-    {
-      "title": "Microsoft：日期、时间与时区设置",
-      "url": "https://support.microsoft.com/en-us/windows/experience/personalization/set-time-date-and-time-zone-settings-in-windows"
-    },
-    {
-      "title": "Mozilla：安全网站的时间错误排查",
-      "url": "https://support.mozilla.org/en-US/kb/troubleshoot-time-errors-secure-websites"
-    },
-    {
-      "title": "Apple：使用需要登录的公共Wi-Fi",
-      "url": "https://support.apple.com/en-us/102554"
-    },
-    {
-      "title": "Android帮助：连接Wi-Fi网络",
-      "url": "https://support.google.com/android/answer/9075847"
-    },
-    {
-      "title": "Apple：蜂窝数据与用量统计",
-      "url": "https://support.apple.com/en-us/109323"
-    },
-    {
-      "title": "Apple：安装或移除iPhone配置描述文件",
-      "url": "https://support.apple.com/en-gb/guide/iphone/iph6c493b19/ios"
-    },
-    {
-      "title": "MDN：URL组成与处理",
-      "url": "https://developer.mozilla.org/en-US/docs/Web/API/URL"
-    },
-    {
-      "title": "Mullvad官方项目：日志与遥测说明",
-      "url": "https://github.com/mullvad/mullvadvpn-app/blob/main/docs/logging-and-telemetry.md"
-    },
-    {
-      "title": "Google Play帮助：更新Android应用",
-      "url": "https://support.google.com/googleplay/answer/113412"
-    },
-    {
-      "title": "Proton VPN：套餐与连接权益说明",
-      "url": "https://protonvpn.com/support/proton-vpn-plans"
-    },
-    {
-      "title": "Mullvad官方连接检查",
-      "url": "https://mullvad.net/en/check"
-    },
-    {
-      "title": "MDN：IPv6术语说明",
-      "url": "https://developer.mozilla.org/en-US/docs/Glossary/IPv6"
-    }
-  ]
-}
+[
+  {
+    "id": "windows",
+    "title": "Windows VPN 与机场客户端：安装前准备和连接检查",
+    "sources": [
+      {
+        "title": "Microsoft：在 Windows 中连接 VPN",
+        "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows"
+      },
+      {
+        "title": "Microsoft：Windows 代理设置",
+        "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/use-a-proxy-server-in-windows"
+      }
+    ]
+  },
+  {
+    "id": "macos",
+    "title": "macOS 连接指南：客户端来源、权限与退出检查",
+    "sources": [
+      {
+        "title": "Apple：在 Mac 上设置 VPN 连接",
+        "url": "https://support.apple.com/guide/mac-help/mchlp2963/mac"
+      },
+      {
+        "title": "Apple：Mac 网络服务的代理设置",
+        "url": "https://support.apple.com/guide/mac-help/mchlp2591/mac"
+      },
+      {
+        "title": "Apple：排查 VPN 和其他网络安全软件",
+        "url": "https://support.apple.com/102281"
+      },
+      {
+        "title": "WireGuard：官方安装入口",
+        "url": "https://www.wireguard.com/install/"
+      }
+    ]
+  },
+  {
+    "id": "android",
+    "title": "Android 连接教程：VPN 权限、配置与后台检查",
+    "sources": [
+      {
+        "title": "Google：Android VPN 连接和配置管理",
+        "url": "https://support.google.com/android/answer/9089766"
+      },
+      {
+        "title": "Android Developers：VPN 服务、常开和分应用机制",
+        "url": "https://developer.android.com/develop/connectivity/vpn"
+      },
+      {
+        "title": "Android Developers：Doze 和应用待机机制",
+        "url": "https://developer.android.com/training/monitoring-device-state/doze-standby"
+      }
+    ]
+  },
+  {
+    "id": "ios",
+    "title": "iOS 连接准备：官方应用、协议配置与验证清单",
+    "sources": [
+      {
+        "title": "Apple：设备部署中的 VPN 能力和适用范围",
+        "url": "https://support.apple.com/guide/deployment/vpn-overview-depae3d361d0/web"
+      },
+      {
+        "title": "Apple：在 iPhone 上安装或移除描述文件",
+        "url": "https://support.apple.com/guide/iphone/iph6c493b19/ios"
+      },
+      {
+        "title": "Apple：iPhone 蜂窝数据设置和应用用量",
+        "url": "https://support.apple.com/guide/iphone/iph3dd5f213/ios"
+      },
+      {
+        "title": "Apple：取消由 Apple 计费的订阅",
+        "url": "https://support.apple.com/118428"
+      },
+      {
+        "title": "WireGuard：官方安装入口",
+        "url": "https://www.wireguard.com/install/"
+      },
+      {
+        "title": "IVPN：各平台支持的协议",
+        "url": "https://www.ivpn.net/knowledgebase/general/what-vpn-protocols-do-you-offer/"
+      }
+    ]
+  },
+  {
+    "id": "linux",
+    "title": "Ubuntu 连接 VPN：从确认协议到首次连接",
+    "sources": [
+      {
+        "title": "Ubuntu：桌面连接 VPN",
+        "url": "https://help.ubuntu.com/stable/ubuntu-help/net-vpn-connect.html"
+      },
+      {
+        "title": "OpenVPN Connect：导入连接配置",
+        "url": "https://openvpn.net/connect-docs/import-profile.html"
+      },
+      {
+        "title": "Proton VPN：生成 WireGuard 配置文件",
+        "url": "https://protonvpn.com/support/wireguard-configurations"
+      }
+    ]
+  },
+  {
+    "id": "subscription-import",
+    "title": "机场订阅怎么导入：先核对格式，再完成首次连接",
+    "sources": [
+      {
+        "title": "OpenVPN Connect：导入连接配置",
+        "url": "https://openvpn.net/connect-docs/import-profile.html"
+      },
+      {
+        "title": "Proton VPN：生成 WireGuard 配置文件",
+        "url": "https://protonvpn.com/support/wireguard-configurations"
+      }
+    ]
+  },
+  {
+    "id": "qr-import",
+    "title": "二维码导入配置：确认来源、识别类型与验证结果",
+    "sources": [
+      {
+        "title": "Proton VPN：官方 WireGuard Android 客户端配置示例",
+        "url": "https://protonvpn.com/support/wireguard-manual-android"
+      },
+      {
+        "title": "OpenVPN Connect：导入连接配置",
+        "url": "https://openvpn.net/connect-docs/import-profile.html"
+      },
+      {
+        "title": "Apple：在 iPhone 上安装或移除描述文件",
+        "url": "https://support.apple.com/guide/iphone/iph6c493b19/ios"
+      }
+    ]
+  },
+  {
+    "id": "wireguard-windows",
+    "title": "Windows 使用 WireGuard：导入配置与连接验证",
+    "sources": [
+      {
+        "title": "Proton VPN：官方 WireGuard Windows 客户端配置示例",
+        "url": "https://protonvpn.com/support/wireguard-manual-windows"
+      },
+      {
+        "title": "Proton VPN：生成 WireGuard 配置文件",
+        "url": "https://protonvpn.com/support/wireguard-configurations"
+      },
+      {
+        "title": "WireGuard：官方安装入口",
+        "url": "https://www.wireguard.com/install/"
+      }
+    ]
+  },
+  {
+    "id": "wireguard-android",
+    "title": "Android 使用 WireGuard：从配置文件导入到断开检查",
+    "sources": [
+      {
+        "title": "Proton VPN：官方 WireGuard Android 客户端配置示例",
+        "url": "https://protonvpn.com/support/wireguard-manual-android"
+      },
+      {
+        "title": "Proton VPN：生成 WireGuard 配置文件",
+        "url": "https://protonvpn.com/support/wireguard-configurations"
+      },
+      {
+        "title": "Android Developers：VPN 服务、常开和分应用机制",
+        "url": "https://developer.android.com/develop/connectivity/vpn"
+      }
+    ]
+  },
+  {
+    "id": "openvpn-connect",
+    "title": "OpenVPN Connect 导入教程：文件、URL与认证检查",
+    "sources": [
+      {
+        "title": "OpenVPN Connect：导入连接配置",
+        "url": "https://openvpn.net/connect-docs/import-profile.html"
+      }
+    ]
+  },
+  {
+    "id": "windows-system-proxy",
+    "title": "Windows 系统代理设置：填写地址、端口与恢复原设置",
+    "sources": [
+      {
+        "title": "Microsoft：Windows 代理设置",
+        "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/use-a-proxy-server-in-windows"
+      },
+      {
+        "title": "Mozilla：Firefox 连接与代理设置",
+        "url": "https://support.mozilla.org/en-US/kb/connection-settings-firefox"
+      }
+    ]
+  },
+  {
+    "id": "macos-proxy-settings",
+    "title": "Mac 代理设置教程：按网络服务配置与退出验证",
+    "sources": [
+      {
+        "title": "Apple：Mac 网络服务的代理设置",
+        "url": "https://support.apple.com/guide/mac-help/mchlp2591/mac"
+      },
+      {
+        "title": "Apple：在 Mac 上设置 VPN 连接",
+        "url": "https://support.apple.com/guide/mac-help/mchlp2963/mac"
+      }
+    ]
+  },
+  {
+    "id": "android-always-on",
+    "title": "Android 始终开启VPN：查找入口、验证与关闭",
+    "sources": [
+      {
+        "title": "Google：Android VPN 连接和配置管理",
+        "url": "https://support.google.com/android/answer/9089766"
+      },
+      {
+        "title": "Android Developers：VPN 服务、常开和分应用机制",
+        "url": "https://developer.android.com/develop/connectivity/vpn"
+      }
+    ]
+  },
+  {
+    "id": "firefox-proxy",
+    "title": "Firefox 代理设置：跟随系统、手动配置与故障对照",
+    "sources": [
+      {
+        "title": "Mozilla：Firefox 连接与代理设置",
+        "url": "https://support.mozilla.org/en-US/kb/connection-settings-firefox"
+      },
+      {
+        "title": "Microsoft：VPN 路由决策",
+        "url": "https://learn.microsoft.com/en-us/windows/security/operating-system-security/network-security/vpn/vpn-routing"
+      }
+    ]
+  },
+  {
+    "id": "mullvad-split-tunneling",
+    "title": "Mullvad Windows 分流：排除应用、验证与恢复",
+    "sources": [
+      {
+        "title": "Mullvad：应用分流、排除列表和已知限制",
+        "url": "https://mullvad.net/en/help/split-tunneling-with-the-mullvad-app"
+      },
+      {
+        "title": "Mullvad：浏览器连接检测及检测范围",
+        "url": "https://mullvad.net/en/check"
+      }
+    ]
+  },
+  {
+    "id": "troubleshooting",
+    "title": "已连接却不能上网？按顺序排查 VPN 与机场订阅",
+    "sources": [
+      {
+        "title": "Microsoft：Windows Wi-Fi 故障排查与网络重置",
+        "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/fix-wi-fi-connection-issues-in-windows"
+      },
+      {
+        "title": "Apple：排查 VPN 和其他网络安全软件",
+        "url": "https://support.apple.com/102281"
+      },
+      {
+        "title": "Google：Android VPN 连接和配置管理",
+        "url": "https://support.google.com/android/answer/9089766"
+      }
+    ]
+  },
+  {
+    "id": "dns-check",
+    "title": "DNS 故障怎么查：记录报错、核对设置与对照连接",
+    "sources": [
+      {
+        "title": "Google：Android 网络高级设置与私人 DNS",
+        "url": "https://support.google.com/android/answer/9654714"
+      },
+      {
+        "title": "Mozilla：Firefox 连接与代理设置",
+        "url": "https://support.mozilla.org/en-US/kb/connection-settings-firefox"
+      },
+      {
+        "title": "Microsoft：Windows Wi-Fi 故障排查与网络重置",
+        "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/fix-wi-fi-connection-issues-in-windows"
+      }
+    ]
+  },
+  {
+    "id": "network-time-check",
+    "title": "连接前核对系统时间：Windows日期、时区与证书错误",
+    "sources": [
+      {
+        "title": "Microsoft：Windows 日期、时间与时区设置",
+        "url": "https://support.microsoft.com/en-us/windows/experience/personalization/set-time-date-and-time-zone-settings-in-windows"
+      },
+      {
+        "title": "Mozilla：安全网站的时间错误",
+        "url": "https://support.mozilla.org/en-US/kb/troubleshoot-time-errors-secure-websites"
+      }
+    ]
+  },
+  {
+    "id": "hotel-wifi-login",
+    "title": "酒店公共Wi-Fi先登录：iPhone认证页与VPN连接顺序",
+    "sources": [
+      {
+        "title": "Apple：使用需要登录的 Wi-Fi 网络",
+        "url": "https://support.apple.com/102554"
+      },
+      {
+        "title": "Apple：iPhone 蜂窝数据设置和应用用量",
+        "url": "https://support.apple.com/guide/iphone/iph3dd5f213/ios"
+      },
+      {
+        "title": "Apple：iPhone 或 iPad 无法连接 Wi-Fi 时的检查",
+        "url": "https://support.apple.com/111786"
+      }
+    ]
+  },
+  {
+    "id": "wifi-cellular-handoff",
+    "title": "Wi-Fi切换移动数据后断线：固定配置逐步验证",
+    "sources": [
+      {
+        "title": "Android Developers：VPN 服务、常开和分应用机制",
+        "url": "https://developer.android.com/develop/connectivity/vpn"
+      },
+      {
+        "title": "Apple：iPhone 蜂窝数据设置和应用用量",
+        "url": "https://support.apple.com/guide/iphone/iph3dd5f213/ios"
+      },
+      {
+        "title": "Google：Android VPN 连接和配置管理",
+        "url": "https://support.google.com/android/answer/9089766"
+      }
+    ]
+  },
+  {
+    "id": "traffic-reset-check",
+    "title": "流量与重置日期核对：把本机统计和套餐账期分开",
+    "sources": [
+      {
+        "title": "Apple：iPhone 蜂窝数据设置和应用用量",
+        "url": "https://support.apple.com/guide/iphone/iph3dd5f213/ios"
+      },
+      {
+        "title": "Microsoft：Windows 计量连接",
+        "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/metered-connections-in-windows"
+      }
+    ]
+  },
+  {
+    "id": "subscription-refresh",
+    "title": "订阅更新教程：保留旧配置、刷新与验证新列表",
+    "sources": [
+      {
+        "title": "OpenVPN Connect：导入连接配置",
+        "url": "https://openvpn.net/connect-docs/import-profile.html"
+      },
+      {
+        "title": "Proton VPN：生成 WireGuard 配置文件",
+        "url": "https://protonvpn.com/support/wireguard-configurations"
+      }
+    ]
+  },
+  {
+    "id": "device-limit-review",
+    "title": "设备数量超限怎么查：连接、配置与授权逐项清点",
+    "sources": [
+      {
+        "title": "Mullvad：桌面应用连接、断网保护和设备管理",
+        "url": "https://mullvad.net/en/help/using-mullvad-vpn-app"
+      },
+      {
+        "title": "Google：Android VPN 连接和配置管理",
+        "url": "https://support.google.com/android/answer/9089766"
+      },
+      {
+        "title": "Proton VPN：生成 WireGuard 配置文件",
+        "url": "https://protonvpn.com/support/wireguard-configurations"
+      }
+    ]
+  },
+  {
+    "id": "client-update",
+    "title": "客户端更新教程：确认来源、保存状态与更新后验证",
+    "sources": [
+      {
+        "title": "Google：更新 Android 应用",
+        "url": "https://support.google.com/googleplay/answer/113412"
+      },
+      {
+        "title": "Google：Play Protect 应用安全检查",
+        "url": "https://support.google.com/googleplay/answer/2812853"
+      },
+      {
+        "title": "WireGuard：官方安装入口",
+        "url": "https://www.wireguard.com/install/"
+      }
+    ]
+  },
+  {
+    "id": "configuration-backup",
+    "title": "配置备份与换设备：列清资料、保存副本和恢复验证",
+    "sources": [
+      {
+        "title": "OpenVPN Connect：导入连接配置",
+        "url": "https://openvpn.net/connect-docs/import-profile.html"
+      },
+      {
+        "title": "Proton VPN：生成 WireGuard 配置文件",
+        "url": "https://protonvpn.com/support/wireguard-configurations"
+      },
+      {
+        "title": "Apple：iCloud 备份包含哪些资料",
+        "url": "https://support.apple.com/108770"
+      }
+    ]
+  },
+  {
+    "id": "logs-redaction",
+    "title": "客户端日志怎么整理：保留错误，隐藏订阅与私密信息",
+    "sources": [
+      {
+        "title": "Mullvad 官方项目：日志与遥测说明",
+        "url": "https://github.com/mullvad/mullvadvpn-app/blob/main/docs/logging-and-telemetry.md"
+      }
+    ]
+  },
+  {
+    "id": "subscription-link-reset",
+    "title": "订阅链接暴露后怎么处理：确认凭据范围与更换配置",
+    "sources": [
+      {
+        "title": "Proton VPN：生成 WireGuard 配置文件",
+        "url": "https://protonvpn.com/support/wireguard-configurations"
+      },
+      {
+        "title": "OpenVPN Connect：导入连接配置",
+        "url": "https://openvpn.net/connect-docs/import-profile.html"
+      }
+    ]
+  },
+  {
+    "id": "disconnect-restore",
+    "title": "退出客户端后不能上网：断开、代理与自动连接检查",
+    "sources": [
+      {
+        "title": "Microsoft：Windows 代理设置",
+        "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/use-a-proxy-server-in-windows"
+      },
+      {
+        "title": "Apple：Mac 网络服务的代理设置",
+        "url": "https://support.apple.com/guide/mac-help/mchlp2591/mac"
+      },
+      {
+        "title": "Google：Android VPN 连接和配置管理",
+        "url": "https://support.google.com/android/answer/9089766"
+      },
+      {
+        "title": "Mozilla：Firefox 连接与代理设置",
+        "url": "https://support.mozilla.org/en-US/kb/connection-settings-firefox"
+      }
+    ]
+  },
+  {
+    "id": "remove-vpn-profile",
+    "title": "移除VPN配置：分清本机删除、描述文件与服务端撤销",
+    "sources": [
+      {
+        "title": "Apple：在 iPhone 上安装或移除描述文件",
+        "url": "https://support.apple.com/guide/iphone/iph6c493b19/ios"
+      },
+      {
+        "title": "Google：Android VPN 连接和配置管理",
+        "url": "https://support.google.com/android/answer/9089766"
+      },
+      {
+        "title": "Apple：取消由 Apple 计费的订阅",
+        "url": "https://support.apple.com/118428"
+      }
+    ]
+  },
+  {
+    "id": "ipv6-connection-check",
+    "title": "IPv4与IPv6连接检查：分别记录出口与浏览器结果",
+    "sources": [
+      {
+        "title": "MDN：IPv6 概念",
+        "url": "https://developer.mozilla.org/en-US/docs/Glossary/IPv6"
+      },
+      {
+        "title": "Mullvad：浏览器连接检测及检测范围",
+        "url": "https://mullvad.net/en/check"
+      },
+      {
+        "title": "Microsoft：VPN 路由决策",
+        "url": "https://learn.microsoft.com/en-us/windows/security/operating-system-security/network-security/vpn/vpn-routing"
+      }
+    ]
+  }
+]

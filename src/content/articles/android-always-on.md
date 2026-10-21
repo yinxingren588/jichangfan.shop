@@ -7,7 +7,7 @@ updated: "2026-10-21"
 tags: ["使用教程","连接与分流"]
 topic: "guide-connection"
 related: ["android","wifi-cellular-handoff","disconnect-restore"]
-sources: [{"title":"Android帮助：连接和管理VPN","url":"https://support.google.com/android/answer/9089766"}]
+sources: [{"title": "Google：Android VPN 连接和配置管理", "url": "https://support.google.com/android/answer/9089766"}, {"title": "Android Developers：VPN 服务、常开和分应用机制", "url": "https://developer.android.com/develop/connectivity/vpn"}]
 draft: false
 order: 13
 ---
@@ -38,7 +38,31 @@ order: 13
 
 记录功能是否可用、启用后能否连接、关闭后是否恢复，以及异常发生时的网络类型。该记录只用于理解自己设备上的行为，不代表其他品牌或不同系统版本也相同。连接中断后再恢复的时间，也不能用一次观察包装成品牌稳定性评分。
 
+
+
+## 把常开与无 VPN 阻断分别验收
+
+系统常开管理指定 VPN 的启动与维持，应用自动重连是自身逻辑，而无 VPN 阻断决定未走隧道的流量能否联网。启用多个设置时必须分别理解，否则可能把预期阻断误认为套餐故障。个人资料和工作资料也要各自确认。
+
+| 检查结果 | 对应处理 |
+| --- | --- |
+| 没有系统常开入口 | 查系统与应用支持，不安装未知补丁 |
+| 排除应用在启用阻断后离线 | 核对允许/排除列表与阻断的系统限制 |
+| 手动断开后立即重连 | 检查常开和应用自动策略是否仍启用 |
+
+### 对照案例
+
+例如只允许浏览器经过 VPN，又开启无 VPN 阻断，其他应用失去网络。这可能符合该组合机制，并非‘排除就直连’。修改前应知道自己需要何种范围，再按产品支持调整。
+
+### 完成后的验收
+
+验证重启、切网和主动断开，记录系统提供方、阻断状态及原任务结果。每次只改一个开关，测试结束恢复原值；组织策略由管理员管理。
+
 ## 常见问题
+
+### 常开能保证断网时照常上网吗？
+
+不能。没有底层网络、认证失败或对端不可达仍会中断。常开机制不是网络可用性保证，应记录错误并按对应层次排查。
 
 ### 找不到该选项是不是应用坏了？
 
@@ -47,3 +71,9 @@ order: 13
 ### 切换Wi-Fi后应该怎么检查？
 
 先使用[网络切换验证](/guides/wifi-cellular-handoff/)确认基础网络与任务恢复；不再使用时按[断开恢复流程](/guides/disconnect-restore/)检查。
+
+
+## 进一步阅读与参考
+
+- [Google：Android VPN 连接和配置管理](https://support.google.com/android/answer/9089766)
+- [Android Developers：VPN 服务、常开和分应用机制](https://developer.android.com/develop/connectivity/vpn)

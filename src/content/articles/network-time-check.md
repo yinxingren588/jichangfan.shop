@@ -7,7 +7,7 @@ updated: "2026-10-21"
 tags: ["使用教程","故障排查"]
 topic: "guide-troubleshoot"
 related: ["troubleshooting","dns-check","client-update"]
-sources: [{"title":"Microsoft：日期、时间与时区设置","url":"https://support.microsoft.com/en-us/windows/experience/personalization/set-time-date-and-time-zone-settings-in-windows"},{"title":"Mozilla：安全网站的时间错误排查","url":"https://support.mozilla.org/en-US/kb/troubleshoot-time-errors-secure-websites"}]
+sources: [{"title": "Microsoft：Windows 日期、时间与时区设置", "url": "https://support.microsoft.com/en-us/windows/experience/personalization/set-time-date-and-time-zone-settings-in-windows"}, {"title": "Mozilla：安全网站的时间错误", "url": "https://support.mozilla.org/en-US/kb/troubleshoot-time-errors-secure-websites"}]
 draft: false
 order: 18
 ---
@@ -38,7 +38,31 @@ order: 18
 
 可以记录“时间纠正后，原报错不再出现”，但不要由此推断套餐速度或稳定性更好。时间错误解决后，仍可能需要处理账户认证、配置更新或目标平台限制。保留前后错误与修改项，比只写一句“重启好了”更方便复查。
 
+
+
+## 将真实时钟与日志时区分开
+
+Windows 设置可分别管理日期时间与时区。日志可能记录 UTC，而手机显示本地时间，这不等于时钟失准。证书尚未生效或过期也可能是服务端真实问题，正确时间只是排查前提，不是忽略警告的理由。
+
+| 检查结果 | 对应处理 |
+| --- | --- |
+| 年月日或实际时刻明显错误 | 先按系统或组织方式校正 |
+| 相差固定时区且日志标记 UTC | 标注并换算，不为对齐日志改系统时钟 |
+| 时间正确仍有证书警告 | 继续核对域名、证书及服务端情况 |
+
+### 对照案例
+
+例如日志为 12:05 UTC，用户记录北京 20:05，两者可以对应同一时刻。应把时区写进工单；故意回拨日期让证书暂时通过，会掩盖真实错误并影响其他认证。
+
+### 完成后的验收
+
+校正后复现原失败网址，核对重启后时间是否保持及同步提示。若只是日志时区不同，保留换算说明即可；没有改善时继续按原错误排查，不持续调整日期碰运气。
+
 ## 常见问题
+
+### VPN 连上后就会替系统同步时间吗？
+
+不能假定。联网可能恢复同步服务的可达性，但时钟管理与 VPN 是不同功能。按 Microsoft 或组织正式设置处理，并验证真实时刻。
 
 ### 节点在国外，系统时区就必须跟着改吗？
 
@@ -47,3 +71,9 @@ order: 18
 ### 校准后仍失败怎么办？
 
 继续区分[DNS与访问错误](/guides/dns-check/)，或按[连接排查顺序](/guides/troubleshooting/)核对其他阶段。
+
+
+## 进一步阅读与参考
+
+- [Microsoft：Windows 日期、时间与时区设置](https://support.microsoft.com/en-us/windows/experience/personalization/set-time-date-and-time-zone-settings-in-windows)
+- [Mozilla：安全网站的时间错误](https://support.mozilla.org/en-US/kb/troubleshoot-time-errors-secure-websites)

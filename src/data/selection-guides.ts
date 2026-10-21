@@ -20,8 +20,8 @@ export const selectionGuides: Record<string, SelectionGuide> = {
     exampleTitle: '月价更低，实际用起来一定更省吗？',
     example: '假设甲月付 20 元、标称 100GB、固定 2 倍率；乙月付 30 元、100GB、固定 1 倍率。甲可传输约 50GB，乙约 100GB。每月只用 20GB 时，按实际用量摊销分别为 1 元/GB 与 1.5 元/GB；若需要 80GB，甲的配额则不够。',
     outcome: '先判断够不够用，再比较实际支出。以上是虚构算例，不对应收录品牌；未计客户端、税费与超额成本。',
-    next: [{title:'用套餐成本计算器复算',url:'/ranking/value/#cost-calculator',detail:'填付款总额、配额、倍率和预计用量。'},{title:'核对品牌套餐与优惠码',url:'/coupons/',detail:'29 个品牌的参考资料，查看来源和付款口径。'},{title:'检查流量重置周期',url:'/guides/traffic-reset-check/',detail:'把流量重置与账单续费分开记录。'}],
-    brands: [{slug:'yinxingren',reason:'月付参考资料入口，可核对付款金额与每月配额。'},{slug:'edgenova',reason:'年付总额参考入口，用于辨别总价与折算月价。'},{slug:'feiv',reason:'一次性流量参考入口，需要另核有效期与用量。'}],
+    next: [{title:'用套餐成本计算器复算',url:'/ranking/value/#cost-calculator',detail:'填付款总额、配额、倍率和预计用量。'},{title:'核对品牌套餐与优惠码',url:'/coupons/',detail:'29 个品牌的套餐资料，查看来源和付款口径。'},{title:'检查流量重置周期',url:'/guides/traffic-reset-check/',detail:'把流量重置与账单续费分开记录。'}],
+    brands: [{slug:'yinxingren',reason:'月付套餐资料入口，可核对付款金额与每月配额。'},{slug:'edgenova',reason:'年付总额资料入口，用于辨别总价与折算月价。'},{slug:'feiv',reason:'一次性流量资料入口，需要另核有效期与用量。'}],
   },
   beginner: {
     scenario: '第一次选择时，先完成“设备能装、配置能导入、付款能理解”三项检查。把自己不愿维护的步骤写出来，会比不断增加候选更容易做决定。',
@@ -35,7 +35,7 @@ export const selectionGuides: Record<string, SelectionGuide> = {
     example: '假设你不想手动维护配置。候选甲有两种系统的官方应用和明确设备条款；乙仅提供订阅链接，客户端兼容资料缺失；丙的年付展示便宜，但没有读懂续费规则。先核对甲的实际安装流程；乙等取得兼容资料后再判断，丙等付款条款清楚后再比较。',
     outcome: '这是一段虚构筛选演示，不代表某个品牌已经通过测试。保留候选的理由应对应你的需求，而不是广告中的节点数量。',
     next: [{title:'Windows 首次使用',url:'/guides/windows/',detail:'准备来源、权限与首次连接。'},{title:'订阅链接导入',url:'/guides/subscription-import/',detail:'检查格式，避免把凭据发给无关服务。'},{title:'VPN 与代理订阅的差异',url:'/blog/vpn-vs-proxy/',detail:'先分清客户端和配置类型。'}],
-    brands: [{slug:'mullvad',reason:'商业 VPN 官方资料入口，可继续核对应用和设备条款。'},{slug:'yinxingren',reason:'代理订阅参考资料入口，客户端兼容情况需向服务方确认。'}],
+    brands: [{slug:'mullvad',reason:'商业 VPN 官方资料入口，可继续核对应用和设备条款。'},{slug:'yinxingren',reason:'代理订阅套餐资料入口，客户端兼容情况需向服务方确认。'}],
   },
   premium: {
     scenario: '高端线路选择适合从可解释的证据开始。把使用地区、运营商和重要任务写清楚，再请服务方说明线路覆盖的具体一段及适用套餐。',

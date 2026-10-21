@@ -1,7 +1,7 @@
 {
   "checkedAt": "2026-10-21",
   "referenceSite": "https://jiediantuijian.shop/",
-  "method": "Price and traffic facts read from 29 third-party reference tables. Not verified official checkout data. Coupon codes and affiliate URLs supplied by site owner. Discount, expiry and eligibility unverified. No performance claims reused.",
+  "method": "The owner explicitly confirms designated-source prices and traffic. 29 pages read in full. Plan periods resolved from table cells and specific notes. Specifications are attributed declarations, not our tests. Coupon discount, expiry and eligibility not supplied.",
   "brands": [
     {
       "slug": "yinxingren",
@@ -19,9 +19,12 @@
           "trafficGB": 144,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/yinxingren/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "500 Mbps",
+          "devices": "5台设备"
         },
         {
           "name": "纯专线主力版",
@@ -31,11 +34,54 @@
           "trafficGB": 350,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/yinxingren/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "1000 Mbps",
+          "devices": "8台设备"
         }
-      ]
+      ],
+      "specifications": {
+        "focus": "以设备数和 144GB / 350GB 两档划分主力用途",
+        "selection": "隐形人的两档不只是流量翻倍：价格从 24 元升到 48 元，配额增加 206GB，并发从 5 台升到 8 台。若电脑、手机和平板合计不到 5 台且用量低于 144GB，主力版增加的权益可能闲置；需要第 6 台同时在线或每月超过入门配额时，升级才有明确理由。",
+        "boundary": "资料将线路写为 IEPL 纯专线，同时提供三种协议。专线名称不能证明所有节点采用同一路由；应针对实际选用节点核对入口、倍率与订阅格式。",
+        "caseLabel": "以单人办公加周末视频的 110GB 月用量为例",
+        "usageGB": 110,
+        "devices": 5,
+        "faq": [
+          {
+            "question": "144GB 不够用时一定要买 350GB 吗？",
+            "answer": "先看是否为某次系统更新造成的偶发峰值，并询问流量加购和升级补差规则。长期超过 144GB 时，350GB 档才更便于预算；不要假设剩余流量会自动结转。"
+          }
+        ],
+        "related": [
+          "breezenet",
+          "flashleap",
+          "sogoyun"
+        ],
+        "line": "IEPL纯专线",
+        "protocols": [
+          "Shadowsocks",
+          "Trojan",
+          "Hysteria2"
+        ],
+        "regions": [
+          "香港",
+          "台湾",
+          "日本",
+          "新加坡",
+          "美国",
+          "英国",
+          "韩国"
+        ],
+        "deviceLimit": "5-8台设备",
+        "source": "https://jiediantuijian.shop/airport/yinxingren/",
+        "checkedAt": "2026-10-21",
+        "sourceSha256": "db3bbd8c0d2aa6624c3fa59d9115df15fc9e2c90a7971a251ffdf94aa351a7f1",
+        "aiClaims": "ChatGPT、Claude 3.5、Midjourney、Gemini、Copilot",
+        "streamingClaims": "Netflix 4K、Disney+、YouTube Premium、HBO Max"
+      }
     },
     {
       "slug": "muguang",
@@ -52,9 +98,12 @@
           "trafficGB": 120,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/muguang/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "500 Mbps",
+          "devices": "4台设备"
         },
         {
           "name": "海量进阶月付",
@@ -64,11 +113,52 @@
           "trafficGB": 300,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/muguang/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "800 Mbps",
+          "devices": "6台设备"
         }
-      ]
+      ],
+      "specifications": {
+        "focus": "20 元门槛与 300GB 进阶档的差额比较",
+        "selection": "暮光网络基础档 120GB 对应 20 元，进阶档用 38 元换到 300GB。增加 18 元获得 180GB 标称配额，适合已经有连续月度用量记录的用户；只需要百 GB 左右时，基础档的总支出更低。",
+        "boundary": "资料列有 VLESS 与 Shadowsocks，选择客户端前应看订阅里实际提供的节点类型。某客户端支持 VLESS，不代表能直接导入任何订阅地址。",
+        "caseLabel": "以双设备办公、每月 90GB 的需求为例",
+        "usageGB": 90,
+        "devices": 4,
+        "faq": [
+          {
+            "question": "暮光网络和同为 20 元起的品牌怎么比？",
+            "answer": "先对齐 120GB 的月度口径，再核对协议、设备数和常用地区。相同起步价格无法说明到你家宽带的质量相同，可以把 U1S1、跨界云加入对比后逐项记录。"
+          }
+        ],
+        "related": [
+          "u1s1",
+          "kuajiecloud",
+          "quanqiuyun"
+        ],
+        "line": "专线节点",
+        "protocols": [
+          "VLESS",
+          "Shadowsocks"
+        ],
+        "regions": [
+          "香港",
+          "台湾",
+          "日本",
+          "新加坡",
+          "美国",
+          "德国"
+        ],
+        "deviceLimit": "4-6台",
+        "source": "https://jiediantuijian.shop/airport/muguang/",
+        "checkedAt": "2026-10-21",
+        "sourceSha256": "dd72f5a17606f7746eb28d060471e2a2db45d8afc6d0ce6738924b355c0aa67c",
+        "aiClaims": "ChatGPT、Claude、Gemini",
+        "streamingClaims": "Netflix、Disney+、YouTube Premium"
+      }
     },
     {
       "slug": "breezenet",
@@ -86,9 +176,12 @@
           "trafficGB": 200,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/breezenet/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "500 Mbps",
+          "devices": "4台设备"
         },
         {
           "name": "微风进阶版",
@@ -98,11 +191,53 @@
           "trafficGB": 500,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/breezenet/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "1000 Mbps",
+          "devices": "6台设备"
         }
-      ]
+      ],
+      "specifications": {
+        "focus": "8 元 200GB 与 18 元 500GB 的低预算选择",
+        "selection": "微风网络的两档均为月付，200GB 与 500GB 之间的价格差为 10 元。用量不足 200GB 时，进阶档较低的账面每 GB 单价并不自动节省现金；连续几个月接近配额上限，才值得用 18 元档换取更大余量。",
+        "boundary": "来源将线路列为 IEPL/IPLC，并列出 VLESS、Shadowsocks、Trojan。协议选择较多意味着要匹配配置，不应同时开启多个客户端争用系统代理或 VPN 接口。",
+        "caseLabel": "以三台个人设备合计每月 160GB 为例",
+        "usageGB": 160,
+        "devices": 4,
+        "faq": [
+          {
+            "question": "weifeng90 是九折码吗？",
+            "answer": "代码由站长提供，但字符串中的 90 不能证明折扣比例。复制 weifeng90 后查看订单实际减免和适用套餐，本站的 8 元、18 元均未应用优惠码。"
+          }
+        ],
+        "related": [
+          "feiv",
+          "guangnianti",
+          "kexincloud"
+        ],
+        "line": "IEPL/IPLC",
+        "protocols": [
+          "VLESS",
+          "Shadowsocks",
+          "Trojan"
+        ],
+        "regions": [
+          "香港",
+          "台湾",
+          "日本",
+          "新加坡",
+          "美国",
+          "英国"
+        ],
+        "deviceLimit": "4-6台",
+        "source": "https://jiediantuijian.shop/airport/breezenet/",
+        "checkedAt": "2026-10-21",
+        "sourceSha256": "a969d73fbff5ab43095df84cded8a7630a446b1e25e191054191eafad287a87e",
+        "aiClaims": "ChatGPT Plus、Claude 3.5 Sonnet、Perplexity、Midjourney",
+        "streamingClaims": "Netflix 4K、Disney+、YouTube 4K、TikTok"
+      }
     },
     {
       "slug": "feimaoyun",
@@ -120,9 +255,12 @@
           "trafficGB": 150,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/feimaoyun/",
-          "note": "参考页的周期列写作月付，但套餐名和备注明确写年付折算；本站按年付折合月价展示，年付总额待确认。"
+          "note": "来源备注为年付折合月价，不能按月购买；年度实付总额与续费规则请在订单查看。",
+          "ownerConfirmed": true,
+          "port": "400 Mbps",
+          "devices": "4台设备"
         },
         {
           "name": "畅享月付版",
@@ -132,11 +270,53 @@
           "trafficGB": 350,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/feimaoyun/",
-          "note": "参考页的周期列写作月付，但套餐名和备注明确写年付折算；本站按年付折合月价展示，年付总额待确认。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "800 Mbps",
+          "devices": "6台设备"
         }
-      ]
+      ],
+      "specifications": {
+        "focus": "区分约 7 元年付月均价和 16 元普通月付",
+        "selection": "飞猫云的低门槛展示来自年付折算，不能理解为只支付 7 元就买到一个月。首次体验可先比较 16 元、350GB 的普通月付与年付的预付款总额；即使月均数更低，也要把全年占用的现金和中途退出规则一起计入。",
+        "boundary": "原表的付款栏写月付，备注却写年付折算；本站根据更明确的备注保留年付月均口径。约 84 元只是 7×12 的预算估算，不是已确认的年度应付总额。",
+        "caseLabel": "以全年持续使用、每月约 100GB 的需求为例",
+        "usageGB": 100,
+        "devices": 4,
+        "faq": [
+          {
+            "question": "飞猫云 7 元档是否可以按月取消？",
+            "answer": "不能从年付折合月价推断可按月购买或退款。应在订单中核对年付总额、有效期、退款方式；需要普通月付时看 16 元的畅享月付版。"
+          }
+        ],
+        "related": [
+          "firefly",
+          "kuaili",
+          "breezenet"
+        ],
+        "line": "IEPL/IPLC / 优质中转线路",
+        "protocols": [
+          "Shadowsocks",
+          "V2Ray",
+          "Trojan"
+        ],
+        "regions": [
+          "香港",
+          "台湾",
+          "日本",
+          "新加坡",
+          "美国",
+          "韩国"
+        ],
+        "deviceLimit": "4-6台",
+        "source": "https://jiediantuijian.shop/airport/feimaoyun/",
+        "checkedAt": "2026-10-21",
+        "sourceSha256": "ec5f6e093f8f359817dac65b51e3c73158e6be7af02acfefd4e983004a0b3e8f",
+        "aiClaims": "ChatGPT、Claude、Copilot",
+        "streamingClaims": "Netflix、Disney+、YouTube Premium"
+      }
     },
     {
       "slug": "dalaocloud",
@@ -153,9 +333,12 @@
           "trafficGB": 180,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/dalaocloud/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "600 Mbps",
+          "devices": "5台设备"
         },
         {
           "name": "大佬至尊版",
@@ -165,11 +348,54 @@
           "trafficGB": 450,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/dalaocloud/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "1200 Mbps",
+          "devices": "8台设备"
         }
-      ]
+      ],
+      "specifications": {
+        "focus": "180GB 到 450GB 的配额和并发同时升级",
+        "selection": "大佬云轻享版适合在 180GB 以内使用的个人用户，至尊版把月配额增到 450GB，并发从 5 台增到 8 台。两档价格差 20 元，升级应围绕持续大用量或并发需求，而不是只看套餐的“至尊”名称。",
+        "boundary": "来源备注出现企业级 SLA，但当前资料未附可执行的赔付比例、工单响应时限或完整合同。本文不据此承诺可用率，团队用途需另外取得正式条款。",
+        "caseLabel": "以个人多设备每月 150GB 的需求为例",
+        "usageGB": 150,
+        "devices": 5,
+        "faq": [
+          {
+            "question": "至尊版能否直接用于企业业务？",
+            "answer": "名称和备注不能替代业务合同。涉及多人协作时，应确认账户共享许可、售后时限、故障处理和发票等条款，再判断 450GB、8 台的规格是否满足实际需要。"
+          }
+        ],
+        "related": [
+          "yinxingren",
+          "sogoyun",
+          "wavenet"
+        ],
+        "line": "优质骨干中转 / 专线",
+        "protocols": [
+          "Shadowsocks",
+          "Trojan",
+          "Hysteria2"
+        ],
+        "regions": [
+          "香港",
+          "台湾",
+          "日本",
+          "新加坡",
+          "美国",
+          "英国",
+          "德国"
+        ],
+        "deviceLimit": "5-8台",
+        "source": "https://jiediantuijian.shop/airport/dalaocloud/",
+        "checkedAt": "2026-10-21",
+        "sourceSha256": "4bbdd099533735df5489e11e539ca71e137fdc537dd25fd44032c108d2c5e32e",
+        "aiClaims": "ChatGPT Plus、Claude 3.5 Sonnet、Midjourney、OpenAI API",
+        "streamingClaims": "Netflix 4K、Disney+、YouTube 4K、HBO Max"
+      }
     },
     {
       "slug": "feiv",
@@ -186,9 +412,12 @@
           "trafficGB": 100,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/feiv/",
-          "note": "不限时方案按一次性总配额展示，使用期限、清零条件和续费方式尚未在结账页核实。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "300 Mbps",
+          "devices": "3台设备"
         },
         {
           "name": "不限时海量版",
@@ -198,11 +427,51 @@
           "trafficGB": 200,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/feiv/",
-          "note": "不限时方案按一次性总配额展示，使用期限、清零条件和续费方式尚未在结账页核实。"
+          "note": "不限时档按总配额展示，不是每月重置；有效期与服务条款见订单。",
+          "ownerConfirmed": true,
+          "port": "500 Mbps",
+          "devices": "5台设备"
         }
-      ]
+      ],
+      "specifications": {
+        "focus": "月付主力与不限时备用必须分开计算",
+        "selection": "飞V的 4.9 元轻量版为每月 100GB，29 元不限时版则是 200GB 总配额，两者没有相同的重置周期。低频备用可按预计用完总量的月份估算支出，持续每月使用则应比较月付方案，不能把 200GB 当作每月到账。",
+        "boundary": "不限时是资料站对该档有效期的描述，并不保证服务永久存在。下单时仍要留存有效期、停服、退款及订阅失效的条款，不宜一次囤积多个账号。",
+        "caseLabel": "以应急连接每月消耗 20GB 的假设为例",
+        "usageGB": 20,
+        "devices": 3,
+        "faq": [
+          {
+            "question": "29 元的 200GB 每月重置吗？",
+            "answer": "不是。本站按不限时总配额展示；若每月使用 20GB，账面约可分配 10 个月，但未计倍率、额外扣量或服务变更。这是预算演示，不是使用寿命承诺。"
+          }
+        ],
+        "related": [
+          "breezenet",
+          "kexincloud",
+          "ermaoyun"
+        ],
+        "line": "优化线路",
+        "protocols": [
+          "Trojan",
+          "V2Ray"
+        ],
+        "regions": [
+          "香港",
+          "台湾",
+          "日本",
+          "新加坡",
+          "美国"
+        ],
+        "deviceLimit": "3-5台",
+        "source": "https://jiediantuijian.shop/airport/feiv/",
+        "checkedAt": "2026-10-21",
+        "sourceSha256": "9c814d96853763eaac3d5b97df42f16c1fe2a2c81d295d5e9c6bb5fb657310ab",
+        "aiClaims": "ChatGPT、Claude",
+        "streamingClaims": "YouTube HD、Bilibili港澳台"
+      }
     },
     {
       "slug": "laddercloud",
@@ -219,9 +488,12 @@
           "trafficGB": 125,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/laddercloud/",
-          "note": "第二档的流量列为350GB，备注另提最高500GB，信息不一致；本表保留流量列数值，下单前确认对应套餐。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "500 Mbps",
+          "devices": "4台设备"
         },
         {
           "name": "海量专线版",
@@ -231,11 +503,53 @@
           "trafficGB": 350,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/laddercloud/",
-          "note": "第二档的流量列为350GB，备注另提最高500GB，信息不一致；本表保留流量列数值，下单前确认对应套餐。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "1000 Mbps",
+          "devices": "6台设备"
         }
-      ]
+      ],
+      "specifications": {
+        "focus": "125GB 基础中转与 350GB 专线档的分界",
+        "selection": "梯子云基础档 25 元、125GB，进阶档 48 元、350GB。升级同时涉及套餐名称中的线路层级变化，不能只把差价除以新增 GB；应询问两档能选的节点是否相同，以及升级会不会改变重置日。",
+        "boundary": "海量专线版表格明确写 350GB，备注另有“最高可达500GB”措辞。本站采用本档对应的 350GB，不把其他可能的海量方案配额移植到这档。",
+        "caseLabel": "以每月 100GB、四台设备的组合为例",
+        "usageGB": 100,
+        "devices": 4,
+        "faq": [
+          {
+            "question": "海量专线版到底是 350GB 还是 500GB？",
+            "answer": "当前收录档位为 48 元、350GB/月。备注提到的最高 500GB 没有对应本档的独立价格，因此不能写成购买 48 元档即可获得 500GB。"
+          }
+        ],
+        "related": [
+          "lingmao",
+          "yifanyun",
+          "flashleap"
+        ],
+        "line": "优化中转/专线",
+        "protocols": [
+          "Shadowsocks",
+          "Trojan",
+          "V2Ray"
+        ],
+        "regions": [
+          "香港",
+          "台湾",
+          "日本",
+          "新加坡",
+          "美国",
+          "英国"
+        ],
+        "deviceLimit": "4-6台",
+        "source": "https://jiediantuijian.shop/airport/laddercloud/",
+        "checkedAt": "2026-10-21",
+        "sourceSha256": "ee3e80782299d8c4f6358f7860a733c24855878cb698e71858aac6f6c2e6311d",
+        "aiClaims": "ChatGPT、Claude、Gemini",
+        "streamingClaims": "Netflix、Disney+、YouTube Premium"
+      }
     },
     {
       "slug": "wavenet",
@@ -252,9 +566,12 @@
           "trafficGB": 150,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/wavenet/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "600 Mbps",
+          "devices": "5台设备"
         },
         {
           "name": "自研旗舰版",
@@ -264,11 +581,53 @@
           "trafficGB": 360,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/wavenet/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "1000 Mbps",
+          "devices": "8台设备"
         }
-      ]
+      ],
+      "specifications": {
+        "focus": "先验证自研客户端，再决定 150GB 或 360GB",
+        "selection": "浪网的核心区别是来源提到自研客户端优化线路。基础档为 30 元、150GB，旗舰档为 58 元、360GB；对依赖一键连接的用户，安装包来源、系统支持和配置迁移方式应先于配额选择确认。",
+        "boundary": "自研客户端的存在不意味着各平台都有同样功能。若计划在路由器或第三方客户端使用，应核对是否提供兼容的标准订阅，不把 VLESS 支持当作任意客户端通用保证。",
+        "caseLabel": "以电脑手机每月合计 120GB 的需求为例",
+        "usageGB": 120,
+        "devices": 5,
+        "faq": [
+          {
+            "question": "浪网适合完全不用第三方客户端的人吗？",
+            "answer": "资料强调自研客户端，可以作为候选；购买前仍须确认你的操作系统有可用版本、下载入口可信且支持导出或迁移。本文没有安装测试，不能保证一键连接在每台设备成功。"
+          }
+        ],
+        "related": [
+          "sujie",
+          "edgenova",
+          "kuaili"
+        ],
+        "line": "自研客户端优化线路",
+        "protocols": [
+          "VLESS",
+          "Trojan"
+        ],
+        "regions": [
+          "香港",
+          "台湾",
+          "日本",
+          "新加坡",
+          "美国",
+          "英国",
+          "德国"
+        ],
+        "deviceLimit": "5-8台",
+        "source": "https://jiediantuijian.shop/airport/wavenet/",
+        "checkedAt": "2026-10-21",
+        "sourceSha256": "30d684c60326d67d39388db0acea006f5479e4c7ca43700b8b8ec67caad41e95",
+        "aiClaims": "ChatGPT Plus、Claude 3.5 Sonnet、Perplexity",
+        "streamingClaims": "Netflix 4K、Disney+、YouTube 4K"
+      }
     },
     {
       "slug": "lingdongcloud",
@@ -285,9 +644,12 @@
           "trafficGB": 100,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/lingdongcloud/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "400 Mbps",
+          "devices": "4台设备"
         },
         {
           "name": "畅享月付版",
@@ -297,11 +659,51 @@
           "trafficGB": 260,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/lingdongcloud/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "800 Mbps",
+          "devices": "6台设备"
         }
-      ]
+      ],
+      "specifications": {
+        "focus": "100GB 轻用量与 260GB 持续用量的选择",
+        "selection": "灵动云基础版每月 20 元、100GB，畅享版每月 36 元、260GB。多付 16 元增加 160GB；当用量长期在百 GB 以上时更容易体现进阶档的价值，偶尔超量则先核对是否允许流量加购。",
+        "boundary": "来源列出 Trojan 和 Shadowsocks。协议名称用于匹配客户端与订阅内容，并不能证明“稳定防封”；切换协议后也应分别记录所用节点和网络，避免把变量混在一起。",
+        "caseLabel": "以轻量浏览与文档同步每月 70GB 为例",
+        "usageGB": 70,
+        "devices": 4,
+        "faq": [
+          {
+            "question": "100GB 能否同时分给手机与电脑？",
+            "answer": "月配额通常应按同一账户合计观察，设备数限制另算。来源基础档写 4 台设备；具体统计是在线会话还是注册设备，以及是否允许共享，需要阅读品牌当期条款。"
+          }
+        ],
+        "related": [
+          "wuyou",
+          "muguang",
+          "stardream"
+        ],
+        "line": "优化节点",
+        "protocols": [
+          "Trojan",
+          "Shadowsocks"
+        ],
+        "regions": [
+          "香港",
+          "台湾",
+          "日本",
+          "新加坡",
+          "美国"
+        ],
+        "deviceLimit": "4-6台",
+        "source": "https://jiediantuijian.shop/airport/lingdongcloud/",
+        "checkedAt": "2026-10-21",
+        "sourceSha256": "01ed354fa4e1d37fd8b8990e1de865f785db8f000df1cbe4ef5d89a888f12323",
+        "aiClaims": "ChatGPT、Claude",
+        "streamingClaims": "Netflix、YouTube 4K、Disney+"
+      }
     },
     {
       "slug": "firefly",
@@ -319,9 +721,12 @@
           "trafficGB": 60,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/firefly/",
-          "note": "参考页的周期列写作月付，但套餐名和备注明确写年付折算；本站按年付折合月价展示，年付总额待确认。"
+          "note": "来源备注为年付折合月价，不能按月购买；年度实付总额与续费规则请在订单查看。",
+          "ownerConfirmed": true,
+          "port": "300 Mbps",
+          "devices": "3台设备"
         },
         {
           "name": "标准月付版",
@@ -331,11 +736,51 @@
           "trafficGB": 160,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/firefly/",
-          "note": "参考页的周期列写作月付，但套餐名和备注明确写年付折算；本站按年付折合月价展示，年付总额待确认。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "600 Mbps",
+          "devices": "5台设备"
         }
-      ]
+      ],
+      "specifications": {
+        "focus": "60GB 年付月均档适合什么用量",
+        "selection": "Firefly机场的约 8 元档属于年付折合月价，60GB 是月度配额；16 元标准月付提供 160GB。轻度长期使用才有必要研究年付门槛，尚未验证网络或每月明显超过 60GB 时，月付档更便于控制尝试周期。",
+        "boundary": "年付折算不能当作实际每月扣款。约 96 元只由 8×12 得到，订单是否另有套餐周期、首期折扣或续费金额，不能由该算式推定。",
+        "caseLabel": "以每月 45GB 的轻量办公需求为例",
+        "usageGB": 45,
+        "devices": 3,
+        "faq": [
+          {
+            "question": "firefly 优惠码能用在年付档吗？",
+            "answer": "站长提供代码 firefly，但适用月付还是年付、可否叠加活动仍需订单确认。不要在年付月均价上再自行减去假定折扣。"
+          }
+        ],
+        "related": [
+          "kuaili",
+          "feimaoyun",
+          "kexincloud"
+        ],
+        "line": "优质线路",
+        "protocols": [
+          "VLESS",
+          "Trojan"
+        ],
+        "regions": [
+          "香港",
+          "台湾",
+          "日本",
+          "新加坡",
+          "美国"
+        ],
+        "deviceLimit": "3-5台",
+        "source": "https://jiediantuijian.shop/airport/firefly/",
+        "checkedAt": "2026-10-21",
+        "sourceSha256": "d15eeb202b04122490c586d5623424b107bacc7202eea2bbe0bf22358cd87fae",
+        "aiClaims": "ChatGPT、Claude",
+        "streamingClaims": "Netflix、YouTube Premium"
+      }
     },
     {
       "slug": "lingmao",
@@ -352,9 +797,12 @@
           "trafficGB": 150,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/lingmao/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "500 Mbps",
+          "devices": "4台设备"
         },
         {
           "name": "旗舰大流量版",
@@ -364,11 +812,52 @@
           "trafficGB": 350,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/lingmao/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "1000 Mbps",
+          "devices": "6台设备"
         }
-      ]
+      ],
+      "specifications": {
+        "focus": "150GB 与 350GB 的 IPLC 套餐差异",
+        "selection": "灵猫 IPLC 专线版为 25 元、150GB，旗舰版为 48 元、350GB，两档设备限制分别为 4 台与 6 台。若主要需求是个人多终端使用，先数同时在线设备，再看月配额，避免为了“旗舰”名称承担闲置支出。",
+        "boundary": "来源列出的 V2Ray 是工具生态名称，并不是足以确定全部配置细节的单一传输协议。导入前要看实际订阅包含的节点类型，不应仅凭这一个字段判断兼容。",
+        "caseLabel": "以四台个人设备合计每月 120GB 为例",
+        "usageGB": 120,
+        "devices": 4,
+        "faq": [
+          {
+            "question": "灵猫旗舰版是否能保证所有视频平台解锁？",
+            "answer": "资料有相关功能描述，但没有机场翻的逐平台测试。应把目标平台、账号地区、节点和测试日期一起记录，不能用“原生IP”字样替代可用性确认。"
+          }
+        ],
+        "related": [
+          "laddercloud",
+          "flashleap",
+          "yifanyun"
+        ],
+        "line": "IPLC",
+        "protocols": [
+          "V2Ray",
+          "Shadowsocks"
+        ],
+        "regions": [
+          "香港",
+          "台湾",
+          "日本",
+          "新加坡",
+          "美国",
+          "英国"
+        ],
+        "deviceLimit": "4-6台",
+        "source": "https://jiediantuijian.shop/airport/lingmao/",
+        "checkedAt": "2026-10-21",
+        "sourceSha256": "cb6f5130751de45c56be6a67bea009f6a3303e40809b488fcec4fcb4a242dff9",
+        "aiClaims": "ChatGPT、Claude 3.5 Sonnet、Gemini",
+        "streamingClaims": "Netflix、Disney+、YouTube 4K"
+      }
     },
     {
       "slug": "flashleap",
@@ -386,9 +875,12 @@
           "trafficGB": 150,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/flashleap/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "500 Mbps",
+          "devices": "4台设备"
         },
         {
           "name": "纯专线进阶版",
@@ -398,11 +890,52 @@
           "trafficGB": 360,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/flashleap/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "1000 Mbps",
+          "devices": "6台设备"
         }
-      ]
+      ],
+      "specifications": {
+        "focus": "150GB 到 360GB 的专线档升级账本",
+        "selection": "闪跃基础档为 24 元、150GB，进阶档为 46 元、360GB。差价 22 元对应 210GB 新增配额和两台额外并发，适合持续超过基础配额的人；配额够用时无需为了较高端口标称值升级。",
+        "boundary": "来源使用 IPLC 纯专线描述。游戏用途还受游戏区服、UDP、回程及高峰丢包影响，不能从线路名称或 1000Mbps 标称值推出低延迟结论。",
+        "caseLabel": "以每月 125GB 的办公与娱乐需求为例",
+        "usageGB": 125,
+        "devices": 4,
+        "faq": [
+          {
+            "question": "闪跃适合只为降低游戏延迟购买吗？",
+            "answer": "套餐数据只能说明费用和配额。游戏需求应先确认区服、UDP支持和试用规则，再在自己的运营商上记录延迟波动；本文没有可直接推荐的游戏测速结果。"
+          }
+        ],
+        "related": [
+          "yinxingren",
+          "lingmao",
+          "lightspeed"
+        ],
+        "line": "IPLC纯专线",
+        "protocols": [
+          "Shadowsocks",
+          "Trojan",
+          "V2Ray"
+        ],
+        "regions": [
+          "香港",
+          "台湾",
+          "日本",
+          "新加坡",
+          "美国"
+        ],
+        "deviceLimit": "4-6台",
+        "source": "https://jiediantuijian.shop/airport/flashleap/",
+        "checkedAt": "2026-10-21",
+        "sourceSha256": "bdab5d8cc422be0aa1e2d9dc3732f15dd9f8f166059c62757d4b59639e912730",
+        "aiClaims": "ChatGPT、Claude、Midjourney",
+        "streamingClaims": "Netflix 4K、Disney+、YouTube 4K"
+      }
     },
     {
       "slug": "wuyou",
@@ -420,9 +953,12 @@
           "trafficGB": 100,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/wuyou/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "400 Mbps",
+          "devices": "4台设备"
         },
         {
           "name": "无忧进阶版",
@@ -432,11 +968,51 @@
           "trafficGB": 260,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/wuyou/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "800 Mbps",
+          "devices": "6台设备"
         }
-      ]
+      ],
+      "specifications": {
+        "focus": "19 元 100GB 与 36 元 260GB 的预算边界",
+        "selection": "无忧链接基础版每月 19 元，配额 100GB；进阶版 36 元、260GB。价格提高约九成而配额增加 160%，对持续超过百 GB 的人有比较意义，但未用完的月度配额不能自动视作储值余额。",
+        "boundary": "资料写有 IPLC、Shadowsocks 和 V2Ray。应将线路架构、实际节点协议和客户端格式分别核对，尤其注意把订阅链接只保存在自己信任的客户端中。",
+        "caseLabel": "以每月 80GB 的网页与远程办公需求为例",
+        "usageGB": 80,
+        "devices": 4,
+        "faq": [
+          {
+            "question": "wuyou666 是无限期有效的优惠吗？",
+            "answer": "代码来自站长，未附活动到期日及续费规则。订单首次可用也不等于每次续费都能用；核对减免后的总额并保存当次活动说明。"
+          }
+        ],
+        "related": [
+          "lingdongcloud",
+          "v2yun",
+          "stardream"
+        ],
+        "line": "IPLC",
+        "protocols": [
+          "Shadowsocks",
+          "V2Ray"
+        ],
+        "regions": [
+          "香港",
+          "台湾",
+          "日本",
+          "新加坡",
+          "美国"
+        ],
+        "deviceLimit": "4-6台",
+        "source": "https://jiediantuijian.shop/airport/wuyou/",
+        "checkedAt": "2026-10-21",
+        "sourceSha256": "b5759836eff745262b4aa8fe47cb8d18318c058cf35649868379195e1384f66d",
+        "aiClaims": "ChatGPT、Claude",
+        "streamingClaims": "Netflix、Disney+、YouTube HD"
+      }
     },
     {
       "slug": "kuajiecloud",
@@ -453,9 +1029,12 @@
           "trafficGB": 120,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/kuajiecloud/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "500 Mbps",
+          "devices": "4台设备"
         },
         {
           "name": "全专线旗舰版",
@@ -465,11 +1044,52 @@
           "trafficGB": 320,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/kuajiecloud/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "1000 Mbps",
+          "devices": "6台设备"
         }
-      ]
+      ],
+      "specifications": {
+        "focus": "120GB 入门与 320GB 旗舰之间的实际差额",
+        "selection": "跨界云基础档 20 元、120GB，旗舰档 42 元、320GB。若用量在 120GB 到 300GB 之间，旗舰档的增加配额与 6 台并发有明确用途；基础档足够时，保留 22 元月度差价比追求低单价更直接。",
+        "boundary": "资料把两档都归为全专线架构，但没有逐节点路径证明。购买前应确认套餐能使用的节点清单，不能将另一档或历史页面的地区权限默认套入当前订单。",
+        "caseLabel": "以每月 95GB 的四设备需求为例",
+        "usageGB": 95,
+        "devices": 4,
+        "faq": [
+          {
+            "question": "全专线意味着所有地区都能随便选吗？",
+            "answer": "线路架构和节点权限是两个字段。来源列有六个地区，但是否全部包含在基础档、是否存在特殊倍率，应看实际套餐说明和节点标签。"
+          }
+        ],
+        "related": [
+          "muguang",
+          "u1s1",
+          "laddercloud"
+        ],
+        "line": "全专线架构",
+        "protocols": [
+          "Shadowsocks",
+          "Trojan"
+        ],
+        "regions": [
+          "香港",
+          "台湾",
+          "日本",
+          "新加坡",
+          "美国",
+          "英国"
+        ],
+        "deviceLimit": "4-6台",
+        "source": "https://jiediantuijian.shop/airport/kuajiecloud/",
+        "checkedAt": "2026-10-21",
+        "sourceSha256": "07936e85cba23bacdf209cff26d76392271c9eb8776715232391da8cd7a9bff8",
+        "aiClaims": "ChatGPT、Claude、Perplexity",
+        "streamingClaims": "Netflix、Disney+、YouTube 4K"
+      }
     },
     {
       "slug": "stardream",
@@ -487,9 +1107,12 @@
           "trafficGB": 100,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/stardream/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "400 Mbps",
+          "devices": "4台设备"
         },
         {
           "name": "双专线标准版",
@@ -499,11 +1122,51 @@
           "trafficGB": 240,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/stardream/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "800 Mbps",
+          "devices": "6台设备"
         }
-      ]
+      ],
+      "specifications": {
+        "focus": "16 元双专线门槛与 240GB 标准档",
+        "selection": "星岛梦特惠版 16 元、100GB，标准版 32 元、240GB，价格翻倍但配额增加 140GB。只做轻量办公时可以先按 100GB 档规划，视频和同步占比较高时再检查标准版的余量是否值得翻倍支出。",
+        "boundary": "来源使用 IPLC / IEPL 和双线冗余调度描述。双线并不自动等于两个独立故障域，也无法推出故障后无感切换；重要任务应另准备可验证的恢复方案。",
+        "caseLabel": "以每月 75GB 的轻量多设备需求为例",
+        "usageGB": 75,
+        "devices": 4,
+        "faq": [
+          {
+            "question": "星岛梦有两条线就一定不断线吗？",
+            "answer": "不能如此推断。还要看入口、上游、客户端和调度实现是否共享故障点。nmw888 是站长提供的优惠码，不能作为线路冗余证明。"
+          }
+        ],
+        "related": [
+          "v2yun",
+          "jiliancloud",
+          "lingdongcloud"
+        ],
+        "line": "IPLC / IEPL",
+        "protocols": [
+          "V2Ray",
+          "Shadowsocks"
+        ],
+        "regions": [
+          "香港",
+          "台湾",
+          "日本",
+          "新加坡",
+          "美国"
+        ],
+        "deviceLimit": "4-6台",
+        "source": "https://jiediantuijian.shop/airport/stardream/",
+        "checkedAt": "2026-10-21",
+        "sourceSha256": "7c5d4df17ac70d10f8c371a3d12dd85ceb02188d1f3bd00e33886f2c1a84463f",
+        "aiClaims": "ChatGPT、Claude、Gemini",
+        "streamingClaims": "Netflix 4K、Disney+、YouTube Premium"
+      }
     },
     {
       "slug": "lightspeed",
@@ -521,9 +1184,12 @@
           "trafficGB": 148,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/lightspeed/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "500 Mbps",
+          "devices": "4台设备"
         },
         {
           "name": "隧道高配版",
@@ -533,11 +1199,52 @@
           "trafficGB": 360,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/lightspeed/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "1000 Mbps",
+          "devices": "6台设备"
         }
-      ]
+      ],
+      "specifications": {
+        "focus": "148GB 公网隧道与 360GB 高配的比较",
+        "selection": "光速云基础档的 148GB 配额较为具体，不应在页面中随意取整为 150GB。每月 23 元与 42 元两档相差 19 元，进阶提供额外 212GB，同时设备上限由 4 台增到 6 台，适合把真实月用量记录带入比较。",
+        "boundary": "来源明确写公网隧道中转，不应把它改写成纯 IEPL 或 IPLC。高峰表现取决于具体网络路径，选择时可以和同价位专线描述的品牌比较条款，但不能只按名称判优劣。",
+        "caseLabel": "以每月 115GB 的办公视频混合需求为例",
+        "usageGB": 115,
+        "devices": 4,
+        "faq": [
+          {
+            "question": "光速云 148GB 是不是约 150GB？",
+            "answer": "当前收录的确切套餐字段为 148GB/月，本站保留该值。只有来源明确使用约数的字段才标注约，避免给预算和配额计算引入额外误差。"
+          }
+        ],
+        "related": [
+          "flashleap",
+          "yinxingren",
+          "ermaoyun"
+        ],
+        "line": "公网隧道中转",
+        "protocols": [
+          "Shadowsocks",
+          "Trojan"
+        ],
+        "regions": [
+          "香港",
+          "台湾",
+          "日本",
+          "新加坡",
+          "美国",
+          "韩国"
+        ],
+        "deviceLimit": "4-6台",
+        "source": "https://jiediantuijian.shop/airport/lightspeed/",
+        "checkedAt": "2026-10-21",
+        "sourceSha256": "90c82b8e90bb875f1a186bed085a201c1b6e5c9bf506cdd99f2a1b554ca0c097",
+        "aiClaims": "ChatGPT、Claude",
+        "streamingClaims": "Netflix、Disney+、YouTube 4K"
+      }
     },
     {
       "slug": "v2yun",
@@ -555,9 +1262,12 @@
           "trafficGB": 100,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/v2yun/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "400 Mbps",
+          "devices": "4台设备"
         },
         {
           "name": "IPLC进阶版",
@@ -567,11 +1277,51 @@
           "trafficGB": 240,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/v2yun/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "800 Mbps",
+          "devices": "6台设备"
         }
-      ]
+      ],
+      "specifications": {
+        "focus": "14.9 元 100GB 的低门槛与 240GB 进阶",
+        "selection": "唯兔云也以 V2云命名，本站将两个名称对应到同一个品牌记录。基础档 14.9 元、100GB，进阶档 28 元、240GB；对已确认每月超过 100GB 的用户，增加 13.1 元比单看起步价格更有判断价值。",
+        "boundary": "资料列有 VLESS 与 Shadowsocks，线路标为 IPLC。客户端选择应以实际订阅格式和节点类型为依据，品牌别名中的 V2 不能作为仅支持某一种协议的证据。",
+        "caseLabel": "以每月 80GB 的个人需求为例",
+        "usageGB": 80,
+        "devices": 4,
+        "faq": [
+          {
+            "question": "唯兔云和 V2云是两个套餐商吗？",
+            "answer": "本页按站长提供的“唯兔云（V2云）”合并为同一品牌，保留同一推广入口和优惠码 rabbit。比较时无需把两个名称重复计入候选。"
+          }
+        ],
+        "related": [
+          "jiliancloud",
+          "stardream",
+          "guangnianti"
+        ],
+        "line": "IPLC专线",
+        "protocols": [
+          "VLESS",
+          "Shadowsocks"
+        ],
+        "regions": [
+          "香港",
+          "台湾",
+          "日本",
+          "新加坡",
+          "美国"
+        ],
+        "deviceLimit": "4-6台",
+        "source": "https://jiediantuijian.shop/airport/v2yun/",
+        "checkedAt": "2026-10-21",
+        "sourceSha256": "702e43652a715b4650200d035b439517c34d66462961868844d93979b3381673",
+        "aiClaims": "ChatGPT、Claude 3.5 Sonnet、Gemini",
+        "streamingClaims": "Netflix 4K、Disney+、YouTube Premium"
+      }
     },
     {
       "slug": "u1s1",
@@ -589,9 +1339,12 @@
           "trafficGB": 120,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/u1s1/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "500 Mbps",
+          "devices": "4台设备"
         },
         {
           "name": "三网优化旗舰版",
@@ -601,11 +1354,51 @@
           "trafficGB": 300,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/u1s1/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "1000 Mbps",
+          "devices": "6台设备"
         }
-      ]
+      ],
+      "specifications": {
+        "focus": "三网优化的描述应和 120GB / 300GB 分开看",
+        "selection": "U1S1（有一说一）基础档 20 元、120GB，旗舰档 38 元、300GB，两档差价为 18 元。以用量做第一轮筛选，再验证本地运营商到可用节点的路径，比用“三网”字样直接认定所有宽带效果一致更可靠。",
+        "boundary": "BGP 三网优化加 IEPL 是资料来源的架构描述，不是机场翻在电信、联通、移动三网的对照实验。移动热点与家中宽带应分别试用和记录，不能互相代替。",
+        "caseLabel": "以每月 95GB 的电脑手机组合为例",
+        "usageGB": 95,
+        "devices": 4,
+        "faq": [
+          {
+            "question": "U1S1 代码需要区分大小写吗？",
+            "answer": "本站保留站长给出的 U1S1 大小写，可直接复制后粘贴。优惠是否适用于旗舰档或续费仍看当次订单，不能因为品牌同名就假设默认生效。"
+          }
+        ],
+        "related": [
+          "muguang",
+          "quanqiuyun",
+          "kuajiecloud"
+        ],
+        "line": "BGP三网优化 + IEPL",
+        "protocols": [
+          "Shadowsocks",
+          "Trojan"
+        ],
+        "regions": [
+          "香港",
+          "台湾",
+          "日本",
+          "新加坡",
+          "美国"
+        ],
+        "deviceLimit": "4-6台",
+        "source": "https://jiediantuijian.shop/airport/u1s1/",
+        "checkedAt": "2026-10-21",
+        "sourceSha256": "46d5ff9b3a412843ab7ffa05f15ac9d2346f02ed75be39394615508d7981885c",
+        "aiClaims": "ChatGPT、Claude、Perplexity",
+        "streamingClaims": "Netflix 4K、Disney+、YouTube 4K"
+      }
     },
     {
       "slug": "jiliancloud",
@@ -622,9 +1415,12 @@
           "trafficGB": 100,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/jiliancloud/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "400 Mbps",
+          "devices": "4台设备"
         },
         {
           "name": "双专线增强版",
@@ -634,11 +1430,52 @@
           "trafficGB": 250,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/jiliancloud/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "800 Mbps",
+          "devices": "6台设备"
         }
-      ]
+      ],
+      "specifications": {
+        "focus": "14.4 元与 28 元双专线档如何取舍",
+        "selection": "极连云基础档 14.4 元、100GB，增强档 28 元、250GB。增加 13.6 元获得 150GB 新配额；需求在 100GB 以内时基础档便于控制总支出，持续超出时再比较增强档和流量加购方案。",
+        "boundary": "资料列有 Shadowsocks、Trojan 和 V2Ray，并使用自研/通用多协议的备注。是否有适配你系统的自研应用、通用订阅是否可导出，需要分别确认，不能只凭支持多协议推定安装流程。",
+        "caseLabel": "以每月 85GB 的个人轻办公为例",
+        "usageGB": 85,
+        "devices": 4,
+        "faq": [
+          {
+            "question": "14.4 元档和 28 元档能中途升级吗？",
+            "answer": "目前价格表没有说明补差、重置日或旧配额处理。应先询问升级后的有效期及剩余流量规则，再计算中途升级总支出，不能默认只支付两档差价。"
+          }
+        ],
+        "related": [
+          "v2yun",
+          "stardream",
+          "guangnianti"
+        ],
+        "line": "IPLC / IEPL",
+        "protocols": [
+          "Shadowsocks",
+          "Trojan",
+          "V2Ray"
+        ],
+        "regions": [
+          "香港",
+          "台湾",
+          "日本",
+          "新加坡",
+          "美国"
+        ],
+        "deviceLimit": "4-6台",
+        "source": "https://jiediantuijian.shop/airport/jiliancloud/",
+        "checkedAt": "2026-10-21",
+        "sourceSha256": "7521e82f55148f82b92ee9fffcb0282627fe5ba359f64f770ef0360fa80f94f4",
+        "aiClaims": "ChatGPT、Claude、Gemini",
+        "streamingClaims": "Netflix、Disney+、YouTube 4K"
+      }
     },
     {
       "slug": "quanqiuyun",
@@ -656,9 +1493,12 @@
           "trafficGB": 120,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/quanqiuyun/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "500 Mbps",
+          "devices": "4台设备"
         },
         {
           "name": "中转海量版",
@@ -668,11 +1508,51 @@
           "trafficGB": 300,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/quanqiuyun/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "800 Mbps",
+          "devices": "6台设备"
         }
-      ]
+      ],
+      "specifications": {
+        "focus": "经典中转 120GB 与海量 300GB 的同周期比较",
+        "selection": "全球云两档分别为 20 元、120GB 和 38 元、300GB，均按月展示。它与若干同价品牌的账面数据相近，此时比较重点应转向协议、客户端格式和常用地区，而不是重复强调同一个最低价。",
+        "boundary": "来源将其归为中转优化，并列 VLESS、Trojan。“全球”是品牌名称，不代表覆盖所有国家；当前资料列出的地区只有香港、台湾、日本、新加坡和美国。",
+        "caseLabel": "以每月 90GB 的普通双设备需求为例",
+        "usageGB": 90,
+        "devices": 4,
+        "faq": [
+          {
+            "question": "全球云是否包含所有国家节点？",
+            "answer": "不是由品牌名称决定。当前资料列出五个地区，其他地区未收录。需要指定国家时，应先查看实际节点清单及所购档位权限，再决定是否购买。"
+          }
+        ],
+        "related": [
+          "muguang",
+          "u1s1",
+          "lingdongcloud"
+        ],
+        "line": "中转优化",
+        "protocols": [
+          "VLESS",
+          "Trojan"
+        ],
+        "regions": [
+          "香港",
+          "台湾",
+          "日本",
+          "新加坡",
+          "美国"
+        ],
+        "deviceLimit": "4-6台",
+        "source": "https://jiediantuijian.shop/airport/quanqiuyun/",
+        "checkedAt": "2026-10-21",
+        "sourceSha256": "7dc945ba48221c253e42b05a9328d47dd6c8cc775b0cd70afc38ef15ce8d71d0",
+        "aiClaims": "ChatGPT、Claude",
+        "streamingClaims": "Netflix、Disney+、YouTube 4K"
+      }
     },
     {
       "slug": "guangnianti",
@@ -689,9 +1569,12 @@
           "trafficGB": 110,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/guangnianti/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "400 Mbps",
+          "devices": "4台设备"
         },
         {
           "name": "大流量专线版",
@@ -701,11 +1584,51 @@
           "trafficGB": 280,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/guangnianti/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "800 Mbps",
+          "devices": "6台设备"
         }
-      ]
+      ],
+      "specifications": {
+        "focus": "12.6 元 110GB 与 26 元 280GB 的配额台阶",
+        "selection": "光年梯基础档 110GB 的配额高于常见的百 GB 门槛，但只应按实际 110GB 计算。高配档 26 元、280GB，两档差价 13.4 元，新增 170GB；持续用量超过 110GB 才是升级的明确理由。",
+        "boundary": "来源描述 IEPL 专线，并列 Shadowsocks、Trojan。轻量协议的实现开销和具体延迟是不同问题，不应把“轻量”推演成对游戏或远程桌面的低延迟保证。",
+        "caseLabel": "以每月 90GB 的办公下载需求为例",
+        "usageGB": 90,
+        "devices": 4,
+        "faq": [
+          {
+            "question": "110GB 档可以按每天平均分配吗？",
+            "answer": "可以做预算：按 30 天约为每天 3.67GB，但不是每日限额或每日补充。月重置时间和超量处理需看后台，不能用平均值推断未用流量会逐日累积。"
+          }
+        ],
+        "related": [
+          "breezenet",
+          "jiliancloud",
+          "v2yun"
+        ],
+        "line": "IEPL专线",
+        "protocols": [
+          "Shadowsocks",
+          "Trojan"
+        ],
+        "regions": [
+          "香港",
+          "台湾",
+          "日本",
+          "新加坡",
+          "美国"
+        ],
+        "deviceLimit": "4-6台",
+        "source": "https://jiediantuijian.shop/airport/guangnianti/",
+        "checkedAt": "2026-10-21",
+        "sourceSha256": "6a4f5a20c5b147ed9fc2b0e62038892a9d7637a5142e39dee1c83e95ac7c293d",
+        "aiClaims": "ChatGPT、Claude 3.5 Sonnet、Midjourney",
+        "streamingClaims": "Netflix 4K、Disney+、YouTube 4K"
+      }
     },
     {
       "slug": "sogoyun",
@@ -722,9 +1645,12 @@
           "trafficGB": 150,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/sogoyun/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "600 Mbps",
+          "devices": "5台设备"
         },
         {
           "name": "企业尊享版",
@@ -734,11 +1660,53 @@
           "trafficGB": 350,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/sogoyun/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "1000 Mbps",
+          "devices": "8台设备"
         }
-      ]
+      ],
+      "specifications": {
+        "focus": "150GB / 350GB 与 5 台 / 8 台并发一起筛选",
+        "selection": "Sogo云两档每月 25 元和 46 元，提供 150GB 和 350GB。与只增加配额的升级不同，这里设备数也从 5 台到 8 台；个人设备较多时可先按并发筛选，再看增加的 200GB 是否会用到。",
+        "boundary": "“企业级专线”是来源的架构描述，不等于附带企业合同、专属带宽或确定赔付。若用于团队，必须另行确认账户共享、售后响应、计费主体及业务用途许可。",
+        "caseLabel": "以五台个人设备每月合计 125GB 为例",
+        "usageGB": 125,
+        "devices": 5,
+        "faq": [
+          {
+            "question": "Sogo云企业专线版能否多人共享？",
+            "answer": "当前表格写设备并发，没有给出多人共享许可。设备数量不等于人数授权；团队采用前应取得明确服务条款，不能把 5 台或 8 台解释为五人或八人账号。"
+          }
+        ],
+        "related": [
+          "dalaocloud",
+          "yinxingren",
+          "yifanyun"
+        ],
+        "line": "IEPL企业级专线",
+        "protocols": [
+          "Shadowsocks",
+          "Trojan",
+          "VLESS"
+        ],
+        "regions": [
+          "香港",
+          "台湾",
+          "日本",
+          "新加坡",
+          "美国",
+          "英国"
+        ],
+        "deviceLimit": "5-8台",
+        "source": "https://jiediantuijian.shop/airport/sogoyun/",
+        "checkedAt": "2026-10-21",
+        "sourceSha256": "e48a8a085e10de849397c832bdd95ec252ba0e95bb31ea9dde7eb86613c8b8a2",
+        "aiClaims": "ChatGPT Plus、Claude 3.5 Sonnet、Gemini",
+        "streamingClaims": "Netflix 4K、Disney+、YouTube 4K"
+      }
     },
     {
       "slug": "yuzhoucloud",
@@ -756,9 +1724,12 @@
           "trafficGB": 60,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/yuzhoucloud/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "400 Mbps",
+          "devices": "4台设备"
         },
         {
           "name": "双线畅享版",
@@ -768,11 +1739,51 @@
           "trafficGB": 180,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/yuzhoucloud/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "800 Mbps",
+          "devices": "6台设备"
         }
-      ]
+      ],
+      "specifications": {
+        "focus": "60GB 起步档与 180GB 档的用量分界",
+        "selection": "宇宙云基础档 14.9 元、60GB，与同价但百 GB 配额的品牌不能只看起步价比较。进阶档 28 元、180GB，多付 13.1 元获得 120GB 新配额；若每月稳定超过 60GB，基础档的低支出可能伴随频繁超额。",
+        "boundary": "来源列为 IPLC / IEPL，协议为 Shadowsocks、Trojan。对轻度使用者，配额够用、可顺利导入以及月度重置日清楚，通常比只比较架构缩写更有实际意义。",
+        "caseLabel": "以每月 45GB 的网页和消息需求为例",
+        "usageGB": 45,
+        "devices": 4,
+        "faq": [
+          {
+            "question": "YUZHOU553 是折扣金额或折扣比例吗？",
+            "answer": "不能从代码数字推断。本站保留完整大写代码 YUZHOU553，折扣金额、首购或续费限制以及到期日期均以订单实际显示为准。"
+          }
+        ],
+        "related": [
+          "firefly",
+          "kexincloud",
+          "v2yun"
+        ],
+        "line": "IPLC / IEPL",
+        "protocols": [
+          "Shadowsocks",
+          "Trojan"
+        ],
+        "regions": [
+          "香港",
+          "台湾",
+          "日本",
+          "新加坡",
+          "美国"
+        ],
+        "deviceLimit": "4-6台",
+        "source": "https://jiediantuijian.shop/airport/yuzhoucloud/",
+        "checkedAt": "2026-10-21",
+        "sourceSha256": "523d6e50a18dd6f67fb98f36d896cab0effd6fa4dcdb76903dd545d6109c7074",
+        "aiClaims": "ChatGPT、Claude",
+        "streamingClaims": "Netflix、Disney+、YouTube HD"
+      }
     },
     {
       "slug": "ermaoyun",
@@ -789,9 +1800,12 @@
           "trafficGB": 120,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/ermaoyun/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "400 Mbps",
+          "devices": "4台设备"
         },
         {
           "name": "多节点大流量版",
@@ -801,11 +1815,52 @@
           "trafficGB": 280,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/ermaoyun/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "800 Mbps",
+          "devices": "6台设备"
         }
-      ]
+      ],
+      "specifications": {
+        "focus": "15 元 120GB 与 30 元 280GB 的多地区选择",
+        "selection": "二猫云的基础档为 15 元、120GB，大流量档为 30 元、280GB。价格翻倍增加 160GB，基础配额未用完时升级会提高总支出；需要更多同时在线设备或用量持续超过 120GB 才有更充分理由。",
+        "boundary": "资料的线路字段是“多节点覆盖”，这描述覆盖方式，不能补写为 IEPL 专线。地区列表包含韩国，但每档节点权限与具体在线状态仍需在订阅中确认。",
+        "caseLabel": "以每月 95GB 且需要核对韩国节点的需求为例",
+        "usageGB": 95,
+        "devices": 4,
+        "faq": [
+          {
+            "question": "二猫云的“多节点”意味着专线吗？",
+            "answer": "不能。节点数量或地区覆盖与线路类型没有等号。本站按来源保留多节点覆盖的表述，不推定其路由、专线供应商或高峰稳定性。"
+          }
+        ],
+        "related": [
+          "lightspeed",
+          "breezenet",
+          "quanqiuyun"
+        ],
+        "line": "多节点覆盖",
+        "protocols": [
+          "Shadowsocks",
+          "V2Ray"
+        ],
+        "regions": [
+          "香港",
+          "台湾",
+          "日本",
+          "新加坡",
+          "美国",
+          "韩国"
+        ],
+        "deviceLimit": "4-6台",
+        "source": "https://jiediantuijian.shop/airport/ermaoyun/",
+        "checkedAt": "2026-10-21",
+        "sourceSha256": "b6a121b1c3fddcbb0914ee772c25d4e3c3fd56b4bb7311a2a8da897fd9a838b7",
+        "aiClaims": "ChatGPT、Claude",
+        "streamingClaims": "Netflix、YouTube 4K"
+      }
     },
     {
       "slug": "yifanyun",
@@ -822,9 +1877,12 @@
           "trafficGB": 150,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/yifanyun/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "500 Mbps",
+          "devices": "4台设备"
         },
         {
           "name": "专线旗舰版",
@@ -834,11 +1892,51 @@
           "trafficGB": 350,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/yifanyun/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "1000 Mbps",
+          "devices": "6台设备"
         }
-      ]
+      ],
+      "specifications": {
+        "focus": "25 元专线入门与 45 元 350GB 旗舰档",
+        "selection": "一翻云基础档 25 元、150GB，旗舰档 45 元、350GB。20 元差价换取 200GB 新配额，并发从 4 台提升至 6 台；在同为 150GB 起步的候选里，可以把进阶档总价和所需协议作为下一轮比较条件。",
+        "boundary": "来源的“专线节点”没有进一步说明 IEPL 或 IPLC，本文不擅自补齐线路类型。VLESS 与 Shadowsocks 用于核对兼容性，不能仅由“高速稳定”备注认定实际连接效果。",
+        "caseLabel": "以每月 120GB 的四设备个人需求为例",
+        "usageGB": 120,
+        "devices": 4,
+        "faq": [
+          {
+            "question": "一翻云是哪一种专线？",
+            "answer": "当前来源只写专线节点，未明确 IEPL 或 IPLC。需要了解架构时应要求节点或线路说明，而不是根据其他品牌类似套餐名猜测。"
+          }
+        ],
+        "related": [
+          "lingmao",
+          "sujie",
+          "sogoyun"
+        ],
+        "line": "专线节点",
+        "protocols": [
+          "VLESS",
+          "Shadowsocks"
+        ],
+        "regions": [
+          "香港",
+          "台湾",
+          "日本",
+          "新加坡",
+          "美国"
+        ],
+        "deviceLimit": "4-6台",
+        "source": "https://jiediantuijian.shop/airport/yifanyun/",
+        "checkedAt": "2026-10-21",
+        "sourceSha256": "8e9b21a2a582769e103262c1fb1421bb69c6cd0ca4a0843f33e2f87554fa9b19",
+        "aiClaims": "ChatGPT、Claude",
+        "streamingClaims": "Netflix、Disney+、YouTube 4K"
+      }
     },
     {
       "slug": "edgenova",
@@ -855,9 +1953,12 @@
           "trafficGB": 200,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/edgenova/",
-          "note": "86元和168元为参考页列出的年付总额；200GB和450GB来自月度流量列，实际重置规则待确认。"
+          "note": "一次支付全年金额，流量按来源表头为月度配额，不视为全年可提前使用的总包。",
+          "ownerConfirmed": true,
+          "port": "500 Mbps",
+          "devices": "5台设备"
         },
         {
           "name": "进阶专线版",
@@ -867,11 +1968,51 @@
           "trafficGB": 450,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/edgenova/",
-          "note": "86元和168元为参考页列出的年付总额；200GB和450GB来自月度流量列，实际重置规则待确认。"
+          "note": "一次支付全年金额，流量按来源表头为月度配额，不视为全年可提前使用的总包。",
+          "ownerConfirmed": true,
+          "port": "1000 Mbps",
+          "devices": "8台设备"
         }
-      ]
+      ],
+      "specifications": {
+        "focus": "86 元年付总额与每月 200GB 必须分栏",
+        "selection": "边缘节点 EdgeNova 两档均为年付：86 元或 168 元一次支付，对应每月 200GB 或 450GB。86÷12 约为 7.17 元月均预算，但不是 7.17 元普通月付；如果只需要一个月，不应把全年预付当成当月开销。",
+        "boundary": "年付配合月度重置意味着有效期与配额是两个时钟：剩余年度使用期不能替代当月已用尽的流量。资料未说明未用完配额结转，不能直接写成一年获得随时可用的 2400GB 总包。",
+        "caseLabel": "以全年使用且每月约 160GB 的需求为例",
+        "usageGB": 160,
+        "devices": 5,
+        "faq": [
+          {
+            "question": "86 元年付是不是一次获得 2400GB？",
+            "answer": "当前资料表头为月度可用流量，因此按 200GB/月展示。200×12 只是各月标称配额的算术合计，不代表可以提前消耗或跨月结转的总配额。"
+          }
+        ],
+        "related": [
+          "feimaoyun",
+          "firefly",
+          "kuaili"
+        ],
+        "line": "IEPL专线直连",
+        "protocols": [
+          "Shadowsocks",
+          "Trojan"
+        ],
+        "regions": [
+          "香港",
+          "台湾",
+          "日本",
+          "新加坡",
+          "美国"
+        ],
+        "deviceLimit": "5-8台",
+        "source": "https://jiediantuijian.shop/airport/edgenova/",
+        "checkedAt": "2026-10-21",
+        "sourceSha256": "9524e542074bf34163a3cbf68ea609a6d8a387aa136d85b98f136a2c9ccfec24",
+        "aiClaims": "ChatGPT、Claude",
+        "streamingClaims": "Netflix、Disney+、YouTube 4K"
+      }
     },
     {
       "slug": "kexincloud",
@@ -888,9 +2029,12 @@
           "trafficGB": 45,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/kexincloud/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "300 Mbps",
+          "devices": "3台设备"
         },
         {
           "name": "IPLC标准版",
@@ -900,11 +2044,51 @@
           "trafficGB": 150,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/kexincloud/",
-          "note": "第三方页面参考数据，未在服务商结账页核验；不是优惠码折后价。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "600 Mbps",
+          "devices": "5台设备"
         }
-      ]
+      ],
+      "specifications": {
+        "focus": "9 元 45GB 的小配额与 22 元 150GB",
+        "selection": "可信云起步金额低，但基础配额只有 45GB，适合先用自己的用量记录检查是否够用。标准档为 22 元、150GB，两档差价 13 元；若每月已接近 45GB，上调配额比只看 9 元门槛更容易避免超额。",
+        "boundary": "来源将其标为 IPLC，设备数由 3 台增至 5 台。可信云是品牌名称，不等于已经完成安全审计；涉及敏感工作时仍需核对运营主体、日志条款和自身安全要求。",
+        "caseLabel": "以每月 30GB 的低频个人需求为例",
+        "usageGB": 30,
+        "devices": 3,
+        "faq": [
+          {
+            "question": "可信云 45GB 适合长期看视频吗？",
+            "answer": "应按实际消耗判断，不能用品牌套餐名推断。45GB 按 30 天均分仅为每天 1.5GB；视频画质、时长和后台同步都会改变用量，可先记录一周后再估算整月。"
+          }
+        ],
+        "related": [
+          "kuaili",
+          "firefly",
+          "feiv"
+        ],
+        "line": "IPLC",
+        "protocols": [
+          "Shadowsocks",
+          "Trojan"
+        ],
+        "regions": [
+          "香港",
+          "台湾",
+          "日本",
+          "新加坡",
+          "美国"
+        ],
+        "deviceLimit": "3-5台",
+        "source": "https://jiediantuijian.shop/airport/kexincloud/",
+        "checkedAt": "2026-10-21",
+        "sourceSha256": "3cfbd7b0fcf339d8c638cc5a21282a573ab2feaa0919ecc32256851f3f8d9ad3",
+        "aiClaims": "ChatGPT、Claude",
+        "streamingClaims": "Netflix、YouTube HD"
+      }
     },
     {
       "slug": "sujie",
@@ -921,9 +2105,12 @@
           "trafficGB": 150,
           "trafficApprox": true,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/sujie/",
-          "note": "入门方案的参考页备注为约150GB、按套餐而定，本站保留约数标记。"
+          "note": "来源备注约 150GB，具体配额按实际套餐确认。",
+          "ownerConfirmed": true,
+          "port": "500 Mbps",
+          "devices": "4台设备"
         },
         {
           "name": "极速畅联版",
@@ -933,11 +2120,51 @@
           "trafficGB": 350,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/sujie/",
-          "note": "入门方案的参考页备注为约150GB、按套餐而定，本站保留约数标记。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "1000 Mbps",
+          "devices": "6台设备"
         }
-      ]
+      ],
+      "specifications": {
+        "focus": "150GB 约数和一键客户端需求都要看清",
+        "selection": "速界基础档为 25 元、约 150GB，旗舰档为 45 元、350GB。基础档备注写“按套餐而定”，因此本文保留约数，不能在精确到个位 GB 的预算里把它当作保证下限。设备上限分别为 4 台与 6 台。",
+        "boundary": "来源在高配档备注提到官方客户端一键连接，但没有完整系统版本表。新手购买前应先找到可信下载入口，确认目标系统与最低版本，再查看是否需要手动导入订阅。",
+        "caseLabel": "以每月约 110GB 的新手电脑手机需求为例",
+        "usageGB": 110,
+        "devices": 4,
+        "faq": [
+          {
+            "question": "速界基础档为什么写约 150GB？",
+            "answer": "因为资料备注明确写约 150GB、按套餐而定。本站保留这一限定；若预计用量非常接近配额，应在订单里确认精确数值和套餐名称，不用近似值做紧贴上限的规划。"
+          }
+        ],
+        "related": [
+          "wavenet",
+          "kuaili",
+          "yifanyun"
+        ],
+        "line": "新手优化线路",
+        "protocols": [
+          "Shadowsocks",
+          "Trojan"
+        ],
+        "regions": [
+          "香港",
+          "台湾",
+          "日本",
+          "新加坡",
+          "美国"
+        ],
+        "deviceLimit": "4-6台",
+        "source": "https://jiediantuijian.shop/airport/sujie/",
+        "checkedAt": "2026-10-21",
+        "sourceSha256": "12d7ec103fdd1736e94a697ed11810e662417f6a1553990b47f2e1732fa127a0",
+        "aiClaims": "ChatGPT、Claude",
+        "streamingClaims": "Netflix、Disney+、YouTube 4K"
+      }
     },
     {
       "slug": "kuaili",
@@ -954,9 +2181,12 @@
           "trafficGB": 30,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/kuaili/",
-          "note": "参考页的周期列写作月付，但套餐名和备注明确写年付折算；本站按年付折合月价展示，年付总额待确认。"
+          "note": "来源备注为年付折合月价，不能按月购买；年度实付总额与续费规则请在订单查看。",
+          "ownerConfirmed": true,
+          "port": "300 Mbps",
+          "devices": "3台设备"
         },
         {
           "name": "IEPL标准版",
@@ -966,11 +2196,51 @@
           "trafficGB": 120,
           "trafficApprox": false,
           "verified": false,
-          "reference": true,
+          "reference": false,
           "source": "https://jiediantuijian.shop/airport/kuaili/",
-          "note": "参考页的周期列写作月付，但套餐名和备注明确写年付折算；本站按年付折合月价展示，年付总额待确认。"
+          "note": "价格、流量由站长确认，以指定资料页为依据；金额未套用优惠码。",
+          "ownerConfirmed": true,
+          "port": "600 Mbps",
+          "devices": "5台设备"
         }
-      ]
+      ],
+      "specifications": {
+        "focus": "30GB 年付月均档与 120GB 普通月付",
+        "selection": "快狸的轻量档约 10 元是年付折合月价，每月只有 30GB；24 元标准档是普通月付、120GB。两档同时改变付款周期和流量台阶，不能把 10 元与 24 元当成同周期的简单价差。",
+        "boundary": "约 120 元只由 10×12 估算而来，不是已确认年度总额。自研客户端是来源备注，是否支持你的系统、是否提供标准订阅和迁移办法，均应先查看下载说明。",
+        "caseLabel": "以每月 20GB 的低频备用需求为例",
+        "usageGB": 20,
+        "devices": 3,
+        "faq": [
+          {
+            "question": "快狸 30GB 年付适合当视频主力吗？",
+            "answer": "30GB 按 30 天均分约为每天 1GB，是否够用取决于时长与画质。若自己的历史用量显著高于 30GB，应比较 120GB 普通月付，而非只追求低年付月均价。"
+          }
+        ],
+        "related": [
+          "firefly",
+          "kexincloud",
+          "edgenova"
+        ],
+        "line": "IEPL专线",
+        "protocols": [
+          "Shadowsocks",
+          "Trojan"
+        ],
+        "regions": [
+          "香港",
+          "台湾",
+          "日本",
+          "新加坡",
+          "美国"
+        ],
+        "deviceLimit": "3-5台",
+        "source": "https://jiediantuijian.shop/airport/kuaili/",
+        "checkedAt": "2026-10-21",
+        "sourceSha256": "82059b04848c1541490f95472b940ddb299e7210106a743c0af9b6daeb8c31d7",
+        "aiClaims": "ChatGPT、Claude",
+        "streamingClaims": "YouTube HD、Bilibili海外"
+      }
     }
   ]
 }

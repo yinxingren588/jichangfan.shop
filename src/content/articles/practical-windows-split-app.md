@@ -10,50 +10,49 @@ primaryKeyword: "vpn推荐"
 batch: 5
 order: 93
 related: ["practical-windows-kill-switch","practical-windows-port-conflict"]
-sources: [{"title":"Microsoft：Windows VPN 连接说明","url":"https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows"},{"title":"Proton VPN：分流功能与平台说明","url":"https://protonvpn.com/support/protonvpn-split-tunneling"}]
+sources: [{"title": "Microsoft：VPN 路由决策", "url": "https://learn.microsoft.com/en-us/windows/security/operating-system-security/network-security/vpn/vpn-routing"}, {"title": "Microsoft：Windows VPN 配置选项", "url": "https://learn.microsoft.com/en-us/windows/security/operating-system-security/network-security/vpn/vpn-profile-options"}]
 draft: false
 ---
 
-选择一个应经过连接和一个应直连的应用分别观察，核对客户端对分流的正式定义。
+Windows 分应用分流要通过真实联网进程和新建连接验收。规则列表里出现程序名称，只说明保存了配置；启动器、后台服务或已有连接可能并未按你预想的方式处理，具体识别能力取决于客户端实现。
 
-## 关键判断
+## 具体检查步骤
 
-旧连接可能继续使用原状态，具体行为依产品而异。验证应针对你实际使用的进程和任务。
+1. 确认当前版本支持的是按进程、目标地址还是其他规则分流。记录希望走 VPN 的应用 A 和希望保持原路径的应用 B，先保存原规则副本。
 
-## 三步检查
+2. 核对真正联网的程序，而不只看桌面快捷方式。部分软件由独立更新器或后台服务发送请求；按产品官方方式添加正确对象，不随便把整个系统目录列入规则。
 
-### 1. 确认当前版本支持该功能
+3. 按客户端说明重启相关应用或重新建立连接，再分别执行 A、B 的同类小任务。结合客户端连接记录和受控服务日志验证命中规则；浏览器 IP 只能证明该浏览器请求。
 
-明确哪些任务应经过连接、哪些应保持原路径。规则列表只代表配置，不能替代实际验证；已有会话是否需要重建，应查看所用产品说明。
+## 怎样根据结果继续判断
 
-### 2. 重启需要重新建连的应用
+| 观察结果 | 下一步 |
+| --- | --- |
+| 规则命中但任务仍失败 | 继续查协议、DNS、权限与服务端错误 |
+| 主程序命中、上传未命中 | 核对后台上传进程或目标地址规则 |
+| 排除应用完全离线 | 查看分流与断网保护是否存在明确限制 |
 
-把启动应用、建立连接和任务成功分成三个状态。设置自动策略之前先找到取消方式，并在非关键时段验证断线和主动退出时的实际行为。
+## 一个可对照的排查场景
 
-### 3. 记录各自任务结果
+例如把同步软件启动器列入隧道规则，真正上传却由后台服务完成。规则名称看似正确，上传仍失败。应找到负责上传的正式组件，再按支持方式调整并重建上传任务；不要用全局放行掩盖规则遗漏。
 
-先写出本次要验证的具体成功条件，再实际执行。保留失败样本与改变过的条件；另一个任务的成功不自动覆盖这次任务，单次结果也不代表长期表现。
+## 恢复与验收
 
-## 怎样保留这次结果
-
-把“确认当前版本支持该功能”得到的信息和“记录各自任务结果”的结果分开保存。前者说明起点，后者说明是否达到目的；中间若改变了条件，也要记下改变了什么。这样下次遇到相似现象时，可以先对照差异，而不是从头猜原因。
-
-## 容易忽略的边界
-
-不要仅凭规则列表中出现应用名就宣布所有流量已符合预期。
-
-Windows 内置连接、独立 VPN 应用和代理客户端可能使用不同入口。本组按具体故障或使用时点展开，先定位应用与系统的边界，再按当前官方文档处理，避免一次改变整个网络环境。
+用保存的规则副本撤销本次变更，确认 A、B 都回到原路径。最终记录应包含客户端版本、识别对象、目标任务和观察结果，便于软件升级后重复验证。
 
 ## 常见问题
 
-### 需要先重装软件或重置网络吗？
+### Windows 内置分流和第三方客户端可以照抄吗？
 
-通常应先确认错误范围并保留日志。重装和重置可能同时改变多项条件；按官方流程处理之前，准备必要的配置与账号恢复方式。
+不可以。Windows 的路由与企业配置方式，并不等同于每款客户端的进程规则。管理文档用于理解机制，个人应用应遵循对应产品的实际支持范围。
 
 ## 进一步阅读与参考
 
 - [Windows 开启断网保护前，怎样避免被锁在离线状态？](/blog/practical-windows-kill-switch/)
+
 - [Windows 本地代理端口冲突，应该怎样处理？](/blog/practical-windows-port-conflict/)
+
 - [Windows 实用检查主题目录](/blog/topics/windows/)
 
-官方参考：[Microsoft：Windows VPN 连接说明](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows)、[Proton VPN：分流功能与平台说明](https://protonvpn.com/support/protonvpn-split-tunneling)。它们用于核对概念与平台边界，本文步骤为编辑整理，不表示所有软件具有同一功能。具体按钮和当前支持情况请读相应官方帮助；没有用官方宣传冒充本站实测。
+- [Microsoft：VPN 路由决策](https://learn.microsoft.com/en-us/windows/security/operating-system-security/network-security/vpn/vpn-routing)
+- [Microsoft：Windows VPN 配置选项](https://learn.microsoft.com/en-us/windows/security/operating-system-security/network-security/vpn/vpn-profile-options)

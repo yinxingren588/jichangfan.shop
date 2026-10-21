@@ -5,7 +5,7 @@ category: "guides"
 date: "2026-10-21"
 updated: "2026-10-21"
 tags: ["入门","设备","协议","设备入门"]
-sources: [{"title":"WireGuard 官方安装入口","url":"https://www.wireguard.com/install/"},{"title":"IVPN 官方协议说明","url":"https://www.ivpn.net/knowledgebase/general/what-vpn-protocols-do-you-offer/"}]
+sources: [{"title": "Apple：在 Mac 上设置 VPN 连接", "url": "https://support.apple.com/guide/mac-help/mchlp2963/mac"}, {"title": "Apple：Mac 网络服务的代理设置", "url": "https://support.apple.com/guide/mac-help/mchlp2591/mac"}, {"title": "Apple：排查 VPN 和其他网络安全软件", "url": "https://support.apple.com/102281"}, {"title": "WireGuard：官方安装入口", "url": "https://www.wireguard.com/install/"}]
 draft: false
 topic: "guide-devices"
 order: 2
@@ -34,7 +34,31 @@ Mac 上先确认客户端适合当前系统与设备，再处理连接配置。�
 
 确认应用的自动连接选项，再核对系统代理是否恢复。某些客户端退出时可能保留设置，应按当前应用帮助处理。若使用断网保护，断开后不能联网也可能是保护策略，先查规则而非重装系统。
 
+
+
+## 区分系统连接、代理和协议客户端
+
+Mac 的系统 VPN、当前网络服务的代理与独立客户端不共用一套输入字段。先确认资料由谁提供、用于哪个入口，再考虑权限。Apple 文档要求由服务方或管理员提供匹配的连接类型、服务器及认证信息，不能用网页购买地址代替。
+
+| 检查结果 | 对应处理 |
+| --- | --- |
+| 系统 VPN 参数 | 按 Apple 与服务方说明配置，核对认证类型 |
+| HTTP、HTTPS、SOCKS 或 PAC | 到当前网络服务的代理设置核对 |
+| 专用协议文件或订阅 | 使用开发者支持的客户端与导入入口 |
+
+### 对照案例
+
+例如 Wi-Fi 下设置过本地代理，切到有线网络后结果不同。Mac 的网络服务可能各有设置，先核对当前服务及应用如何接管；不要因为菜单栏仍显示相同图标，就认定两种接入使用相同参数。
+
+### 完成后的验收
+
+连接、真实任务、主动断开和重新打开应用各验证一次。记录本人更改的网络服务和代理类型，恢复时只撤销本次改动，不清空企业网络与证书。
+
 ## 常见问题
+
+### 客户端要求网络权限就应全部允许吗？
+
+应把权限与正式功能说明对应。系统 VPN 授权、网络扩展和其他隐私权限范围不同；来源或用途不清时先核实，不把未知权限当作所有 Mac 连接必备条件。
 
 ### 手机能用，Mac 就一定能用吗？
 
@@ -43,3 +67,11 @@ Mac 上先确认客户端适合当前系统与设备，再处理连接配置。�
 ### 一个账号能同时连多少设备？
 
 查看当前套餐设备条款，不能只数已安装应用数量。可在[品牌比较表](/compare/)中查看已核实字段。出现重复断线时，按[排查顺序](/guides/troubleshooting/)记录结果。
+
+
+## 进一步阅读与参考
+
+- [Apple：在 Mac 上设置 VPN 连接](https://support.apple.com/guide/mac-help/mchlp2963/mac)
+- [Apple：Mac 网络服务的代理设置](https://support.apple.com/guide/mac-help/mchlp2591/mac)
+- [Apple：排查 VPN 和其他网络安全软件](https://support.apple.com/102281)
+- [WireGuard：官方安装入口](https://www.wireguard.com/install/)

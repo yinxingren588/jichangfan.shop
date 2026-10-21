@@ -2,6 +2,7 @@
 import {priceLabel,traffic,type Airport} from '../data/airports';
 const {airport:a}=Astro.props as {airport:Airport};
 ---
-<div class="table-wrap" tabindex="0" role="region" aria-label={a.name+'套餐价格与流量表'}><table><thead><tr><th scope="col">套餐</th><th scope="col">金额与付款口径</th><th scope="col">流量配额</th><th scope="col">资料状态</th></tr></thead><tbody>{a.plans.map(p=><tr data-plan-period={p.period}><th scope="row">{p.name}</th><td>{priceLabel(p)}</td><td>{traffic(p)}</td><td>{p.reference?'第三方参考价':'官方公开价'}</td></tr>)}</tbody></table></div>
+<div class="table-wrap" tabindex="0" role="region" aria-label={a.name+'套餐价格与流量表'}><table><thead><tr><th scope="col">套餐</th><th scope="col">金额与付款口径</th><th scope="col">流量配额</th>{a.testStatus==='owner-confirmed'&&<><th scope="col">设备并发</th><th scope="col">标称端口</th></>}<th scope="col">资料状态</th></tr></thead><tbody>{a.plans.map(p=><tr data-plan-period={p.period}><th scope="row">{p.name}</th><td>{priceLabel(p)}</td><td>{traffic(p)}</td>{a.testStatus==='owner-confirmed'&&<><td>{p.devices}</td><td>{p.port}</td></>}<td>{p.ownerConfirmed?'站长确认价格与流量':p.reference?'第三方参考价':'官方公开价'}</td></tr>)}</tbody></table></div>
+{a.testStatus==='owner-confirmed'&&<p class="note">设备并发和标称端口按指定资料页列示；端口数值不是本地实测速度，设备数量也不等于允许多人共享。</p>}
 {[...new Set(a.plans.map(p=>p.note).filter(Boolean))].map(note=><p class="note" data-plan-note-periods={a.plans.filter(p=>p.note===note).map(p=>p.period).join(" ")}>{note}</p>)}
 <p class="note">以上金额未套用优惠码。币种按原币展示；实际支付、税费、续费金额和流量重置规则以服务商订单页为准。</p>

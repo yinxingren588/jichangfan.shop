@@ -10,50 +10,49 @@ primaryKeyword: "vpn推荐"
 batch: 5
 order: 82
 related: ["practical-windows-sleep-reconnect","practical-windows-built-in-type"]
-sources: [{"title":"Microsoft：Windows VPN 连接说明","url":"https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows"},{"title":"Mullvad：官方桌面应用使用说明","url":"https://mullvad.net/en/help/using-mullvad-vpn-app"},{"title":"WireGuard：官方安装入口","url":"https://www.wireguard.com/install/"}]
+sources: [{"title": "Microsoft：配置 Windows 启动应用", "url": "https://support.microsoft.com/en-us/windows/experience/startup-boot/configure-startup-applications-in-windows"}, {"title": "Microsoft：Windows VPN 配置选项", "url": "https://learn.microsoft.com/en-us/windows/security/operating-system-security/network-security/vpn/vpn-profile-options"}]
 draft: false
 ---
 
-先确保客户端和基础网络能各自正常启动，再按官方选项设置自动连接并验证退出方式。
+开机自动启动程序、自动建立 VPN 和开机前保护网络是三件不同的事。Windows 启动应用列表通常控制登录后启动，不能仅靠打开这一项就保证登录前所有流量已经受保护。验证时应观察接入就绪、客户端启动和隧道成功的先后顺序。
 
-## 关键判断
+## 具体检查步骤
 
-启动应用和建立有效连接是两个状态。不要只看到托盘图标就认定工作任务已经受到预期路由控制。
+1. 在 Windows 启动应用设置及客户端内部核对两边的开关。只保留一套明确的启动方式，避免同一应用被快捷方式、计划任务和自身设置重复拉起。
 
-## 三步检查
+2. 选择可在本机恢复的空闲时段重启，记录登录后网络就绪时间、客户端出现时间及连接结果。使用网页登录网络时，还要记录认证完成前后的差异。
 
-### 1. 核对应用的启动设置
+3. 分别测试自动连接成功、没有可用网络、主动取消自动连接三种状态。若期望未连 VPN 时阻断，需另外核对产品保护策略，不把自动启动当作阻断功能。
 
-把启动应用、建立连接和任务成功分成三个状态。设置自动策略之前先找到取消方式，并在非关键时段验证断线和主动退出时的实际行为。
+## 怎样根据结果继续判断
 
-### 2. 观察联网完成后的连接
+| 观察结果 | 下一步 |
+| --- | --- |
+| 程序启动但没有连接 | 查看应用自动连接目标和认证状态 |
+| 启动时报重复实例或端口占用 | 清理自己配置的重复启动入口 |
+| 登录前就需企业资源 | 由管理员核对设备隧道等受支持方案 |
 
-先写出本次要验证的具体成功条件，再实际执行。保留失败样本与改变过的条件；另一个任务的成功不自动覆盖这次任务，单次结果也不代表长期表现。
+## 一个可对照的排查场景
 
-### 3. 测试取消自动连接的恢复路径
+例如设置允许客户端随用户登录启动，但没有勾选应用自己的自动连接。开机后窗口出现、节点未连，是两项设置不同导致的结果。随意加延时脚本不会自动补齐认证或保护要求。
 
-服务账户与付款渠道可能分离。以实际购买渠道显示的订单和下一次扣款为核对对象，保存正式处理结果；退出应用或删除配置不自动等于完成付款处理。
+## 恢复与验收
 
-## 怎样保留这次结果
-
-把“核对应用的启动设置”得到的信息和“测试取消自动连接的恢复路径”的结果分开保存。前者说明起点，后者说明是否达到目的；中间若改变了条件，也要记下改变了什么。这样下次遇到相似现象时，可以先对照差异，而不是从头猜原因。
-
-## 容易忽略的边界
-
-不要叠加多个定时启动脚本来掩盖未知的连接故障。
-
-Windows 内置连接、独立 VPN 应用和代理客户端可能使用不同入口。本组按具体故障或使用时点展开，先定位应用与系统的边界，再按当前官方文档处理，避免一次改变整个网络环境。
+保留从 Windows 启动列表和应用内取消自动连接的路径；失败时能本机登录并恢复原状。验收包括一次完整重启及一次普通断开，避免只在软件热启动时验证。
 
 ## 常见问题
 
-### 需要先重装软件或重置网络吗？
+### 把快捷方式放进启动目录能保证先于所有应用吗？
 
-通常应先确认错误范围并保留日志。重装和重置可能同时改变多项条件；按官方流程处理之前，准备必要的配置与账号恢复方式。
+不能。Microsoft 提供启动应用管理方式，但这不是全局网络就绪或安全顺序保证。需要登录前保护的组织设备，应采用管理员确认的方案。
 
 ## 进一步阅读与参考
 
 - [Windows 睡眠唤醒后 VPN 不恢复，先查什么？](/blog/practical-windows-sleep-reconnect/)
+
 - [Windows 内置 VPN 的类型，为什么必须匹配？](/blog/practical-windows-built-in-type/)
+
 - [Windows 实用检查主题目录](/blog/topics/windows/)
 
-官方参考：[Microsoft：Windows VPN 连接说明](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows)、[Mullvad：官方桌面应用使用说明](https://mullvad.net/en/help/using-mullvad-vpn-app)、[WireGuard：官方安装入口](https://www.wireguard.com/install/)。它们用于核对概念与平台边界，本文步骤为编辑整理，不表示所有软件具有同一功能。具体按钮和当前支持情况请读相应官方帮助；没有用官方宣传冒充本站实测。
+- [Microsoft：配置 Windows 启动应用](https://support.microsoft.com/en-us/windows/experience/startup-boot/configure-startup-applications-in-windows)
+- [Microsoft：Windows VPN 配置选项](https://learn.microsoft.com/en-us/windows/security/operating-system-security/network-security/vpn/vpn-profile-options)

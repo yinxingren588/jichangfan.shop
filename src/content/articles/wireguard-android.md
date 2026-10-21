@@ -7,7 +7,7 @@ updated: "2026-10-21"
 tags: ["使用教程","配置导入"]
 topic: "guide-import"
 related: ["android","wireguard-windows","wifi-cellular-handoff"]
-sources: [{"title":"Proton VPN：Android手动配置WireGuard","url":"https://protonvpn.com/support/wireguard-manual-android"},{"title":"WireGuard官方安装入口","url":"https://www.wireguard.com/install/"}]
+sources: [{"title": "Proton VPN：官方 WireGuard Android 客户端配置示例", "url": "https://protonvpn.com/support/wireguard-manual-android"}, {"title": "Proton VPN：生成 WireGuard 配置文件", "url": "https://protonvpn.com/support/wireguard-configurations"}, {"title": "Android Developers：VPN 服务、常开和分应用机制", "url": "https://developer.android.com/develop/connectivity/vpn"}]
 draft: false
 order: 9
 ---
@@ -38,7 +38,31 @@ order: 9
 
 记录Android版本、应用版本、配置创建日期、使用的网络与失败提示即可。不要把.conf、二维码或带令牌的地址上传到公开讨论。旧配置需要替换时，从服务商入口重新取得资料，再依次验证，不以重新安装应用替代凭据更新。
 
+
+
+## 文件名、权限与网络错误不要混查
+
+Android WireGuard 文件导入失败，应先分清名称、内容和系统授权。Proton 的示例流程提醒文件名兼容问题，但改名只能解决名称解析，不能把普通网页或订阅 URL 变成完整配置。实际规则以当前客户端为准。
+
+| 检查结果 | 对应处理 |
+| --- | --- |
+| 选择文件即出现名称错误 | 按官方要求用简短名称并保留 .conf |
+| 导入成功，VPN 请求被拒绝 | 确认来源后按系统授权流程处理 |
+| 开关已启用，任务仍失败 | 看握手、配置有效性和基础网络 |
+
+### 对照案例
+
+例如从账户下载时尚未登录，文件实际保存了登录页。把它重命名为 wg_home.conf 仍不包含有效参数，应回到可信账户重新下载。不要把缺失字段从网上随便拼进文件，更不要分享私钥请别人代填。
+
+### 完成后的验收
+
+验收记录文件来源与创建日期、系统授权、实际任务和断开。切换 Wi-Fi 与移动数据应作为另一轮测试，避免在首次导入中同时更改接入与端点。
+
 ## 常见问题
+
+### 系统钥匙图标能代替握手和任务验证吗？
+
+不能。它可辅助确认活跃 VPN 机制，但实际对端响应、路由与目标应用还需分别观察；导入和连接日志应保留必要错误。
 
 ### 换手机能直接复制同一份文件吗？
 
@@ -47,3 +71,10 @@ order: 9
 ### 有VPN图标但网页失败怎么办？
 
 按[通用连接排查](/guides/troubleshooting/)区分基础网络与配置问题，再阅读[网络切换验证](/guides/wifi-cellular-handoff/)。
+
+
+## 进一步阅读与参考
+
+- [Proton VPN：官方 WireGuard Android 客户端配置示例](https://protonvpn.com/support/wireguard-manual-android)
+- [Proton VPN：生成 WireGuard 配置文件](https://protonvpn.com/support/wireguard-configurations)
+- [Android Developers：VPN 服务、常开和分应用机制](https://developer.android.com/develop/connectivity/vpn)

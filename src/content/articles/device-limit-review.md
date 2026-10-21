@@ -7,7 +7,7 @@ updated: "2026-10-21"
 tags: ["使用教程","日常维护"]
 topic: "guide-maintenance"
 related: ["traffic-reset-check","configuration-backup","remove-vpn-profile"]
-sources: [{"title":"Proton VPN：套餐与连接权益说明","url":"https://protonvpn.com/support/proton-vpn-plans"}]
+sources: [{"title": "Mullvad：桌面应用连接、断网保护和设备管理", "url": "https://mullvad.net/en/help/using-mullvad-vpn-app"}, {"title": "Google：Android VPN 连接和配置管理", "url": "https://support.google.com/android/answer/9089766"}, {"title": "Proton VPN：生成 WireGuard 配置文件", "url": "https://protonvpn.com/support/wireguard-configurations"}]
 draft: false
 order: 23
 ---
@@ -38,7 +38,31 @@ order: 23
 
 用“仍在用、已停用、待识别”三个状态管理即可。所有待识别项在操作前先确认，避免家庭成员或自己的另一台设备突然掉线。清单不需要精确到公开IP；个人可识别的本地名称和最近使用时间通常更便于维护。
 
+
+
+## 识别额度类型再释放名额
+
+设备注册、密钥数量和同时连接并不等价。先把错误原文与当前方案规则对应，再决定断开、撤销或重新授权。其他品牌帮助中的具体上限不能替代本人订单，也不能从设备数量多就推断允许所有设备同时使用。
+
+| 检查结果 | 对应处理 |
+| --- | --- |
+| 同时在线超限 | 先正常结束不需要的旧会话 |
+| 注册或密钥槽位已满 | 到服务端识别并撤销明确不用的项目 |
+| 本机仅有多个配置 | 先查是否真的占服务端名额，不盲删全部 |
+
+### 对照案例
+
+假设当前限制的是两台注册设备，旧手机虽关机仍可能占槽位；而同时连接限制关注的是在线状态。两种提示应走不同处理，不能用‘只剩一个人在用’作为注册名额一定够的依据。
+
+### 完成后的验收
+
+清理后逐台恢复必要设备，记录哪一步触发限制。撤销前先确认对象与恢复方式，旧设备丢失时处理凭据风险，不分享密钥绕开服务限制。
+
 ## 常见问题
+
+### 退出窗口就释放同时连接了吗？
+
+不一定，后台服务或自动连接可能继续运行。应通过客户端正式断开，并结合服务端提供的会话状态核对。
 
 ### 删除手机里的应用会自动释放所有服务端名额吗？
 
@@ -47,3 +71,10 @@ order: 23
 ### 新设备应该如何准备？
 
 先确认支持的客户端和凭据方式，阅读[配置备份与迁移](/guides/configuration-backup/)；不再使用的本机配置可按[移除流程](/guides/remove-vpn-profile/)处理。
+
+
+## 进一步阅读与参考
+
+- [Mullvad：桌面应用连接、断网保护和设备管理](https://mullvad.net/en/help/using-mullvad-vpn-app)
+- [Google：Android VPN 连接和配置管理](https://support.google.com/android/answer/9089766)
+- [Proton VPN：生成 WireGuard 配置文件](https://protonvpn.com/support/wireguard-configurations)

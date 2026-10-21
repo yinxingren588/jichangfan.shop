@@ -5,7 +5,7 @@ category: "guides"
 date: "2026-10-21"
 updated: "2026-10-21"
 tags: ["入门","设备","协议","设备入门"]
-sources: [{"title":"Android 帮助：连接 VPN","url":"https://support.google.com/android/answer/9089766"},{"title":"WireGuard 官方安装入口","url":"https://www.wireguard.com/install/"}]
+sources: [{"title": "Google：Android VPN 连接和配置管理", "url": "https://support.google.com/android/answer/9089766"}, {"title": "Android Developers：VPN 服务、常开和分应用机制", "url": "https://developer.android.com/develop/connectivity/vpn"}, {"title": "Android Developers：Doze 和应用待机机制", "url": "https://developer.android.com/training/monitoring-device-state/doze-standby"}]
 draft: false
 topic: "guide-devices"
 order: 3
@@ -34,7 +34,31 @@ Android 上先确定你安装的是服务商官方应用，还是需要自行导
 
 在应用或系统 VPN 页面主动断开，再确认普通网络恢复。如果不再使用该服务，按系统设置移除对应配置，并从服务后台撤销不需要的设备授权。分享截图时遮盖订阅地址、二维码和账号令牌。
 
+
+
+## 首次使用的四种失败应分开处理
+
+Android 上授权、导入、连接与后台恢复发生在不同阶段，错误应原样保留。系统一次只允许每个用户或工作资料有一个活跃 VPN 服务，广告过滤工具也可能占用该机制；不要把冲突自动归因于机场账号。
+
+| 检查结果 | 对应处理 |
+| --- | --- |
+| 导入时报格式不支持 | 检查订阅或文件类型及指定客户端 |
+| 系统 VPN 请求来自未知应用 | 取消并核对安装来源 |
+| 前台可用、锁屏后任务停住 | 区分服务断开与业务应用待机，再查后台策略 |
+
+### 对照案例
+
+例如启动本地广告过滤后，原 VPN 被停止。应查两款应用是否都使用 VpnService 以及是否有正式集成方式，而不是反复刷新订阅。系统钥匙图标无法说明当前一定是原先那款网络应用。
+
+### 完成后的验收
+
+首次验收记录系统提供方、原任务、一次锁屏恢复及主动断开。若需常开与无 VPN 阻断，另外验证例外应用和门户网络，保存本机可执行的恢复入口。
+
 ## 常见问题
+
+### 安装多个 VPN 应用会同时连接吗？
+
+不能以安装数量判断。Android 对每个用户或资料的活跃 VPN 服务有范围限制，具体应用还可能有兼容要求。应按其正式说明管理，不从两个图标存在推断双重保护。
 
 ### 为何其他网络工具同时失效？
 
@@ -43,3 +67,10 @@ Android 上先确定你安装的是服务商官方应用，还是需要自行导
 ### 流量够不够用怎么判断？
 
 查看应用和服务后台的计量周期，结合[流量倍率](/glossary/traffic-multiplier/)理解消耗。需要选择服务时先读[新手选择指南](/recommend/beginner/)。
+
+
+## 进一步阅读与参考
+
+- [Google：Android VPN 连接和配置管理](https://support.google.com/android/answer/9089766)
+- [Android Developers：VPN 服务、常开和分应用机制](https://developer.android.com/develop/connectivity/vpn)
+- [Android Developers：Doze 和应用待机机制](https://developer.android.com/training/monitoring-device-state/doze-standby)

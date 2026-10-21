@@ -5,7 +5,7 @@ category: "blog"
 date: "2026-10-21"
 updated: "2026-10-21"
 tags: ["入门","VPN","协议"]
-sources: [{"title":"WireGuard 官方概念说明","url":"https://www.wireguard.com/"},{"title":"IVPN 官方协议说明","url":"https://www.ivpn.net/knowledgebase/general/what-vpn-protocols-do-you-offer/"},{"title":"WireGuard 官方安装入口","url":"https://www.wireguard.com/install/"}]
+sources: [{"title":"WireGuard：隧道、接口与路由概念","url":"https://www.wireguard.com/"},{"title":"WireGuard：各平台安装入口","url":"https://www.wireguard.com/install/"},{"title":"IVPN：各平台协议支持","url":"https://www.ivpn.net/knowledgebase/general/what-vpn-protocols-do-you-offer/"},{"title":"MDN：代理服务器与隧道","url":"https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Proxy_servers_and_tunneling"}]
 draft: false
 ---
 
@@ -57,6 +57,17 @@ WireGuard 官方说明将其描述为 VPN 隧道，并说明通过接口和路�
 
 假设浏览器可以访问某个页面，但桌面应用超时。这个结果只能说明浏览器的那次访问成功，不能说明桌面应用走了同一路径。先查客户端当前模式与应用代理设置，再按相同网络分别复查；一次只改一个条件，退出后也检查普通网络是否恢复。
 
+## 按故障对象选择排查入口
+
+| 现象 | 首先核对 | 合理下一步 |
+| --- | --- | --- |
+| 订阅无法导入 | 客户端支持的格式与链接是否完整 | 用可信说明确认输入类型 |
+| 能导入但无法连接 | 账户、配置与实际错误 | 保留脱敏失败阶段 |
+| 浏览器成功而其他应用失败 | 代理遵循方式、路由与分流 | 对照同一网络逐项检查 |
+| 退出后普通网络异常 | 当前哪个工具仍修改设置 | 按软件正式恢复方式处理 |
+
+MDN的代理与隧道概念帮助理解转发层次；WireGuard的接口与路由说明对应其技术机制。两者都不能替你证明某家商业服务在当前设备的覆盖范围。尤其是企业设备，管理者提供的VPN与个人连接订阅不能仅凭名称互换。
+
 ## 常见问题
 
 ### VPN 一定覆盖所有流量吗？
@@ -66,3 +77,13 @@ WireGuard 官方说明将其描述为 VPN 隧道，并说明通过接口和路�
 ### 该从哪个教程开始？
 
 按设备进入[教程中心](/guides/)，再用[横向比较](/compare/)检查服务类型与协议。
+
+## 进一步阅读与参考
+
+- [订阅导入教程](/guides/subscription-import/)
+- [客户端兼容检查](/blog/practical-compatible-before-cheap/)
+- [VPN基础词条](/glossary/vpn/)
+
+本文保留原有概念与选择框架，资料说明与实际测试分别标注。算例为编辑设计，可替换成自己的输入；没有为品牌编造网络表现或长期保证。
+
+[WireGuard：隧道、接口与路由概念](https://www.wireguard.com/)、[WireGuard：各平台安装入口](https://www.wireguard.com/install/)、[IVPN：各平台协议支持](https://www.ivpn.net/knowledgebase/general/what-vpn-protocols-do-you-offer/)、[MDN：代理服务器与隧道](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Proxy_servers_and_tunneling)。

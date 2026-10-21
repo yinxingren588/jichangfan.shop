@@ -16,6 +16,14 @@
     "violations": []
   },
   {
+    "route": "/airport/feimaoyun/",
+    "violations": []
+  },
+  {
+    "route": "/coupons/",
+    "violations": []
+  },
+  {
     "route": "/guides/windows/",
     "violations": []
   },

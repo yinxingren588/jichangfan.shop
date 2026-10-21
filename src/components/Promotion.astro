@@ -1,0 +1,11 @@
+---
+import type {Airport} from '../data/airports';
+const {airport:a,compact=false}=Astro.props as {airport:Airport;compact?:boolean};
+---
+{a.affiliateUrl&&<div class:list={['promotion',{'promotion-compact':compact}]}>
+ <p class="promotion-title">{a.name} · {a.coupon?'优惠码':'推广入口'}</p>
+ {a.coupon?<div class="coupon-line"><code>{a.coupon}</code><button type="button" class="copy-coupon" data-coupon={a.coupon} aria-label={'复制 '+a.name+' 优惠码'}>复制优惠码</button></div>:<p class="coupon-missing">未提供优惠码</p>}
+ <p class="coupon-status" role="status" aria-live="polite">{a.coupon?'站长提供；折扣、有效期及适用套餐待确认。':'邀请链接不等于优惠券，结账前确认是否有活动。'}</p>
+ <a class="button promotion-link" href={a.affiliateUrl} target="_blank" rel="sponsored nofollow noopener noreferrer">前往 {a.name} ↗</a>
+ <small class="affiliate-note">推广链接：经此入口购买，本站可能获得佣金。</small>
+ </div>}

@@ -15,3 +15,9 @@
 所有品牌没有本站购入测试记录。AI 支持均未知；流媒体仅 Proton 保留官方描述，不能写成实测。代理订阅只有一个真实品牌，其他四个是商业 VPN，页面已明确标注，没有冒充五个机场。
 
 架构与协议依据：Astro 官方安装与内容文档 https://docs.astro.build/en/install-and-setup/ ，IndexNow https://www.indexnow.org/documentation 。依赖版本从 npm registry 实际获取，package-lock.json 锁定。
+
+## 站长提供的29个推广品牌（2026-10-21新增）
+
+价格和流量来源为 https://jiediantuijian.shop/airport/ 下对应品牌的公开参考表；这是第三方资料，不是官方结账核验。逐品牌来源、数据与修正见 partner-brand-sources.json 和 partner-plans.csv。仅摘取套餐名、金额与配额事实，不采用参考站的评分、零丢包、速度、解锁率或稳定性宣传。推广链接与12个优惠码来自本次用户消息，未推断折扣幅度、有效期或适用套餐。
+
+飞猫云、Firefly机场和快狸的入门价在参考页表头写月付，名称及备注写年付折算，本次保留金额但改为“年付折合每月（总额待确认）”。边缘节点的86元/168元为年付总额；飞V的200GB为一次性总配额。速界入门配额保留“约”字，梯子云流量列与备注不一致已注明。

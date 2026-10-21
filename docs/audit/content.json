@@ -1,8 +1,8 @@
 {
   "status": "PASS",
   "issues": [],
-  "brands": 5,
+  "brands": 34,
   "articles": 215,
-  "reviewStatus": "official-data only",
-  "factualLimits": "Automated checks detect schema/evidence gaps and unsupported test claims; human judgement is still required for source interpretation."
+  "reviewStatus": "5 official-data and 29 reference-data; none tested",
+  "factualLimits": "Third-party prices are unverified checkout references. Coupon terms unverified. Automated checks do not replace human source interpretation."
 }

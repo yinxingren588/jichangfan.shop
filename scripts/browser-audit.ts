@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import {chromium} from 'playwright';
 import AxeBuilder from '@axe-core/playwright';
-import {pages,result} from './lib';
+import {pages,result} from './lib';import {airports} from '../src/data/airports';
 const base=process.env.PREVIEW_URL||'http://127.0.0.1:4321';
 const executablePath=process.env.CHROME_PATH||'C:/Program Files/Google/Chrome/Application/chrome.exe';
 const browser=await chromium.launch({executablePath,headless:true});
@@ -20,7 +20,7 @@ try{
  checks.push('All '+all.length+' normal pages respond 200 without document overflow at 1440, 768 and 375 px');
  await page.setViewportSize({width:1440,height:1000});await page.goto(base+'/');
  await page.screenshot({path:'docs/audit/home-desktop.png',fullPage:true});
- for(const route of ['/','/compare/','/airport/just-my-socks/','/review/proton-vpn/','/guides/windows/','/recommend/budget/','/blog/','/blog/topics/windows/','/blog/practical-windows-sleep-reconnect/']){
+ for(const route of ['/','/compare/','/airport/just-my-socks/','/review/proton-vpn/','/airport/feimaoyun/','/coupons/','/guides/windows/','/recommend/budget/','/blog/','/blog/topics/windows/','/blog/practical-windows-sleep-reconnect/']){
   await page.goto(base+route);const audit=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();accessibility.push({route,violations:audit.violations.map(v=>({id:v.id,impact:v.impact,description:v.description,nodes:v.nodes.map(n=>n.target)}))});for(const v of audit.violations)issues.push(route+' accessibility '+v.id+' ('+v.impact+')');
  }
  await page.goto(base+'/compare/');assert.equal(await page.locator('#compare-empty').isVisible(),true);
@@ -32,13 +32,15 @@ try{
  await page.goto(base+'/compare/?brands=windscribe,ivpn,invalid,ivpn');assert.equal(await page.locator('#compare-table thead th').count(),3);
  assert.match(await page.locator('#compare-table').innerText(),/Windscribe/);assert.match(await page.locator('#compare-table').innerText(),/尚未核实/);
  await page.screenshot({path:'docs/audit/compare-desktop.png',fullPage:true});checks.push('Comparison: empty, add 2–4, reject fifth, remove, URL restore, invalid/duplicate IDs');
- await page.goto(base+'/airport/');await page.getByRole('button',{name:'代理订阅',exact:true}).click();assert.equal(await page.locator('[data-brand-kind]:visible').count(),1);await page.getByRole('button',{name:'商业 VPN',exact:true}).click();assert.equal(await page.locator('[data-brand-kind]:visible').count(),4);checks.push('Brand filtering: proxy=1, VPN=4');
+ await page.goto(base+'/compare/?brands=feimaoyun,edgenova,feiv');assert.match(await page.locator('#compare-table').innerText(),/¥86 \/ 年付总额/);assert.match(await page.locator('#compare-table').innerText(),/200 GB \/ 总配额/);assert.match(await page.locator('#compare-table').innerText(),/年付折合每月/);assert.equal(await page.locator('#compare-table a[rel~=sponsored]').count(),3);checks.push('Partner comparison: annual totals, monthly equivalent, total quota and exact affiliate links');
+ await context.grantPermissions(['clipboard-read','clipboard-write'],{origin:base});await page.goto(base+'/coupons/');await page.getByRole('button',{name:'复制 隐形人 优惠码',exact:true}).first().click();assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),'yxr888');assert.match(await page.locator('.coupon-status').first().innerText(),/已复制/);await page.screenshot({path:'docs/audit/coupons-desktop.png',fullPage:false});checks.push('Coupon copy writes the supplied case-sensitive code to clipboard');
+ await page.goto(base+'/airport/');await page.getByRole('button',{name:'代理订阅',exact:true}).click();assert.equal(await page.locator('[data-brand-kind]:visible').count(),airports.filter(a=>a.kind==='proxy').length);await page.getByRole('button',{name:'商业 VPN',exact:true}).click();assert.equal(await page.locator('[data-brand-kind]:visible').count(),4);checks.push('Brand filtering: all supplied proxies and 4 VPNs');
  await page.goto(base+'/search/');const searchTotal=await page.locator('[data-search]').count();await page.locator('#query').fill('Windows VPN 与机场客户端');assert.equal(await page.locator('[data-search]:visible').count(),1);await page.locator('#query').fill('zzzz-no-match');assert.equal(await page.locator('#no-results').isVisible(),true);await page.locator('#query').fill('');assert.equal(await page.locator('[data-search]:visible').count(),searchTotal);checks.push('Search: matching result, no result, clear '+searchTotal+' entries');
  await page.goto(base+'/blog/');assert.equal(await page.locator('.article-list .article-row').count(),20);await page.getByRole('link',{name:'第 11 页',exact:true}).click();assert.equal(await page.locator('.article-list .article-row').count(),5);assert.match(await page.locator('meta[name=robots]').getAttribute('content')||'',/noindex/);await page.goto(base+'/blog/topics/windows/');assert.equal(await page.locator('.article-list .article-row').count(),20);await page.getByRole('link',{name:'Windows 睡眠唤醒后 VPN 不恢复，先查什么？',exact:true}).click();assert.match(await page.locator('h1').innerText(),/Windows 睡眠唤醒/);checks.push('Blog: 20 entries per page, 5 on final page, noindex archive, 20-entry topic, article navigation');
  await page.setViewportSize({width:375,height:900});await page.goto(base+'/');const menu=page.locator('.menu-button');assert.equal(await page.locator('#primary-nav').isVisible(),false);await menu.click();assert.equal(await menu.getAttribute('aria-expanded'),'true');await page.getByRole('navigation',{name:'主导航'}).getByRole('link',{name:'机场推荐',exact:true}).click();assert.match(page.url(),/recommend/);checks.push('Mobile menu: open, ARIA state, navigate');
  await page.goto(base+'/');await page.screenshot({path:'docs/audit/home-mobile.png',fullPage:true});
  const unknown=await page.goto(base+'/a-page-that-does-not-exist/');assert.equal(unknown?.status(),404);assert.equal(await page.locator('h1').innerText(),'这条路径，暂时没有内容。');checks.push('Missing path returns actual 404 page');
- const nojs=await browser.newContext({javaScriptEnabled:false});const staticPage=await nojs.newPage();await staticPage.goto(base+'/compare/');assert.equal(await staticPage.locator('.compare-table thead th').count(),6);await staticPage.goto(base+'/');assert.equal(await staticPage.locator('.card').count(),3);checks.push('No JavaScript: homepage cards and complete comparison table are present');await nojs.close();
+ const nojs=await browser.newContext({javaScriptEnabled:false});const staticPage=await nojs.newPage();await staticPage.goto(base+'/compare/');assert.equal(await staticPage.locator('.compare-table thead th').count(),airports.length+1);await staticPage.goto(base+'/');assert.equal(await staticPage.locator('.card').count(),3);checks.push('No JavaScript: homepage cards and complete comparison table are present');await nojs.close();
 }catch(error){issues.push(String(error));}finally{await browser.close();}
 fs.writeFileSync('docs/audit/accessibility.json',JSON.stringify(accessibility,null,2));
 result('browser',issues,{visits,checks});

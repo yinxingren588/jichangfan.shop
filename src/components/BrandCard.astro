@@ -1,5 +1,6 @@
 ---
-import {monthlyPlan,money,traffic,type Airport} from '../data/airports';
-const {airport:a}=Astro.props as {airport:Airport};const p=monthlyPlan(a);
+import {displayPlan,priceLabel,traffic,evidenceLabel,type Airport} from '../data/airports';
+import Promotion from './Promotion.astro';
+const {airport:a}=Astro.props as {airport:Airport};const p=displayPlan(a);
 ---
-<article class="card"><div class="brand-head"><span class="brand-icon" style={'background:'+a.color} aria-hidden="true">{a.monogram}</span><div><h3>{a.name}</h3><small>{a.kind==='proxy'?'代理订阅':'商业 VPN'} · 官方资料</small></div></div><p>{a.description}</p><div class="price">{p?money(p.price,p.currency):'尚未核实'} <small>/ 月付起</small></div><div class="label-row">{a.suitableFor.slice(0,1).map(s=><span class="pill">{s}</span>)}</div><div class="specs"><span>{traffic(p)}</span><span>{a.protocols[0]||'协议待核实'}</span></div><p style="margin-top:12px;font-size:11px">优点：{a.advantages[0]}<br/>留意：{a.disadvantages[0]}</p><a class="text-link" href={'/airport/'+a.slug+'/'}>查看资料与注意事项 <span aria-hidden="true">↗</span></a></article>
+<article class="card"><div class="brand-head"><span class="brand-icon" style={'background:'+a.color} aria-hidden="true">{a.monogram}</span><div><h3>{a.name}</h3><small>{evidenceLabel(a)}</small></div></div><p>{a.description}</p><div class="price">{priceLabel(p)}</div><div class="specs"><span>{traffic(p)}</span><span>{a.plans.length} 档套餐</span></div><p style="margin-top:12px;font-size:11px">留意：{a.disadvantages[0]}</p><a class="text-link" href={'/airport/'+a.slug+'/'}>全部套餐与来源 <span aria-hidden="true">↗</span></a><Promotion airport={a} compact/></article>

@@ -1,0 +1,80 @@
+<div class="landscape" aria-hidden="true">
+  <picture class="landscape-painting landscape-move">
+    <source media="(max-width: 700px)" srcset="/images/shanshui-background-mobile.webp" />
+    <img src="/images/shanshui-background.webp" width="1672" height="941" alt="" decoding="async" fetchpriority="high" />
+  </picture>
+  <svg class="landscape-mist landscape-mist-far landscape-move" viewBox="0 0 1600 900" preserveAspectRatio="none" focusable="false">
+    <defs><linearGradient id="mist-far" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fffef7" stop-opacity="0"/><stop offset=".5" stop-color="#fffef7" stop-opacity=".72"/><stop offset="1" stop-color="#fffef7" stop-opacity="0"/></linearGradient></defs>
+    <path d="M-300 185Q50 335 420 238T1080 263T1950 215L1950 380Q1500 335 1160 391T420 360T-300 345Z" fill="url(#mist-far)"/>
+  </svg>
+  <svg class="landscape-mist landscape-mist-near landscape-move" viewBox="0 0 1600 900" preserveAspectRatio="none" focusable="false">
+    <defs><linearGradient id="mist-near" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f8f8ef" stop-opacity="0"/><stop offset=".48" stop-color="#f8f8ef" stop-opacity=".9"/><stop offset="1" stop-color="#f8f8ef" stop-opacity="0"/></linearGradient></defs>
+    <path d="M-350 440Q90 355 470 461T1090 426T1950 455L1950 620Q1500 565 1070 620T360 594T-350 590Z" fill="url(#mist-near)"/>
+  </svg>
+  <svg class="landscape-water landscape-move" viewBox="0 0 1600 900" preserveAspectRatio="none" focusable="false">
+    <g fill="none" stroke="#fffff4" stroke-width="2" stroke-linecap="round"><path d="M410 681Q560 675 710 681M870 689Q1000 681 1130 689M325 719Q490 713 655 719M740 745Q920 735 1100 745M450 782Q630 777 810 782M965 802Q1080 793 1195 802M270 843Q445 833 620 843M760 862Q935 852 1110 862"/><path opacity=".55" d="M600 699H775M800 765H965M470 816H675M1000 735H1140"/></g>
+  </svg>
+  <svg class="landscape-birds landscape-move" viewBox="0 0 130 50" focusable="false"><g fill="none" stroke="#31584c" stroke-width="1.7" stroke-linecap="round"><path class="landscape-wing landscape-move" d="M9 23Q20 13 31 25Q41 14 52 21"/><path class="landscape-wing landscape-move" d="M76 10Q83 3 90 11Q98 4 106 8"/></g></svg>
+  <div class="landscape-wash"></div>
+</div>
+<button class="landscape-toggle" type="button" data-landscape-toggle aria-label="暂停背景动画" hidden>
+  <svg class="landscape-pause-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3v10M11 3v10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  <svg class="landscape-play-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="m5 3 8 5-8 5Z" fill="currentColor"/></svg>
+  <span data-landscape-label>暂停山水</span>
+</button>
+<script>
+  const root=document.documentElement;
+  const toggle=document.querySelector<HTMLButtonElement>('[data-landscape-toggle]')!;
+  const label=toggle.querySelector<HTMLElement>('[data-landscape-label]')!;
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+  const storageKey='jichangfan-landscape-motion';
+  let preference='playing';
+  try{preference=localStorage.getItem(storageKey)==='paused'?'paused':'playing';}catch{}
+  function updateLandscape(){
+    const paused=reduced.matches||preference==='paused';
+    root.dataset.landscapeMotion=paused?'paused':'playing';
+    toggle.disabled=reduced.matches;
+    label.textContent=reduced.matches?'山水静景':paused?'播放山水':'暂停山水';
+    toggle.setAttribute('aria-label',reduced.matches?'已按系统偏好暂停背景动画':paused?'播放背景动画':'暂停背景动画');
+    toggle.title=reduced.matches?'系统已开启减少动态效果':paused?'播放云雾与水纹动画':'暂停云雾与水纹动画';
+  }
+  toggle.addEventListener('click',()=>{preference=preference==='paused'?'playing':'paused';try{localStorage.setItem(storageKey,preference);}catch{}updateLandscape();});
+  reduced.addEventListener('change',updateLandscape);
+  const updateVisibility=()=>{root.dataset.landscapeHidden=String(document.hidden);};
+  document.addEventListener('visibilitychange',updateVisibility);
+  updateLandscape();updateVisibility();toggle.hidden=false;
+</script>
+<style is:global>
+ body{position:relative;isolation:isolate;background:transparent}
+ .landscape{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;contain:strict;background:#eeeede}
+ .landscape-painting{position:absolute;inset:-2%;display:block;animation:landscape-breathe 65s ease-in-out infinite alternate;transform-origin:55% 65%}
+ .landscape-painting img{width:100%;height:100%;max-width:none;object-fit:cover;object-position:center center}
+ .landscape-mist{position:absolute;inset:0;width:112%;height:100%;max-width:none}
+ .landscape-mist-far{left:-6%;opacity:.62;animation:landscape-mist-far 34s ease-in-out infinite alternate}
+ .landscape-mist-near{left:-7%;opacity:.52;animation:landscape-mist-near 26s ease-in-out infinite alternate}
+ .landscape-water{position:absolute;inset:0;width:100%;height:100%;opacity:.4;animation:landscape-water 7s ease-in-out infinite alternate}
+ .landscape-birds{position:absolute;right:13%;top:16%;width:92px;height:42px;opacity:.48;animation:landscape-birds 23s ease-in-out infinite alternate}
+ .landscape-wing{transform-box:fill-box;transform-origin:center;animation:landscape-wing 3.7s ease-in-out infinite alternate}
+ .landscape-wash{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 38%,rgba(246,245,240,.68) 0,rgba(246,245,240,.35) 48%,rgba(246,245,240,.05) 82%),linear-gradient(180deg,rgba(246,245,240,.25),rgba(246,245,240,.06) 60%,rgba(246,245,240,.13))}
+ .landscape-move{animation-play-state:paused}
+ html[data-landscape-motion=playing]:not([data-landscape-hidden=true]) .landscape-move{animation-play-state:running}
+ .landscape-toggle{position:fixed;right:max(19px,env(safe-area-inset-right));bottom:max(18px,env(safe-area-inset-bottom));z-index:30;display:flex;align-items:center;gap:8px;padding:9px 13px;background:rgba(255,254,246,.95);color:#244e42;border:1px solid #aebeb0;border-radius:30px;box-shadow:0 4px 20px rgba(25,47,43,.08);font-size:11px;line-height:1.6;min-height:38px}
+ .landscape-toggle svg{width:13px;height:13px;flex:none}.landscape-play-icon{display:none}
+ html[data-landscape-motion=paused] .landscape-pause-icon{display:none}html[data-landscape-motion=paused] .landscape-play-icon{display:block}
+ .landscape-toggle:disabled{opacity:.85;cursor:default}
+ .topbar{background:rgba(246,245,240,.87)}
+ main>.container:not(:first-child){background:rgba(246,245,240,.9);border:1px solid rgba(255,255,248,.82);border-radius:7px;padding:29px 32px;margin-top:24px;margin-bottom:30px}
+ .cover-copy{background:rgba(246,245,240,.86);border:1px solid rgba(255,255,248,.8);border-radius:7px;padding:29px 32px;box-shadow:0 8px 40px rgba(48,72,53,.025)}
+ .editorial-stats{background:rgba(246,245,240,.9);border-radius:4px}
+ .breadcrumb{width:fit-content;max-width:100%;padding:8px 12px;background:rgba(246,245,240,.91);border-radius:4px}
+ .footer{padding-bottom:66px}
+ @keyframes landscape-breathe{from{transform:scale(1.005) translate3d(-.35%,0,0)}to{transform:scale(1.045) translate3d(.5%,-.5%,0)}}
+ @keyframes landscape-mist-far{from{transform:translate3d(-3%,0,0);opacity:.35}to{transform:translate3d(4%,1%,0);opacity:.72}}
+ @keyframes landscape-mist-near{from{transform:translate3d(4%,0,0);opacity:.32}to{transform:translate3d(-5%,-1%,0);opacity:.62}}
+ @keyframes landscape-water{from{transform:translate3d(-9px,1px,0) scaleX(1.01);opacity:.16}to{transform:translate3d(15px,-1px,0) scaleX(1.025);opacity:.42}}
+ @keyframes landscape-birds{from{transform:translate3d(-18px,0,0)}to{transform:translate3d(34px,-11px,0)}}
+ @keyframes landscape-wing{from{transform:scaleY(.72)}to{transform:scaleY(1.13)}}
+ @media(max-width:760px){.cover-copy{padding:22px 20px}.landscape-birds{right:9%;width:70px;top:13%}}
+ @media(max-width:600px){main>.container:not(:first-child){padding:20px 16px;margin-top:19px}.cover-copy{padding:24px 21px}.landscape-painting img{object-position:24% center}.landscape-wash{background:linear-gradient(180deg,rgba(246,245,240,.22),rgba(246,245,240,.12))}.landscape-toggle{right:12px;bottom:max(12px,env(safe-area-inset-bottom));font-size:10px;padding:8px 11px;min-height:35px}.landscape-birds{top:14%;right:9%;width:60px}.landscape-mist-near{animation-duration:34s}.landscape-mist-far{animation-duration:40s}.landscape-painting{animation-duration:90s}.breadcrumb{font-size:9px;padding:7px 9px}}
+ @media(prefers-reduced-motion:reduce){.landscape-move{animation:none!important}}
+</style>

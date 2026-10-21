@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "issues": [],
+  "checks": [
+    "Default water layer visibly changes transform over time",
+    "Pause freezes movement, preference survives navigation, resume works",
+    "Mobile uses the 70KB asset, no page overflow, pause control works",
+    "System reduced-motion preference produces a static scene",
+    "No JavaScript: static scene and fully readable page, no inactive control"
+  ],
+  "desktopBytes": 175918,
+  "mobileBytes": 70478
+}

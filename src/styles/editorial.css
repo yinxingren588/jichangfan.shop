@@ -41,3 +41,7 @@
 
 /* Wide reference tables in reading pages stay within the article. */
 .prose>table{display:block;max-width:100%;overflow-x:auto;font-size:13px}.prose>table th,.prose>table td{min-width:135px}.prose .table-wrap{max-width:100%;min-width:0}
+
+/* Progressive enhancement: filtered reference rows stay hidden. */
+.partner-detail[hidden],.partner-detail [hidden]{display:none!important}
+.journal-archive .page-heading h1{text-wrap:balance}

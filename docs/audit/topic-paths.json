@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "issues": [],
+  "topicHubs": 10,
+  "articlesWithContext": 240,
+  "groupedArticleBreadcrumbs": 200,
+  "destinations": [
+    {
+      "keyword": "机场推荐",
+      "url": "/",
+      "homepageClicks": 0,
+      "mainContentLinkingPages": 354
+    },
+    {
+      "keyword": "机场节点",
+      "url": "/glossary/node/",
+      "homepageClicks": 1,
+      "mainContentLinkingPages": 31
+    },
+    {
+      "keyword": "性价比机场",
+      "url": "/ranking/value/",
+      "homepageClicks": 1,
+      "mainContentLinkingPages": 36
+    },
+    {
+      "keyword": "梯子推荐",
+      "url": "/recommend/beginner/",
+      "homepageClicks": 1,
+      "mainContentLinkingPages": 34
+    },
+    {
+      "keyword": "vpn",
+      "url": "/glossary/vpn/",
+      "homepageClicks": 2,
+      "mainContentLinkingPages": 32
+    },
+    {
+      "keyword": "vpn机场",
+      "url": "/blog/vpn-vs-proxy/",
+      "homepageClicks": 1,
+      "mainContentLinkingPages": 39
+    },
+    {
+      "keyword": "vpn节点",
+      "url": "/glossary/node/",
+      "homepageClicks": 1,
+      "mainContentLinkingPages": 31
+    },
+    {
+      "keyword": "vpn推荐",
+      "url": "/blog/vpn-selection/",
+      "homepageClicks": 1,
+      "mainContentLinkingPages": 27
+    }
+  ],
+  "limits": "Local information architecture checks only; link counts and click depth do not demonstrate search ranking, indexation or user demand."
+}

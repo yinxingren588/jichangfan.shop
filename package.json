@@ -14,10 +14,11 @@
     "audit:seo": "tsx scripts/audit-seo.ts",
     "check:links": "tsx scripts/check-links.ts",
     "validate:content": "tsx scripts/validate-content.ts",
-    "test": "npm run validate:content && npm run audit:seo && npm run check:links && tsx scripts/audit-partners.ts && tsx scripts/audit-guides.ts && tsx --test scripts/core.test.ts",
+    "test": "npm run validate:content && npm run audit:seo && npm run check:links && tsx scripts/audit-partners.ts && tsx scripts/audit-guides.ts && tsx scripts/audit-topic-paths.ts && tsx --test scripts/core.test.ts",
     "indexnow": "tsx scripts/indexnow.ts",
     "indexnow:init": "tsx scripts/indexnow.ts --init",
-    "audit:browser": "tsx scripts/browser-audit.ts"
+    "audit:browser": "tsx scripts/browser-audit.ts",
+    "audit:topics": "tsx scripts/audit-topic-paths.ts"
   },
   "dependencies": {
     "astro": "7.4.1",

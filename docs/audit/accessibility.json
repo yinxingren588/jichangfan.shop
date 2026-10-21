@@ -40,6 +40,18 @@
     "violations": []
   },
   {
+    "route": "/ranking/value/",
+    "violations": []
+  },
+  {
+    "route": "/blog/topics/traffic/",
+    "violations": []
+  },
+  {
+    "route": "/glossary/node/",
+    "violations": []
+  },
+  {
     "route": "/blog/",
     "violations": []
   },

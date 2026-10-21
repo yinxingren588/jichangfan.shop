@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "issues": [],
+  "visits": 10,
+  "width": 375,
+  "checks": [
+    "Final release build: balanced topic headings and no document overflow on all ten hubs"
+  ]
+}

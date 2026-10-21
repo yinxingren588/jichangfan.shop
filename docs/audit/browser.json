@@ -7,12 +7,14 @@
     "Comparison: empty, add 2–4, reject fifth, remove, URL restore, invalid/duplicate IDs",
     "Partner comparison: annual totals, monthly equivalent, total quota and exact affiliate links",
     "Coupon copy writes the supplied case-sensitive code to clipboard",
+    "Plan filters: 29 brands/58 plans, bilingual name, annual equivalent, 12 supplied coupon codes, no result, deep-link reset and one-time quota",
+    "Topic introductions, three-step reading routes, grouped breadcrumbs and contextual article destinations",
     "Brand filtering: all supplied proxies and 4 VPNs",
     "Guides: 30 articles in six five-entry groups, working article navigation",
-    "Search: matching result, no result, clear 274 entries",
+    "Search: matching result, no result, clear 293 entries",
     "Blog: 20 entries per page, 5 on final page, noindex archive, 20-entry topic, article navigation",
     "Mobile menu: open, ARIA state, navigate",
     "Missing path returns actual 404 page",
-    "No JavaScript: homepage cards and complete comparison table are present"
+    "No JavaScript: homepage, full comparison and all 29 brands/58 reference plans remain readable"
   ]
 }

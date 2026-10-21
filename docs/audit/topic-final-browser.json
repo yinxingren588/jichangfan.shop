@@ -1,0 +1,67 @@
+{
+  "status": "PASS",
+  "issues": [],
+  "visits": 99,
+  "checkedRoutes": [
+    "/guides/windows/",
+    "/guides/macos/",
+    "/guides/android/",
+    "/guides/ios/",
+    "/guides/linux/",
+    "/guides/subscription-import/",
+    "/guides/qr-import/",
+    "/guides/wireguard-windows/",
+    "/guides/wireguard-android/",
+    "/guides/openvpn-connect/",
+    "/guides/windows-system-proxy/",
+    "/guides/macos-proxy-settings/",
+    "/guides/android-always-on/",
+    "/guides/firefox-proxy/",
+    "/guides/mullvad-split-tunneling/",
+    "/guides/troubleshooting/",
+    "/guides/dns-check/",
+    "/guides/network-time-check/",
+    "/guides/hotel-wifi-login/",
+    "/guides/wifi-cellular-handoff/",
+    "/guides/traffic-reset-check/",
+    "/guides/subscription-refresh/",
+    "/guides/device-limit-review/",
+    "/guides/client-update/",
+    "/guides/configuration-backup/",
+    "/guides/logs-redaction/",
+    "/guides/subscription-link-reset/",
+    "/guides/disconnect-restore/",
+    "/guides/remove-vpn-profile/",
+    "/guides/ipv6-connection-check/",
+    "/blog/practical-unused-quota-cost/",
+    "/blog/practical-weekly-traffic-estimate/",
+    "/blog/practical-unlimited-policy/"
+  ],
+  "accessibility": [
+    {
+      "route": "/guides/android/",
+      "violations": []
+    },
+    {
+      "route": "/guides/windows/",
+      "violations": []
+    },
+    {
+      "route": "/guides/traffic-reset-check/",
+      "violations": []
+    },
+    {
+      "route": "/blog/practical-unused-quota-cost/",
+      "violations": []
+    },
+    {
+      "route": "/blog/practical-weekly-traffic-estimate/",
+      "violations": []
+    },
+    {
+      "route": "/blog/practical-unlimited-policy/",
+      "violations": []
+    }
+  ],
+  "scope": "Final build after correcting tutorial-group context and rewriting three traffic articles; other unchanged routes checked in the preceding 1062-visit full-site run."
+}

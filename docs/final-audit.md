@@ -1,8 +1,14 @@
-# 机场翻验收：29个品牌、套餐与优惠码
+# 机场翻验收：Editorial 杂志式设计框架
 
 验收日期：2026-10-21。正式域名 https://jichangfan.shop ，品牌机场翻 JICHANGFAN。
 
-## 交付内容
+## 新版设计
+
+整站改为暖白、深墨绿与香槟金的杂志式设计。重建首页、导航、页脚、品牌卡片与连接地图；博客目录桌面双栏，手机单栏；文章使用衬线标题、宽松正文与目录侧栏。替换favicon和分享图片，提供明显键盘焦点、移动菜单及减少动画偏好支持。
+
+本次更换视觉框架和页面组件，底层仍为Astro、TypeScript和Tailwind的静态生成，未迁移技术栈。所有内容地址、站点域名、品牌数据与博客正文保持原有结构。设计说明见design-system.md。
+
+## 内容与资料
 
 加入用户提供的全部29个品牌、原样推广链接、12个优惠码，整理58档套餐的人民币参考价格与流量。保留原有5个品牌，当前共34个。原先新增的200篇博客保留，博客总计205篇，教程与百科另有10篇。
 
@@ -20,14 +26,14 @@
 
 | 项目 | 状态 | 本次结果 |
 | --- | --- | --- |
-| 类型与组件检查 | PASS | 65个检查文件，0错误、0警告，1个忽略目录下旧临时脚本的未使用导入提示 |
+| 类型与组件检查 | PASS | 76个检查文件，0错误、0警告；2个来自忽略目录临时脚本的未使用导入提示 |
 | 生产构建 | PASS | 330个HTML页面，318条可索引URL |
 | 内容来源与声明 | PASS | 34个品牌；29个reference-data、5个official-data；无tested记录 |
 | 用户品牌专项 | PASS | 29品牌、58档套餐、12代码；完整地址含fragment及代码大小写一致 |
 | 计费周期回归 | PASS | 年付折合价、年付总额、一次性配额分别校验 |
 | 元信息与结构化数据 | PASS | 唯一标题和描述、单H1、Canonical、Robots、OG、Schema、可见ItemList链接 |
 | Sitemap | PASS | 正式域名和真实编辑日期，排除搜索、404与后续分页 |
-| 内链与资源 | PASS | 16015个内部引用，329个正常页面可从首页到达 |
+| 内链与资源 | PASS | 16710个内部引用，329个正常页面可从首页到达 |
 | 计算与IndexNow单元测试 | PASS | 6项通过；未实际提交IndexNow |
 | 三种屏幕尺寸 | PASS | 987次访问，1440/768/375px；HTTP200且无整页溢出 |
 | 浏览器交互 | PASS | 品牌筛选、比较2–4家、拒绝第五家、移除、URL恢复、优惠码复制、搜索、手机菜单 |
@@ -39,7 +45,17 @@
 | 全部推广链路可达性 | NOT TESTED | 保留用户提供的全部入口，不保证服务商跳转或后续站点状态 |
 | 公网部署与Bing收录 | NOT TESTED | 未操作Cloudflare、DNS或站长后台，不保证收录和排名 |
 
-本表对应docs/audit下本次记录；自动检查不能替代人工审读、订单核验或真实网络测试。历史200篇内容审计保留在history/articles-200-final-audit.md，原始建站记录在history/initial-final-audit.md。
+本表对应docs/audit下本次记录；自动检查不能替代人工审读、订单核验或真实网络测试。上一版品牌资料验收保留在history/partner-brands-final-audit.md。历史200篇内容审计保留在history/articles-200-final-audit.md，原始建站记录在history/initial-final-audit.md。
+
+## 新版预览
+
+- audit/home-first-screen.png：新版首页首屏。
+- audit/home-desktop.png 与 home-mobile.png：完整首页。
+- audit/blog-desktop.png：双栏博客索引。
+- audit/article-desktop.png：文章阅读页。
+- audit/coupons-desktop.png：新版优惠码页面。
+
+浏览器987次访问与11类页面Axe检查针对新版设计重跑，全部通过。首页目录标题随后作短句排版调整，最终重新构建并检查该页。没有重新进行品牌报价核验。
 
 ## 文件与维护
 

@@ -13,7 +13,7 @@ const breadcrumbs=[{name:'博客文章',url:'/blog/'},...(topic?[{name:topic.nam
 const schema=[{'@context':'https://schema.org','@type':'ItemList',name:heading,itemListElement:entries.map((e,i)=>({'@type':'ListItem',position:i+1,name:e.data.title,url:site.url+'/blog/'+e.id+'/'}))}];
 ---
 <Base {title} {description} {breadcrumbs} {schema} noindex={!topic&&currentPage>1}>
- <div class="container">
+ <div class="container journal-archive">
   <header class="page-heading"><div class="eyebrow">JICHANGFAN / PRACTICAL READING</div><h1>{heading}</h1><p>{topic?topic.intro:'从一个具体问题开始，读懂价格、配置与使用边界。新增内容按十个主题整理，每篇附检查步骤、相关阅读和官方参考。'}</p><div class="meta"><span>{topic?entries.length+' 篇主题文章':total+' 篇博客 · 每页 20 篇'}</span><time datetime="2026-10-21">更新于 2026-10-21</time></div></header>
   <nav class="topic-directory" aria-label="博客主题"><a href="/blog/" aria-current={!topic&&currentPage===1?'page':undefined}>全部文章</a>{blogTopics.map(t=><a href={'/blog/topics/'+t.id+'/'} aria-current={topic?.id===t.id?'page':undefined}>{t.name}</a>)}</nav>
   <section class="section"><div class="section-heading"><h2>{topic?'本专题文章':'文章目录'}</h2>{!topic&&<span class="meta">第 {currentPage} / {totalPages} 页</span>}</div><ArticleList {entries} numbered/></section>

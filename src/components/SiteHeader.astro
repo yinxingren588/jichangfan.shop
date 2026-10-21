@@ -1,0 +1,11 @@
+---
+import {nav} from '../data/site';import SiteMark from './SiteMark.astro';
+const path=Astro.url.pathname;
+---
+<div class="topbar"><div class="container"><span>一份关于连接与选择的阅读手册</span><span class="secondary-text">JICHANGFAN JOURNAL <span aria-hidden="true">／</span> SINCE 2026</span></div></div>
+<header class="header"><div class="container header-row">
+ <a class="logo" href="/" aria-label="机场翻首页"><span class="logo-icon"><SiteMark/></span><span class="logo-text">机场翻<small>JICHANGFAN</small></span></a>
+ <button type="button" class="menu-button" aria-controls="primary-nav" aria-expanded="false"><span>菜单</span><span class="menu-lines" aria-hidden="true"></span></button>
+ <nav id="primary-nav" class="nav" aria-label="主导航">{nav.map(([label,url])=><a class:list={{active:url==='/'?path==='/':path.startsWith(url)}} href={url} aria-current={(url==='/'?path==='/':path.startsWith(url))?'page':undefined}>{label}</a>)}</nav>
+ <a href="/search/" class="search-link" aria-label="搜索文章与品牌"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><span>搜索</span></a>
+</div></header>

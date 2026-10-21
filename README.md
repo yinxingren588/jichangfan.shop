@@ -4,6 +4,8 @@
 
 ## 先看这里
 
+- [Editorial 杂志式设计框架](docs/design-system.md)
+
 - [29 品牌、58 档套餐与优惠码维护](docs/partner-brands.md)
 - [品牌套餐汇总表](docs/partner-plans.csv)
 

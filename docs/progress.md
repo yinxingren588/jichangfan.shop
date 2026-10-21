@@ -1,0 +1,16 @@
+# 阶段进度
+
+- PHASE 1：已读取 8 个关键词、正式域名和远程地址。克隆后确认为空仓库；分支 main，无未知代码及用户修改。
+- PHASE 2：已建立 keyword-map.csv，全部关键词对应主要搜索意图，没有捏造搜索量。
+- PHASE 3：Astro 7.4.1、TypeScript、Tailwind 4.3.3、Markdown Content Collections、SSG 与 Sitemap。
+- PHASE 4：浅色蓝色资讯门户、桌面侧栏、移动折叠菜单、原创文字标识。
+- PHASE 5：统一 airports.ts、5 个真实品牌、官方来源与未知状态。
+- PHASE 6：首页、排行体系、品牌资料、独立分析、2–4 家对比。
+- PHASE 7：5 篇教程、5 篇选择指南、5 篇百科、6 个需求专题。
+- PHASE 8：导航、面包屑、推荐链路、标签相关文章与首页可达验证。
+- PHASE 9：元信息、Schema、Robots、Sitemap 和手动增量 IndexNow 模块。
+- PHASE 10：最终测试结果见 final-audit.md 与 audit/ 原始记录。
+- PHASE 11：Git、Cloudflare 配置与上线文档，推送结果见最终验收。
+- PHASE 12：交付资料、压缩包与最终验收报告。
+
+必要范围调整：不编造 3 个性能排行榜。实际交付 2 个有依据的排序视图，另有成本参考与稳定性方法。没有倍率和长期测试时不填名次，符合原始指令的数据真实性要求。

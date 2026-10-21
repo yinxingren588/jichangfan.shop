@@ -1,0 +1,37 @@
+{
+  "name": "xintuan-blog",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.22.0"
+  },
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "build": "astro build && tsx scripts/postbuild.ts",
+    "preview": "astro preview --host 127.0.0.1",
+    "check": "astro check",
+    "audit:seo": "tsx scripts/audit-seo.ts",
+    "check:links": "tsx scripts/check-links.ts",
+    "validate:content": "tsx scripts/validate-content.ts",
+    "test": "npm run validate:content && npm run audit:seo && npm run check:links && tsx --test scripts/core.test.ts",
+    "indexnow": "tsx scripts/indexnow.ts",
+    "indexnow:init": "tsx scripts/indexnow.ts --init",
+    "audit:browser": "tsx scripts/browser-audit.ts"
+  },
+  "dependencies": {
+    "astro": "7.4.1",
+    "@astrojs/sitemap": "3.7.4",
+    "@tailwindcss/vite": "4.3.3",
+    "tailwindcss": "4.3.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.11",
+    "typescript": "6.0.3",
+    "tsx": "4.23.15",
+    "cheerio": "1.2.0",
+    "playwright": "1.64.1",
+    "@axe-core/playwright": "4.14.0",
+    "lighthouse": "13.5.0"
+  }
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "route": "/",
+    "violations": []
+  },
+  {
+    "route": "/compare/",
+    "violations": []
+  },
+  {
+    "route": "/airport/just-my-socks/",
+    "violations": []
+  },
+  {
+    "route": "/review/proton-vpn/",
+    "violations": []
+  },
+  {
+    "route": "/guides/windows/",
+    "violations": []
+  },
+  {
+    "route": "/recommend/budget/",
+    "violations": []
+  }
+]

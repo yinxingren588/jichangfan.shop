@@ -1,0 +1,5 @@
+---
+import Base from '../../layouts/Base.astro';import ArticleList from '../../components/ArticleList.astro';import {getCollection} from 'astro:content';
+const entries=(await getCollection('articles',({data})=>data.category==='blog'&&!data.draft)).sort((a,b)=>a.id.localeCompare(b.id));
+---
+<Base title="博客文章：把价格、产品与证据，讲得更清楚。" description="新团博客博客文章，把价格、产品与证据，讲得更清楚。内容提供官方来源、相关内链与实际更新日期，不包含虚构测试数据。" breadcrumbs={[{name:'博客文章',url:'/blog/'}]}><div class="container"><header class="page-heading"><div class="eyebrow">READ & LEARN</div><h1>博客文章</h1><p>把价格、产品与证据，讲得更清楚。每篇内容均记录来源和更新日期，先理解方法，再判断具体产品。</p></header><ArticleList entries={entries} numbered/><nav class="page-nav"><a href="/recommend/">按需求选择 →</a><a href="/airport/">核对品牌资料 →</a></nav></div></Base>

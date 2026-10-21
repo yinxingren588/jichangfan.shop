@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "issues": [],
+  "visits": 150,
+  "checks": [
+    "All 50 normal pages respond 200 without document overflow at 1440, 768 and 375 px",
+    "Comparison: empty, add 2–4, reject fifth, remove, URL restore, invalid/duplicate IDs",
+    "Brand filtering: proxy=1, VPN=4",
+    "Search: matching result, no result, clear",
+    "Mobile menu: open, ARIA state, navigate",
+    "Missing path returns actual 404 page",
+    "No JavaScript: homepage cards and complete comparison table are present"
+  ]
+}

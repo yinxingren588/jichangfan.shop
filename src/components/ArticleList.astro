@@ -1,0 +1,4 @@
+---
+const {entries,numbered=false}=Astro.props;
+---
+<div class="article-list">{entries.map((entry:any,i:number)=><article class="article-row"><div><div class="meta"><span>{entry.data.category==='guides'?'使用教程':entry.data.category==='glossary'?'知识百科':'选择指南'}</span><time datetime={entry.data.updated}>{entry.data.updated}</time></div><h3><a href={'/'+entry.data.category+'/'+entry.id+'/'}>{entry.data.title}</a></h3><p>{entry.data.description}</p></div>{numbered&&<span class="article-number" aria-hidden="true">{String(i+1).padStart(2,'0')}</span>}</article>)}</div>

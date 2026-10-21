@@ -1,0 +1,5 @@
+---
+import Base from '../../layouts/Base.astro';
+const boards=[['overall','综合资料榜','按五项公开资料的完备度排序，不等于性能推荐。'],['budget','月付预算榜','同一美元币种，按核实的普通月付价格升序。'],['value','性价比核算','标称成本参考、倍率折算规则与未参与排名原因。'],['stable','稳定性观察','公开实测标准；没有长期记录前不编造名次。']];
+---
+<Base title="机场排行榜：综合资料、月付预算与性价比依据" description="公开机场排行榜的排序范围与计算规则。查看官方资料完备度、同币种月付预算、每 GB 计算及稳定性观察方法，不以虚构测速排名。" breadcrumbs={[{name:'机场排行',url:'/ranking/'}]}><div class="container"><header class="page-heading"><div class="eyebrow">RANKING WITH CONTEXT</div><h1>排名之前，先看比较依据。</h1><p>价格、资料完整性和网络表现是不同维度。每个榜单都会说明比较范围、数据来源以及没有证据的部分。</p></header><div class="catalog-grid">{boards.map(([slug,name,desc])=><a class="card" href={'/ranking/'+slug+'/'}><span class="pill">公开规则</span><h2 style="margin-top:13px">{name} ↗</h2><p>{desc}</p></a>)}</div><p class="note">不设置付费上榜。当前没有购入套餐实测，所有品牌的 testStatus 均为 official-data。</p></div></Base>

@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "issues": [],
+  "pages": 51,
+  "indexable": 49,
+  "checks": [
+    "unique titles/descriptions",
+    "one H1",
+    "canonical",
+    "robots",
+    "OG/Twitter",
+    "sitemap XML and lastmod",
+    "schema JSON, article dates and visible ItemList links",
+    "placeholder and blank-page scan"
+  ]
+}

@@ -1,0 +1,4 @@
+---
+import Base from '../../layouts/Base.astro';import {airports} from '../../data/airports';
+---
+<Base title="机场评测与 VPN 独立资料分析" description="从官方价格、付款周期、设备限制与可核实权益分析五个真实品牌，明确优缺点与未知字段。当前评测均为资料分析，未进行网络实测。" breadcrumbs={[{name:'机场评测',url:'/review/'}]}><div class="container"><header class="page-heading"><div class="eyebrow">INDEPENDENT DESK RESEARCH</div><h1>评测先说明证据，再给判断。</h1><p>本期是基于官方资料的独立分析，尚未开展速度、稳定性与解锁实测。产品事实来自官方页面，适用建议是编辑判断。</p></header><div class="catalog-grid">{airports.map(a=><article class="card"><span class="pill">{a.kind==='proxy'?'代理订阅':'商业 VPN'} · 未实测</span><h2 style="font-size:23px;margin-top:14px"><a href={'/review/'+a.slug+'/'}>{a.name} 资料分析 ↗</a></h2><p>{a.conclusion}</p><div class="meta"><time datetime="2026-10-21">2026-10-21</time><span>附官方来源</span></div></article>)}</div></div></Base>

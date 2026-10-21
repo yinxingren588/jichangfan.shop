@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "issues": [],
+  "guides": 30,
+  "newGuides": 25,
+  "groups": [
+    {
+      "name": "设备入门",
+      "count": 5
+    },
+    {
+      "name": "配置导入",
+      "count": 5
+    },
+    {
+      "name": "连接与分流",
+      "count": 5
+    },
+    {
+      "name": "故障排查",
+      "count": 5
+    },
+    {
+      "name": "日常维护",
+      "count": 5
+    },
+    {
+      "name": "隐私与退出",
+      "count": 5
+    }
+  ],
+  "minNewChineseCharacters": 739,
+  "maxNewChineseCharacters": 837,
+  "pairsCompared": 435,
+  "maxFiveCharacterShingleJaccard": 0.02,
+  "closestPair": [
+    "wireguard-android",
+    "wireguard-windows"
+  ],
+  "limits": "Count, structure, evidence and text-similarity checks; not a claim that all steps were exercised on every platform or account."
+}

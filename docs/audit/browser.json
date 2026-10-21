@@ -1,14 +1,15 @@
 {
   "status": "PASS",
   "issues": [],
-  "visits": 987,
+  "visits": 1062,
   "checks": [
-    "All 329 normal pages respond 200 without document overflow at 1440, 768 and 375 px",
+    "All 354 normal pages respond 200 without document overflow at 1440, 768 and 375 px",
     "Comparison: empty, add 2–4, reject fifth, remove, URL restore, invalid/duplicate IDs",
     "Partner comparison: annual totals, monthly equivalent, total quota and exact affiliate links",
     "Coupon copy writes the supplied case-sensitive code to clipboard",
     "Brand filtering: all supplied proxies and 4 VPNs",
-    "Search: matching result, no result, clear 249 entries",
+    "Guides: 30 articles in six five-entry groups, working article navigation",
+    "Search: matching result, no result, clear 274 entries",
     "Blog: 20 entries per page, 5 on final page, noindex archive, 20-entry topic, article navigation",
     "Mobile menu: open, ARIA state, navigate",
     "Missing path returns actual 404 page",

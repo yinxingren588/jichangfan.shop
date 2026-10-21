@@ -1,0 +1,103 @@
+{
+  "checkedAt": "2026-10-21",
+  "scope": "25 newly authored guides; 5 existing device/troubleshooting guides retained. Public official documentation read; no customer account or device configurations executed.",
+  "sourceNotes": "Ubuntu official help was readable in search results; a later direct request returned a temporary 503. Apple guide URLs can offer different OS versions. Refer to the current official UI. References support specific steps; general troubleshooting and record templates are original editorial guidance.",
+  "sources": [
+    {
+      "title": "Ubuntu官方：连接VPN",
+      "url": "https://help.ubuntu.com/stable/ubuntu-help/net-vpn-connect.html"
+    },
+    {
+      "title": "WireGuard官方安装入口",
+      "url": "https://www.wireguard.com/install/"
+    },
+    {
+      "title": "Proton VPN：Windows手动配置WireGuard",
+      "url": "https://protonvpn.com/support/wireguard-manual-windows"
+    },
+    {
+      "title": "Proton VPN：Android手动配置WireGuard",
+      "url": "https://protonvpn.com/support/wireguard-manual-android"
+    },
+    {
+      "title": "Proton VPN：下载WireGuard配置",
+      "url": "https://protonvpn.com/support/wireguard-configurations"
+    },
+    {
+      "title": "OpenVPN Connect：导入连接配置",
+      "url": "https://openvpn.net/connect-docs/import-profile.html"
+    },
+    {
+      "title": "Microsoft：Windows代理设置",
+      "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/use-a-proxy-server-in-windows"
+    },
+    {
+      "title": "Apple：更改Mac代理设置",
+      "url": "https://support.apple.com/en-au/guide/mac-help/mchlp2591/mac"
+    },
+    {
+      "title": "Android帮助：连接和管理VPN",
+      "url": "https://support.google.com/android/answer/9089766"
+    },
+    {
+      "title": "Mozilla：Firefox连接设置",
+      "url": "https://support.mozilla.org/en-US/kb/connection-settings-firefox"
+    },
+    {
+      "title": "Mullvad：应用分流操作说明",
+      "url": "https://mullvad.net/en/help/split-tunneling-with-the-mullvad-app"
+    },
+    {
+      "title": "Microsoft：Windows网络设置与任务",
+      "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/essential-network-settings-and-tasks-in-windows"
+    },
+    {
+      "title": "Microsoft：日期、时间与时区设置",
+      "url": "https://support.microsoft.com/en-us/windows/experience/personalization/set-time-date-and-time-zone-settings-in-windows"
+    },
+    {
+      "title": "Mozilla：安全网站的时间错误排查",
+      "url": "https://support.mozilla.org/en-US/kb/troubleshoot-time-errors-secure-websites"
+    },
+    {
+      "title": "Apple：使用需要登录的公共Wi-Fi",
+      "url": "https://support.apple.com/en-us/102554"
+    },
+    {
+      "title": "Android帮助：连接Wi-Fi网络",
+      "url": "https://support.google.com/android/answer/9075847"
+    },
+    {
+      "title": "Apple：蜂窝数据与用量统计",
+      "url": "https://support.apple.com/en-us/109323"
+    },
+    {
+      "title": "Apple：安装或移除iPhone配置描述文件",
+      "url": "https://support.apple.com/en-gb/guide/iphone/iph6c493b19/ios"
+    },
+    {
+      "title": "MDN：URL组成与处理",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/URL"
+    },
+    {
+      "title": "Mullvad官方项目：日志与遥测说明",
+      "url": "https://github.com/mullvad/mullvadvpn-app/blob/main/docs/logging-and-telemetry.md"
+    },
+    {
+      "title": "Google Play帮助：更新Android应用",
+      "url": "https://support.google.com/googleplay/answer/113412"
+    },
+    {
+      "title": "Proton VPN：套餐与连接权益说明",
+      "url": "https://protonvpn.com/support/proton-vpn-plans"
+    },
+    {
+      "title": "Mullvad官方连接检查",
+      "url": "https://mullvad.net/en/check"
+    },
+    {
+      "title": "MDN：IPv6术语说明",
+      "url": "https://developer.mozilla.org/en-US/docs/Glossary/IPv6"
+    }
+  ]
+}

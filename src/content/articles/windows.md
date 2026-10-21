@@ -4,9 +4,12 @@ description: "区分系统内置 VPN 与第三方订阅客户端，按来源、�
 category: "guides"
 date: "2026-10-21"
 updated: "2026-10-21"
-tags: ["入门","设备","协议"]
+tags: ["入门","设备","协议","设备入门"]
 sources: [{"title":"Microsoft：在 Windows 中连接 VPN","url":"https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows"},{"title":"WireGuard 官方安装入口","url":"https://www.wireguard.com/install/"},{"title":"IVPN 官方协议说明","url":"https://www.ivpn.net/knowledgebase/general/what-vpn-protocols-do-you-offer/"}]
 draft: false
+topic: "guide-devices"
+order: 1
+related: ["macos","android"]
 ---
 
 Windows 上的正确起点是先确认服务商提供什么配置，而不是先下载某个热门客户端。系统内置 VPN、商业 VPN 应用与代理订阅客户端的导入方式不同，不能把一种订阅链接直接粘贴到所有程序里。

@@ -4,9 +4,12 @@ description: "了解 iPhone 与 iPad 的 VPN 应用来源、配置类型和验�
 category: "guides"
 date: "2026-10-21"
 updated: "2026-10-21"
-tags: ["入门","设备","协议"]
+tags: ["入门","设备","协议","设备入门"]
 sources: [{"title":"WireGuard 官方安装入口","url":"https://www.wireguard.com/install/"},{"title":"IVPN 官方协议说明","url":"https://www.ivpn.net/knowledgebase/general/what-vpn-protocols-do-you-offer/"}]
 draft: false
+topic: "guide-devices"
+order: 4
+related: ["windows","macos"]
 ---
 
 在 iPhone 或 iPad 上，先核对服务商支持的应用与协议，再安装对应客户端。系统中出现 VPN 标识，通常表示某个应用正在使用连接能力，并不能单独证明服务类型或目标平台可用。

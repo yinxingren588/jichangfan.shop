@@ -28,6 +28,14 @@
     "violations": []
   },
   {
+    "route": "/guides/",
+    "violations": []
+  },
+  {
+    "route": "/guides/wireguard-android/",
+    "violations": []
+  },
+  {
     "route": "/recommend/budget/",
     "violations": []
   },

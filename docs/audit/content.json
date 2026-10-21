@@ -2,7 +2,7 @@
   "status": "PASS",
   "issues": [],
   "brands": 34,
-  "articles": 215,
+  "articles": 240,
   "reviewStatus": "5 official-data and 29 reference-data; none tested",
   "factualLimits": "Third-party prices are unverified checkout references. Coupon terms unverified. Automated checks do not replace human source interpretation."
 }

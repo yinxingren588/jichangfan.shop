@@ -4,9 +4,12 @@ description: "为 Mac 核对官方客户端、系统兼容性与配置来源，�
 category: "guides"
 date: "2026-10-21"
 updated: "2026-10-21"
-tags: ["入门","设备","协议"]
+tags: ["入门","设备","协议","设备入门"]
 sources: [{"title":"WireGuard 官方安装入口","url":"https://www.wireguard.com/install/"},{"title":"IVPN 官方协议说明","url":"https://www.ivpn.net/knowledgebase/general/what-vpn-protocols-do-you-offer/"}]
 draft: false
+topic: "guide-devices"
+order: 2
+related: ["windows","android"]
 ---
 
 Mac 上先确认客户端适合当前系统与设备，再处理连接配置。菜单栏的状态只反映应用自身状态；使用者仍需检查实际任务，以及断开后网络是否按预期恢复。

@@ -1,8 +1,8 @@
 {
   "status": "PASS",
   "issues": [],
-  "pages": 330,
-  "indexable": 318,
+  "pages": 355,
+  "indexable": 343,
   "checks": [
     "unique titles/descriptions",
     "one H1",

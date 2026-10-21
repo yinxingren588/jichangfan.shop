@@ -4,9 +4,12 @@ description: "用官方入口核对 Android VPN 应用，理解连接请求、�
 category: "guides"
 date: "2026-10-21"
 updated: "2026-10-21"
-tags: ["入门","设备","协议"]
+tags: ["入门","设备","协议","设备入门"]
 sources: [{"title":"Android 帮助：连接 VPN","url":"https://support.google.com/android/answer/9089766"},{"title":"WireGuard 官方安装入口","url":"https://www.wireguard.com/install/"}]
 draft: false
+topic: "guide-devices"
+order: 3
+related: ["windows","macos"]
 ---
 
 Android 上先确定你安装的是服务商官方应用，还是需要自行导入配置的协议客户端。应用提出 VPN 连接请求时，应确认请求来自你主动安装的软件，再继续配置。

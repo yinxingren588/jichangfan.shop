@@ -4,9 +4,12 @@ description: "先区分基础网络、账户配置、客户端和目标服务错
 category: "guides"
 date: "2026-10-21"
 updated: "2026-10-21"
-tags: ["稳定","设备","协议"]
+tags: ["稳定","设备","协议","故障排查"]
 sources: [{"title":"Android 帮助：连接 VPN","url":"https://support.google.com/android/answer/9089766"},{"title":"IVPN 官方协议说明","url":"https://www.ivpn.net/knowledgebase/general/what-vpn-protocols-do-you-offer/"}]
 draft: false
+topic: "guide-troubleshoot"
+order: 16
+related: ["dns-check","network-time-check"]
 ---
 
 “已连接”与“任务成功”是两件事。先确认断开服务后基础网络正常，再检查账户、客户端与目的服务，按顺序排除能缩小问题范围。

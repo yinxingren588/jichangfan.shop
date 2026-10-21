@@ -1,0 +1,650 @@
+[
+  {
+    "number": 1,
+    "id": "windows",
+    "title": "Windows VPN 与机场客户端：安装前准备和连接检查",
+    "group": "guide-devices",
+    "groupName": "设备入门",
+    "url": "https://jichangfan.shop/guides/windows/",
+    "source": "src/content/articles/windows.md",
+    "export": "01-windows.md",
+    "isNew": false,
+    "chineseCharacters": 659,
+    "sources": [
+      {
+        "title": "Microsoft：在 Windows 中连接 VPN",
+        "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-vpn-in-windows"
+      },
+      {
+        "title": "WireGuard 官方安装入口",
+        "url": "https://www.wireguard.com/install/"
+      },
+      {
+        "title": "IVPN 官方协议说明",
+        "url": "https://www.ivpn.net/knowledgebase/general/what-vpn-protocols-do-you-offer/"
+      }
+    ]
+  },
+  {
+    "number": 2,
+    "id": "macos",
+    "title": "macOS 连接指南：客户端来源、权限与退出检查",
+    "group": "guide-devices",
+    "groupName": "设备入门",
+    "url": "https://jichangfan.shop/guides/macos/",
+    "source": "src/content/articles/macos.md",
+    "export": "02-macos.md",
+    "isNew": false,
+    "chineseCharacters": 590,
+    "sources": [
+      {
+        "title": "WireGuard 官方安装入口",
+        "url": "https://www.wireguard.com/install/"
+      },
+      {
+        "title": "IVPN 官方协议说明",
+        "url": "https://www.ivpn.net/knowledgebase/general/what-vpn-protocols-do-you-offer/"
+      }
+    ]
+  },
+  {
+    "number": 3,
+    "id": "android",
+    "title": "Android 连接教程：VPN 权限、配置与后台检查",
+    "group": "guide-devices",
+    "groupName": "设备入门",
+    "url": "https://jichangfan.shop/guides/android/",
+    "source": "src/content/articles/android.md",
+    "export": "03-android.md",
+    "isNew": false,
+    "chineseCharacters": 607,
+    "sources": [
+      {
+        "title": "Android 帮助：连接 VPN",
+        "url": "https://support.google.com/android/answer/9089766"
+      },
+      {
+        "title": "WireGuard 官方安装入口",
+        "url": "https://www.wireguard.com/install/"
+      }
+    ]
+  },
+  {
+    "number": 4,
+    "id": "ios",
+    "title": "iOS 连接准备：官方应用、协议配置与验证清单",
+    "group": "guide-devices",
+    "groupName": "设备入门",
+    "url": "https://jichangfan.shop/guides/ios/",
+    "source": "src/content/articles/ios.md",
+    "export": "04-ios.md",
+    "isNew": false,
+    "chineseCharacters": 615,
+    "sources": [
+      {
+        "title": "WireGuard 官方安装入口",
+        "url": "https://www.wireguard.com/install/"
+      },
+      {
+        "title": "IVPN 官方协议说明",
+        "url": "https://www.ivpn.net/knowledgebase/general/what-vpn-protocols-do-you-offer/"
+      }
+    ]
+  },
+  {
+    "number": 5,
+    "id": "linux",
+    "title": "Ubuntu 连接 VPN：从确认协议到首次连接",
+    "group": "guide-devices",
+    "groupName": "设备入门",
+    "url": "https://jichangfan.shop/guides/linux/",
+    "source": "src/content/articles/linux.md",
+    "export": "05-linux.md",
+    "isNew": true,
+    "chineseCharacters": 808,
+    "sources": [
+      {
+        "title": "Ubuntu官方：连接VPN",
+        "url": "https://help.ubuntu.com/stable/ubuntu-help/net-vpn-connect.html"
+      },
+      {
+        "title": "WireGuard官方安装入口",
+        "url": "https://www.wireguard.com/install/"
+      }
+    ]
+  },
+  {
+    "number": 6,
+    "id": "subscription-import",
+    "title": "机场订阅怎么导入：先核对格式，再完成首次连接",
+    "group": "guide-import",
+    "groupName": "配置导入",
+    "url": "https://jichangfan.shop/guides/subscription-import/",
+    "source": "src/content/articles/subscription-import.md",
+    "export": "06-subscription-import.md",
+    "isNew": true,
+    "chineseCharacters": 796,
+    "sources": [
+      {
+        "title": "OpenVPN Connect：导入连接配置",
+        "url": "https://openvpn.net/connect-docs/import-profile.html"
+      },
+      {
+        "title": "Proton VPN：下载WireGuard配置",
+        "url": "https://protonvpn.com/support/wireguard-configurations"
+      },
+      {
+        "title": "MDN：URL组成与处理",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/API/URL"
+      }
+    ]
+  },
+  {
+    "number": 7,
+    "id": "qr-import",
+    "title": "二维码导入配置：确认来源、识别类型与验证结果",
+    "group": "guide-import",
+    "groupName": "配置导入",
+    "url": "https://jichangfan.shop/guides/qr-import/",
+    "source": "src/content/articles/qr-import.md",
+    "export": "07-qr-import.md",
+    "isNew": true,
+    "chineseCharacters": 829,
+    "sources": [
+      {
+        "title": "MDN：URL组成与处理",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/API/URL"
+      },
+      {
+        "title": "OpenVPN Connect：导入连接配置",
+        "url": "https://openvpn.net/connect-docs/import-profile.html"
+      },
+      {
+        "title": "WireGuard官方安装入口",
+        "url": "https://www.wireguard.com/install/"
+      }
+    ]
+  },
+  {
+    "number": 8,
+    "id": "wireguard-windows",
+    "title": "Windows 使用 WireGuard：导入配置与连接验证",
+    "group": "guide-import",
+    "groupName": "配置导入",
+    "url": "https://jichangfan.shop/guides/wireguard-windows/",
+    "source": "src/content/articles/wireguard-windows.md",
+    "export": "08-wireguard-windows.md",
+    "isNew": true,
+    "chineseCharacters": 780,
+    "sources": [
+      {
+        "title": "Proton VPN：Windows手动配置WireGuard",
+        "url": "https://protonvpn.com/support/wireguard-manual-windows"
+      },
+      {
+        "title": "WireGuard官方安装入口",
+        "url": "https://www.wireguard.com/install/"
+      }
+    ]
+  },
+  {
+    "number": 9,
+    "id": "wireguard-android",
+    "title": "Android 使用 WireGuard：从配置文件导入到断开检查",
+    "group": "guide-import",
+    "groupName": "配置导入",
+    "url": "https://jichangfan.shop/guides/wireguard-android/",
+    "source": "src/content/articles/wireguard-android.md",
+    "export": "09-wireguard-android.md",
+    "isNew": true,
+    "chineseCharacters": 777,
+    "sources": [
+      {
+        "title": "Proton VPN：Android手动配置WireGuard",
+        "url": "https://protonvpn.com/support/wireguard-manual-android"
+      },
+      {
+        "title": "WireGuard官方安装入口",
+        "url": "https://www.wireguard.com/install/"
+      }
+    ]
+  },
+  {
+    "number": 10,
+    "id": "openvpn-connect",
+    "title": "OpenVPN Connect 导入教程：文件、URL与认证检查",
+    "group": "guide-import",
+    "groupName": "配置导入",
+    "url": "https://jichangfan.shop/guides/openvpn-connect/",
+    "source": "src/content/articles/openvpn-connect.md",
+    "export": "10-openvpn-connect.md",
+    "isNew": true,
+    "chineseCharacters": 802,
+    "sources": [
+      {
+        "title": "OpenVPN Connect：导入连接配置",
+        "url": "https://openvpn.net/connect-docs/import-profile.html"
+      }
+    ]
+  },
+  {
+    "number": 11,
+    "id": "windows-system-proxy",
+    "title": "Windows 系统代理设置：填写地址、端口与恢复原设置",
+    "group": "guide-connection",
+    "groupName": "连接与分流",
+    "url": "https://jichangfan.shop/guides/windows-system-proxy/",
+    "source": "src/content/articles/windows-system-proxy.md",
+    "export": "11-windows-system-proxy.md",
+    "isNew": true,
+    "chineseCharacters": 837,
+    "sources": [
+      {
+        "title": "Microsoft：Windows代理设置",
+        "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/use-a-proxy-server-in-windows"
+      },
+      {
+        "title": "Mozilla：Firefox连接设置",
+        "url": "https://support.mozilla.org/en-US/kb/connection-settings-firefox"
+      }
+    ]
+  },
+  {
+    "number": 12,
+    "id": "macos-proxy-settings",
+    "title": "Mac 代理设置教程：按网络服务配置与退出验证",
+    "group": "guide-connection",
+    "groupName": "连接与分流",
+    "url": "https://jichangfan.shop/guides/macos-proxy-settings/",
+    "source": "src/content/articles/macos-proxy-settings.md",
+    "export": "12-macos-proxy-settings.md",
+    "isNew": true,
+    "chineseCharacters": 814,
+    "sources": [
+      {
+        "title": "Apple：更改Mac代理设置",
+        "url": "https://support.apple.com/en-au/guide/mac-help/mchlp2591/mac"
+      }
+    ]
+  },
+  {
+    "number": 13,
+    "id": "android-always-on",
+    "title": "Android 始终开启VPN：查找入口、验证与关闭",
+    "group": "guide-connection",
+    "groupName": "连接与分流",
+    "url": "https://jichangfan.shop/guides/android-always-on/",
+    "source": "src/content/articles/android-always-on.md",
+    "export": "13-android-always-on.md",
+    "isNew": true,
+    "chineseCharacters": 797,
+    "sources": [
+      {
+        "title": "Android帮助：连接和管理VPN",
+        "url": "https://support.google.com/android/answer/9089766"
+      }
+    ]
+  },
+  {
+    "number": 14,
+    "id": "firefox-proxy",
+    "title": "Firefox 代理设置：跟随系统、手动配置与故障对照",
+    "group": "guide-connection",
+    "groupName": "连接与分流",
+    "url": "https://jichangfan.shop/guides/firefox-proxy/",
+    "source": "src/content/articles/firefox-proxy.md",
+    "export": "14-firefox-proxy.md",
+    "isNew": true,
+    "chineseCharacters": 796,
+    "sources": [
+      {
+        "title": "Mozilla：Firefox连接设置",
+        "url": "https://support.mozilla.org/en-US/kb/connection-settings-firefox"
+      }
+    ]
+  },
+  {
+    "number": 15,
+    "id": "mullvad-split-tunneling",
+    "title": "Mullvad Windows 分流：排除应用、验证与恢复",
+    "group": "guide-connection",
+    "groupName": "连接与分流",
+    "url": "https://jichangfan.shop/guides/mullvad-split-tunneling/",
+    "source": "src/content/articles/mullvad-split-tunneling.md",
+    "export": "15-mullvad-split-tunneling.md",
+    "isNew": true,
+    "chineseCharacters": 796,
+    "sources": [
+      {
+        "title": "Mullvad：应用分流操作说明",
+        "url": "https://mullvad.net/en/help/split-tunneling-with-the-mullvad-app"
+      }
+    ]
+  },
+  {
+    "number": 16,
+    "id": "troubleshooting",
+    "title": "已连接却不能上网？按顺序排查 VPN 与机场订阅",
+    "group": "guide-troubleshoot",
+    "groupName": "故障排查",
+    "url": "https://jichangfan.shop/guides/troubleshooting/",
+    "source": "src/content/articles/troubleshooting.md",
+    "export": "16-troubleshooting.md",
+    "isNew": false,
+    "chineseCharacters": 619,
+    "sources": [
+      {
+        "title": "Android 帮助：连接 VPN",
+        "url": "https://support.google.com/android/answer/9089766"
+      },
+      {
+        "title": "IVPN 官方协议说明",
+        "url": "https://www.ivpn.net/knowledgebase/general/what-vpn-protocols-do-you-offer/"
+      }
+    ]
+  },
+  {
+    "number": 17,
+    "id": "dns-check",
+    "title": "DNS 故障怎么查：记录报错、核对设置与对照连接",
+    "group": "guide-troubleshoot",
+    "groupName": "故障排查",
+    "url": "https://jichangfan.shop/guides/dns-check/",
+    "source": "src/content/articles/dns-check.md",
+    "export": "17-dns-check.md",
+    "isNew": true,
+    "chineseCharacters": 774,
+    "sources": [
+      {
+        "title": "Microsoft：Windows网络设置与任务",
+        "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/essential-network-settings-and-tasks-in-windows"
+      },
+      {
+        "title": "Mozilla：Firefox连接设置",
+        "url": "https://support.mozilla.org/en-US/kb/connection-settings-firefox"
+      }
+    ]
+  },
+  {
+    "number": 18,
+    "id": "network-time-check",
+    "title": "连接前核对系统时间：Windows日期、时区与证书错误",
+    "group": "guide-troubleshoot",
+    "groupName": "故障排查",
+    "url": "https://jichangfan.shop/guides/network-time-check/",
+    "source": "src/content/articles/network-time-check.md",
+    "export": "18-network-time-check.md",
+    "isNew": true,
+    "chineseCharacters": 800,
+    "sources": [
+      {
+        "title": "Microsoft：日期、时间与时区设置",
+        "url": "https://support.microsoft.com/en-us/windows/experience/personalization/set-time-date-and-time-zone-settings-in-windows"
+      },
+      {
+        "title": "Mozilla：安全网站的时间错误排查",
+        "url": "https://support.mozilla.org/en-US/kb/troubleshoot-time-errors-secure-websites"
+      }
+    ]
+  },
+  {
+    "number": 19,
+    "id": "hotel-wifi-login",
+    "title": "酒店公共Wi-Fi先登录：iPhone认证页与VPN连接顺序",
+    "group": "guide-troubleshoot",
+    "groupName": "故障排查",
+    "url": "https://jichangfan.shop/guides/hotel-wifi-login/",
+    "source": "src/content/articles/hotel-wifi-login.md",
+    "export": "19-hotel-wifi-login.md",
+    "isNew": true,
+    "chineseCharacters": 786,
+    "sources": [
+      {
+        "title": "Apple：使用需要登录的公共Wi-Fi",
+        "url": "https://support.apple.com/en-us/102554"
+      }
+    ]
+  },
+  {
+    "number": 20,
+    "id": "wifi-cellular-handoff",
+    "title": "Wi-Fi切换移动数据后断线：固定配置逐步验证",
+    "group": "guide-troubleshoot",
+    "groupName": "故障排查",
+    "url": "https://jichangfan.shop/guides/wifi-cellular-handoff/",
+    "source": "src/content/articles/wifi-cellular-handoff.md",
+    "export": "20-wifi-cellular-handoff.md",
+    "isNew": true,
+    "chineseCharacters": 764,
+    "sources": [
+      {
+        "title": "Android帮助：连接Wi-Fi网络",
+        "url": "https://support.google.com/android/answer/9075847"
+      },
+      {
+        "title": "Apple：蜂窝数据与用量统计",
+        "url": "https://support.apple.com/en-us/109323"
+      }
+    ]
+  },
+  {
+    "number": 21,
+    "id": "traffic-reset-check",
+    "title": "流量与重置日期核对：把本机统计和套餐账期分开",
+    "group": "guide-maintenance",
+    "groupName": "日常维护",
+    "url": "https://jichangfan.shop/guides/traffic-reset-check/",
+    "source": "src/content/articles/traffic-reset-check.md",
+    "export": "21-traffic-reset-check.md",
+    "isNew": true,
+    "chineseCharacters": 768,
+    "sources": [
+      {
+        "title": "Apple：蜂窝数据与用量统计",
+        "url": "https://support.apple.com/en-us/109323"
+      },
+      {
+        "title": "Microsoft：Windows网络设置与任务",
+        "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/essential-network-settings-and-tasks-in-windows"
+      }
+    ]
+  },
+  {
+    "number": 22,
+    "id": "subscription-refresh",
+    "title": "订阅更新教程：保留旧配置、刷新与验证新列表",
+    "group": "guide-maintenance",
+    "groupName": "日常维护",
+    "url": "https://jichangfan.shop/guides/subscription-refresh/",
+    "source": "src/content/articles/subscription-refresh.md",
+    "export": "22-subscription-refresh.md",
+    "isNew": true,
+    "chineseCharacters": 801,
+    "sources": [
+      {
+        "title": "OpenVPN Connect：导入连接配置",
+        "url": "https://openvpn.net/connect-docs/import-profile.html"
+      },
+      {
+        "title": "Proton VPN：下载WireGuard配置",
+        "url": "https://protonvpn.com/support/wireguard-configurations"
+      }
+    ]
+  },
+  {
+    "number": 23,
+    "id": "device-limit-review",
+    "title": "设备数量超限怎么查：连接、配置与授权逐项清点",
+    "group": "guide-maintenance",
+    "groupName": "日常维护",
+    "url": "https://jichangfan.shop/guides/device-limit-review/",
+    "source": "src/content/articles/device-limit-review.md",
+    "export": "23-device-limit-review.md",
+    "isNew": true,
+    "chineseCharacters": 832,
+    "sources": [
+      {
+        "title": "Proton VPN：套餐与连接权益说明",
+        "url": "https://protonvpn.com/support/proton-vpn-plans"
+      }
+    ]
+  },
+  {
+    "number": 24,
+    "id": "client-update",
+    "title": "客户端更新教程：确认来源、保存状态与更新后验证",
+    "group": "guide-maintenance",
+    "groupName": "日常维护",
+    "url": "https://jichangfan.shop/guides/client-update/",
+    "source": "src/content/articles/client-update.md",
+    "export": "24-client-update.md",
+    "isNew": true,
+    "chineseCharacters": 819,
+    "sources": [
+      {
+        "title": "Google Play帮助：更新Android应用",
+        "url": "https://support.google.com/googleplay/answer/113412"
+      },
+      {
+        "title": "WireGuard官方安装入口",
+        "url": "https://www.wireguard.com/install/"
+      }
+    ]
+  },
+  {
+    "number": 25,
+    "id": "configuration-backup",
+    "title": "配置备份与换设备：列清资料、保存副本和恢复验证",
+    "group": "guide-maintenance",
+    "groupName": "日常维护",
+    "url": "https://jichangfan.shop/guides/configuration-backup/",
+    "source": "src/content/articles/configuration-backup.md",
+    "export": "25-configuration-backup.md",
+    "isNew": true,
+    "chineseCharacters": 809,
+    "sources": [
+      {
+        "title": "Proton VPN：下载WireGuard配置",
+        "url": "https://protonvpn.com/support/wireguard-configurations"
+      },
+      {
+        "title": "OpenVPN Connect：导入连接配置",
+        "url": "https://openvpn.net/connect-docs/import-profile.html"
+      }
+    ]
+  },
+  {
+    "number": 26,
+    "id": "logs-redaction",
+    "title": "客户端日志怎么整理：保留错误，隐藏订阅与私密信息",
+    "group": "guide-privacy",
+    "groupName": "隐私与退出",
+    "url": "https://jichangfan.shop/guides/logs-redaction/",
+    "source": "src/content/articles/logs-redaction.md",
+    "export": "26-logs-redaction.md",
+    "isNew": true,
+    "chineseCharacters": 786,
+    "sources": [
+      {
+        "title": "Mullvad官方项目：日志与遥测说明",
+        "url": "https://github.com/mullvad/mullvadvpn-app/blob/main/docs/logging-and-telemetry.md"
+      }
+    ]
+  },
+  {
+    "number": 27,
+    "id": "subscription-link-reset",
+    "title": "订阅链接暴露后怎么处理：确认凭据范围与更换配置",
+    "group": "guide-privacy",
+    "groupName": "隐私与退出",
+    "url": "https://jichangfan.shop/guides/subscription-link-reset/",
+    "source": "src/content/articles/subscription-link-reset.md",
+    "export": "27-subscription-link-reset.md",
+    "isNew": true,
+    "chineseCharacters": 826,
+    "sources": [
+      {
+        "title": "MDN：URL组成与处理",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/API/URL"
+      },
+      {
+        "title": "Proton VPN：下载WireGuard配置",
+        "url": "https://protonvpn.com/support/wireguard-configurations"
+      }
+    ]
+  },
+  {
+    "number": 28,
+    "id": "disconnect-restore",
+    "title": "退出客户端后不能上网：断开、代理与自动连接检查",
+    "group": "guide-privacy",
+    "groupName": "隐私与退出",
+    "url": "https://jichangfan.shop/guides/disconnect-restore/",
+    "source": "src/content/articles/disconnect-restore.md",
+    "export": "28-disconnect-restore.md",
+    "isNew": true,
+    "chineseCharacters": 805,
+    "sources": [
+      {
+        "title": "Microsoft：Windows代理设置",
+        "url": "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/use-a-proxy-server-in-windows"
+      },
+      {
+        "title": "Apple：更改Mac代理设置",
+        "url": "https://support.apple.com/en-au/guide/mac-help/mchlp2591/mac"
+      },
+      {
+        "title": "Android帮助：连接和管理VPN",
+        "url": "https://support.google.com/android/answer/9089766"
+      }
+    ]
+  },
+  {
+    "number": 29,
+    "id": "remove-vpn-profile",
+    "title": "移除VPN配置：分清本机删除、描述文件与服务端撤销",
+    "group": "guide-privacy",
+    "groupName": "隐私与退出",
+    "url": "https://jichangfan.shop/guides/remove-vpn-profile/",
+    "source": "src/content/articles/remove-vpn-profile.md",
+    "export": "29-remove-vpn-profile.md",
+    "isNew": true,
+    "chineseCharacters": 739,
+    "sources": [
+      {
+        "title": "Apple：安装或移除iPhone配置描述文件",
+        "url": "https://support.apple.com/en-gb/guide/iphone/iph6c493b19/ios"
+      },
+      {
+        "title": "Android帮助：连接和管理VPN",
+        "url": "https://support.google.com/android/answer/9089766"
+      },
+      {
+        "title": "OpenVPN Connect：导入连接配置",
+        "url": "https://openvpn.net/connect-docs/import-profile.html"
+      }
+    ]
+  },
+  {
+    "number": 30,
+    "id": "ipv6-connection-check",
+    "title": "IPv4与IPv6连接检查：分别记录出口与浏览器结果",
+    "group": "guide-privacy",
+    "groupName": "隐私与退出",
+    "url": "https://jichangfan.shop/guides/ipv6-connection-check/",
+    "source": "src/content/articles/ipv6-connection-check.md",
+    "export": "30-ipv6-connection-check.md",
+    "isNew": true,
+    "chineseCharacters": 829,
+    "sources": [
+      {
+        "title": "MDN：IPv6术语说明",
+        "url": "https://developer.mozilla.org/en-US/docs/Glossary/IPv6"
+      },
+      {
+        "title": "Mullvad官方连接检查",
+        "url": "https://mullvad.net/en/check"
+      }
+    ]
+  }
+]

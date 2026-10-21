@@ -1,5 +1,34 @@
 ---
-import Base from '../../layouts/Base.astro';import {topics} from '../../data/topics';import {airports} from '../../data/airports';import BrandCard from '../../components/BrandCard.astro';
-export function getStaticPaths(){return topics.map(topic=>({params:{slug:topic.slug},props:{topic}}));}const {topic:t}=Astro.props;
+import Base from '../../layouts/Base.astro';
+import {topics} from '../../data/topics';
+import {selectionGuides} from '../../data/selection-guides';
+import {airports} from '../../data/airports';
+import BrandCard from '../../components/BrandCard.astro';
+export function getStaticPaths(){return topics.map(topic=>({params:{slug:topic.slug},props:{topic}}));}
+const {topic:t}=Astro.props;
+const guide=selectionGuides[t.slug];
+const references=guide.brands.map(ref=>({...ref,airport:airports.find(a=>a.slug===ref.slug)!}));
 ---
-<Base title={t.title} description={t.description+t.subtitle+'机场翻以官方来源梳理选择条件，区分套餐权益与实际网络表现。'} breadcrumbs={[{name:'机场推荐',url:'/recommend/'},{name:t.name,url:'/recommend/'+t.slug+'/'}]}><div class="container"><header class="page-heading"><div class="eyebrow">按需求选择 / {t.tag}</div><h1>{t.title}</h1><p>{t.description}{t.subtitle}</p><div class="meta"><time datetime="2026-10-21">更新于 2026-10-21</time><span>编辑选择指南 · 非实测排名</span></div></header><div class="page-grid"><article class="prose"><h2 id="answer">快速结论</h2><p>{t.paragraphs[0]}</p><h2 id="criteria">先核对三个条件</h2><ol>{t.steps.map(s=><li>{s}</li>)}</ol><h2 id="tradeoffs">比较时容易遗漏什么</h2><p>{t.paragraphs[1]}</p><h2 id="action">购买前的下一步</h2><p>{t.paragraphs[2]}</p><p>在<a href="/compare/">横向比较工具</a>中选择候选服务，把价格、币种、付款周期与未知字段一起保留。看到“尚未核实”时，应先查对应官方说明，不把缺失值当作免费、无限或保证支持。</p><h2 id="faq">常见问题</h2><h3>为什么没有给出唯一第一名？</h3><p>不同网络和使用场景的结果可能不同。本页提供筛选条件，不用未经验证的主观分数替代你的实际需求。</p><h3>下一步该读哪一页？</h3><p>费用比较可读<a href="/ranking/budget/">月付预算榜</a>；计费折算可读<a href="/ranking/value/">性价比核算说明</a>；网络表现应读<a href="/ranking/stable/">稳定性记录方法</a>。</p><h2 id="sources">资料依据</h2><p>本文为编辑方法说明。具体套餐证据见<a href="/airport/">品牌资料库</a>各品牌的官方来源。推荐规则与商业披露见<a href="/editorial-policy/">编辑政策</a>。</p></article><aside><div class="side-panel toc"><h2>本页目录</h2><a href="#answer">快速结论</a><a href="#criteria">三个核对条件</a><a href="#tradeoffs">容易遗漏的细节</a><a href="#action">购买前下一步</a><a href="#faq">常见问题</a><a href="#sources">资料依据</a></div></aside></div><section class="section related"><div class="section-heading"><h2>可核对的资料入口</h2><a href="/airport/">全部品牌 ↗</a></div><div class="cards">{airports.slice(0,3).map(a=><BrandCard airport={a}/>)}</div></section></div></Base>
+<Base title={t.title} description={t.description+t.subtitle+'附场景判断表、具体筛选算例与对应教程，说明资料依据和未知条件。'} breadcrumbs={[{name:'机场推荐',url:'/recommend/'},{name:t.name,url:'/recommend/'+t.slug+'/'}]}>
+  <div class="container">
+    <header class="page-heading"><div class="eyebrow">按需求选择 / {t.tag}</div><h1>{t.title}</h1><p>{t.description}{t.subtitle}</p><div class="meta"><time datetime="2026-10-21">更新于 2026-10-21</time><span>编辑选择指南 · 非实测排名</span></div></header>
+    <div class="page-grid">
+      <article class="prose">
+        <h2 id="answer">快速结论</h2><p>{t.paragraphs[0]}</p><p>{guide.scenario}</p>
+        <h2 id="decision">按你的情况选择下一步</h2>
+        <div class="table-wrap" tabindex="0" role="region" aria-label={t.name+'选择判断表'}><table><thead><tr><th scope="col">你面对的情况</th><th scope="col">先核对什么</th><th scope="col">怎样继续</th></tr></thead><tbody>{guide.checks.map(row=><tr><th scope="row">{row[0]}</th><td>{row[1]}</td><td>{row[2]}</td></tr>)}</tbody></table></div>
+        <h2 id="criteria">三个筛选条件</h2><ol>{t.steps.map(s=><li>{s}</li>)}</ol>
+        <h2 id="example">{guide.exampleTitle}</h2><p>{guide.example}</p><blockquote><p>{guide.outcome}</p></blockquote>
+        <h2 id="tradeoffs">比较时容易遗漏什么</h2><p>{t.paragraphs[1]}</p>
+        <h2 id="action">购买前的下一步</h2><p>{t.paragraphs[2]}</p><p>在<a href="/compare/">横向比较工具</a>中选择候选服务，把价格、币种、付款周期与未知字段一起保留。关键要求仍缺资料时，先补来源，再决定是否付款。</p>
+        <h2 id="faq">常见问题</h2><h3>怎样判断某个候选适合我？</h3><p>把本页判断表中与你相关的条件写成清单，再到品牌资料与对应教程逐条核对。官方声明、第三方参考和个人观察应分别记录；尚未核实的字段不能算作已满足要求。</p><h3>这里的算例或案例是实测吗？</h3><p>本页案例是编辑设计的筛选演示，用于解释比较方式，没有对应的真实账户测试。品牌价格、优惠与证据状态以各资料页的标注为准。</p>
+        <h2 id="sources">资料依据</h2><p>本页选择规则与案例由机场翻编辑整理。具体套餐证据见<a href="/airport/">品牌资料库</a>各品牌来源；技术操作见下方对应教程。资料取舍与商业关系见<a href="/editorial-policy/">编辑政策</a>。</p>
+      </article>
+      <aside><div class="side-panel toc"><h2>本页目录</h2><a href="#answer">快速结论</a><a href="#decision">场景判断表</a><a href="#criteria">筛选条件</a><a href="#example">具体选择案例</a><a href="#tradeoffs">容易遗漏的细节</a><a href="#action">购买前下一步</a><a href="#faq">常见问题</a><a href="#sources">资料依据</a></div></aside>
+    </div>
+    <section class="section related"><div class="section-heading"><h2>把选择落实到下一步</h2><a href="/guides/">全部 30 篇教程 ↗</a></div><div class="catalog-grid">{guide.next.map(link=><a class="card" href={link.url}><h3>{link.title} ↗</h3><p>{link.detail}</p></a>)}</div></section>
+    {references.length>0&&<section class="section"><div class="section-heading"><h2>与本页条件相关的资料入口</h2><a href="/airport/">全部品牌 ↗</a></div><p class="note">按本页讨论的资料类型展示，不是性能排名，也不表示已通过场景测试。各品牌仍需按来源与未知字段继续核对。</p><div class="reference-notes">{references.map(ref=><p><a href={'/airport/'+ref.slug+'/'}>{ref.airport.name}</a>：{ref.reason}</p>)}</div><div class="cards">{references.map(ref=><BrandCard airport={ref.airport}/>)}</div></section>}
+    <nav class="page-nav" aria-label="其他选择专题">{topics.filter(other=>other.slug!==t.slug).map(other=><a href={'/recommend/'+other.slug+'/'}>{other.name} →</a>)}</nav>
+  </div>
+</Base>
+<style>.reference-notes{margin:20px 0;font-size:13px;line-height:1.9}.reference-notes a{color:var(--forest);text-decoration:underline}.catalog-grid h3{font-size:18px;line-height:1.7}</style>

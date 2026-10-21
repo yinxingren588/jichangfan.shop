@@ -1,0 +1,76 @@
+<section class="cost-calculator white-panel" id="cost-calculator" aria-labelledby="cost-title">
+  <div class="eyebrow">THE COST DESK / 算清每一笔</div>
+  <h2 id="cost-title">套餐成本计算器</h2>
+  <p>把付款周期、流量倍率和实际用量一起算。可填写订单确认的优惠后总额；下列示例均为虚构算例。</p>
+  <div class="cost-presets" aria-label="加载虚构算例">
+    <button type="button" data-cost-preset="monthly">月付 · 2 倍率</button>
+    <button type="button" data-cost-preset="annual">年付 · 每月重置</button>
+    <button type="button" data-cost-preset="total">一次性 · 总量配额</button>
+  </div>
+  <form id="cost-form">
+    <div class="cost-fields">
+      <label for="cost-payment">实际付款总额<input id="cost-payment" name="payment" type="number" min="0.01" max="1000000000" step="any" value="20" required /></label>
+      <label for="cost-currency">金额币种<select id="cost-currency" name="currency"><option value="CNY">人民币 CNY</option><option value="USD">美元 USD</option><option value="EUR">欧元 EUR</option></select></label>
+      <label for="cost-months">比较月数<input id="cost-months" name="months" type="number" min="1" max="120" step="1" value="1" required aria-describedby="cost-months-help" /></label>
+      <label for="cost-quota">标称流量（GB）<input id="cost-quota" name="quotaGB" type="number" min="0.01" max="1000000000" step="any" value="100" required /></label>
+      <label for="cost-period">流量配额周期<select id="cost-period" name="quotaPeriod"><option value="month">每月重置</option><option value="total">整个比较周期共用</option></select></label>
+      <label for="cost-multiplier">所用节点流量倍率<input id="cost-multiplier" name="multiplier" type="number" min="0.000001" max="1000000" step="any" value="2" required /></label>
+      <label for="cost-usage">预计每月实际传输（GB）<input id="cost-usage" name="usageGB" type="number" min="0" max="1000000000" step="any" value="30" required /></label>
+    </div>
+    <p class="cost-help" id="cost-months-help">月付通常填 1，年付填 12；一次性流量填预计用完月数，并先确认有效期。这里只做同币种计算，切换币种不会换汇。</p>
+    <button class="button" type="submit">计算我的成本 <span aria-hidden="true">→</span></button>
+  </form>
+  <p id="cost-status" role="status" aria-live="polite">修改示例数值后，点击计算。数据仅在当前页面计算。</p>
+  <div id="cost-result" hidden>
+    <div class="cost-results">
+      <div><span>折算每月支出</span><strong id="cost-monthly-payment"></strong></div>
+      <div><span>每月等效可传输</span><strong id="cost-monthly-quota"></strong></div>
+      <div><span>配额全部用完时</span><strong id="cost-capacity-unit"></strong><small>金额 / GB</small></div>
+      <div><span>按预计用量摊销</span><strong id="cost-usage-unit"></strong><small>金额 / GB</small></div>
+    </div>
+    <p id="cost-explanation"></p>
+  </div>
+  <details class="cost-method"><summary>计算方法与适用条件</summary><p>月均支出 = 付款总额 ÷ 比较月数。每月配额先除以倍率；若为总量包，再除以比较月数。满配额单位成本 = 月均支出 ÷ 每月等效可传输量。按用量摊销 = 月均支出 ÷ 预计月用量。</p><p>假设同一节点倍率、用量按月均匀分布，不计超额购买、额外客户端、税费和退款。总量包的月均值仅用于预算，不代表每月都会重置。多倍率节点需按实际使用构成另算；不限量套餐不适用每 GB 配额比较。</p></details>
+  <noscript><p class="note">启用 JavaScript 可使用计算器。也可以手算：月付 20 元、100GB、固定 2 倍率，可传输 50GB；全部用完为 0.4 元/GB，每月只用 30GB 时约 0.67 元/GB。</p></noscript>
+</section>
+
+<script>
+  import {calculateCost} from '../data/cost';
+  const form = document.querySelector<HTMLFormElement>('#cost-form')!;
+  const result = document.querySelector<HTMLElement>('#cost-result')!;
+  const status = document.querySelector<HTMLElement>('#cost-status')!;
+  const put = (id: string, value: string) => { document.getElementById(id)!.textContent = value; };
+  const read = (name: string) => (form.elements.namedItem(name) as HTMLInputElement | HTMLSelectElement).value;
+  const clearResult = () => { result.hidden = true; status.textContent = '参数已修改，请重新计算。'; };
+  function renderCost() {
+    if (!form.reportValidity()) return;
+    try {
+      const cost = calculateCost({payment:Number(read('payment')),months:Number(read('months')),quotaGB:Number(read('quotaGB')),quotaPeriod:read('quotaPeriod') as 'month'|'total',multiplier:Number(read('multiplier')),usageGB:Number(read('usageGB'))});
+      const currency = read('currency');
+      const money = (amount: number) => (amount>0&&amount<0.0001?'小于 ':'')+new Intl.NumberFormat('zh-CN',{style:'currency',currency,minimumFractionDigits:2,maximumFractionDigits:4}).format(amount>0&&amount<0.0001?0.0001:amount);
+      put('cost-monthly-payment',money(cost.monthlyPayment));
+      put('cost-monthly-quota',new Intl.NumberFormat('zh-CN',{maximumFractionDigits:2}).format(cost.monthlyQuota)+' GB');
+      put('cost-capacity-unit',money(cost.capacityUnitCost));
+      put('cost-usage-unit',cost.usageUnitCost === undefined ? '暂不计算' : money(cost.usageUnitCost));
+      put('cost-explanation',cost.exceedsQuota ? '预计用量超过每月等效配额。请核对超额后限速、停用或加购规则；当前付款额不足以估算全部需求成本。' : Number(read('usageGB')) === 0 ? '预计用量为 0，无法计算按用量摊销成本。' : '配额未全部用完时，按实际用量摊销的成本会高于满配额成本。年付月均值仍需要一次支付总额。');
+      result.hidden = false;
+      status.textContent = '计算完成。结果基于你填写的数值，不代表任何品牌的报价或实测表现。';
+    } catch(error) { result.hidden = true; status.textContent = error instanceof Error ? error.message : '请检查输入数值。'; }
+  }
+  form.addEventListener('submit',event=>{event.preventDefault();renderCost();});
+  form.addEventListener('input',clearResult);
+  form.addEventListener('invalid',()=>{result.hidden=true;status.textContent='请按字段提示填写有效数值。';},true);
+  const presets: Record<string, Record<string,string>> = {
+    monthly:{payment:'20',currency:'CNY',months:'1',quotaGB:'100',quotaPeriod:'month',multiplier:'2',usageGB:'30'},
+    annual:{payment:'120',currency:'CNY',months:'12',quotaGB:'100',quotaPeriod:'month',multiplier:'1',usageGB:'60'},
+    total:{payment:'120',currency:'CNY',months:'12',quotaGB:'100',quotaPeriod:'total',multiplier:'1',usageGB:'60'},
+  };
+  document.querySelectorAll<HTMLButtonElement>('[data-cost-preset]').forEach(button=>button.addEventListener('click',()=>{
+    for (const [name,value] of Object.entries(presets[button.dataset.costPreset!]!)) (form.elements.namedItem(name) as HTMLInputElement).value=value;
+    renderCost();
+  }));
+</script>
+
+<style>
+  .cost-calculator{margin-bottom:28px;scroll-margin-top:120px}.cost-calculator>p{max-width:850px;font-size:14px;line-height:1.9}.cost-presets{display:flex;flex-wrap:wrap;gap:10px;margin:23px 0}.cost-presets button{background:transparent;border:1px solid var(--line);border-radius:3px;color:var(--ink);padding:10px 13px;font:inherit;font-size:12px;cursor:pointer}.cost-presets button:hover{background:var(--paper)}.cost-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.cost-fields label{font-size:12px;display:flex;flex-direction:column;gap:9px;color:var(--ink)}.cost-fields input,.cost-fields select{width:100%;min-width:0;padding:13px 12px;background:#fff;border:1px solid #89947f;border-radius:3px;font:inherit;color:var(--ink);font-size:15px;min-height:47px}.cost-help{font-size:12px;color:var(--muted);line-height:1.9;margin:19px 0}.cost-results{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;border-top:1px solid var(--line);padding-top:25px;margin-top:25px}.cost-results span,.cost-results small{display:block;font-size:11px;color:var(--muted)}.cost-results strong{display:block;font-size:25px;font-family:Georgia,serif;color:var(--forest);overflow-wrap:anywhere;margin:8px 0}.cost-method{margin-top:22px;font-size:13px;line-height:1.9}.cost-method summary{cursor:pointer;font-weight:600}.cost-method p{margin:14px 0}#cost-status,#cost-explanation{font-size:13px;line-height:1.9;margin:20px 0 0}.cost-presets button:focus-visible,.cost-fields input:focus-visible,.cost-fields select:focus-visible{outline:2px solid var(--forest);outline-offset:3px}@media(max-width:760px){.cost-fields{grid-template-columns:repeat(2,minmax(0,1fr))}.cost-results{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:480px){.cost-fields{grid-template-columns:minmax(0,1fr);gap:16px}.cost-calculator{scroll-margin-top:95px}.cost-results strong{font-size:23px}.cost-presets{gap:8px}.cost-presets button{font-size:11px;padding:9px}}
+</style>

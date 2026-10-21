@@ -1,0 +1,65 @@
+{
+  "status": "PASS",
+  "issues": [],
+  "visits": 42,
+  "checks": [
+    "All 14 affected routes return 200 without document overflow at 1440/768/375px",
+    "Six topics have distinct four-row decision tables, examples and relevant source entries",
+    "Calculator: multiplier, annual resets vs total quota, excess demand, zero use, currency label, stale result, invalid input and very small costs",
+    "Decision tables and manual calculation remain readable without JavaScript"
+  ],
+  "accessibility": [
+    {
+      "route": "/",
+      "violations": []
+    },
+    {
+      "route": "/recommend/budget/",
+      "violations": []
+    },
+    {
+      "route": "/recommend/beginner/",
+      "violations": []
+    },
+    {
+      "route": "/recommend/premium/",
+      "violations": []
+    },
+    {
+      "route": "/recommend/stable/",
+      "violations": []
+    },
+    {
+      "route": "/recommend/ai/",
+      "violations": []
+    },
+    {
+      "route": "/recommend/streaming/",
+      "violations": []
+    },
+    {
+      "route": "/ranking/value/",
+      "violations": []
+    },
+    {
+      "route": "/blog/vpn-selection/",
+      "violations": []
+    },
+    {
+      "route": "/blog/vpn-vs-proxy/",
+      "violations": []
+    },
+    {
+      "route": "/glossary/node/",
+      "violations": []
+    },
+    {
+      "route": "/glossary/vpn/",
+      "violations": []
+    },
+    {
+      "route": "/blog/practical-shortlist-three/",
+      "violations": []
+    }
+  ]
+}

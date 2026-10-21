@@ -2,7 +2,7 @@
   "status": "PASS",
   "issues": [],
   "newArticles": 200,
-  "totalMarkdown": 215,
+  "totalMarkdown": 240,
   "topics": {
     "选型与预算": 20,
     "流量与计费": 20,
@@ -16,7 +16,7 @@
     "隐私与安全习惯": 20
   },
   "minChineseCharacters": 617,
-  "maxChineseCharacters": 723,
+  "maxChineseCharacters": 1122,
   "pairsCompared": 19900,
   "maxFiveCharacterShingleJaccard": 0.62,
   "closestPair": [

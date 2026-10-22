@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "date": "2026-10-22",
+  "page": "/contact/",
+  "handle": "@yinxingren_588",
+  "url": "https://t.me/yinxingren_588",
+  "checks": {
+    "build": "355 HTML pages; 343 indexable URLs",
+    "seo": "PASS",
+    "localHttp": 200,
+    "linkTargets": "Account text and button both use the exact HTTPS URL",
+    "newWindow": "Both links use target=_blank and rel=noopener noreferrer",
+    "desktop1440": "No horizontal overflow",
+    "mobile375": "No horizontal overflow; contact row stacks vertically",
+    "email": "mailto:yinxingren588@gmail.com retained",
+    "background": "Dynamic landscape retained"
+  },
+  "scope": "Local website and delivery packages only; no messages sent and no remote deployment"
+}
